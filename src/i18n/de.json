@@ -29,7 +29,7 @@
     "noLimit": "Unbegrenzt"
   },
   "disclosure": {
-    "short": "Wenn du dich über einen dieser Links anmeldest, zahlt der Anbieter dem CashPilot-Projekt möglicherweise eine Prämie. Sie geht nicht von deinen Einnahmen ab.",
+    "short": "Das sind Empfehlungslinks. Die Anmeldung darüber kostet dich nichts.",
     "more": "So funktionieren Empfehlungslinks"
   },
   "home": {
@@ -482,21 +482,16 @@
   "referrals": {
     "title": "Empfehlungslinks",
     "metaTitle": "CashPilot-Empfehlungslinks und wie sie funktionieren",
-    "description": "Jeder Anbieter-Link mit einem CashPilot-Empfehlungscode, was er für dich bedeutet und wie du dich ohne ihn anmeldest.",
+    "description": "Jeder Anbieter-Link mit einem CashPilot-Empfehlungscode und was er für dich bedeutet.",
     "lead": "Diese Seite listet jeden Anbieter-Link mit einem CashPilot-Empfehlungscode auf und zeigt, was er für dich bedeutet.",
     "howTitle": "So funktionieren Empfehlungslinks",
-    "how1": "Wenn du dich über einen dieser Links bei einem Anbieter anmeldest, zahlt der Anbieter dem CashPilot-Projekt möglicherweise eine Prämie. Sie geht nicht von deinen Einnahmen ab.",
     "how2": "Manche Anbieter geben auch dir einen Bonus, wenn du dich über den Link anmeldest. Wir zeigen ihn, wenn der Katalog ihn nennt.",
-    "how3": "Du musst diese Links nie nutzen. Jeder Eintrag zeigt auch die eigene Website des Anbieters, damit du dich ohne Empfehlung anmelden kannst.",
-    "how4": "Die Prämien helfen, das Projekt zu finanzieren.",
     "count": "{count} Anbieter, aus dem Katalog vom {date}.",
     "code": "Code",
     "provider": "Anbieter",
     "link": "Mit Empfehlung anmelden",
-    "website": "Website des Anbieters (ohne Empfehlung)",
     "links": "Links",
     "youGet": "Du bekommst",
-    "projectGets": "Das Projekt bekommt",
     "codeEntry": "Der Link gibt den Code nicht weiter. Gib {code} ein, wenn die App nach einem Empfehlungscode fragt.",
     "guide": "CashPilot-Anleitung",
     "guideLabel": "CashPilot-Anleitung für {name}",

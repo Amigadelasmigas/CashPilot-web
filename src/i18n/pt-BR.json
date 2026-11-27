@@ -29,7 +29,7 @@
     "noLimit": "Sem limite"
   },
   "disclosure": {
-    "short": "Se você se cadastrar por um destes links, o provedor pode pagar uma recompensa ao projeto CashPilot. Ela não sai dos seus ganhos.",
+    "short": "Estes são links de indicação. Cadastrar-se por eles não custa nada para você.",
     "more": "Como funcionam as indicações"
   },
   "home": {
@@ -482,21 +482,16 @@
   "referrals": {
     "title": "Links de indicação",
     "metaTitle": "Links de indicação do CashPilot e como funcionam",
-    "description": "Todos os links de provedores com um código de indicação do CashPilot, o que isso significa para você e como se cadastrar sem ele.",
+    "description": "Todos os links de provedores com um código de indicação do CashPilot, e o que isso significa para você.",
     "lead": "Esta página lista todos os links de provedores que têm um código de indicação do CashPilot, e o que cada um significa para você.",
     "howTitle": "Como funcionam as indicações",
-    "how1": "Se você se cadastrar em um provedor por um destes links, o provedor pode pagar uma recompensa ao projeto CashPilot. Ela não sai dos seus ganhos.",
     "how2": "Alguns provedores também dão um bônus para você quando se cadastra pelo link. Mostramos isso quando o catálogo informa.",
-    "how3": "Você nunca é obrigado a usar estes links. Cada item também mostra o site do próprio provedor, para você se cadastrar sem indicação.",
-    "how4": "As recompensas ajudam a financiar o projeto.",
     "count": "{count} provedores, segundo o catálogo de {date}.",
     "code": "Código",
     "provider": "Provedor",
     "link": "Cadastrar com indicação",
-    "website": "Site do provedor (sem indicação)",
     "links": "Links",
     "youGet": "Você recebe",
-    "projectGets": "O projeto recebe",
     "codeEntry": "O link não repassa o código. Digite {code} quando o app pedir um código de indicação.",
     "guide": "Guia do CashPilot",
     "guideLabel": "Guia do CashPilot para {name}",

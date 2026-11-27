@@ -28,10 +28,8 @@ const groups = CATEGORY_ORDER.map((key) => ({
     <section class="ref__how card" aria-labelledby="how-title">
       <h2 id="how-title">{t("referrals.howTitle")}</h2>
       <ul>
-        <li>{t("referrals.how1")}</li>
+        <li>{t("disclosure.short")}</li>
         <li>{t("referrals.how2")}</li>
-        <li>{t("referrals.how3")}</li>
-        <li>{t("referrals.how4")}</li>
       </ul>
     </section>
 
@@ -67,7 +65,6 @@ const groups = CATEGORY_ORDER.map((key) => ({
                   <th scope="col">{t("referrals.provider")}</th>
                   <th scope="col">{t("referrals.code")}</th>
                   <th scope="col">{t("referrals.youGet")}</th>
-                  <th scope="col">{t("referrals.projectGets")}</th>
                   <th scope="col">{t("referrals.links")}</th>
                 </tr>
               </thead>
@@ -86,19 +83,12 @@ const groups = CATEGORY_ORDER.map((key) => ({
                     <td class:list={{ "ref__empty": !s.bonusReferee }} data-label={t("referrals.youGet")} lang={s.bonusReferee ? "en" : undefined}>
                       {s.bonusReferee}
                     </td>
-                    <td class:list={{ "ref__empty": !s.bonusReferrer }} data-label={t("referrals.projectGets")} lang={s.bonusReferrer ? "en" : undefined}>
-                      {s.bonusReferrer}
-                    </td>
                     <td class="ref__links">
                       <a href={s.signupUrl} rel="sponsored noopener">
                         {t("referrals.link")}
                       </a>
                       <span class="url" dir="ltr">{s.signupUrl}</span>
                       {s.codeEntry && <p class="ref__note">{t("referrals.codeEntry", { code: s.codeEntry })}</p>}
-                      <a class="ref__plain" href={s.website} rel="noopener">
-                        {t("referrals.website")}
-                      </a>
-                      <span class="url" dir="ltr">{s.website}</span>
                     </td>
                   </tr>
                 ))}
@@ -232,13 +222,6 @@ const groups = CATEGORY_ORDER.map((key) => ({
   .ref__links a {
     display: block;
     font-weight: 500;
-  }
-  .ref__links .ref__plain {
-    margin-top: 0.6rem;
-    color: var(--muted);
-  }
-  .ref__links .ref__plain:hover {
-    color: var(--text);
   }
   .url {
     display: block;

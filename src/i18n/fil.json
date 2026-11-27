@@ -29,7 +29,7 @@
     "noLimit": "Walang limit"
   },
   "disclosure": {
-    "short": "Kung mag-sign up ka sa isa sa mga link na ito, maaaring magbigay ang provider ng reward sa CashPilot project. Hindi ito kinukuha sa kita mo.",
+    "short": "Mga referral link ang mga ito. Wala kang babayaran kapag nag-sign up ka sa mga ito.",
     "more": "Paano gumagana ang referral"
   },
   "home": {
@@ -482,21 +482,16 @@
   "referrals": {
     "title": "Mga referral link",
     "metaTitle": "Mga referral link ng CashPilot at kung paano gumagana ang mga ito",
-    "description": "Bawat link ng provider na may CashPilot referral code, ano ang ibig sabihin nito para sa iyo, at paano mag-sign up nang wala nito.",
+    "description": "Bawat link ng provider na may CashPilot referral code, at ang ibig sabihin nito para sa iyo.",
     "lead": "Nakalista sa page na ito ang bawat link ng provider na may CashPilot referral code, at ang ibig sabihin ng bawat isa para sa iyo.",
     "howTitle": "Paano gumagana ang referral",
-    "how1": "Kung mag-sign up ka sa isang provider sa isa sa mga link na ito, maaaring magbigay ang provider ng reward sa CashPilot project. Hindi ito kinukuha sa kita mo.",
     "how2": "May ilang provider na nagbibigay rin sa iyo ng bonus kapag nag-sign up ka sa link. Ipinapakita namin ito kung nakalista ito sa catalog.",
-    "how3": "Hindi mo kailangang gamitin ang mga link na ito. Ipinapakita rin ng bawat entry ang sariling website ng provider, para makapag-sign up ka nang walang referral.",
-    "how4": "Nakakatulong ang mga reward na pondohan ang project.",
     "count": "{count} provider, mula sa catalog noong {date}.",
     "code": "Code",
     "provider": "Provider",
     "link": "Mag-sign up gamit ang referral",
-    "website": "Website ng provider (walang referral)",
     "links": "Mga link",
     "youGet": "Makukuha mo",
-    "projectGets": "Makukuha ng project",
     "codeEntry": "Hindi ipinapasa ng link ang code. I-type ang {code} kapag humingi ang app ng referral code.",
     "guide": "CashPilot guide",
     "guideLabel": "CashPilot guide para sa {name}",

@@ -29,7 +29,7 @@
     "noLimit": "Sin límite"
   },
   "disclosure": {
-    "short": "Si te registras con uno de estos enlaces, el proveedor puede pagar una recompensa al proyecto CashPilot. No sale de tus ganancias.",
+    "short": "Son enlaces de referido. Registrarte con ellos no te cuesta nada.",
     "more": "Cómo funcionan los referidos"
   },
   "home": {
@@ -482,21 +482,16 @@
   "referrals": {
     "title": "Enlaces de referido",
     "metaTitle": "Enlaces de referido de CashPilot y cómo funcionan",
-    "description": "Todos los enlaces de proveedores con un código de referido de CashPilot, qué significan para ti y cómo registrarte sin ellos.",
+    "description": "Todos los enlaces de proveedores con un código de referido de CashPilot, y qué significan para ti.",
     "lead": "Esta página recoge todos los enlaces de proveedores que llevan un código de referido de CashPilot, y qué significa cada uno para ti.",
     "howTitle": "Cómo funcionan los referidos",
-    "how1": "Si te registras con un proveedor a través de uno de estos enlaces, el proveedor puede pagar una recompensa al proyecto CashPilot. No sale de tus ganancias.",
     "how2": "Algunos proveedores también te dan un bono cuando te registras con el enlace. Lo indicamos cuando el catálogo lo recoge.",
-    "how3": "No estás obligado a usar estos enlaces. Cada entrada muestra también la web del propio proveedor, para que puedas registrarte sin referido.",
-    "how4": "Las recompensas ayudan a financiar el proyecto.",
     "count": "{count} proveedores, según el catálogo del {date}.",
     "code": "Código",
     "provider": "Proveedor",
     "link": "Registrarse con referido",
-    "website": "Web del proveedor (sin referido)",
     "links": "Enlaces",
     "youGet": "Tú recibes",
-    "projectGets": "El proyecto recibe",
     "codeEntry": "El enlace no transmite el código. Escribe {code} cuando la app te pida un código de referido.",
     "guide": "Guía de CashPilot",
     "guideLabel": "Guía de CashPilot para {name}",

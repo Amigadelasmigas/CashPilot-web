@@ -29,7 +29,7 @@
     "noLimit": "Sans limite"
   },
   "disclosure": {
-    "short": "Si vous vous inscrivez par l'un de ces liens, le fournisseur peut verser une récompense au projet CashPilot. Elle n'est pas prise sur vos gains.",
+    "short": "Ce sont des liens de parrainage. Vous inscrire par ces liens ne vous coûte rien.",
     "more": "Comment fonctionne le parrainage"
   },
   "home": {
@@ -482,21 +482,16 @@
   "referrals": {
     "title": "Liens de parrainage",
     "metaTitle": "Les liens de parrainage de CashPilot et leur fonctionnement",
-    "description": "Tous les liens de fournisseurs avec un code de parrainage CashPilot, ce que cela change pour vous, et comment s'inscrire sans.",
+    "description": "Tous les liens de fournisseurs avec un code de parrainage CashPilot, et ce que cela change pour vous.",
     "lead": "Cette page liste tous les liens de fournisseurs qui contiennent un code de parrainage CashPilot, et ce que chacun change pour vous.",
     "howTitle": "Comment fonctionne le parrainage",
-    "how1": "Si vous vous inscrivez chez un fournisseur par l'un de ces liens, le fournisseur peut verser une récompense au projet CashPilot. Elle n'est pas prise sur vos gains.",
     "how2": "Certains fournisseurs vous offrent aussi un bonus quand vous vous inscrivez par le lien. Nous l'indiquons quand le catalogue le mentionne.",
-    "how3": "Vous n'êtes jamais obligé d'utiliser ces liens. Chaque entrée affiche aussi le site du fournisseur lui-même, pour que vous puissiez vous inscrire sans parrainage.",
-    "how4": "Les récompenses aident à financer le projet.",
     "count": "{count} fournisseurs, d'après le catalogue du {date}.",
     "code": "Code",
     "provider": "Fournisseur",
     "link": "S'inscrire avec parrainage",
-    "website": "Site du fournisseur (sans parrainage)",
     "links": "Liens",
     "youGet": "Vous recevez",
-    "projectGets": "Le projet reçoit",
     "codeEntry": "Le lien ne transmet pas le code. Saisissez {code} quand l'application vous demande un code de parrainage.",
     "guide": "Guide CashPilot",
     "guideLabel": "Guide CashPilot pour {name}",

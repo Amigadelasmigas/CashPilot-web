@@ -29,7 +29,7 @@
     "noLimit": "Bez limitu"
   },
   "disclosure": {
-    "short": "Jeśli zarejestrujesz się przez jeden z tych linków, dostawca może zapłacić projektowi CashPilot nagrodę. Nie pochodzi ona z twoich zarobków.",
+    "short": "To są linki polecające. Rejestracja przez nie nic cię nie kosztuje.",
     "more": "Jak działają linki polecające"
   },
   "home": {
@@ -482,21 +482,16 @@
   "referrals": {
     "title": "Linki polecające",
     "metaTitle": "Linki polecające CashPilot i jak działają",
-    "description": "Każdy link do dostawcy z kodem polecającym CashPilot, co oznacza dla ciebie i jak zarejestrować się bez niego.",
+    "description": "Każdy link do dostawcy z kodem polecającym CashPilot i co oznacza dla ciebie.",
     "lead": "Ta strona wymienia każdy link do dostawcy z kodem polecającym CashPilot i wyjaśnia, co każdy z nich oznacza dla ciebie.",
     "howTitle": "Jak działają linki polecające",
-    "how1": "Jeśli zarejestrujesz się u dostawcy przez jeden z tych linków, dostawca może zapłacić projektowi CashPilot nagrodę. Nie pochodzi ona z twoich zarobków.",
     "how2": "Niektórzy dostawcy dają też tobie bonus za rejestrację przez link. Pokazujemy go tam, gdzie podaje go katalog.",
-    "how3": "Nigdy nie musisz używać tych linków. Każdy wpis pokazuje też stronę dostawcy, więc możesz zarejestrować się bez polecenia.",
-    "how4": "Nagrody pomagają finansować projekt.",
     "count": "Dostawcy: {count}, według katalogu z {date}.",
     "code": "Kod",
     "provider": "Dostawca",
     "link": "Rejestracja z poleceniem",
-    "website": "Strona dostawcy (bez polecenia)",
     "links": "Linki",
     "youGet": "Ty dostajesz",
-    "projectGets": "Projekt dostaje",
     "codeEntry": "Link nie przekazuje kodu. Wpisz {code}, gdy aplikacja poprosi o kod polecający.",
     "guide": "Poradnik CashPilot",
     "guideLabel": "Poradnik CashPilot: {name}",

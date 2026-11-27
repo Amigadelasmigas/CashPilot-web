@@ -29,7 +29,7 @@
     "noLimit": "Geen limiet"
   },
   "disclosure": {
-    "short": "Als je je via een van deze links aanmeldt, kan de aanbieder het CashPilot-project een beloning betalen. Die gaat niet af van je inkomsten.",
+    "short": "Dit zijn verwijzingslinks. Je aanmelden via deze links kost je niets.",
     "more": "Zo werken verwijzingslinks"
   },
   "home": {
@@ -482,21 +482,16 @@
   "referrals": {
     "title": "Verwijzingslinks",
     "metaTitle": "CashPilot-verwijzingslinks en hoe ze werken",
-    "description": "Elke link naar een aanbieder met een CashPilot-verwijzingscode, wat die voor jou betekent en hoe je je zonder code aanmeldt.",
+    "description": "Elke link naar een aanbieder met een CashPilot-verwijzingscode, en wat die voor jou betekent.",
     "lead": "Deze pagina toont elke link naar een aanbieder met een CashPilot-verwijzingscode, en wat elke link voor jou betekent.",
     "howTitle": "Zo werken verwijzingslinks",
-    "how1": "Als je je via een van deze links bij een aanbieder aanmeldt, kan de aanbieder het CashPilot-project een beloning betalen. Die gaat niet af van je inkomsten.",
     "how2": "Sommige aanbieders geven jou ook een bonus als je je via de link aanmeldt. We tonen die als de catalogus hem vermeldt.",
-    "how3": "Je hoeft deze links nooit te gebruiken. Elke vermelding toont ook de eigen website van de aanbieder, zodat je je zonder verwijzing kunt aanmelden.",
-    "how4": "De beloningen helpen het project te financieren.",
     "count": "{count} aanbieders, uit de catalogus van {date}.",
     "code": "Code",
     "provider": "Aanbieder",
     "link": "Aanmelden met verwijzing",
-    "website": "Website van de aanbieder (zonder verwijzing)",
     "links": "Links",
     "youGet": "Jij krijgt",
-    "projectGets": "Het project krijgt",
     "codeEntry": "De link geeft de code niet door. Typ {code} als de app om een verwijzingscode vraagt.",
     "guide": "CashPilot-handleiding",
     "guideLabel": "CashPilot-handleiding voor {name}",

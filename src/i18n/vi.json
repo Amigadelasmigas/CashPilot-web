@@ -29,7 +29,7 @@
     "noLimit": "Không giới hạn"
   },
   "disclosure": {
-    "short": "Nếu bạn đăng ký qua một trong các liên kết này, nhà cung cấp có thể trả thưởng cho dự án CashPilot. Khoản thưởng này không bị trừ vào thu nhập của bạn.",
+    "short": "Đây là các liên kết giới thiệu. Đăng ký qua các liên kết này không tốn của bạn bất kỳ chi phí nào.",
     "more": "Cách hoạt động của liên kết giới thiệu"
   },
   "home": {
@@ -482,21 +482,16 @@
   "referrals": {
     "title": "Liên kết giới thiệu",
     "metaTitle": "Liên kết giới thiệu của CashPilot và cách chúng hoạt động",
-    "description": "Mọi liên kết nhà cung cấp có mã giới thiệu CashPilot, ý nghĩa của nó với bạn, và cách đăng ký không qua mã.",
+    "description": "Mọi liên kết nhà cung cấp có mã giới thiệu CashPilot, và ý nghĩa của nó với bạn.",
     "lead": "Trang này liệt kê mọi liên kết nhà cung cấp có mang mã giới thiệu CashPilot, và ý nghĩa của từng liên kết với bạn.",
     "howTitle": "Cách hoạt động của liên kết giới thiệu",
-    "how1": "Nếu bạn đăng ký với nhà cung cấp qua một trong các liên kết này, nhà cung cấp có thể trả thưởng cho dự án CashPilot. Khoản thưởng này không bị trừ vào thu nhập của bạn.",
     "how2": "Một số nhà cung cấp cũng tặng bạn tiền thưởng khi đăng ký qua liên kết. Chúng tôi hiển thị khoản này khi danh mục có ghi.",
-    "how3": "Bạn không bắt buộc phải dùng các liên kết này. Mỗi mục cũng hiển thị trang web riêng của nhà cung cấp, để bạn có thể đăng ký mà không qua giới thiệu.",
-    "how4": "Các khoản thưởng giúp tài trợ cho dự án.",
     "count": "{count} nhà cung cấp, từ danh mục ngày {date}.",
     "code": "Mã",
     "provider": "Nhà cung cấp",
     "link": "Đăng ký qua giới thiệu",
-    "website": "Trang web nhà cung cấp (không giới thiệu)",
     "links": "Liên kết",
     "youGet": "Bạn nhận được",
-    "projectGets": "Dự án nhận được",
     "codeEntry": "Liên kết không tự chuyển mã. Hãy nhập {code} khi ứng dụng hỏi mã giới thiệu.",
     "guide": "Hướng dẫn CashPilot",
     "guideLabel": "Hướng dẫn CashPilot cho {name}",

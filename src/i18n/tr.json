@@ -29,7 +29,7 @@
     "noLimit": "Sınır yok"
   },
   "disclosure": {
-    "short": "Bu bağlantılardan biriyle kaydolursanız sağlayıcı, CashPilot projesine bir ödül ödeyebilir. Bu ödül kazancınızdan düşülmez.",
+    "short": "Bunlar referans bağlantılarıdır. Bu bağlantılarla kaydolmak size hiçbir maliyet getirmez.",
     "more": "Referans bağlantıları nasıl çalışır"
   },
   "home": {
@@ -482,21 +482,16 @@
   "referrals": {
     "title": "Referans bağlantıları",
     "metaTitle": "CashPilot referans bağlantıları ve nasıl çalıştıkları",
-    "description": "CashPilot referans kodu taşıyan tüm sağlayıcı bağlantıları, bunların sizin için ne anlama geldiği ve referans olmadan nasıl kaydolacağınız.",
+    "description": "CashPilot referans kodu taşıyan tüm sağlayıcı bağlantıları ve bunların sizin için ne anlama geldiği.",
     "lead": "Bu sayfa, CashPilot referans kodu taşıyan tüm sağlayıcı bağlantılarını ve her birinin sizin için ne anlama geldiğini listeler.",
     "howTitle": "Referans bağlantıları nasıl çalışır",
-    "how1": "Bu bağlantılardan biriyle bir sağlayıcıya kaydolursanız sağlayıcı, CashPilot projesine bir ödül ödeyebilir. Bu ödül kazancınızdan düşülmez.",
     "how2": "Bazı sağlayıcılar bağlantıyla kaydolduğunuzda size de bir bonus verir. Katalogda yer alıyorsa bunu gösteriyoruz.",
-    "how3": "Bu bağlantıları kullanmak zorunda değilsiniz. Her satırda sağlayıcının kendi web sitesi de yer alır. Böylece referans olmadan kaydolabilirsiniz.",
-    "how4": "Ödüller projenin finansmanına yardımcı olur.",
     "count": "{count} sağlayıcı, {date} tarihli katalogdan.",
     "code": "Kod",
     "provider": "Sağlayıcı",
     "link": "Referansla kaydol",
-    "website": "Sağlayıcının web sitesi (referanssız)",
     "links": "Bağlantılar",
     "youGet": "Sizin aldığınız",
-    "projectGets": "Projenin aldığı",
     "codeEntry": "Bağlantı kodu iletmez. Uygulama referans kodu istediğinde {code} yazın.",
     "guide": "CashPilot rehberi",
     "guideLabel": "{name} için CashPilot rehberi",

@@ -29,7 +29,7 @@
     "noLimit": "Nessun limite"
   },
   "disclosure": {
-    "short": "Se ti iscrivi tramite uno di questi link, il fornitore può pagare una ricompensa al progetto CashPilot. Non viene tolta dai tuoi guadagni.",
+    "short": "Questi sono link referral. Iscriverti tramite questi link non ti costa nulla.",
     "more": "Come funzionano i referral"
   },
   "home": {
@@ -482,21 +482,16 @@
   "referrals": {
     "title": "Link referral",
     "metaTitle": "I link referral di CashPilot e come funzionano",
-    "description": "Tutti i link dei fornitori con un codice referral di CashPilot, cosa significano per te e come iscriverti senza.",
+    "description": "Tutti i link dei fornitori con un codice referral di CashPilot, e cosa significano per te.",
     "lead": "Questa pagina elenca tutti i link dei fornitori che contengono un codice referral di CashPilot, e cosa significa ognuno per te.",
     "howTitle": "Come funzionano i referral",
-    "how1": "Se ti iscrivi presso un fornitore tramite uno di questi link, il fornitore può pagare una ricompensa al progetto CashPilot. Non viene tolta dai tuoi guadagni.",
     "how2": "Alcuni fornitori danno anche a te un bonus quando ti iscrivi tramite il link. Lo indichiamo quando il catalogo lo riporta.",
-    "how3": "Non sei mai obbligato a usare questi link. Ogni voce mostra anche il sito del fornitore, così puoi iscriverti senza referral.",
-    "how4": "Le ricompense aiutano a finanziare il progetto.",
     "count": "{count} fornitori, dal catalogo del {date}.",
     "code": "Codice",
     "provider": "Fornitore",
     "link": "Iscriviti con referral",
-    "website": "Sito del fornitore (senza referral)",
     "links": "Link",
     "youGet": "Tu ricevi",
-    "projectGets": "Il progetto riceve",
     "codeEntry": "Il link non trasmette il codice. Scrivi {code} quando l'app ti chiede un codice referral.",
     "guide": "Guida di CashPilot",
     "guideLabel": "Guida di CashPilot per {name}",

@@ -29,7 +29,7 @@
     "noLimit": "No limit"
   },
   "disclosure": {
-    "short": "If you sign up through one of these links, the provider may pay the CashPilot project a reward. It does not come out of your earnings.",
+    "short": "These are referral links. Signing up through them costs you nothing.",
     "more": "How referrals work"
   },
   "home": {
@@ -482,21 +482,16 @@
   "referrals": {
     "title": "Referral links",
     "metaTitle": "CashPilot referral links and how they work",
-    "description": "Every provider link with a CashPilot referral code, what it means for you, and how to sign up without one.",
+    "description": "Every provider link with a CashPilot referral code, and what it means for you.",
     "lead": "This page lists every provider link that carries a CashPilot referral code, and what each one means for you.",
     "howTitle": "How referrals work",
-    "how1": "If you sign up with a provider through one of these links, the provider may pay the CashPilot project a reward. It does not come out of your earnings.",
     "how2": "Some providers also give you a bonus when you sign up through the link. We show it where the catalog lists it.",
-    "how3": "You never have to use these links. Each entry also shows the provider's own website, so you can sign up without a referral.",
-    "how4": "The rewards help fund the project.",
     "count": "{count} providers, from the catalog on {date}.",
     "code": "Code",
     "provider": "Provider",
     "link": "Sign up with referral",
-    "website": "Provider website (no referral)",
     "links": "Links",
     "youGet": "You get",
-    "projectGets": "The project gets",
     "codeEntry": "The link does not pass the code on. Type {code} when the app asks for a referral code.",
     "guide": "CashPilot guide",
     "guideLabel": "CashPilot guide for {name}",

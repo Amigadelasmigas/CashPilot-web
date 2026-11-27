@@ -29,7 +29,7 @@
     "noLimit": "Tanpa batas"
   },
   "disclosure": {
-    "short": "Jika Anda mendaftar lewat salah satu tautan ini, penyedia mungkin memberi imbalan kepada proyek CashPilot. Imbalan itu tidak diambil dari penghasilan Anda.",
+    "short": "Ini adalah tautan referral. Mendaftar lewat tautan ini tidak membebani Anda apa pun.",
     "more": "Cara kerja referral"
   },
   "home": {
@@ -482,21 +482,16 @@
   "referrals": {
     "title": "Tautan referral",
     "metaTitle": "Tautan referral CashPilot dan cara kerjanya",
-    "description": "Setiap tautan penyedia yang memakai kode referral CashPilot, artinya bagi Anda, dan cara mendaftar tanpa kode itu.",
+    "description": "Setiap tautan penyedia yang memakai kode referral CashPilot, dan artinya bagi Anda.",
     "lead": "Halaman ini mencantumkan setiap tautan penyedia yang memuat kode referral CashPilot, dan arti masing-masing bagi Anda.",
     "howTitle": "Cara kerja referral",
-    "how1": "Jika Anda mendaftar di penyedia lewat salah satu tautan ini, penyedia mungkin memberi imbalan kepada proyek CashPilot. Imbalan itu tidak diambil dari penghasilan Anda.",
     "how2": "Sebagian penyedia juga memberi Anda bonus saat Anda mendaftar lewat tautan itu. Kami menampilkannya jika katalog mencantumkannya.",
-    "how3": "Anda tidak pernah wajib memakai tautan ini. Setiap entri juga menampilkan situs web resmi penyedia, sehingga Anda bisa mendaftar tanpa referral.",
-    "how4": "Imbalan tersebut membantu mendanai proyek.",
     "count": "{count} penyedia, dari katalog pada {date}.",
     "code": "Kode",
     "provider": "Penyedia",
     "link": "Daftar dengan referral",
-    "website": "Situs web penyedia (tanpa referral)",
     "links": "Tautan",
     "youGet": "Yang Anda dapat",
-    "projectGets": "Yang didapat proyek",
     "codeEntry": "Tautan ini tidak meneruskan kodenya. Ketik {code} saat aplikasi meminta kode referral.",
     "guide": "Panduan CashPilot",
     "guideLabel": "Panduan CashPilot untuk {name}",
