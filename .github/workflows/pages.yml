@@ -1,7 +1,7 @@
 # Builds cashpilot.club and deploys it to GitHub Pages.
-# Runs on every push to main, once a day (so star counts, Docker pulls, the
-# catalog and release sizes stay current), on demand, and when a sibling repo
-# sends a `release` repository_dispatch after it publishes.
+# Runs on every push to main, once a day (so star counts, Docker pulls and the
+# catalog stay current) and on demand. New releases reach the site through the
+# PRs of bump-pins.yml.
 name: Pages
 
 on:
@@ -10,8 +10,6 @@ on:
   schedule:
     - cron: "17 5 * * *"
   workflow_dispatch:
-  repository_dispatch:
-    types: [release]
 
 permissions:
   contents: read
