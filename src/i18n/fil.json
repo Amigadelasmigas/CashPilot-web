@@ -234,6 +234,9 @@
       "feature": "Feature",
       "rows": {
         "license": "Lisensya",
+        "lanIsolation": "Inilalayo ang mga service sa home network mo bilang default",
+        "lockedDown": "Hinihigpitan ang container ng bawat service",
+        "dockerAccess": "Sinasala ang pagkontrol sa mga container mo",
         "balances": "Binabasa ang balance mula sa mga provider account mo",
         "fleet": "Iisang dashboard para sa maraming server",
         "desktop": "Desktop app",
@@ -247,8 +250,12 @@
         "gplReadme": "May GPL-3.0 file, pero ipinagbabawal ng README ang binagong kopya",
         "estimates": "Hindi, tantiya lang",
         "claimed": "Sinasabing mayroon, sa closed code",
-        "betaMining": "Oo, nasa beta ang mining"
+        "betaMining": "Oo, nasa beta ang mining",
+        "lanReachable": "Hindi, naaabot pa rin ang network mo",
+        "partly": "Bahagya",
+        "updaterHardened": "Hindi, pero hinigpitan ang updater nito"
       },
+      "security": "Inuuna ng CashPilot ang seguridad. Hinihigpitan ang bawat service na pinapatakbo nito at, bilang default, hindi nito maaabot ang home network mo. <a href=\"{securityUrl}\">Basahin ang mga default na setting sa seguridad</a>.",
       "more": "Buong paghahambing, may source sa bawat cell"
     },
     "faq": {

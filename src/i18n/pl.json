@@ -234,6 +234,9 @@
       "feature": "Funkcja",
       "rows": {
         "license": "Licencja",
+        "lanIsolation": "Domyślnie trzyma usługi z dala od twojej sieci domowej",
+        "lockedDown": "Zabezpiecza kontener każdej usługi",
+        "dockerAccess": "Filtruje sterowanie twoimi kontenerami",
         "balances": "Odczytuje salda z twoich kont u dostawców",
         "fleet": "Jeden panel dla wielu serwerów",
         "desktop": "Aplikacja na komputer",
@@ -247,8 +250,12 @@
         "gplReadme": "Plik GPL-3.0, README zabrania zmienionych kopii",
         "estimates": "Nie, tylko szacunki",
         "claimed": "Deklarowane, w zamkniętym kodzie",
-        "betaMining": "Tak, kopanie w wersji beta"
+        "betaMining": "Tak, kopanie w wersji beta",
+        "lanReachable": "Nie, twoja sieć domowa pozostaje dostępna",
+        "partly": "Częściowo",
+        "updaterHardened": "Nie, ale jego aktualizator jest zabezpieczony"
       },
+      "security": "W CashPilot bezpieczeństwo jest na pierwszym miejscu. Każda usługa, którą uruchamia, jest zabezpieczona i domyślnie nie ma dostępu do twojej sieci domowej. <a href=\"{securityUrl}\">Przeczytaj o domyślnych ustawieniach bezpieczeństwa</a>.",
       "more": "Pełne porównanie ze źródłem dla każdej komórki"
     },
     "faq": {

@@ -234,6 +234,9 @@
       "feature": "Özellik",
       "rows": {
         "license": "Lisans",
+        "lanIsolation": "Hizmetleri varsayılan olarak ev ağınızdan uzak tutar",
+        "lockedDown": "Her hizmetin konteynerini sıkı şekilde kısıtlar",
+        "dockerAccess": "Konteynerlerinizin yönetimini filtreler",
         "balances": "Sağlayıcı hesaplarınızdan bakiye okur",
         "fleet": "Birçok sunucu için tek panel",
         "desktop": "Masaüstü uygulaması",
@@ -247,8 +250,12 @@
         "gplReadme": "GPL-3.0 dosyası var, README değiştirilmiş kopyaları yasaklıyor",
         "estimates": "Hayır, yalnızca tahmin",
         "claimed": "İddia ediliyor, kapalı kodda",
-        "betaMining": "Evet, madencilik beta aşamasında"
+        "betaMining": "Evet, madencilik beta aşamasında",
+        "lanReachable": "Hayır, ev ağınız erişilebilir kalır",
+        "partly": "Kısmen",
+        "updaterHardened": "Hayır, ama güncelleyicisi kısıtlanmış"
       },
+      "security": "CashPilot'ta güvenlik her şeyden önce gelir. Başlattığı her hizmet kısıtlanmış olarak çalışır ve varsayılan olarak ev ağınıza erişemez. <a href=\"{securityUrl}\">Varsayılan güvenlik ayarlarını okuyun</a>.",
       "more": "Her hücre için kaynak içeren tam karşılaştırma"
     },
     "faq": {

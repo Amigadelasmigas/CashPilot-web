@@ -234,6 +234,9 @@
       "feature": "功能",
       "rows": {
         "license": "许可证",
+        "lanIsolation": "默认将服务与家庭网络隔离",
+        "lockedDown": "严格限制每个服务的容器",
+        "dockerAccess": "过滤对容器的控制请求",
         "balances": "从你的服务商账户读取余额",
         "fleet": "一个仪表盘管理多台服务器",
         "desktop": "桌面应用",
@@ -247,8 +250,12 @@
         "gplReadme": "有 GPL-3.0 文件，但 README 禁止修改版",
         "estimates": "否，仅有估算",
         "claimed": "声称支持，代码不公开",
-        "betaMining": "是，挖矿为测试版"
+        "betaMining": "是，挖矿为测试版",
+        "lanReachable": "否，你的网络仍可被访问",
+        "partly": "部分",
+        "updaterHardened": "否，但其更新组件受到严格限制"
       },
+      "security": "CashPilot 把安全放在首位。它启动的每个服务都在严格受限的容器中运行，并且默认无法访问你的家庭网络。<a href=\"{securityUrl}\">阅读安全默认设置</a>。",
       "more": "完整对比，每一项都附有来源"
     },
     "faq": {

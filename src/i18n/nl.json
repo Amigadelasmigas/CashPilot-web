@@ -234,6 +234,9 @@
       "feature": "Functie",
       "rows": {
         "license": "Licentie",
+        "lanIsolation": "Houdt de diensten standaard weg van je thuisnetwerk",
+        "lockedDown": "Beveiligt de container van elke dienst",
+        "dockerAccess": "Filtert de besturing van je containers",
         "balances": "Leest saldi uit je accounts bij aanbieders",
         "fleet": "Eén dashboard voor veel servers",
         "desktop": "Desktop-app",
@@ -247,8 +250,12 @@
         "gplReadme": "GPL-3.0-bestand, README verbiedt gewijzigde kopieën",
         "estimates": "Nee, alleen schattingen",
         "claimed": "Beweerd, in gesloten code",
-        "betaMining": "Ja, mining in bèta"
+        "betaMining": "Ja, mining in bèta",
+        "lanReachable": "Nee, je thuisnetwerk blijft bereikbaar",
+        "partly": "Deels",
+        "updaterHardened": "Nee, maar de updater is beveiligd"
       },
+      "security": "Veiligheid staat bij CashPilot voorop. Elke dienst die het start, draait beveiligd en kan standaard je thuisnetwerk niet bereiken. <a href=\"{securityUrl}\">Lees de standaard beveiligingsinstellingen</a>.",
       "more": "Volledige vergelijking met een bron voor elke cel"
     },
     "faq": {

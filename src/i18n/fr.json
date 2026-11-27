@@ -234,6 +234,9 @@
       "feature": "Fonctionnalité",
       "rows": {
         "license": "Licence",
+        "lanIsolation": "Tient les services à l'écart de votre réseau domestique par défaut",
+        "lockedDown": "Verrouille le conteneur de chaque service",
+        "dockerAccess": "Filtre le contrôle de vos conteneurs",
         "balances": "Relève les soldes de vos comptes chez les fournisseurs",
         "fleet": "Un seul tableau de bord pour plusieurs serveurs",
         "desktop": "Application de bureau",
@@ -247,8 +250,12 @@
         "gplReadme": "Fichier GPL-3.0, mais le README interdit les copies modifiées",
         "estimates": "Non, des estimations seulement",
         "claimed": "Annoncé, en code fermé",
-        "betaMining": "Oui, minage en bêta"
+        "betaMining": "Oui, minage en bêta",
+        "lanReachable": "Non, votre réseau reste accessible",
+        "partly": "En partie",
+        "updaterHardened": "Non, mais son outil de mise à jour est verrouillé"
       },
+      "security": "La sécurité passe en premier dans CashPilot. Chaque service qu'il lance tourne dans un conteneur verrouillé et, par défaut, ne peut pas atteindre votre réseau domestique. <a href=\"{securityUrl}\">Lisez les réglages de sécurité par défaut</a>.",
       "more": "Comparaison complète avec une source pour chaque case"
     },
     "faq": {

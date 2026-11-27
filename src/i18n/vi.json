@@ -234,6 +234,9 @@
       "feature": "Tính năng",
       "rows": {
         "license": "Giấy phép",
+        "lanIsolation": "Mặc định cách ly dịch vụ khỏi mạng gia đình",
+        "lockedDown": "Giới hạn quyền container của từng dịch vụ",
+        "dockerAccess": "Lọc lệnh điều khiển container của bạn",
         "balances": "Đọc số dư từ tài khoản nhà cung cấp của bạn",
         "fleet": "Một bảng điều khiển cho nhiều máy chủ",
         "desktop": "Ứng dụng máy tính",
@@ -247,8 +250,12 @@
         "gplReadme": "Có tệp GPL-3.0, README cấm bản sao có sửa đổi",
         "estimates": "Không, chỉ ước tính",
         "claimed": "Có (theo tuyên bố), mã nguồn đóng",
-        "betaMining": "Có, đào coin đang beta"
+        "betaMining": "Có, đào coin đang beta",
+        "lanReachable": "Không, vẫn truy cập được mạng của bạn",
+        "partly": "Một phần",
+        "updaterHardened": "Không, nhưng trình cập nhật bị giới hạn quyền"
       },
+      "security": "CashPilot đặt bảo mật lên hàng đầu. Mọi dịch vụ nó khởi chạy đều bị giới hạn quyền và, theo mặc định, không thể truy cập mạng gia đình của bạn. <a href=\"{securityUrl}\">Đọc về các thiết lập bảo mật mặc định</a>.",
       "more": "Bảng so sánh đầy đủ, mỗi ô đều có nguồn"
     },
     "faq": {

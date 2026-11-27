@@ -234,6 +234,9 @@
       "feature": "Fitur",
       "rows": {
         "license": "Lisensi",
+        "lanIsolation": "Memisahkan layanan dari jaringan rumah Anda secara default",
+        "lockedDown": "Membatasi hak akses container setiap layanan",
+        "dockerAccess": "Menyaring kendali atas container Anda",
         "balances": "Membaca saldo dari akun penyedia Anda",
         "fleet": "Satu dasbor untuk banyak server",
         "desktop": "Aplikasi desktop",
@@ -247,8 +250,12 @@
         "gplReadme": "Ada file GPL-3.0, README melarang salinan yang diubah",
         "estimates": "Tidak, hanya perkiraan",
         "claimed": "Diklaim, dalam kode tertutup",
-        "betaMining": "Ya, mining masih beta"
+        "betaMining": "Ya, mining masih beta",
+        "lanReachable": "Tidak, jaringan Anda tetap bisa dijangkau",
+        "partly": "Sebagian",
+        "updaterHardened": "Tidak, tetapi updater-nya dibatasi"
       },
+      "security": "CashPilot mengutamakan keamanan. Setiap layanan yang dijalankannya berjalan dengan hak akses terbatas dan, secara default, tidak bisa menjangkau jaringan rumah Anda. <a href=\"{securityUrl}\">Baca pengaturan keamanan bawaan</a>.",
       "more": "Perbandingan lengkap dengan sumber untuk setiap sel"
     },
     "faq": {

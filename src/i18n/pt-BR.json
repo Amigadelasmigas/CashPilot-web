@@ -234,6 +234,9 @@
       "feature": "Recurso",
       "rows": {
         "license": "Licença",
+        "lanIsolation": "Mantém os serviços fora da sua rede doméstica por padrão",
+        "lockedDown": "Restringe o contêiner de cada serviço",
+        "dockerAccess": "Filtra o controle dos seus contêineres",
         "balances": "Lê os saldos das suas contas nos provedores",
         "fleet": "Um só painel para vários servidores",
         "desktop": "App para desktop",
@@ -247,8 +250,12 @@
         "gplReadme": "Arquivo GPL-3.0, mas o README proíbe cópias modificadas",
         "estimates": "Não, só estimativas",
         "claimed": "Alega que sim, em código fechado",
-        "betaMining": "Sim, mineração em beta"
+        "betaMining": "Sim, mineração em beta",
+        "lanReachable": "Não, sua rede continua acessível",
+        "partly": "Em parte",
+        "updaterHardened": "Não, mas o atualizador é restrito"
       },
+      "security": "A segurança vem em primeiro lugar no CashPilot. Cada serviço que ele inicia roda em um contêiner restrito e, por padrão, não consegue acessar sua rede doméstica. <a href=\"{securityUrl}\">Leia as configurações de segurança padrão</a>.",
       "more": "Comparação completa com uma fonte para cada célula"
     },
     "faq": {
