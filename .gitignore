@@ -10,3 +10,16 @@ screenshots/
 *.db
 .beads-credential-key
 .beads/proxieddb/
+
+# Beads: .beads/ commits only its scaffolding (config.yaml, README.md, hooks/,
+# metadata.json, .gitignore). Bead text lives in the tracker, which syncs to
+# a private remote (sync.remote in .beads/config.yaml) and never enters this repository.
+.beads/issues.jsonl
+.beads/interactions.jsonl
+.beads/events.jsonl
+.beads/dolt/
+.beads/embeddeddolt/
+.beads/backup/
+.beads/*.db
+.beads/.beads-credential-key
+.beads/.local_version
