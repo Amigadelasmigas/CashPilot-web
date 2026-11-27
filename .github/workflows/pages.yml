@@ -37,9 +37,10 @@ jobs:
       - run: bun install --frozen-lockfile
 
       # --strict: a published locale must have every key, so it never shows
-      # English halfway through a page.
+      # English halfway through a page. --all: every one of the 20 locales
+      # must have its file, so a lost file fails here and not in production.
       - name: Check translations
-        run: bun run i18n:check --strict
+        run: bun run i18n:check --strict --all
 
       - name: Build
         run: bun run build
