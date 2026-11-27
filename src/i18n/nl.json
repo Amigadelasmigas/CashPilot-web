@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "CashPilot",
     "titleSuffix": "CashPilot",
-    "ogImageAlt": "CashPilot: zet je ongebruikte hardware aan het werk en zie elke uitbetaling in één dashboard."
+    "ogImageAlt": "CashPilot: zet je ongebruikte hardware aan het werk en bekijk elke uitbetaling in één dashboard."
   },
   "nav": {
     "skip": "Naar de inhoud",
@@ -38,7 +38,7 @@
     "description": "Gratis opensourcesoftware die bandbreedte delen, DePIN, GPU-rekenkracht en mining op je eigen machines draait, en elke uitbetaling in één dashboard toont.",
     "hero": {
       "pill": "Gratis en open source, GPL-3.0",
-      "title": "Zet je ongebruikte hardware aan het werk. Zie elke uitbetaling in één dashboard.",
+      "title": "Zet je ongebruikte hardware aan het werk. Bekijk elke uitbetaling in één dashboard.",
       "lead": "CashPilot richt diensten voor passief inkomen in op je computers, thuisservers en Raspberry Pi. Het leest je saldo bij elke aanbieder uit en bewaart de geschiedenis op één plek, op je eigen machine.",
       "download": "Downloaden",
       "selfhost": "Zelf hosten met Docker",
@@ -101,7 +101,7 @@
       },
       "mining": {
         "name": "Mining",
-        "text": "Mine met je CPU of GPU, en zie ASIC-miners in je netwerk. In bèta."
+        "text": "Mine met je CPU of GPU en houd de ASIC-miners in je netwerk in de gaten. In bèta."
       },
       "all": {
         "name": "Alle {count} in de docs",
@@ -109,7 +109,7 @@
       }
     },
     "tour": {
-      "title": "Een kijkje binnen",
+      "title": "Een kijkje in de apps",
       "lead": "Echte schermen uit de apps, met demogegevens. Kies een scherm om het helemaal te zien.",
       "fleet": {
         "title": "Machines",
@@ -119,7 +119,7 @@
       "catalog": {
         "title": "Catalogus",
         "text": "Elke ondersteunde dienst, met een filter per groep.",
-        "alt": "De pagina Catalog: het groepsfilter en de diensten die op je machines draaien, elk met zijn soort."
+        "alt": "De pagina Catalog: het groepsfilter en de diensten die op je machines draaien, elk met het type."
       },
       "payouts": {
         "title": "Uitbetalingen",
@@ -170,7 +170,7 @@
         "text": "Elke dienst die CashPilot start, draait los van de andere, zonder extra rechten en met een limiet op het aantal processen."
       },
       "lan": {
-        "title": "Weg van je thuisnetwerk",
+        "title": "Afgeschermd van je thuisnetwerk",
         "text": "Bij een nieuwe Docker-installatie kunnen de diensten die het start je LAN, je router en de machine waarop ze draaien niet bereiken. <a href=\"{securityUrl}\">Je thuisnetwerk beschermen</a>."
       },
       "stop": {
@@ -182,7 +182,7 @@
     },
     "earnings": {
       "title": "Wat je inkomsten bepaalt",
-      "lead": "Niemand kan je een bedrag beloven. Dit zijn de dingen die het bepalen.",
+      "lead": "Niemand kan je een bedrag beloven. Dit zijn de factoren die het bepalen.",
       "country": {
         "title": "Je land",
         "text": "Aanbieders betalen voor verkeer uit sommige landen meer dan uit andere."
@@ -229,7 +229,7 @@
       "notStatedNote": "– betekent dat de catalogus het niet vermeldt."
     },
     "compare": {
-      "title": "Hoe CashPilot zich verhoudt",
+      "title": "CashPilot vergeleken",
       "lead": "Feiten over de andere opensourcetools die meerdere van deze diensten draaien. Gecontroleerd op {date}.",
       "caption": "CashPilot en andere opensourcetools, functie voor functie",
       "feature": "Functie",
@@ -249,7 +249,7 @@
         "gplReadme": "GPL-3.0-bestand, README verbiedt gewijzigde kopieën",
         "estimates": "Nee, alleen schattingen",
         "claimed": "Beweerd, in gesloten code",
-        "dockerOrPodman": "Ja, of Podman",
+        "dockerOrPodman": "Ja, Docker of Podman",
         "betaMining": "Ja, mining in bèta"
       },
       "more": "Volledige vergelijking met een bron voor elke cel"
@@ -381,7 +381,7 @@
       "what": "De Android-app houdt de verdien-apps op je telefoon in de gaten en meldt hun status aan je CashPilot-server of desktop-app. De app heeft een van die twee nodig om zich bij te melden.",
       "qr": "Scan met je telefoon om de APK te downloaden.",
       "qrAlt": "QR-code voor de downloadlink van de Android-APK",
-      "stores": "Niet in Google Play. F-Droid: volgt."
+      "stores": "Niet in Google Play. F-Droid: binnenkort."
     },
     "docker": {
       "metaTitle": "CashPilot zelf hosten met Docker",
@@ -507,7 +507,7 @@
     "lead": "Kort gezegd: deze website verzamelt niets, en de CashPilot-apps sturen niets naar het project.",
     "site": {
       "title": "Deze website",
-      "p1": "Geen cookies, geen analytics, geen trackingpixels en geen advertenties. De pagina laadt niets van andere websites. De lettertypen zijn onderdeel van de site.",
+      "p1": "Geen cookies, geen analytics, geen trackingpixels en geen advertenties. De pagina laadt niets van andere websites. De lettertypen maken deel uit van de site.",
       "p2": "Als je een taal kiest, bewaart je browser die keuze in zijn lokale opslag. Die blijft op je apparaat en wordt nooit naar ons gestuurd.",
       "p3": "GitHub Pages host deze site, en Cloudflare leidt het verkeer ernaartoe. Beide kunnen voor de beveiliging het IP-adres van elk bezoek loggen, en Cloudflare kan je browser vragen netwerkfouten aan Cloudflare te melden. Lees de <a href=\"{githubPrivacyUrl}\">privacyverklaring van GitHub</a> en het <a href=\"{cloudflarePrivacyUrl}\">privacybeleid van Cloudflare</a>."
     },
@@ -550,11 +550,11 @@
       },
       "warranty": {
         "title": "Geen garantie",
-        "text": "CashPilot is vrije software onder de licentie GPL-3.0-or-later. Het komt zonder enige garantie, zoals artikel 15 en 16 van de licentie zeggen."
+        "text": "CashPilot is vrije software onder de licentie GPL-3.0-or-later. Het wordt geleverd zonder enige garantie, zoals staat in artikel 15 en 16 van de licentie."
       },
       "trademarks": {
         "title": "Handelsmerken",
-        "text": "Namen en logo's van aanbieders en platforms zijn van hun eigenaars. Het gebruik hier zegt alleen waarmee CashPilot werkt."
+        "text": "Namen en logo's van aanbieders en platforms zijn van hun eigenaars. We noemen ze hier alleen om te laten zien waarmee CashPilot werkt."
       }
     }
   },
@@ -565,10 +565,10 @@
     "download": "Naar de downloads"
   },
   "footer": {
-    "tagline": "Draai diensten voor passief inkomen op je eigen hardware en zie elke uitbetaling in één dashboard.",
+    "tagline": "Draai diensten voor passief inkomen op je eigen hardware en bekijk elke uitbetaling in één dashboard.",
     "product": "Product",
     "project": "Project",
-    "about": "Over",
+    "about": "Info",
     "download": "Downloaden",
     "docs": "Documentatie",
     "referrals": "Verwijzingslinks",

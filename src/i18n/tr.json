@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "CashPilot",
     "titleSuffix": "CashPilot",
-    "ogImageAlt": "CashPilot: Boşta duran donanımınızı çalıştırın, tüm ödemeleri tek bir panelde görün."
+    "ogImageAlt": "CashPilot: Boşta duran donanımınızı değerlendirin, tüm ödemeleri tek bir panelde görün."
   },
   "nav": {
     "skip": "İçeriğe geç",
@@ -15,14 +15,14 @@
   },
   "lang": {
     "label": "Dil",
-    "suggest": "Bu sitenin Türkçesi de var.",
-    "switch": "Türkçe göster",
+    "suggest": "Bu site Türkçe olarak da mevcut.",
+    "switch": "Türkçesine geç",
     "dismiss": "Hayır, teşekkürler"
   },
   "common": {
     "copy": "Kopyala",
     "copied": "Kopyalandı",
-    "copyFailed": "Seçip kopyalayın",
+    "copyFailed": "Seçip kopyala",
     "copyLabel": "Komutu kopyala",
     "yes": "Evet",
     "no": "Hayır",
@@ -38,7 +38,7 @@
     "description": "Bant genişliği paylaşımı, DePIN, GPU hesaplama ve madencilik hizmetlerini kendi makinelerinizde çalıştıran ve tüm ödemeleri tek bir panelde gösteren ücretsiz, açık kaynaklı yazılım.",
     "hero": {
       "pill": "Ücretsiz ve açık kaynak, GPL-3.0",
-      "title": "Boşta duran donanımınızı çalıştırın. Tüm ödemeleri tek bir panelde görün.",
+      "title": "Boşta duran donanımınızı değerlendirin. Tüm ödemeleri tek bir panelde görün.",
       "lead": "CashPilot, pasif gelir hizmetlerini bilgisayarlarınıza, ev sunucularınıza ve Raspberry Pi'nize kurar. Her sağlayıcıdaki bakiyenizi okur ve geçmişi tek bir yerde, kendi makinenizde saklar.",
       "download": "İndir",
       "selfhost": "Docker ile kendiniz barındırın",
@@ -72,7 +72,7 @@
         },
         "pick": {
           "title": "Hizmetlerinizi seçin",
-          "text": "Katalogdan seçin, sağlayıcıya kaydolun ve giriş bilgilerinizi yapıştırın. Docker imajı olan hizmetleri CashPilot kendi konteynerinde başlatır. Diğerlerinde bakiyenizi okur."
+          "text": "Katalogdan seçin, sağlayıcıya kaydolun ve giriş bilgilerinizi yapıştırın. Docker imajı olan her hizmeti CashPilot ayrı bir konteynerde başlatır. Diğer hizmetlerde bakiyenizi okur."
         },
         "watch": {
           "title": "Her ödemeyi takip edin",
@@ -110,7 +110,7 @@
     },
     "tour": {
       "title": "İçeriden bir bakış",
-      "lead": "Uygulamalardan demo verili gerçek ekranlar. Tamamını görmek için bir ekran seçin.",
+      "lead": "Uygulamalardan gerçek ekranlar, demo verilerle. Tamamını görmek için bir ekran seçin.",
       "fleet": {
         "title": "Makineler",
         "text": "Her makine, sistemi ve en son ne zaman rapor verdiği. Rapor vermeyi bırakan makine kırmızıya döner.",
@@ -153,7 +153,7 @@
         "text": "Sizin makineleriniz ve sizin bağlantınız. Sizin için hiçbir sunucu çalıştırmıyoruz."
       },
       "account": {
-        "title": "Bizde hesap yok",
+        "title": "Bizde hesap gerekmez",
         "text": "Kayıt yok, e-posta yok. Yalnızca seçtiğiniz sağlayıcılara kaydolursunuz."
       },
       "funding": "Masraflar nasıl karşılanıyor? Bazı sağlayıcı bağlantıları referans bağlantısıdır. Bunlardan biriyle kaydolursanız sağlayıcı, CashPilot projesine bir ödül ödeyebilir. Bu ödül kazancınızdan düşülmez."
@@ -249,7 +249,7 @@
         "gplReadme": "GPL-3.0 dosyası var, README değiştirilmiş kopyaları yasaklıyor",
         "estimates": "Hayır, yalnızca tahmin",
         "claimed": "İddia ediliyor, kapalı kodda",
-        "dockerOrPodman": "Evet, ya da Podman",
+        "dockerOrPodman": "Evet, Docker veya Podman",
         "betaMining": "Evet, madencilik beta aşamasında"
       },
       "more": "Her hücre için kaynak içeren tam karşılaştırma"
@@ -263,11 +263,11 @@
         },
         "legal": {
           "q": "Yasal mı?",
-          "a": "Nerede yaşadığınıza ve internet sözleşmenize bağlıdır. Bazı internet sağlayıcıları bağlantının paylaşılmasını veya yeniden satılmasını yasaklar. Başlamadan önce yerel yasaları ve sağlayıcınızın koşullarını kontrol edin. Bu bir hukuki tavsiye değildir."
+          "a": "Bu, nerede yaşadığınıza ve internet sözleşmenize bağlıdır. Bazı internet sağlayıcıları bağlantının paylaşılmasını veya yeniden satılmasını yasaklar. Başlamadan önce yerel yasaları ve sağlayıcınızın koşullarını kontrol edin. Bu bir hukuki tavsiye değildir."
         },
         "safe": {
           "q": "Güvenli mi?",
-          "a": "Bant genişliği hizmetleri başkalarının trafiğinin IP adresinizi kullanmasına izin verir, bu yüzden önce her sağlayıcının koşullarını okuyun. CashPilot başlattığı her hizmeti kendi konteynerinde çalıştırır ve yeni bir Docker kurulumunda onu ev ağınızdan uzak tutar. Başlamadan önce <a href=\"{securityUrl}\">Ev ağınızı koruma</a> rehberini okuyun."
+          "a": "Bant genişliği hizmetleri, başkalarının trafiğini IP adresiniz üzerinden geçirir. Bu yüzden önce her sağlayıcının koşullarını okuyun. CashPilot başlattığı her hizmeti kendi konteynerinde çalıştırır ve yeni bir Docker kurulumunda onu ev ağınızdan uzak tutar. Başlamadan önce <a href=\"{securityUrl}\">Ev ağınızı koruma</a> rehberini okuyun."
         },
         "earn": {
           "q": "Ne kadar kazanırım?",
@@ -340,20 +340,20 @@
     "windows": {
       "metaTitle": "Windows için CashPilot'u indirin",
       "title": "Windows için CashPilot Desktop",
-      "installer": "Yükleyiciyi indirin",
+      "installer": "Yükleyiciyi indir",
       "installerType": "Yükleyici (.exe)",
       "portable": "Taşınabilir sürüm",
       "portableType": "Taşınabilir uygulama (.exe), kurulum gerektirmez",
       "arch": "64 bit (x64). Çoğu bilgisayar 64 bittir.",
       "requires": "Windows 10 22H2 veya Windows 11 23H2 ya da daha yenisi gerekir.",
       "warnTitle": "Windows veya antivirüs programınız uyarı mı veriyor?",
-      "warnText": "Windows uygulaması henüz kod imzalı değildir, bu yüzden SmartScreen \"Windows bilgisayarınızı korudu\" uyarısı gösterebilir. \"Ek bilgi\"ye, ardından \"Yine de çalıştır\"a tıklayın. Yayımladığımız dosyaya sahip olduğunuzu doğrulamak için dosyanın SHA-256 sağlama toplamını aşağıdaki listeyle karşılaştırın.",
+      "warnText": "Windows uygulaması henüz kod imzalı değil, bu yüzden SmartScreen \"Windows kişisel bilgisayarınızı korudu\" uyarısı gösterebilir. \"Ek bilgi\"ye, ardından \"Yine de çalıştır\"a tıklayın. Yayımladığımız dosyaya sahip olduğunuzu doğrulamak için dosyanın SHA-256 sağlama toplamını aşağıdaki listeyle karşılaştırın.",
       "verify": "PowerShell'de:"
     },
     "macos": {
       "metaTitle": "macOS için CashPilot'u indirin",
       "title": "macOS için CashPilot Desktop",
-      "button": "Mac için indirin",
+      "button": "Mac için indir",
       "type": "Zip dosyası",
       "arch": "Apple silicon (M1 ve sonrası).",
       "minimum": "macOS 12 Monterey veya daha yenisi gerekir.",
@@ -364,7 +364,7 @@
     "linux": {
       "metaTitle": "Linux için CashPilot'u indirin",
       "title": "Linux için CashPilot Desktop",
-      "button": "Linux için indirin",
+      "button": "Linux için indir",
       "type": "tar.gz arşivi",
       "arch": "x86_64 (64 bit PC).",
       "minimum": "glibc 2.34 veya daha yenisi gerekir: Ubuntu 22.04, Debian 12 ya da daha yenisi.",
@@ -375,13 +375,13 @@
     "android": {
       "metaTitle": "Android için CashPilot'u indirin",
       "title": "Android için CashPilot",
-      "button": "APK'yı indirin",
+      "button": "APK'yı indir",
       "type": "APK dosyası",
       "requires": "Android 8.0 veya daha yenisi. Telefonunuz, tarayıcınızdan yükleme yapılmasına izin vermenizi ister.",
       "what": "Android uygulaması telefonunuzdaki kazanç uygulamalarını izler ve durumlarını CashPilot sunucunuza veya masaüstü uygulamanıza bildirir. Rapor verebilmesi için bunlardan birine ihtiyaç duyar.",
       "qr": "APK'yı indirmek için telefonunuzla tarayın.",
       "qrAlt": "Android APK indirme bağlantısının QR kodu",
-      "stores": "Google Play'de yok. F-Droid: hazırlanıyor."
+      "stores": "Google Play'de yok. F-Droid: yakında."
     },
     "docker": {
       "metaTitle": "CashPilot'u Docker ile kendiniz barındırın",
@@ -392,7 +392,7 @@
       "step2": "Kurulum token'ını görüntüleyin:",
       "step3": "{url} adresini açın ve token'ı girin. Gerisini kurulum sihirbazı halleder.",
       "viewSource": "Çalıştırmadan önce compose dosyasını okuyun",
-      "images": "Compose dosyası {ui} ve {worker} imajlarını sabitler.",
+      "images": "Compose dosyası imaj sürümlerini sabitler: {ui} ve {worker}.",
       "guide": "Tam rehber: Başlarken"
     },
     "checksums": {
@@ -483,7 +483,7 @@
     "howTitle": "Referans bağlantıları nasıl çalışır",
     "how1": "Bu bağlantılardan biriyle bir sağlayıcıya kaydolursanız sağlayıcı, CashPilot projesine bir ödül ödeyebilir. Bu ödül kazancınızdan düşülmez.",
     "how2": "Bazı sağlayıcılar bağlantıyla kaydolduğunuzda size de bir bonus verir. Katalogda yer alıyorsa bunu gösteriyoruz.",
-    "how3": "Bu bağlantıları kullanmak zorunda değilsiniz. Her kayıt sağlayıcının kendi web sitesini de gösterir. Böylece referans olmadan kaydolabilirsiniz.",
+    "how3": "Bu bağlantıları kullanmak zorunda değilsiniz. Her satırda sağlayıcının kendi web sitesi de yer alır. Böylece referans olmadan kaydolabilirsiniz.",
     "how4": "Ödüller projenin finansmanına yardımcı olur.",
     "count": "{count} sağlayıcı, {date} tarihli katalogdan.",
     "code": "Kod",
@@ -491,8 +491,8 @@
     "link": "Referansla kaydol",
     "website": "Sağlayıcının web sitesi (referanssız)",
     "links": "Bağlantılar",
-    "youGet": "Size kazandırdığı",
-    "projectGets": "Projeye kazandırdığı",
+    "youGet": "Sizin aldığınız",
+    "projectGets": "Projenin aldığı",
     "codeEntry": "Bağlantı kodu iletmez. Uygulama referans kodu istediğinde {code} yazın.",
     "guide": "CashPilot rehberi",
     "guideLabel": "{name} için CashPilot rehberi",
@@ -507,9 +507,9 @@
     "lead": "Kısaca: bu web sitesi hiçbir şey toplamaz ve CashPilot uygulamaları projeye hiçbir şey göndermez.",
     "site": {
       "title": "Bu web sitesi",
-      "p1": "Çerez yok, analiz aracı yok, izleme pikseli yok, reklam yok. Sayfa başka web sitelerinden hiçbir şey yüklemez. Yazı tipleri sitenin bir parçasıdır.",
+      "p1": "Çerez yok, analiz aracı yok, izleme pikseli yok, reklam yok. Sayfa başka web sitelerinden hiçbir şey yüklemez. Yazı tipleri sitenin kendisinden yüklenir.",
       "p2": "Bir dil seçtiğinizde tarayıcınız bu seçimi kendi yerel depolamasında tutar. Seçim cihazınızda kalır ve bize asla gönderilmez.",
-      "p3": "Bu siteyi GitHub Pages barındırır ve trafiği Cloudflare taşır. Her ikisi de güvenlik için her ziyaretin IP adresini kaydedebilir. Cloudflare ayrıca tarayıcınızdan ağ hatalarını kendisine bildirmesini isteyebilir. <a href=\"{githubPrivacyUrl}\">GitHub gizlilik bildirimini</a> ve <a href=\"{cloudflarePrivacyUrl}\">Cloudflare gizlilik politikasını</a> okuyun."
+      "p3": "Bu siteyi GitHub Pages barındırır ve trafiği Cloudflare üzerinden geçer. Her ikisi de güvenlik için her ziyaretin IP adresini kaydedebilir. Cloudflare ayrıca tarayıcınızdan ağ hatalarını kendisine bildirmesini isteyebilir. <a href=\"{githubPrivacyUrl}\">GitHub gizlilik bildirimini</a> ve <a href=\"{cloudflarePrivacyUrl}\">Cloudflare gizlilik politikasını</a> okuyun."
     },
     "apps": {
       "title": "CashPilot uygulamaları",
@@ -541,7 +541,7 @@
         "text": "Kazanç; ülkenize, bağlantınıza, donanımınıza ve sağlayıcılara bağlıdır. Çok düşük veya sıfır olabilir. Sağlayıcılar ücretlerini istedikleri zaman değiştirebilir."
       },
       "law": {
-        "title": "Yasalarınız ve sözleşmeniz",
+        "title": "Yasalar ve sözleşmeniz",
         "text": "Bağlantınızı paylaşmadan veya bir düğüm çalıştırmadan önce yerel yasaları ve internet sağlayıcınızın koşullarını kontrol edin. Kazancınızdan doğan vergilerden siz sorumlusunuz."
       },
       "providers": {
@@ -554,7 +554,7 @@
       },
       "trademarks": {
         "title": "Ticari markalar",
-        "text": "Sağlayıcı ve platform adları ile logoları sahiplerine aittir. Burada kullanılmaları yalnızca CashPilot'un neyle çalıştığını belirtir."
+        "text": "Sağlayıcı ve platform adları ile logoları sahiplerine aittir. Burada yalnızca CashPilot'un neyle çalıştığını belirtmek için kullanılırlar."
       }
     }
   },
@@ -582,7 +582,7 @@
     "agents": "Yapay zekâ ajanları için",
     "contact": "İletişim",
     "legal": "Yerel yasaları ve internet sağlayıcınızın koşullarını kontrol edin. Finansal tavsiye değildir.",
-    "credit": "CashPilot katkıcıları tarafından geliştirilmiştir. GPL-3.0-or-later lisanslı özgür yazılım."
+    "credit": "CashPilot'a katkıda bulunanlar tarafından geliştirilmiştir. GPL-3.0-or-later lisanslı özgür yazılım."
   },
   "categories": {
     "bandwidth": "Bant genişliği paylaşımı",
