@@ -23,10 +23,10 @@ export const files = {
 } as const;
 
 /**
- * Download links pinned to the release the page was built from, so the version,
- * sizes and checksums on the page always describe the file the button gives.
- * A `releases/latest/download/...` link would move to a new release the moment
- * it publishes, up to a day before the site rebuilds.
+ * Download links pinned to the release tags in src/data/pins.json, so the
+ * version, sizes and checksums on the page always describe the file the button
+ * gives. A `releases/latest/download/...` link would move to a new release the
+ * moment it publishes, before anyone checked its files.
  */
 export function downloadsFor(desktopTag: string, androidTag: string) {
   const desktop = (name: string) => `${repo.desktop}/releases/download/${desktopTag}/${name}`;

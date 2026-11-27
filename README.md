@@ -24,7 +24,7 @@ bun run preview        # serve dist/ the way GitHub Pages does
 
 The build reads live data from GitHub and Docker Hub: the service catalog, star counts, Docker pulls, release versions, file sizes and checksums. Set `GITHUB_TOKEN` to avoid the API rate limit. Locally, any part it cannot fetch comes from `src/data/snapshot.json`, so the build also works offline. In CI (`CI` set) a part that cannot be fetched fails the build, so the last good deploy stays live. `CASHPILOT_OFFLINE=1` skips the network. `bun run data:snapshot` refreshes the snapshot.
 
-Download buttons point at the exact release the page was built from, so the version, sizes and checksums on the page always match the file.
+Download buttons point at the release tags pinned in `src/data/pins.json`, so the version, sizes and checksums on the page always match the file. `.github/workflows/bump-pins.yml` checks every hour for new CashPilot, Desktop and Android releases. When one is out and every file the site links for it answers HTTP 200, it opens a PR that moves the pin. A release with a missing file is not pinned, and the run fails with the file named. `bun scripts/bump-pins.ts --dry-run` runs the same check locally.
 
 ### Checks
 
@@ -56,9 +56,9 @@ The picker shows once a second locale exists. It remembers the choice in `localS
 
 ## Deploy
 
-`.github/workflows/pages.yml` builds and deploys to GitHub Pages on every push to `main`, once a day, on demand, and on a `release` repository dispatch. The custom domain is `cashpilot.club` (`public/CNAME`).
+`.github/workflows/pages.yml` builds and deploys to GitHub Pages on every push to `main`, once a day and on demand. The custom domain is `cashpilot.club` (`public/CNAME`).
 
-The Desktop and Android release workflows should send that dispatch (`event_type: release`, a token with `repo` scope), so a new release reaches the site at once instead of up to a day later. GitHub turns off the daily schedule after 60 days without a commit here; re-enable it in the Actions tab.
+A sibling release workflow can send a `release` repository dispatch (`event_type: release`, a token with `repo` scope) to start the bump check at once instead of at the next hour. GitHub turns off scheduled workflows after 60 days without a commit here; re-enable them in the Actions tab.
 
 ## Rules for content
 

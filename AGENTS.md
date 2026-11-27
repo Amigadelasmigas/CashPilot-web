@@ -16,6 +16,7 @@ bun run a11y && bun run overflow    # need a build and a Playwright Chromium
 - Referral links are how the project is funded. Every provider link on the site carries the project's referral code; never add a provider link without one. The referrals page lists only what the user gets, plus the one disclosure line.
 - The referral codes come from the live CashPilot catalog (`services/**/*.yml` in GeiserX/CashPilot), read at build time. Fix a code there, not here. The only codes kept here are the typed ones in `src/lib/typed-codes.ts`, and the build checks them against the catalog.
 - Every visible string lives in `src/i18n/<locale>.json`. A new key goes into all 20 files in the same change.
+- Download links point at the release tags in `src/data/pins.json`. They change through the PRs of `bump-pins.yml`, which open only after every linked file answers HTTP 200.
 - No earnings figure stated as typical. No trackers, cookies or third-party requests. No personal data about anyone.
 - Dark theme only. Pinned versions, never `:latest`.
 - Build and screenshot on a build box, not a laptop that runs other work.

@@ -2,6 +2,7 @@
 // time (src/data/index.ts) and by `bun run data:snapshot`, which writes the
 // committed fallback in src/data/snapshot.json.
 import { parse as parseYaml } from "yaml";
+import pins from "./pins.json";
 
 export const OWNER = "GeiserX";
 export const REPOS = {
@@ -141,8 +142,13 @@ export async function fetchServices(): Promise<Service[]> {
   return docs.map(toService).sort((a, b) => a.name.localeCompare(b.name, "en"));
 }
 
-async function fetchRelease(repo: string): Promise<Release> {
-  const r = await gh(`repos/${OWNER}/${repo}/releases/latest`);
+/**
+ * A release by tag, or the latest one. Desktop, Android and the web app are
+ * read at the tag pinned in pins.json, so their download links change only
+ * through a PR (scripts/bump-pins.ts checks every linked file first).
+ */
+async function fetchRelease(repo: string, tag?: string): Promise<Release> {
+  const r = await gh(`repos/${OWNER}/${repo}/releases/${tag ? `tags/${tag}` : "latest"}`);
   return {
     tag: r.tag_name,
     publishedAt: r.published_at,
@@ -199,9 +205,9 @@ export async function fetchLive(log: (m: string) => void = console.warn): Promis
     ),
     attempt("pulls ui", () => fetchPulls("drumsergio/cashpilot")),
     attempt("pulls worker", () => fetchPulls("drumsergio/cashpilot-worker")),
-    attempt("release web", () => fetchRelease(REPOS.web)),
-    attempt("release desktop", () => fetchRelease(REPOS.desktop)),
-    attempt("release android", () => fetchRelease(REPOS.android)),
+    attempt("release web", () => fetchRelease(REPOS.web, pins.web)),
+    attempt("release desktop", () => fetchRelease(REPOS.desktop, pins.desktop)),
+    attempt("release android", () => fetchRelease(REPOS.android, pins.android)),
     attempt("release mcp", () => fetchRelease(REPOS.mcp)),
   ]);
   // The checksums of the exact release whose sizes we show, not of "latest".
