@@ -38,7 +38,7 @@
     "hero": {
       "pill": "Libre at open source, GPL-3.0",
       "title": "Paganahin ang hardware mong nakatengga. Tingnan ang bawat payout sa iisang dashboard.",
-      "lead": "Sine-set up ng CashPilot ang mga bandwidth sharing, DePIN, mining, GPU at storage service sa iyong mga computer, home server at Raspberry Pi. Sa bagong install ng Docker, hindi maaabot ng mga service na pinapatakbo nito ang LAN mo, ang router mo, o ang makinang pinagtatakbuhan nila. Binabasa nito ang balance mo sa bawat provider at itinatabi ang history sa iisang lugar, sa sarili mong makina.",
+      "lead": "Sine-set up ng CashPilot ang mga bandwidth sharing, DePIN, mining, GPU at storage service sa iyong mga computer, home server at Raspberry Pi. Kaya nitong ihiwalay ang mga app na ito sa home network mo, para internet lang ang maabot nila at wala nang iba. Binabasa nito ang balance mo sa bawat provider at itinatabi ang history sa iisang lugar, sa sarili mong makina.",
       "download": "I-download",
       "selfhost": "I-self-host gamit ang Docker",
       "expect": "Hindi ang CashPilot ang nagbabayad sa iyo. Ang mga provider ang nagbabayad. Nakadepende ang kita sa iyong bansa, koneksyon at hardware.",
@@ -170,7 +170,7 @@
       },
       "lan": {
         "title": "Nakahiwalay sa home network mo",
-        "text": "Sa bagong install ng Docker, hindi maaabot ng mga service na pinapatakbo nito ang LAN mo, ang router mo, o ang makinang pinagtatakbuhan nila. <a href=\"{securityUrl}\">Pagprotekta sa home network mo</a>."
+        "text": "Kaya ng CashPilot na ihiwalay sa home network mo ang mga app na pinapatakbo nito, para internet lang ang maabot nila at wala nang iba. <a href=\"{securityUrl}\">Pagprotekta sa home network mo</a>."
       },
       "stop": {
         "title": "Ihinto ang kahit ano anumang oras",
@@ -271,7 +271,7 @@
         },
         "safe": {
           "q": "Ligtas ba ito?",
-          "a": "Pinapagamit ng mga bandwidth service ang IP address mo sa traffic ng ibang tao, kaya basahin muna ang terms ng bawat provider. Pinapatakbo ng CashPilot ang bawat service na sinisimulan nito sa sarili nitong container at, sa bagong install ng Docker, inilalayo ito sa home network mo. Basahin ang <a href=\"{securityUrl}\">Pagprotekta sa home network mo</a> bago ka magsimula."
+          "a": "Pinapagamit ng mga bandwidth service ang IP address mo sa traffic ng ibang tao, kaya basahin muna ang terms ng bawat provider. Pinapatakbo ng CashPilot ang bawat service na sinisimulan nito sa sarili nitong container at kaya nitong ihiwalay ito sa home network mo, para internet lang ang maabot nito at wala nang iba. Basahin ang <a href=\"{securityUrl}\">Pagprotekta sa home network mo</a> bago ka magsimula."
         },
         "earn": {
           "q": "Magkano ang kikitain ko?",

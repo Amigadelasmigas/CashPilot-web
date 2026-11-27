@@ -38,7 +38,7 @@
     "hero": {
       "pill": "Free and open source, GPL-3.0",
       "title": "Put your idle hardware to work. See every payout in one dashboard.",
-      "lead": "CashPilot sets up bandwidth sharing, DePIN, mining, GPU and storage services on your computers, home servers and Raspberry Pi. On a new Docker install, the services it starts cannot reach your LAN, your router or the machine they run on. It reads your balance from each provider and keeps the history in one place, on your own machine.",
+      "lead": "CashPilot sets up bandwidth sharing, DePIN, mining, GPU and storage services on your computers, home servers and Raspberry Pi. It can fence these apps off from your home network, so they reach the internet and nothing else. It reads your balance from each provider and keeps the history in one place, on your own machine.",
       "download": "Download",
       "selfhost": "Self-host with Docker",
       "expect": "CashPilot does not pay you. The providers do. Earnings depend on your country, connection and hardware.",
@@ -170,7 +170,7 @@
       },
       "lan": {
         "title": "Kept off your home network",
-        "text": "On a new Docker install, the services it starts cannot reach your LAN, your router or the machine they run on. <a href=\"{securityUrl}\">Protecting your home network</a>."
+        "text": "CashPilot can fence the apps it runs off your home network, so they reach the internet and nothing else. <a href=\"{securityUrl}\">Protecting your home network</a>."
       },
       "stop": {
         "title": "Stop anything at any time",
@@ -271,7 +271,7 @@
         },
         "safe": {
           "q": "Is it safe?",
-          "a": "Bandwidth services let other people's traffic use your IP address, so read each provider's terms first. CashPilot runs each service it starts in its own container and, on a new Docker install, keeps it off your home network. Read <a href=\"{securityUrl}\">Protecting your home network</a> before you start."
+          "a": "Bandwidth services let other people's traffic use your IP address, so read each provider's terms first. CashPilot runs each service it starts in its own container and can fence it off from your home network, so it reaches the internet and nothing else. Read <a href=\"{securityUrl}\">Protecting your home network</a> before you start."
         },
         "earn": {
           "q": "How much will I earn?",

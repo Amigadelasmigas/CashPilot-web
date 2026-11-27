@@ -38,7 +38,7 @@
     "hero": {
       "pill": "Darmowe i open source, GPL-3.0",
       "title": "Zaprzęgnij nieużywany sprzęt do pracy. Wszystkie wypłaty w jednym panelu.",
-      "lead": "CashPilot konfiguruje usługi udostępniania łącza, DePIN, kopania kryptowalut, GPU i przestrzeni dyskowej na twoich komputerach, serwerach domowych i Raspberry Pi. Przy nowej instalacji Dockera uruchomione usługi nie mają dostępu do twojej sieci LAN, routera ani maszyny, na której działają. Odczytuje twoje saldo u każdego dostawcy i przechowuje historię w jednym miejscu, na twojej własnej maszynie.",
+      "lead": "CashPilot konfiguruje usługi udostępniania łącza, DePIN, kopania kryptowalut, GPU i przestrzeni dyskowej na twoich komputerach, serwerach domowych i Raspberry Pi. Może odgrodzić te aplikacje od twojej sieci domowej, tak by miały dostęp do internetu i do niczego więcej. Odczytuje twoje saldo u każdego dostawcy i przechowuje historię w jednym miejscu, na twojej własnej maszynie.",
       "download": "Pobierz",
       "selfhost": "Własny serwer z Dockerem",
       "expect": "CashPilot ci nie płaci. Płacą dostawcy. Zarobki zależą od twojego kraju, łącza i sprzętu.",
@@ -170,7 +170,7 @@
       },
       "lan": {
         "title": "Z dala od twojej sieci domowej",
-        "text": "Przy nowej instalacji Dockera uruchomione usługi nie mają dostępu do twojej sieci LAN, routera ani maszyny, na której działają. <a href=\"{securityUrl}\">Ochrona sieci domowej</a>."
+        "text": "CashPilot może odgrodzić uruchamiane przez siebie aplikacje od twojej sieci domowej, tak by miały dostęp do internetu i do niczego więcej. <a href=\"{securityUrl}\">Ochrona sieci domowej</a>."
       },
       "stop": {
         "title": "Zatrzymaj wszystko w każdej chwili",
@@ -271,7 +271,7 @@
         },
         "safe": {
           "q": "Czy to bezpieczne?",
-          "a": "W usługach udostępniania łącza ruch innych osób korzysta z twojego adresu IP, dlatego najpierw przeczytaj warunki każdego dostawcy. CashPilot uruchamia każdą usługę we własnym kontenerze i przy nowej instalacji Dockera trzyma ją z dala od twojej sieci domowej. Zanim zaczniesz, przeczytaj poradnik <a href=\"{securityUrl}\">Ochrona sieci domowej</a>."
+          "a": "W usługach udostępniania łącza ruch innych osób korzysta z twojego adresu IP, dlatego najpierw przeczytaj warunki każdego dostawcy. CashPilot uruchamia każdą usługę we własnym kontenerze i może odgrodzić ją od twojej sieci domowej, tak by miała dostęp do internetu i do niczego więcej. Zanim zaczniesz, przeczytaj poradnik <a href=\"{securityUrl}\">Ochrona sieci domowej</a>."
         },
         "earn": {
           "q": "Ile zarobię?",

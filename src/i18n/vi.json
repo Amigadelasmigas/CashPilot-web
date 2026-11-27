@@ -38,7 +38,7 @@
     "hero": {
       "pill": "Miễn phí và mã nguồn mở, GPL-3.0",
       "title": "Tận dụng phần cứng đang để không. Xem mọi khoản thanh toán trên một bảng điều khiển.",
-      "lead": "CashPilot cài đặt các dịch vụ chia sẻ băng thông, DePIN, đào coin, GPU và lưu trữ trên máy tính, máy chủ tại nhà và Raspberry Pi của bạn. Với một bản cài Docker mới, các dịch vụ nó khởi chạy không thể truy cập mạng LAN, router của bạn hay chính máy mà chúng đang chạy. CashPilot đọc số dư của bạn từ từng nhà cung cấp và lưu lịch sử ở một nơi, ngay trên máy của bạn.",
+      "lead": "CashPilot cài đặt các dịch vụ chia sẻ băng thông, DePIN, đào coin, GPU và lưu trữ trên máy tính, máy chủ tại nhà và Raspberry Pi của bạn. CashPilot có thể tách các ứng dụng này khỏi mạng gia đình của bạn, để chúng chỉ ra được internet và không vào được nơi nào khác. CashPilot đọc số dư của bạn từ từng nhà cung cấp và lưu lịch sử ở một nơi, ngay trên máy của bạn.",
       "download": "Tải về",
       "selfhost": "Tự triển khai với Docker",
       "expect": "CashPilot không trả tiền cho bạn. Các nhà cung cấp mới là bên trả. Thu nhập phụ thuộc vào quốc gia, kết nối và phần cứng của bạn.",
@@ -170,7 +170,7 @@
       },
       "lan": {
         "title": "Cách ly khỏi mạng gia đình",
-        "text": "Với một bản cài Docker mới, các dịch vụ nó khởi chạy không thể truy cập mạng LAN, router của bạn hay chính máy mà chúng đang chạy. <a href=\"{securityUrl}\">Bảo vệ mạng gia đình của bạn</a>."
+        "text": "CashPilot có thể tách các ứng dụng nó chạy khỏi mạng gia đình của bạn, để chúng chỉ ra được internet và không vào được nơi nào khác. <a href=\"{securityUrl}\">Bảo vệ mạng gia đình của bạn</a>."
       },
       "stop": {
         "title": "Dừng bất cứ thứ gì, bất cứ lúc nào",
@@ -271,7 +271,7 @@
         },
         "safe": {
           "q": "Có an toàn không?",
-          "a": "Các dịch vụ băng thông cho phép lưu lượng của người khác dùng địa chỉ IP của bạn, nên hãy đọc điều khoản của từng nhà cung cấp trước. CashPilot chạy mỗi dịch vụ nó khởi chạy trong container riêng và, với bản cài Docker mới, cách ly nó khỏi mạng gia đình của bạn. Hãy đọc <a href=\"{securityUrl}\">Bảo vệ mạng gia đình của bạn</a> trước khi bắt đầu."
+          "a": "Các dịch vụ băng thông cho phép lưu lượng của người khác dùng địa chỉ IP của bạn, nên hãy đọc điều khoản của từng nhà cung cấp trước. CashPilot chạy mỗi dịch vụ nó khởi chạy trong container riêng và có thể tách nó khỏi mạng gia đình của bạn, để nó chỉ ra được internet và không vào được nơi nào khác. Hãy đọc <a href=\"{securityUrl}\">Bảo vệ mạng gia đình của bạn</a> trước khi bắt đầu."
         },
         "earn": {
           "q": "Tôi sẽ kiếm được bao nhiêu?",
