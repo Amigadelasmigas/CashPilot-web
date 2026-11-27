@@ -410,7 +410,7 @@ const faqVars = {
                           {t("home.services.signup")}
                         </a>
                       )}
-                      <TypedCode t={t} service={s} idPrefix="home" />
+                      <TypedCode t={t} service={s} idPrefix="home" compact />
                     </td>
                   </tr>
                 );
@@ -970,8 +970,9 @@ const faqVars = {
     text-align: end;
     vertical-align: top;
   }
+  /* A long name wraps, so the code line under Sign up has room. */
   .services-table tbody th {
-    white-space: nowrap;
+    min-width: 9rem;
   }
   .services-table td.wrap {
     min-width: 9rem;
@@ -1236,6 +1237,21 @@ const faqVars = {
       grid-row: 1;
       align-self: center;
       text-align: end;
+    }
+    /* A code to type goes on its own line across the card, below the facts. */
+    .services-table td.signup:has(:global(.typed-code)) {
+      display: contents;
+    }
+    .services-table td.signup:has(:global(.typed-code)) > .btn {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+      justify-self: end;
+    }
+    .services-table td.signup :global(.typed-code) {
+      grid-column: 1 / -1;
+      justify-content: flex-start;
+      margin: 0;
     }
     .services-table td[data-label] {
       text-align: start;
