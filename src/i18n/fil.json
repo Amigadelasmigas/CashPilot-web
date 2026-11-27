@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "CashPilot",
     "titleSuffix": "CashPilot",
-    "ogImageAlt": "CashPilot: pagkakitaan ang hardware mong nakatengga at makita ang bawat payout sa iisang dashboard."
+    "ogImageAlt": "CashPilot: pagkakitaan ang hardware mong nakatengga at tingnan ang bawat payout sa iisang dashboard."
   },
   "nav": {
     "skip": "Lumaktaw sa nilalaman",
@@ -38,7 +38,7 @@
     "description": "Libre at open-source na software na nagpapatakbo ng bandwidth sharing, DePIN, GPU compute at mining service sa sarili mong mga makina, at ipinapakita ang bawat payout sa iisang dashboard.",
     "hero": {
       "pill": "Libre at open source, GPL-3.0",
-      "title": "Pagkakitaan ang hardware mong nakatengga. Makita ang bawat payout sa iisang dashboard.",
+      "title": "Pagkakitaan ang hardware mong nakatengga. Tingnan ang bawat payout sa iisang dashboard.",
       "lead": "Sine-set up ng CashPilot ang mga passive income service sa iyong mga computer, home server at Raspberry Pi. Binabasa nito ang balance mo sa bawat provider at itinatabi ang history sa iisang lugar, sa sarili mong makina.",
       "download": "I-download",
       "selfhost": "I-self-host gamit ang Docker",
@@ -64,7 +64,7 @@
     },
     "how": {
       "title": "Paano ito gumagana",
-      "lead": "Tatlong hakbang, at walang account sa amin.",
+      "lead": "Tatlong hakbang lang, at hindi mo kailangan ng account sa amin.",
       "steps": {
         "install": {
           "title": "I-install ang CashPilot",
@@ -114,7 +114,7 @@
       "fleet": {
         "title": "Fleet",
         "text": "Bawat makina, ang system nito, at kung kailan ito huling nag-report. Nagiging pula ang makinang tumigil sa pag-report.",
-        "alt": "Ang Fleet page: limang makina kasama ang kanilang system, version at kung kailan huling nag-report ang bawat isa. Offline ang isang makina."
+        "alt": "Ang Fleet page: limang makina kasama ang kanilang system, bersyon at kung kailan huling nag-report ang bawat isa. Offline ang isang makina."
       },
       "catalog": {
         "title": "Catalog",
@@ -139,7 +139,7 @@
     },
     "catch": {
       "title": "Ano ang kapalit?",
-      "lead": "Makatwirang tanong. Narito ang mga totoo.",
+      "lead": "Makatwirang tanong. Narito ang mga katotohanan.",
       "free": {
         "title": "Libre",
         "text": "Walang bayad, walang paid plan at walang ads."
@@ -153,8 +153,8 @@
         "text": "Sa mga makina at koneksyon mo. Wala kaming pinapatakbong server para sa iyo."
       },
       "account": {
-        "title": "Walang account sa amin",
-        "text": "Walang sign-up at walang email. Sa mga provider lang na pinili mo ka magsa-sign up."
+        "title": "Hindi kailangan ng account sa amin",
+        "text": "Walang sign-up at walang email. Magsa-sign up ka lang sa mga provider na pinili mo."
       },
       "funding": "Paano ito napopondohan? Referral link ang ilan sa mga link ng provider. Kung mag-sign up ka sa isa sa mga ito, maaaring magbigay ang provider ng reward sa CashPilot project. Hindi ito kinukuha sa kita mo."
     },
@@ -182,7 +182,7 @@
     },
     "earnings": {
       "title": "Ano ang nakakaapekto sa kita mo",
-      "lead": "Walang makakapangako sa iyo ng eksaktong halaga. Ito ang mga bagay na nagpapagalaw dito.",
+      "lead": "Walang makakapangako sa iyo ng eksaktong halaga. Ito ang mga bagay na nakakaapekto rito.",
       "country": {
         "title": "Ang bansa mo",
         "text": "Mas malaki ang bayad ng mga provider para sa traffic mula sa ilang bansa kaysa sa iba."
@@ -193,11 +193,11 @@
       },
       "connection": {
         "title": "Ang koneksyon mo",
-        "text": "Mas mabilis na upload at walang data cap ay nagbibigay ng puwang para sa mas maraming traffic."
+        "text": "Kapag mas mabilis ang upload at walang data cap, mas maraming traffic ang kaya ng koneksyon mo."
       },
       "uptime": {
         "title": "Uptime",
-        "text": "Mas malaki ang kita ng device na laging bukas kaysa sa device na natutulog."
+        "text": "Mas malaki ang kita ng device na laging bukas kaysa sa device na naka-sleep."
       },
       "devices": {
         "title": "Bilang ng device",
@@ -207,7 +207,7 @@
         "title": "Ang GPU at hardware mo",
         "text": "Nakadepende ang GPU compute at mining sa card mo, sa presyo ng kuryente mo at sa merkado."
       },
-      "note": "May mga setup na napakaliit ng kita. Ipinapakita ng dashboard ang totoong kinikita mo, para matigil mo ang hindi sulit."
+      "note": "May mga setup na napakaliit ng kita. Ipinapakita ng dashboard ang totoong kinikita mo, para maihinto mo ang mga hindi sulit."
     },
     "services": {
       "title": "Mga sikat na service",
@@ -229,9 +229,9 @@
       "notStatedNote": "Ang – ay nangangahulugang hindi ito sinasabi ng catalog."
     },
     "compare": {
-      "title": "Paano ikinukumpara ang CashPilot",
+      "title": "Ang CashPilot kumpara sa iba",
       "lead": "Mga katotohanan tungkol sa ibang open-source tool na nagpapatakbo ng ilan sa mga service na ito. Sinuri noong {date}.",
-      "caption": "Ang CashPilot at ibang open-source tool, bawat feature",
+      "caption": "Ang CashPilot at ibang open-source tool, isa-isang feature",
       "feature": "Feature",
       "rows": {
         "license": "Lisensya",
@@ -255,7 +255,7 @@
       "more": "Buong paghahambing, may source sa bawat cell"
     },
     "faq": {
-      "title": "Mga tanong",
+      "title": "Mga madalas itanong",
       "items": {
         "slow": {
           "q": "Babagal ba ang internet ko?",
@@ -296,7 +296,7 @@
       "text": "Kunin ang desktop app, o patakbuhin ang server gamit ang Docker. Parehong libre.",
       "download": "I-download",
       "github": "Tingnan ang source sa GitHub",
-      "releases": "Para malaman kapag may bagong version, gamitin ang Watch sa GitHub o ang <a href=\"{feedUrl}\">releases feed</a>."
+      "releases": "Para malaman kapag may bagong bersyon, gamitin ang Watch sa GitHub o ang <a href=\"{feedUrl}\">releases feed</a>."
     }
   },
   "download": {
@@ -311,7 +311,7 @@
     "pathsHint": "Hindi sigurado kung alin ang kailangan mo?",
     "pathsLink": "Ikumpara ang mga opsyon",
     "fileInfo": "{type}, {size}",
-    "version": "Version {version}",
+    "version": "Bersyon {version}",
     "source": "Source code",
     "allReleases": "Lahat ng release",
     "tiles": {
@@ -396,7 +396,7 @@
       "guide": "Buong guide: Getting started"
     },
     "checksums": {
-      "title": "Mga SHA-256 checksum, version {version}",
+      "title": "Mga SHA-256 checksum, bersyon {version}",
       "all": "SHA256SUMS file"
     },
     "homelab": {
@@ -466,8 +466,8 @@
     "more": {
       "title": "Iba pang paraan para kumonekta",
       "mcp": {
-        "title": "MCP server para sa mga AI assistant",
-        "text": "Hinahayaan ang isang AI assistant na basahin ang status at kita mo sa CashPilot. Version {version}, para sa Windows, macOS at Linux."
+        "title": "MCP server para sa AI assistant",
+        "text": "Hinahayaan ang isang AI assistant na basahin ang status at kita mo sa CashPilot. Bersyon {version}, para sa Windows, macOS at Linux."
       },
       "ha": {
         "title": "Home Assistant integration",
@@ -483,7 +483,7 @@
     "howTitle": "Paano gumagana ang referral",
     "how1": "Kung mag-sign up ka sa isang provider sa isa sa mga link na ito, maaaring magbigay ang provider ng reward sa CashPilot project. Hindi ito kinukuha sa kita mo.",
     "how2": "May ilang provider na nagbibigay rin sa iyo ng bonus kapag nag-sign up ka sa link. Ipinapakita namin ito kung nakalista ito sa catalog.",
-    "how3": "Hindi mo kailanman kailangang gamitin ang mga link na ito. Ipinapakita rin ng bawat entry ang sariling website ng provider, para makapag-sign up ka nang walang referral.",
+    "how3": "Hindi mo kailangang gamitin ang mga link na ito. Ipinapakita rin ng bawat entry ang sariling website ng provider, para makapag-sign up ka nang walang referral.",
     "how4": "Nakakatulong ang mga reward na pondohan ang project.",
     "count": "{count} provider, mula sa catalog noong {date}.",
     "code": "Code",
@@ -514,7 +514,7 @@
     "apps": {
       "title": "Ang mga CashPilot app",
       "p1": "Walang telemetry ang web server, ang desktop app at ang Android app. Wala silang ipinapadala sa CashPilot project.",
-      "p2": "Nasa sarili mong CashPilot ang mga login at kita mo. Kumokonekta lang ang mga app sa mga service na kailangan nila: ang mga provider na sine-set up mo, ang GitHub para tumingin ng bagong version, mga public IP at exchange-rate service, at mga blockchain explorer para sa mga on-chain balance.",
+      "p2": "Nasa sarili mong CashPilot ang mga login at kita mo. Kumokonekta lang ang mga app sa mga service na kailangan nila: ang mga provider na sine-set up mo, ang GitHub para tumingin ng bagong bersyon, mga public IP at exchange-rate service, at mga blockchain explorer para sa mga on-chain balance.",
       "p3": "Sa ngayon, nilo-load din ng web dashboard ang mga font nito mula sa Google Fonts at ang chart library nito mula sa jsDelivr. Nakalista sa docs ang <a href=\"{comparisonUrl}\">bawat outbound call</a> at kung paano i-off ang mga opsyonal."
     },
     "providers": {
@@ -538,7 +538,7 @@
       },
       "earnings": {
         "title": "Walang ipinapangakong kita",
-        "text": "Nakadepende ang kita sa iyong bansa, koneksyon, hardware at sa mga provider. Maaari itong napakaliit o zero. Maaaring baguhin ng mga provider ang kanilang rate anumang oras."
+        "text": "Nakadepende ang kita sa iyong bansa, koneksyon, hardware at sa mga provider. Maaari itong maging napakaliit o zero. Maaaring baguhin ng mga provider ang kanilang rate anumang oras."
       },
       "law": {
         "title": "Ang batas at kontrata mo",
@@ -560,12 +560,12 @@
   },
   "notFound": {
     "title": "Hindi nakita ang page",
-    "text": "Wala ang page na ito. Baka nailipat na ito.",
+    "text": "Hindi umiiral ang page na ito. Baka nailipat na ito.",
     "home": "Pumunta sa home page",
     "download": "Pumunta sa mga download"
   },
   "footer": {
-    "tagline": "Magpatakbo ng mga passive income service sa sarili mong hardware, at makita ang bawat payout sa iisang dashboard.",
+    "tagline": "Magpatakbo ng mga passive income service sa sarili mong hardware, at tingnan ang bawat payout sa iisang dashboard.",
     "product": "Produkto",
     "project": "Project",
     "about": "Tungkol dito",

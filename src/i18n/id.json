@@ -21,7 +21,7 @@
   },
   "common": {
     "copy": "Salin",
-    "copied": "Tersalin",
+    "copied": "Disalin",
     "copyFailed": "Pilih lalu salin",
     "copyLabel": "Salin perintah",
     "yes": "Ya",
@@ -64,7 +64,7 @@
     },
     "how": {
       "title": "Cara kerjanya",
-      "lead": "Tiga langkah, tanpa akun di tempat kami.",
+      "lead": "Tiga langkah, tanpa perlu akun CashPilot.",
       "steps": {
         "install": {
           "title": "Pasang CashPilot",
@@ -109,7 +109,7 @@
       }
     },
     "tour": {
-      "title": "Lihat ke dalam",
+      "title": "Intip isinya",
       "lead": "Tampilan asli dari aplikasi, dengan data demo. Pilih salah satu tampilan untuk melihatnya secara penuh.",
       "fleet": {
         "title": "Fleet",
@@ -153,7 +153,7 @@
         "text": "Mesin Anda dan koneksi Anda. Kami tidak menjalankan server apa pun untuk Anda."
       },
       "account": {
-        "title": "Tanpa akun di tempat kami",
+        "title": "Tidak perlu akun CashPilot",
         "text": "Tanpa pendaftaran dan tanpa email. Anda hanya mendaftar di penyedia yang Anda pilih."
       },
       "funding": "Dari mana biayanya? Sebagian tautan penyedia adalah tautan referral. Jika Anda mendaftar lewat salah satunya, penyedia mungkin memberi imbalan kepada proyek CashPilot. Imbalan itu tidak diambil dari penghasilan Anda."
@@ -170,12 +170,12 @@
         "text": "Setiap layanan yang dijalankan CashPilot terpisah dari yang lain, dengan hak tambahannya dicabut dan jumlah prosesnya dibatasi."
       },
       "lan": {
-        "title": "Dijauhkan dari jaringan rumah Anda",
+        "title": "Terpisah dari jaringan rumah Anda",
         "text": "Pada instalasi Docker yang baru, layanan yang dijalankannya tidak bisa menjangkau LAN, router, atau mesin tempat layanan itu berjalan. <a href=\"{securityUrl}\">Melindungi jaringan rumah Anda</a>."
       },
       "stop": {
         "title": "Hentikan apa saja kapan saja",
-        "text": "Satu klik menghentikan atau menghapus sebuah layanan. Ada panduan cara menghapus CashPilot sepenuhnya."
+        "text": "Cukup satu klik untuk menghentikan atau menghapus layanan. Ada panduan cara menghapus CashPilot sepenuhnya."
       },
       "ratings": "Setiap penyedia mendapat nilai A sampai F berdasarkan sepuluh pertanyaan yang sama, dan setiap jawaban menautkan ke sumbernya.",
       "ratingsLink": "Lihat nilai penyedia"
@@ -197,7 +197,7 @@
       },
       "uptime": {
         "title": "Waktu aktif",
-        "text": "Perangkat yang terus menyala menghasilkan lebih banyak daripada perangkat yang tidur."
+        "text": "Perangkat yang terus menyala menghasilkan lebih banyak daripada perangkat yang masuk mode tidur."
       },
       "devices": {
         "title": "Jumlah perangkat",
@@ -207,7 +207,7 @@
         "title": "GPU dan perangkat keras Anda",
         "text": "Komputasi GPU dan mining bergantung pada kartu grafis Anda, harga listrik Anda, dan kondisi pasar."
       },
-      "note": "Sebagian penyiapan menghasilkan sangat sedikit. Dasbor menampilkan penghasilan Anda yang sebenarnya, sehingga Anda bisa menghentikan yang tidak menguntungkan."
+      "note": "Sebagian konfigurasi hanya menghasilkan sangat sedikit. Dasbor menampilkan penghasilan Anda yang sebenarnya, sehingga Anda bisa menghentikan yang tidak menguntungkan."
     },
     "services": {
       "title": "Layanan populer",
@@ -255,7 +255,7 @@
       "more": "Perbandingan lengkap dengan sumber untuk setiap sel"
     },
     "faq": {
-      "title": "Pertanyaan",
+      "title": "Tanya jawab",
       "items": {
         "slow": {
           "q": "Apakah internet saya akan jadi lambat?",
@@ -267,11 +267,11 @@
         },
         "safe": {
           "q": "Apakah ini aman?",
-          "a": "Layanan bandwidth membiarkan trafik orang lain memakai alamat IP Anda, jadi baca dulu ketentuan setiap penyedia. CashPilot menjalankan setiap layanan yang dijalankannya di container tersendiri dan, pada instalasi Docker yang baru, menjauhkannya dari jaringan rumah Anda. Baca <a href=\"{securityUrl}\">Melindungi jaringan rumah Anda</a> sebelum memulai."
+          "a": "Layanan bandwidth membiarkan trafik orang lain memakai alamat IP Anda, jadi baca dulu ketentuan setiap penyedia. CashPilot menjalankan setiap layanan yang dijalankannya di container tersendiri dan, pada instalasi Docker yang baru, memisahkannya dari jaringan rumah Anda. Baca <a href=\"{securityUrl}\">Melindungi jaringan rumah Anda</a> sebelum memulai."
         },
         "earn": {
           "q": "Berapa penghasilan saya?",
-          "a": "Kami tidak bisa memberi tahu Anda. Itu tergantung negara, jenis alamat IP, koneksi, waktu aktif, dan layanan yang Anda jalankan. Sebagian penyiapan menghasilkan sangat sedikit. Dasbor menampilkan penghasilan Anda yang sebenarnya."
+          "a": "Kami tidak bisa memastikannya. Itu tergantung negara, jenis alamat IP, koneksi, waktu aktif, dan layanan yang Anda jalankan. Sebagian konfigurasi hanya menghasilkan sangat sedikit. Dasbor menampilkan penghasilan Anda yang sebenarnya."
         },
         "free": {
           "q": "Mengapa gratis?",
@@ -296,7 +296,7 @@
       "text": "Unduh aplikasi desktop, atau jalankan server dengan Docker. Keduanya gratis.",
       "download": "Unduh",
       "github": "Lihat kode sumber di GitHub",
-      "releases": "Untuk tahu kabar versi baru, gunakan Watch di GitHub atau <a href=\"{feedUrl}\">feed rilis</a>."
+      "releases": "Untuk mendapat kabar versi baru, gunakan Watch di GitHub atau <a href=\"{feedUrl}\">feed rilis</a>."
     }
   },
   "download": {
@@ -344,10 +344,10 @@
       "installerType": "Installer (.exe)",
       "portable": "Versi portabel",
       "portableType": "Aplikasi portabel (.exe), tanpa instalasi",
-      "arch": "64-bit (x64). Sebagian besar PC adalah 64-bit.",
+      "arch": "64-bit (x64). Sebagian besar PC sudah 64-bit.",
       "requires": "Butuh Windows 10 22H2, atau Windows 11 23H2 atau yang lebih baru.",
       "warnTitle": "Windows atau antivirus Anda memberi peringatan?",
-      "warnText": "Aplikasi Windows ini belum ditandatangani secara digital (code-signed), jadi SmartScreen mungkin menampilkan \"Windows protected your PC\". Klik More info, lalu Run anyway. Untuk memastikan Anda memegang file yang kami terbitkan, bandingkan checksum SHA-256-nya dengan daftar di bawah.",
+      "warnText": "Aplikasi Windows ini belum ditandatangani secara digital (code-signed), jadi SmartScreen mungkin menampilkan \"Windows protected your PC\". Klik More info, lalu Run anyway. Untuk memastikan file Anda sama dengan yang kami terbitkan, bandingkan checksum SHA-256-nya dengan daftar di bawah.",
       "verify": "Di PowerShell:"
     },
     "macos": {
@@ -392,7 +392,7 @@
       "step2": "Tampilkan token penyiapan:",
       "step3": "Buka {url} lalu masukkan token. Wizard penyiapan akan mengurus sisanya.",
       "viewSource": "Baca file compose sebelum menjalankannya",
-      "images": "File compose mengunci image {ui} dan {worker}.",
+      "images": "File compose memakai versi tetap image {ui} dan {worker}.",
       "guide": "Panduan lengkap: Memulai"
     },
     "checksums": {
@@ -421,7 +421,7 @@
         },
         "casaos": {
           "title": "CasaOS",
-          "text": "Impor file compose sebagai aplikasi kustom selama daftar di store masih ditinjau.",
+          "text": "Impor file compose sebagai aplikasi kustom selama listing di store masih ditinjau.",
           "skills": "Menempel file dan mengubah dua tag image",
           "tools": "CasaOS 0.4.5 atau yang lebih baru"
         },
@@ -513,7 +513,7 @@
     },
     "apps": {
       "title": "Aplikasi CashPilot",
-      "p1": "Server web, aplikasi desktop, dan aplikasi Android tidak memiliki telemetri. Semuanya tidak mengirim apa pun ke proyek CashPilot.",
+      "p1": "Server web, aplikasi desktop, dan aplikasi Android tidak memiliki telemetri. Ketiganya tidak mengirim apa pun ke proyek CashPilot.",
       "p2": "Data login dan penghasilan Anda tetap di CashPilot milik Anda sendiri. Aplikasi hanya terhubung ke layanan yang dibutuhkan: penyedia yang Anda siapkan, GitHub untuk memeriksa versi baru, layanan IP publik dan kurs mata uang, serta blockchain explorer untuk saldo on-chain.",
       "p3": "Saat ini dasbor web juga memuat font-nya dari Google Fonts dan pustaka grafiknya dari jsDelivr. Dokumentasi mencantumkan <a href=\"{comparisonUrl}\">setiap koneksi keluar</a> dan cara mematikan yang opsional."
     },

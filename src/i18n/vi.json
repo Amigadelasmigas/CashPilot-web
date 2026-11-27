@@ -39,9 +39,9 @@
     "hero": {
       "pill": "Miễn phí và mã nguồn mở, GPL-3.0",
       "title": "Tận dụng phần cứng đang để không. Xem mọi khoản thanh toán trên một bảng điều khiển.",
-      "lead": "CashPilot cài đặt các dịch vụ thu nhập thụ động trên máy tính, máy chủ tại nhà và Raspberry Pi của bạn. Nó đọc số dư của bạn từ từng nhà cung cấp và lưu lịch sử ở một nơi, ngay trên máy của bạn.",
+      "lead": "CashPilot cài đặt các dịch vụ thu nhập thụ động trên máy tính, máy chủ tại nhà và Raspberry Pi của bạn. CashPilot đọc số dư của bạn từ từng nhà cung cấp và lưu lịch sử ở một nơi, ngay trên máy của bạn.",
       "download": "Tải về",
-      "selfhost": "Tự lưu trữ với Docker",
+      "selfhost": "Tự triển khai với Docker",
       "expect": "CashPilot không trả tiền cho bạn. Các nhà cung cấp mới là bên trả. Thu nhập phụ thuộc vào quốc gia, kết nối và phần cứng của bạn.",
       "imageAlt": "Bảng điều khiển CashPilot: số dư, thu nhập hôm nay và tháng này, các dịch vụ trên từng máy, và thu nhập theo ngày.",
       "imageAltMobile": "Bảng điều khiển CashPilot trên điện thoại: số dư, cùng thu nhập hôm nay và tháng này."
@@ -64,7 +64,7 @@
     },
     "how": {
       "title": "Cách hoạt động",
-      "lead": "Ba bước, và không cần tài khoản với chúng tôi.",
+      "lead": "Ba bước, không cần tài khoản CashPilot.",
       "steps": {
         "install": {
           "title": "Cài đặt CashPilot",
@@ -72,11 +72,11 @@
         },
         "pick": {
           "title": "Chọn dịch vụ",
-          "text": "Chọn từ danh mục, đăng ký với nhà cung cấp rồi dán thông tin đăng nhập. Với dịch vụ có image Docker, CashPilot khởi chạy nó trong container riêng. Với các dịch vụ còn lại, nó đọc số dư của bạn."
+          "text": "Chọn từ danh mục, đăng ký với nhà cung cấp rồi dán thông tin đăng nhập. Với dịch vụ có image Docker, CashPilot khởi chạy dịch vụ đó trong container riêng. Với các dịch vụ còn lại, CashPilot đọc số dư của bạn."
         },
         "watch": {
           "title": "Theo dõi mọi khoản thanh toán",
-          "text": "CashPilot đọc số dư của bạn mỗi giờ và lưu lịch sử. Khi số dư giảm, nó hỏi bạn xem bạn đã được thanh toán chưa."
+          "text": "CashPilot đọc số dư của bạn mỗi giờ và lưu lịch sử. Khi số dư giảm, CashPilot sẽ hỏi bạn đã nhận được tiền chưa."
         }
       }
     },
@@ -153,21 +153,21 @@
         "text": "Máy của bạn và kết nối của bạn. Chúng tôi không vận hành máy chủ nào cho bạn."
       },
       "account": {
-        "title": "Không cần tài khoản với chúng tôi",
+        "title": "Không cần tài khoản CashPilot",
         "text": "Không đăng ký, không email. Bạn chỉ đăng ký với những nhà cung cấp bạn chọn."
       },
       "funding": "Dự án lấy kinh phí từ đâu? Một số liên kết nhà cung cấp là liên kết giới thiệu. Nếu bạn đăng ký qua một liên kết như vậy, nhà cung cấp có thể trả thưởng cho dự án CashPilot. Khoản thưởng này không bị trừ vào thu nhập của bạn."
     },
     "control": {
       "title": "Bạn luôn nắm quyền kiểm soát",
-      "lead": "CashPilot chạy trên máy của bạn. Bạn có thể xem nó làm gì và dừng nó bất cứ lúc nào.",
+      "lead": "CashPilot chạy trên máy của bạn. Bạn có thể xem CashPilot đang làm gì và dừng nó bất cứ lúc nào.",
       "logins": {
         "title": "Thông tin đăng nhập nằm trên máy của bạn",
         "text": "CashPilot lưu chúng ở dạng mã hóa trong cơ sở dữ liệu riêng. Mỗi thông tin đăng nhập chỉ được gửi tới dịch vụ cần nó."
       },
       "containers": {
         "title": "Mỗi dịch vụ một container riêng",
-        "text": "Mọi dịch vụ CashPilot khởi chạy đều tách biệt với các dịch vụ khác, bị bỏ các quyền thừa và bị giới hạn số tiến trình."
+        "text": "Mọi dịch vụ CashPilot khởi chạy đều tách biệt với các dịch vụ khác, bị tước các quyền không cần thiết và bị giới hạn số tiến trình."
       },
       "lan": {
         "title": "Cách ly khỏi mạng gia đình",
@@ -175,7 +175,7 @@
       },
       "stop": {
         "title": "Dừng bất cứ thứ gì, bất cứ lúc nào",
-        "text": "Một cú nhấp để dừng hoặc gỡ một dịch vụ. Có hướng dẫn cách gỡ CashPilot hoàn toàn."
+        "text": "Chỉ một cú nhấp là dừng hoặc gỡ được một dịch vụ. Có hướng dẫn cách gỡ CashPilot hoàn toàn."
       },
       "ratings": "Mỗi nhà cung cấp được chấm điểm từ A đến F theo cùng mười câu hỏi, và mỗi câu trả lời đều dẫn tới nguồn của nó.",
       "ratingsLink": "Xem điểm của các nhà cung cấp"
@@ -197,7 +197,7 @@
       },
       "uptime": {
         "title": "Thời gian hoạt động",
-        "text": "Thiết bị luôn bật kiếm được nhiều hơn thiết bị hay ngủ."
+        "text": "Thiết bị luôn bật kiếm được nhiều hơn thiết bị hay chuyển sang chế độ ngủ."
       },
       "devices": {
         "title": "Số lượng thiết bị",
@@ -246,19 +246,19 @@
         "gpl": "GPL-3.0",
         "proprietary": "Độc quyền",
         "noLicense": "Không có tệp giấy phép",
-        "gplReadme": "Có tệp GPL-3.0, README cấm bản sửa đổi",
+        "gplReadme": "Có tệp GPL-3.0, README cấm bản sao có sửa đổi",
         "estimates": "Không, chỉ ước tính",
-        "claimed": "Có tuyên bố, trong mã đóng",
+        "claimed": "Có (theo tuyên bố), mã nguồn đóng",
         "dockerOrPodman": "Có, hoặc Podman",
         "betaMining": "Có, đào coin đang beta"
       },
       "more": "Bảng so sánh đầy đủ, mỗi ô đều có nguồn"
     },
     "faq": {
-      "title": "Câu hỏi",
+      "title": "Câu hỏi thường gặp",
       "items": {
         "slow": {
-          "q": "Nó có làm chậm internet của tôi không?",
+          "q": "CashPilot có làm chậm internet của tôi không?",
           "a": "Có thể. Các dịch vụ băng thông chuyển lưu lượng của công ty khác qua kết nối của bạn, nên chúng dùng một phần băng thông tải lên và tải xuống. CashPilot hiển thị mức dùng mạng của từng máy, để bạn thấy cái gì dùng nhiều nhất và dừng nó."
         },
         "legal": {
@@ -275,14 +275,14 @@
         },
         "free": {
           "q": "Tại sao lại miễn phí?",
-          "a": "CashPilot là phần mềm tự do theo giấy phép GPL-3.0, do các cộng tác viên xây dựng. Một số liên kết nhà cung cấp là liên kết giới thiệu, và khoản thưởng từ chúng giúp tài trợ cho dự án. <a href=\"{referralsUrl}\">Cách hoạt động của liên kết giới thiệu</a>."
+          "a": "CashPilot là phần mềm tự do theo giấy phép GPL-3.0, do những người đóng góp xây dựng. Một số liên kết nhà cung cấp là liên kết giới thiệu, và khoản thưởng từ chúng giúp tài trợ cho dự án. <a href=\"{referralsUrl}\">Cách hoạt động của liên kết giới thiệu</a>."
         },
         "docker": {
           "q": "Tôi có cần Docker không?",
-          "a": "Có, cho các dịch vụ CashPilot khởi chạy, vì chúng chạy trong container. Ứng dụng máy tính dùng được với Docker hoặc Podman, và trình hướng dẫn cài đặt sẽ giúp bạn cài Docker. Ứng dụng Android không cần Docker, nhưng nó báo cáo về một máy chủ CashPilot hoặc ứng dụng máy tính."
+          "a": "Có, cho các dịch vụ CashPilot khởi chạy, vì chúng chạy trong container. Ứng dụng máy tính dùng được với Docker hoặc Podman, và trình hướng dẫn cài đặt sẽ giúp bạn cài Docker. Ứng dụng Android không cần Docker, nhưng cần gửi báo cáo về một máy chủ CashPilot hoặc ứng dụng máy tính."
         },
         "pi": {
-          "q": "Nó có chạy trên Raspberry Pi không?",
+          "q": "CashPilot có chạy trên Raspberry Pi không?",
           "a": "Có, trên Pi 3, 4 hoặc 5 với hệ điều hành 64-bit. Hầu hết dịch vụ có bản build cho ARM, và trước khi triển khai, CashPilot kiểm tra xem dịch vụ có chạy được trên CPU của bạn không. <a href=\"{armUrl}\">Chạy trên ARM</a>."
         },
         "data": {
@@ -378,13 +378,13 @@
       "button": "Tải APK",
       "type": "Tệp APK",
       "requires": "Android 8.0 trở lên. Điện thoại sẽ yêu cầu bạn cho phép cài đặt từ trình duyệt.",
-      "what": "Ứng dụng Android theo dõi các ứng dụng kiếm tiền trên điện thoại và báo trạng thái của chúng về máy chủ CashPilot hoặc ứng dụng máy tính của bạn. Nó cần một trong hai để gửi báo cáo về.",
+      "what": "Ứng dụng Android theo dõi các ứng dụng kiếm tiền trên điện thoại và báo trạng thái của chúng về máy chủ CashPilot hoặc ứng dụng máy tính của bạn. Ứng dụng cần có một trong hai để gửi báo cáo về.",
       "qr": "Quét bằng điện thoại để tải APK.",
       "qrAlt": "Mã QR cho liên kết tải APK Android",
       "stores": "Không có trên Google Play. F-Droid: sắp có."
     },
     "docker": {
-      "metaTitle": "Tự lưu trữ CashPilot với Docker",
+      "metaTitle": "Tự triển khai CashPilot với Docker",
       "title": "Máy chủ CashPilot với Docker",
       "lead": "Dành cho máy chủ tại nhà, NAS, Raspberry Pi hoặc bất kỳ máy nào luôn bật. Bạn mở bảng điều khiển trong trình duyệt.",
       "requires": "Cần Docker kèm Compose, trên Linux, macOS hoặc Windows, amd64 hoặc arm64.",
@@ -427,7 +427,7 @@
         },
         "pi": {
           "title": "Raspberry Pi",
-          "text": "Chạy các lệnh Docker ở trên trên Raspberry Pi OS 64-bit.",
+          "text": "Trên Raspberry Pi OS 64-bit, hãy chạy các lệnh Docker ở trên.",
           "skills": "Biết dùng terminal cơ bản",
           "tools": "Một Pi 3, 4 hoặc 5 có Docker"
         },
@@ -446,13 +446,13 @@
       "tools": "Công cụ cần có",
       "desktop": {
         "title": "Ứng dụng máy tính",
-        "text": "CashPilot trong một cửa sổ trên máy tính của bạn. Nó chạy các dịch vụ trên chính máy đó và hiển thị bảng điều khiển.",
+        "text": "CashPilot trong một cửa sổ trên máy tính của bạn. Ứng dụng chạy các dịch vụ trên chính máy đó và hiển thị bảng điều khiển.",
         "skills": "Không cần",
         "tools": "Một máy tính Windows, Mac hoặc Linux luôn bật"
       },
       "server": {
         "title": "Máy chủ với Docker",
-        "text": "CashPilot trên máy chủ tại nhà, NAS hoặc Raspberry Pi. Nó có thể quản lý nhiều máy từ một bảng điều khiển.",
+        "text": "CashPilot trên máy chủ tại nhà, NAS hoặc Raspberry Pi. Có thể quản lý nhiều máy từ một bảng điều khiển.",
         "skills": "Biết dùng terminal cơ bản",
         "tools": "Một máy luôn bật, có Docker"
       },
@@ -483,7 +483,7 @@
     "howTitle": "Cách hoạt động của liên kết giới thiệu",
     "how1": "Nếu bạn đăng ký với nhà cung cấp qua một trong các liên kết này, nhà cung cấp có thể trả thưởng cho dự án CashPilot. Khoản thưởng này không bị trừ vào thu nhập của bạn.",
     "how2": "Một số nhà cung cấp cũng tặng bạn tiền thưởng khi đăng ký qua liên kết. Chúng tôi hiển thị khoản này khi danh mục có ghi.",
-    "how3": "Bạn không bao giờ bắt buộc phải dùng các liên kết này. Mỗi mục cũng hiển thị trang web riêng của nhà cung cấp, để bạn có thể đăng ký mà không qua giới thiệu.",
+    "how3": "Bạn không bắt buộc phải dùng các liên kết này. Mỗi mục cũng hiển thị trang web riêng của nhà cung cấp, để bạn có thể đăng ký mà không qua giới thiệu.",
     "how4": "Các khoản thưởng giúp tài trợ cho dự án.",
     "count": "{count} nhà cung cấp, từ danh mục ngày {date}.",
     "code": "Mã",
@@ -508,7 +508,7 @@
     "site": {
       "title": "Trang web này",
       "p1": "Không cookie, không công cụ phân tích, không pixel theo dõi và không quảng cáo. Trang không tải gì từ trang web khác. Phông chữ là một phần của trang.",
-      "p2": "Khi bạn chọn ngôn ngữ, trình duyệt lưu lựa chọn đó trong bộ nhớ cục bộ. Nó nằm trên thiết bị của bạn và không bao giờ được gửi cho chúng tôi.",
+      "p2": "Khi bạn chọn ngôn ngữ, trình duyệt lưu lựa chọn đó trong bộ nhớ cục bộ. Lựa chọn này chỉ nằm trên thiết bị của bạn và không bao giờ được gửi cho chúng tôi.",
       "p3": "GitHub Pages lưu trữ trang này, và Cloudflare chuyển lưu lượng đến trang. Cả hai có thể ghi lại địa chỉ IP của mỗi lượt truy cập vì lý do bảo mật, và Cloudflare có thể yêu cầu trình duyệt của bạn báo lỗi mạng cho họ. Hãy đọc <a href=\"{githubPrivacyUrl}\">tuyên bố quyền riêng tư của GitHub</a> và <a href=\"{cloudflarePrivacyUrl}\">chính sách quyền riêng tư của Cloudflare</a>."
     },
     "apps": {
@@ -529,7 +529,7 @@
   "disclaimer": {
     "title": "Tuyên bố miễn trừ trách nhiệm",
     "metaTitle": "Tuyên bố miễn trừ trách nhiệm",
-    "description": "CashPilot không đưa ra tư vấn tài chính hay pháp lý, không hứa hẹn thu nhập, và không thuộc về các nhà cung cấp mà nó chạy.",
+    "description": "CashPilot không đưa ra tư vấn tài chính hay pháp lý, không hứa hẹn thu nhập, và không trực thuộc các nhà cung cấp có dịch vụ mà nó chạy.",
     "lead": "Vui lòng đọc phần này trước khi bắt đầu.",
     "items": {
       "advice": {
@@ -538,7 +538,7 @@
       },
       "earnings": {
         "title": "Không hứa hẹn thu nhập",
-        "text": "Thu nhập phụ thuộc vào quốc gia, kết nối, phần cứng của bạn và các nhà cung cấp. Nó có thể rất nhỏ hoặc bằng không. Nhà cung cấp có thể thay đổi mức trả bất cứ lúc nào."
+        "text": "Thu nhập phụ thuộc vào quốc gia, kết nối, phần cứng của bạn và các nhà cung cấp. Thu nhập có thể rất thấp hoặc bằng không. Nhà cung cấp có thể thay đổi mức trả bất cứ lúc nào."
       },
       "law": {
         "title": "Luật pháp và hợp đồng của bạn",
@@ -546,11 +546,11 @@
       },
       "providers": {
         "title": "Nhà cung cấp độc lập",
-        "text": "Các nhà cung cấp là những công ty riêng biệt. CashPilot không thuộc về họ và không thể kiểm soát điều khoản, việc thanh toán hay quyết định về tài khoản của họ. Một số nhà cung cấp trả thưởng giới thiệu cho dự án."
+        "text": "Các nhà cung cấp là những công ty riêng biệt. CashPilot không trực thuộc họ và không thể kiểm soát điều khoản, việc thanh toán hay quyết định về tài khoản của họ. Một số nhà cung cấp trả thưởng giới thiệu cho dự án."
       },
       "warranty": {
-        "title": "Không bảo hành",
-        "text": "CashPilot là phần mềm tự do theo giấy phép GPL-3.0-or-later. Phần mềm được cung cấp không kèm bất kỳ bảo hành nào, như mục 15 và 16 của giấy phép quy định."
+        "title": "Không có bảo đảm",
+        "text": "CashPilot là phần mềm tự do theo giấy phép GPL-3.0-or-later. Phần mềm được cung cấp không kèm bất kỳ bảo đảm nào, như mục 15 và 16 của giấy phép quy định."
       },
       "trademarks": {
         "title": "Nhãn hiệu",
@@ -560,7 +560,7 @@
   },
   "notFound": {
     "title": "Không tìm thấy trang",
-    "text": "Trang này không tồn tại. Có thể nó đã được chuyển đi.",
+    "text": "Trang này không tồn tại. Có thể trang đã được chuyển đi.",
     "home": "Về trang chủ",
     "download": "Đến trang tải về"
   },
@@ -579,10 +579,10 @@
     "android": "CashPilot cho Android",
     "mcp": "Máy chủ MCP",
     "feed": "Nguồn cấp bản phát hành",
-    "agents": "Dành cho tác tử AI",
+    "agents": "Dành cho AI agent",
     "contact": "Liên hệ",
     "legal": "Hãy kiểm tra luật địa phương và điều khoản của nhà mạng. Không phải tư vấn tài chính.",
-    "credit": "Do các cộng tác viên CashPilot xây dựng. Phần mềm tự do theo giấy phép GPL-3.0-or-later."
+    "credit": "Do những người đóng góp cho CashPilot xây dựng. Phần mềm tự do theo giấy phép GPL-3.0-or-later."
   },
   "categories": {
     "bandwidth": "Chia sẻ băng thông",
