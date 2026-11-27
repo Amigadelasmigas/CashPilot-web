@@ -725,7 +725,8 @@ const faqVars = {
   }
   .cats__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* minmax(0, 1fr): a long word (Dutch, German) must not widen a column. */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
     margin: 0;
     padding: 0;
@@ -781,6 +782,9 @@ const faqVars = {
     display: flex;
     flex-direction: column;
     gap: 0.15rem;
+    min-width: 0;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   .cat__name {
     font-weight: 600;
@@ -1151,7 +1155,7 @@ const faqVars = {
   }
   @media (max-width: 760px) {
     .cats__grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .tour {
       grid-template-columns: 1fr;
