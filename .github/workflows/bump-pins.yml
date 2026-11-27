@@ -52,10 +52,17 @@ jobs:
           BRANCH: bot/pins-${{ steps.bump.outputs.slug }}
         run: |
           if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null; then
-            # The branch is there. If its PR is too, open, merged or closed, we are done.
-            # If not, an earlier run pushed it and then failed to open the PR: open it now.
-            if [ -n "$(gh pr list --head "$BRANCH" --state all --json number --jq '.[].number')" ]; then
-              echo "$BRANCH has a PR already"
+            # The branch is there. A merged or closed PR means we are done. An open
+            # PR whose head has no build check gets its CI started again. No PR
+            # means an earlier run pushed the branch and then failed: open it now.
+            state=$(gh pr list --head "$BRANCH" --state all --json state --jq '.[0].state // ""')
+            if [ "$state" = OPEN ]; then
+              runs=$(gh api "repos/$GITHUB_REPOSITORY/commits/$BRANCH/check-runs" --jq '[.check_runs[] | select(.name == "build")] | length')
+              [ "$runs" = 0 ] && gh workflow run ci.yml --ref "$BRANCH"
+              echo "$BRANCH has an open PR"
+              exit 0
+            elif [ -n "$state" ]; then
+              echo "$BRANCH has a $state PR"
               exit 0
             fi
           else
