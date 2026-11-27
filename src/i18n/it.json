@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "CashPilot",
     "titleSuffix": "CashPilot",
-    "ogImageAlt": "CashPilot: fai lavorare l'hardware inutilizzato e vedi tutti i pagamenti in un'unica dashboard."
+    "ogImageAlt": "CashPilot: fai lavorare l'hardware inutilizzato e controlla tutti i pagamenti in un'unica dashboard."
   },
   "nav": {
     "skip": "Vai al contenuto",
@@ -38,10 +38,10 @@
     "description": "Software libero e open source che esegue servizi di condivisione della banda, DePIN, calcolo su GPU e mining sulle tue macchine, e mostra tutti i pagamenti in un'unica dashboard.",
     "hero": {
       "pill": "Libero e open source, GPL-3.0",
-      "title": "Fai lavorare l'hardware inutilizzato. Vedi tutti i pagamenti in un'unica dashboard.",
+      "title": "Fai lavorare l'hardware inutilizzato. Controlla tutti i pagamenti in un'unica dashboard.",
       "lead": "CashPilot configura servizi di reddito passivo sui tuoi computer, server di casa e Raspberry Pi. Legge il tuo saldo presso ogni fornitore e conserva lo storico in un unico posto, sulla tua macchina.",
       "download": "Scarica",
-      "selfhost": "Ospitalo tu con Docker",
+      "selfhost": "Self-hosting con Docker",
       "expect": "Non è CashPilot a pagarti, sono i fornitori. I guadagni dipendono dal tuo Paese, dalla tua connessione e dal tuo hardware.",
       "imageAlt": "La dashboard di CashPilot: il saldo, i guadagni di oggi e di questo mese, i servizi su ogni macchina e i guadagni giornalieri.",
       "imageAltMobile": "La dashboard di CashPilot su un telefono: il saldo e i guadagni di oggi e di questo mese."
@@ -64,7 +64,7 @@
     },
     "how": {
       "title": "Come funziona",
-      "lead": "Tre passaggi, e nessun account da noi.",
+      "lead": "Tre passaggi, senza bisogno di un account da noi.",
       "steps": {
         "install": {
           "title": "Installa CashPilot",
@@ -72,7 +72,7 @@
         },
         "pick": {
           "title": "Scegli i servizi",
-          "text": "Scegli dal catalogo, iscriviti presso il fornitore e incolla le tue credenziali. Per i servizi con un'immagine Docker, CashPilot li avvia nel loro container. Per gli altri legge il tuo saldo."
+          "text": "Scegli dal catalogo, iscriviti presso il fornitore e incolla le tue credenziali. Se il servizio ha un'immagine Docker, CashPilot lo avvia in un container dedicato. Per gli altri, legge il tuo saldo."
         },
         "watch": {
           "title": "Segui ogni pagamento",
@@ -101,7 +101,7 @@
       },
       "mining": {
         "name": "Mining",
-        "text": "Fai mining con la CPU o la GPU, e vedi i miner ASIC della tua rete. In beta."
+        "text": "Fai mining con la CPU o la GPU, e tieni d'occhio i miner ASIC della tua rete. In beta."
       },
       "all": {
         "name": "Tutti i {count} nella documentazione",
@@ -166,8 +166,8 @@
         "text": "CashPilot le salva cifrate nel suo database. Ogni credenziale va solo al servizio che ne ha bisogno."
       },
       "containers": {
-        "title": "Ogni servizio nel suo container",
-        "text": "Ogni servizio avviato da CashPilot gira separato dagli altri, senza i suoi permessi extra e con un limite ai processi."
+        "title": "Ogni servizio in un container dedicato",
+        "text": "Ogni servizio avviato da CashPilot gira isolato dagli altri, senza privilegi aggiuntivi e con un limite al numero di processi."
       },
       "lan": {
         "title": "Tenuti fuori dalla tua rete di casa",
@@ -181,7 +181,7 @@
       "ratingsLink": "Vedi i voti dei fornitori"
     },
     "earnings": {
-      "title": "Cosa cambia i tuoi guadagni",
+      "title": "Da cosa dipendono i tuoi guadagni",
       "lead": "Nessuno può prometterti una cifra. Ecco cosa la fa variare.",
       "country": {
         "title": "Il tuo Paese",
@@ -193,7 +193,7 @@
       },
       "connection": {
         "title": "La tua connessione",
-        "text": "Più velocità di upload e nessun limite ai dati lasciano spazio a più traffico."
+        "text": "Più velocità in upload e nessun limite di dati lasciano spazio a più traffico."
       },
       "uptime": {
         "title": "Tempo di attività",
@@ -207,7 +207,7 @@
         "title": "La tua GPU e il tuo hardware",
         "text": "Il calcolo su GPU e il mining dipendono dalla tua scheda, dal prezzo dell'elettricità e dal mercato."
       },
-      "note": "Alcune configurazioni guadagnano pochissimo. La dashboard mostra quanto guadagni davvero, così puoi eliminare ciò che non rende."
+      "note": "Alcune configurazioni rendono pochissimo. La dashboard mostra quanto guadagni davvero, così puoi eliminare ciò che non rende."
     },
     "services": {
       "title": "Servizi popolari",
@@ -267,11 +267,11 @@
         },
         "safe": {
           "q": "È sicuro?",
-          "a": "I servizi di banda permettono al traffico di altre persone di usare il tuo indirizzo IP, quindi leggi prima le condizioni di ogni fornitore. CashPilot esegue ogni servizio che avvia nel suo container e, su una nuova installazione di Docker, lo tiene fuori dalla tua rete di casa. Leggi <a href=\"{securityUrl}\">Proteggere la rete di casa</a> prima di iniziare."
+          "a": "I servizi di banda permettono al traffico di altre persone di usare il tuo indirizzo IP, quindi leggi prima le condizioni di ogni fornitore. CashPilot esegue ogni servizio che avvia in un container dedicato e, su una nuova installazione di Docker, lo tiene fuori dalla tua rete di casa. Leggi <a href=\"{securityUrl}\">Proteggere la rete di casa</a> prima di iniziare."
         },
         "earn": {
           "q": "Quanto guadagnerò?",
-          "a": "Non possiamo dirtelo. Dipende dal tuo Paese, dal tipo di indirizzo IP, dalla connessione, dal tempo di attività e dai servizi che esegui. Alcune configurazioni guadagnano pochissimo. La dashboard mostra quanto guadagni davvero."
+          "a": "Non possiamo dirtelo. Dipende dal tuo Paese, dal tipo di indirizzo IP, dalla connessione, dal tempo di attività e dai servizi che esegui. Alcune configurazioni rendono pochissimo. La dashboard mostra quanto guadagni davvero."
         },
         "free": {
           "q": "Perché è gratis?",
@@ -340,7 +340,7 @@
     "windows": {
       "metaTitle": "Scarica CashPilot per Windows",
       "title": "CashPilot Desktop per Windows",
-      "installer": "Scarica il programma di installazione",
+      "installer": "Scarica l'installer",
       "installerType": "Programma di installazione (.exe)",
       "portable": "Versione portable",
       "portableType": "App portable (.exe), senza installazione",
@@ -357,7 +357,7 @@
       "type": "File zip",
       "arch": "Apple silicon (M1 e successivi).",
       "minimum": "Richiede macOS 12 Monterey o successivo.",
-      "requires": "Firmato e autenticato da Apple. Decomprimilo e apri cashpilot-desktop.app.",
+      "requires": "Firmato e notarizzato da Apple. Decomprimilo e apri cashpilot-desktop.app.",
       "intel": "Hai un Mac Intel? Non esiste una versione Intel dell'app desktop. <a href=\"{dockerUrl}\">Esegui invece il server con Docker</a>.",
       "verify": "Nel Terminale:"
     },
@@ -379,7 +379,7 @@
       "type": "File APK",
       "requires": "Android 8.0 o successivo. Il telefono ti chiederà di consentire le installazioni dal browser.",
       "what": "L'app Android controlla le app di guadagno sul tuo telefono e ne invia lo stato al tuo server CashPilot o alla tua app desktop. Ha bisogno di uno dei due a cui inviare i dati.",
-      "qr": "Inquadralo con il telefono per scaricare l'APK.",
+      "qr": "Inquadra il codice con il telefono per scaricare l'APK.",
       "qrAlt": "Codice QR del link per scaricare l'APK Android",
       "stores": "Non è su Google Play. F-Droid: in arrivo."
     },
@@ -509,12 +509,12 @@
       "title": "Questo sito",
       "p1": "Niente cookie, niente analytics, niente pixel di tracciamento e niente pubblicità. La pagina non carica nulla da altri siti. I font fanno parte del sito.",
       "p2": "Quando scegli una lingua, il browser salva la scelta nel suo archivio locale. Resta sul tuo dispositivo e non ci viene mai inviata.",
-      "p3": "GitHub Pages ospita questo sito, e Cloudflare gli porta il traffico. Entrambi possono registrare l'indirizzo IP di ogni visita per motivi di sicurezza, e Cloudflare può chiedere al tuo browser di segnalargli gli errori di rete. Leggi l'<a href=\"{githubPrivacyUrl}\">informativa sulla privacy di GitHub</a> e l'<a href=\"{cloudflarePrivacyUrl}\">informativa sulla privacy di Cloudflare</a>."
+      "p3": "GitHub Pages ospita questo sito, e il traffico verso il sito passa da Cloudflare. Entrambi possono registrare l'indirizzo IP di ogni visita per motivi di sicurezza, e Cloudflare può chiedere al tuo browser di segnalargli gli errori di rete. Leggi l'<a href=\"{githubPrivacyUrl}\">informativa sulla privacy di GitHub</a> e l'<a href=\"{cloudflarePrivacyUrl}\">informativa sulla privacy di Cloudflare</a>."
     },
     "apps": {
       "title": "Le app di CashPilot",
       "p1": "Il server web, l'app desktop e l'app Android non hanno telemetria. Non inviano nulla al progetto CashPilot.",
-      "p2": "Le tue credenziali e i tuoi guadagni restano nel tuo CashPilot. Le app si collegano solo ai servizi che servono: i fornitori che configuri, GitHub per cercare una nuova versione, servizi pubblici di IP e di tassi di cambio, e block explorer per i saldi on-chain.",
+      "p2": "Le tue credenziali e i tuoi guadagni restano nel tuo CashPilot. Le app si collegano solo ai servizi di cui hanno bisogno: i fornitori che configuri, GitHub per cercare una nuova versione, servizi pubblici di IP e di tassi di cambio, e block explorer per i saldi on-chain.",
       "p3": "Oggi la dashboard web carica anche i font da Google Fonts e la libreria dei grafici da jsDelivr. La documentazione elenca <a href=\"{comparisonUrl}\">tutte le connessioni in uscita</a> e come disattivare quelle facoltative."
     },
     "providers": {
@@ -541,7 +541,7 @@
         "text": "I guadagni dipendono dal tuo Paese, dalla connessione, dall'hardware e dai fornitori. Possono essere molto bassi o nulli. I fornitori possono cambiare le tariffe in qualsiasi momento."
       },
       "law": {
-        "title": "La tua legge e il tuo contratto",
+        "title": "La legge e il tuo contratto",
         "text": "Controlla la legge del tuo Paese e le condizioni del tuo provider internet prima di condividere la connessione o eseguire un nodo. Sei responsabile delle tasse su ciò che guadagni."
       },
       "providers": {
@@ -565,7 +565,7 @@
     "download": "Vai ai download"
   },
   "footer": {
-    "tagline": "Esegui servizi di reddito passivo sul tuo hardware e vedi tutti i pagamenti in un'unica dashboard.",
+    "tagline": "Esegui servizi di reddito passivo sul tuo hardware e controlla tutti i pagamenti in un'unica dashboard.",
     "product": "Prodotto",
     "project": "Progetto",
     "about": "Informazioni",

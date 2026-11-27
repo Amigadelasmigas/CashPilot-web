@@ -41,7 +41,7 @@
       "title": "Coloque seu hardware parado para trabalhar. Veja todos os pagamentos em um só painel.",
       "lead": "O CashPilot configura serviços de renda passiva nos seus computadores, servidores caseiros e Raspberry Pi. Ele lê o seu saldo em cada provedor e guarda o histórico em um só lugar, na sua própria máquina.",
       "download": "Baixar",
-      "selfhost": "Hospede você mesmo com Docker",
+      "selfhost": "Rode no seu servidor com Docker",
       "expect": "O CashPilot não paga você. Quem paga são os provedores. Os ganhos dependem do seu país, da sua conexão e do seu hardware.",
       "imageAlt": "O painel do CashPilot: o saldo, os ganhos de hoje e deste mês, os serviços de cada máquina e os ganhos por dia.",
       "imageAltMobile": "O painel do CashPilot em um celular: o saldo e os ganhos de hoje e deste mês."
@@ -64,7 +64,7 @@
     },
     "how": {
       "title": "Como funciona",
-      "lead": "Três passos, e nenhuma conta com a gente.",
+      "lead": "Três passos, sem criar conta com a gente.",
       "steps": {
         "install": {
           "title": "Instale o CashPilot",
@@ -72,7 +72,7 @@
         },
         "pick": {
           "title": "Escolha seus serviços",
-          "text": "Escolha no catálogo, cadastre-se no provedor e cole seus dados de acesso. Para serviços com imagem Docker, o CashPilot inicia o serviço no próprio contêiner. Para os outros, ele lê o seu saldo."
+          "text": "Escolha no catálogo, cadastre-se no provedor e cole seus dados de acesso. Para serviços com imagem Docker, o CashPilot inicia o serviço em um contêiner próprio. Para os outros, ele lê o seu saldo."
         },
         "watch": {
           "title": "Acompanhe cada pagamento",
@@ -113,8 +113,8 @@
       "lead": "Telas reais dos apps, com dados de demonstração. Selecione uma tela para vê-la inteira.",
       "fleet": {
         "title": "Frota",
-        "text": "Cada máquina, o sistema dela e quando ela informou pela última vez. Uma máquina que para de informar fica vermelha.",
-        "alt": "A página Frota: cinco máquinas com seus sistemas, versões e quando cada uma informou pela última vez. Uma máquina está offline."
+        "text": "Cada máquina, o sistema dela e quando ela se comunicou pela última vez. Uma máquina que para de se comunicar fica vermelha.",
+        "alt": "A página Frota: cinco máquinas com seus sistemas, versões e quando cada uma se comunicou pela última vez. Uma máquina está offline."
       },
       "catalog": {
         "title": "Catálogo",
@@ -133,7 +133,7 @@
       },
       "android": {
         "title": "App complementar para Android",
-        "text": "Acompanha os apps de renda no seu celular e informa o status deles ao seu servidor CashPilot ou app para desktop.",
+        "text": "Acompanha os apps de renda no seu celular e envia o status deles para o seu servidor CashPilot ou app para desktop.",
         "alt": "A tela inicial do app para Android: os seis apps de renda estão rodando, com os dados que cada um usou em 24 horas."
       }
     },
@@ -156,7 +156,7 @@
         "title": "Nenhuma conta com a gente",
         "text": "Sem cadastro e sem e-mail. Você só se cadastra nos provedores que escolher."
       },
-      "funding": "Como ele se paga? Alguns links de provedores são links de indicação. Se você se cadastrar por um deles, o provedor pode pagar uma recompensa ao projeto CashPilot. Ela não sai dos seus ganhos."
+      "funding": "Como o projeto é financiado? Alguns links de provedores são links de indicação. Se você se cadastrar por um deles, o provedor pode pagar uma recompensa ao projeto CashPilot. Ela não sai dos seus ganhos."
     },
     "control": {
       "title": "Você no controle",
@@ -166,8 +166,8 @@
         "text": "O CashPilot os guarda criptografados no próprio banco de dados. Cada dado de acesso vai só para o serviço que precisa dele."
       },
       "containers": {
-        "title": "Cada serviço no próprio contêiner",
-        "text": "Cada serviço que o CashPilot inicia roda separado dos outros, sem permissões extras e com um limite de processos."
+        "title": "Cada serviço em um contêiner próprio",
+        "text": "Cada serviço que o CashPilot inicia roda isolado dos outros, sem privilégios extras e com um limite de processos."
       },
       "lan": {
         "title": "Fora da sua rede doméstica",
@@ -181,8 +181,8 @@
       "ratingsLink": "Ver as notas dos provedores"
     },
     "earnings": {
-      "title": "O que muda os seus ganhos",
-      "lead": "Ninguém pode prometer um valor. Estes são os fatores que fazem ele variar.",
+      "title": "O que influencia seus ganhos",
+      "lead": "Ninguém pode prometer um valor. Estes são os fatores que fazem esse valor variar.",
       "country": {
         "title": "Seu país",
         "text": "Os provedores pagam mais pelo tráfego de alguns países do que de outros."
@@ -193,7 +193,7 @@
       },
       "connection": {
         "title": "Sua conexão",
-        "text": "Mais velocidade de upload e nenhuma franquia de dados abrem espaço para mais tráfego."
+        "text": "Mais velocidade de upload e internet sem franquia deixam espaço para mais tráfego."
       },
       "uptime": {
         "title": "Tempo ligado",
@@ -212,7 +212,7 @@
     "services": {
       "title": "Serviços populares",
       "lead": "Alguns serviços de cada grupo. A documentação lista todos, com um guia para cada um.",
-      "caption": "Serviços populares e o que eles precisam",
+      "caption": "Serviços populares e do que eles precisam",
       "col": {
         "service": "Serviço",
         "homeIp": "Exige IP residencial",
@@ -220,7 +220,7 @@
         "payout": "Pagamento",
         "minimum": "Pagamento mínimo"
       },
-      "signup": "Cadastrar",
+      "signup": "Cadastre-se",
       "signupLabel": "Cadastrar-se no {name} (link de indicação)",
       "signupLabelPlain": "Cadastrar-se no {name}",
       "guideLabel": "Guia do CashPilot para {name}",
@@ -259,7 +259,7 @@
       "items": {
         "slow": {
           "q": "Ele vai deixar minha internet lenta?",
-          "a": "Pode, sim. Os serviços de banda passam o tráfego de outras empresas pela sua conexão, então usam parte do seu upload e download. O CashPilot mostra o uso de rede de cada máquina, para você ver o que mais consome e parar."
+          "a": "Pode, sim. Os serviços de banda passam o tráfego de outras empresas pela sua conexão, então usam parte do seu upload e download. O CashPilot mostra o uso de rede de cada máquina, para você ver o que mais consome e desligar."
         },
         "legal": {
           "q": "É legal?",
@@ -267,7 +267,7 @@
         },
         "safe": {
           "q": "É seguro?",
-          "a": "Os serviços de banda deixam o tráfego de outras pessoas usar o seu endereço IP, então leia antes os termos de cada provedor. O CashPilot roda cada serviço que inicia no próprio contêiner e, em uma instalação nova do Docker, o mantém fora da sua rede doméstica. Leia <a href=\"{securityUrl}\">Como proteger sua rede doméstica</a> antes de começar."
+          "a": "Os serviços de banda deixam o tráfego de outras pessoas usar o seu endereço IP, então leia antes os termos de cada provedor. O CashPilot roda cada serviço que inicia em um contêiner próprio e, em uma instalação nova do Docker, o mantém fora da sua rede doméstica. Leia <a href=\"{securityUrl}\">Como proteger sua rede doméstica</a> antes de começar."
         },
         "earn": {
           "q": "Quanto vou ganhar?",
@@ -279,11 +279,11 @@
         },
         "docker": {
           "q": "Preciso do Docker?",
-          "a": "Sim, para os serviços que o CashPilot inicia, porque eles rodam em contêineres. O app para desktop funciona com Docker ou Podman, e o assistente de configuração ajuda você a instalar o Docker. O app para Android não precisa de Docker, mas informa a um servidor CashPilot ou app para desktop."
+          "a": "Sim, para os serviços que o CashPilot inicia, porque eles rodam em contêineres. O app para desktop funciona com Docker ou Podman, e o assistente de configuração ajuda você a instalar o Docker. O app para Android não precisa de Docker, mas envia os dados para um servidor CashPilot ou app para desktop."
         },
         "pi": {
           "q": "Ele roda em um Raspberry Pi?",
-          "a": "Sim, em um Pi 3, 4 ou 5 com o sistema de 64 bits. A maioria dos serviços publica uma versão para ARM, e o CashPilot verifica antes de implantar se um serviço roda na sua CPU. <a href=\"{armUrl}\">Rodando em ARM</a>."
+          "a": "Sim, em um Pi 3, 4 ou 5 com o sistema de 64 bits. A maioria dos serviços publica uma versão para ARM, e o CashPilot verifica antes de implantar se um serviço roda na sua CPU. <a href=\"{armUrl}\">Como rodar em ARM</a>."
         },
         "data": {
           "q": "O projeto CashPilot vê meus dados de acesso ou meus ganhos?",
@@ -308,7 +308,7 @@
     "detected": "Seu sistema",
     "otherSystems": "Outros sistemas",
     "ios": "Não existe app para iPhone. Instale o app para desktop em um computador ou rode o servidor, e depois abra o painel no Safari.",
-    "pathsHint": "Não sabe qual você precisa?",
+    "pathsHint": "Não sabe de qual você precisa?",
     "pathsLink": "Compare as opções",
     "fileInfo": "{type}, {size}",
     "version": "Versão {version}",
@@ -358,7 +358,7 @@
       "arch": "Apple silicon (M1 e mais recentes).",
       "minimum": "Exige macOS 12 Monterey ou mais recente.",
       "requires": "Assinado e notarizado pela Apple. Descompacte e abra o cashpilot-desktop.app.",
-      "intel": "Mac com Intel? Não existe versão para Intel do app para desktop. <a href=\"{dockerUrl}\">Rode o servidor com Docker</a> no lugar dele.",
+      "intel": "Mac com Intel? Não existe versão para Intel do app para desktop. <a href=\"{dockerUrl}\">Rode o servidor com Docker</a> em vez disso.",
       "verify": "No Terminal:"
     },
     "linux": {
@@ -378,13 +378,13 @@
       "button": "Baixar o APK",
       "type": "Arquivo APK",
       "requires": "Android 8.0 ou mais recente. O celular vai pedir para você permitir instalações pelo navegador.",
-      "what": "O app para Android acompanha os apps de renda no seu celular e informa o status deles ao seu servidor CashPilot ou app para desktop. Ele precisa de um dos dois para informar.",
+      "what": "O app para Android acompanha os apps de renda no seu celular e envia o status deles para o seu servidor CashPilot ou app para desktop. Ele precisa de um dos dois para enviar os dados.",
       "qr": "Escaneie com o celular para baixar o APK.",
       "qrAlt": "QR code com o link de download do APK para Android",
       "stores": "Não está no Google Play. F-Droid: em breve."
     },
     "docker": {
-      "metaTitle": "Hospede o CashPilot você mesmo com Docker",
+      "metaTitle": "Hospede o CashPilot no seu servidor com Docker",
       "title": "Servidor CashPilot com Docker",
       "lead": "Para um servidor caseiro, um NAS, um Raspberry Pi ou qualquer máquina que fique ligada. Você abre o painel no navegador.",
       "requires": "Exige Docker com Compose, no Linux, macOS ou Windows, amd64 ou arm64.",
@@ -440,7 +440,7 @@
       }
     },
     "paths": {
-      "title": "Qual eu preciso?",
+      "title": "De qual eu preciso?",
       "recommended": "Recomendado para a maioria",
       "skills": "Conhecimento necessário",
       "tools": "O que você precisa",
@@ -485,7 +485,7 @@
     "how2": "Alguns provedores também dão um bônus para você quando se cadastra pelo link. Mostramos isso quando o catálogo informa.",
     "how3": "Você nunca é obrigado a usar estes links. Cada item também mostra o site do próprio provedor, para você se cadastrar sem indicação.",
     "how4": "As recompensas ajudam a financiar o projeto.",
-    "count": "{count} provedores, pelo catálogo de {date}.",
+    "count": "{count} provedores, segundo o catálogo de {date}.",
     "code": "Código",
     "provider": "Provedor",
     "link": "Cadastrar com indicação",
@@ -538,19 +538,19 @@
       },
       "earnings": {
         "title": "Sem ganhos prometidos",
-        "text": "Os ganhos dependem do seu país, da sua conexão, do seu hardware e dos provedores. Eles podem ser muito pequenos ou zero. Os provedores podem mudar os valores a qualquer momento."
+        "text": "Os ganhos dependem do seu país, da sua conexão, do seu hardware e dos provedores. Eles podem ser muito baixos ou nulos. Os provedores podem mudar os valores a qualquer momento."
       },
       "law": {
-        "title": "A sua lei e o seu contrato",
+        "title": "A lei local e o seu contrato",
         "text": "Confira a lei local e os termos do seu provedor de internet antes de compartilhar a conexão ou rodar um nó. Você é responsável por qualquer imposto sobre o que ganhar."
       },
       "providers": {
         "title": "Provedores independentes",
-        "text": "Os provedores são empresas independentes. O CashPilot não faz parte delas e não controla os termos, os pagamentos nem as decisões sobre contas delas. Alguns provedores pagam ao projeto recompensas por indicação."
+        "text": "Os provedores são empresas independentes. O CashPilot não faz parte delas e não pode controlar os termos, os pagamentos nem as decisões sobre contas delas. Alguns provedores pagam ao projeto recompensas por indicação."
       },
       "warranty": {
         "title": "Sem garantia",
-        "text": "O CashPilot é software livre sob a licença GPL-3.0-or-later. Ele não tem nenhuma garantia, como dizem as seções 15 e 16 da licença."
+        "text": "O CashPilot é software livre sob a licença GPL-3.0-or-later. Ele é fornecido sem nenhuma garantia, como dizem as seções 15 e 16 da licença."
       },
       "trademarks": {
         "title": "Marcas registradas",
@@ -593,9 +593,9 @@
   },
   "payment": {
     "paypal": "PayPal",
-    "crypto": "Cripto",
-    "giftcard": "Vale-presentes",
-    "amazon_giftcard": "Vale-presentes da Amazon",
+    "crypto": "Criptomoedas",
+    "giftcard": "Cartões-presente",
+    "amazon_giftcard": "Cartões-presente da Amazon",
     "wise": "Wise",
     "bank": "Transferência bancária",
     "stripe": "Stripe"

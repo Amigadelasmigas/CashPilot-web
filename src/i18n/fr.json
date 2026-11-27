@@ -64,7 +64,7 @@
     },
     "how": {
       "title": "Comment ça marche",
-      "lead": "Trois étapes, et aucun compte chez nous.",
+      "lead": "Trois étapes, sans créer de compte chez nous.",
       "steps": {
         "install": {
           "title": "Installez CashPilot",
@@ -72,7 +72,7 @@
         },
         "pick": {
           "title": "Choisissez vos services",
-          "text": "Choisissez dans le catalogue, inscrivez-vous chez le fournisseur et collez vos identifiants. Pour les services qui ont une image Docker, CashPilot les lance dans leur propre conteneur. Pour les autres, il relève votre solde."
+          "text": "Choisissez dans le catalogue, inscrivez-vous chez le fournisseur et collez vos identifiants. Si le service a une image Docker, CashPilot le lance dans son propre conteneur. Pour les autres, il relève votre solde."
         },
         "watch": {
           "title": "Suivez chaque paiement",
@@ -97,11 +97,11 @@
       },
       "storage": {
         "name": "Stockage",
-        "text": "Louez l'espace disque libre à des réseaux de stockage."
+        "text": "Louez votre espace disque libre à des réseaux de stockage."
       },
       "mining": {
         "name": "Minage",
-        "text": "Minez avec votre CPU ou votre GPU, et voyez les mineurs ASIC de votre réseau. En bêta."
+        "text": "Minez avec votre CPU ou votre GPU, et surveillez les mineurs ASIC de votre réseau. En bêta."
       },
       "all": {
         "name": "Les {count} dans la documentation",
@@ -109,7 +109,7 @@
       }
     },
     "tour": {
-      "title": "Un aperçu de l'intérieur",
+      "title": "Un coup d'œil à l'intérieur",
       "lead": "De vrais écrans des applications, avec des données de démonstration. Sélectionnez un écran pour le voir en entier.",
       "fleet": {
         "title": "Parc",
@@ -128,7 +128,7 @@
       },
       "desktop": {
         "title": "Application de bureau",
-        "text": "Le tableau de bord complet dans une fenêtre sur Windows, macOS ou Linux. Elle peut aussi rejoindre un serveur CashPilot que vous faites déjà tourner.",
+        "text": "Le tableau de bord complet dans une fenêtre sur Windows, macOS ou Linux. Elle peut aussi se connecter à un serveur CashPilot que vous avez déjà.",
         "alt": "CashPilot Desktop sur macOS, avec le solde et les gains du jour et du mois."
       },
       "android": {
@@ -156,7 +156,7 @@
         "title": "Aucun compte chez nous",
         "text": "Pas d'inscription et pas d'e-mail. Vous ne vous inscrivez que chez les fournisseurs que vous choisissez."
       },
-      "funding": "Comment est-il financé ? Certains liens de fournisseurs sont des liens de parrainage. Si vous vous inscrivez par l'un d'eux, le fournisseur peut verser une récompense au projet CashPilot. Elle n'est pas prise sur vos gains."
+      "funding": "Comment le projet est-il financé ? Certains liens de fournisseurs sont des liens de parrainage. Si vous vous inscrivez par l'un d'eux, le fournisseur peut verser une récompense au projet CashPilot. Elle n'est pas prise sur vos gains."
     },
     "control": {
       "title": "Vous gardez le contrôle",
@@ -167,7 +167,7 @@
       },
       "containers": {
         "title": "Chaque service dans son propre conteneur",
-        "text": "Chaque service lancé par CashPilot tourne à l'écart des autres, sans ses droits supplémentaires et avec une limite sur ses processus."
+        "text": "Chaque service lancé par CashPilot tourne isolé des autres, sans privilèges supplémentaires et avec un nombre de processus limité."
       },
       "lan": {
         "title": "Tenu à l'écart de votre réseau domestique",
@@ -185,7 +185,7 @@
       "lead": "Personne ne peut vous promettre un chiffre. Voici ce qui le fait bouger.",
       "country": {
         "title": "Votre pays",
-        "text": "Les fournisseurs paient davantage le trafic de certains pays que celui d'autres pays."
+        "text": "Les fournisseurs paient mieux le trafic venant de certains pays que d'autres."
       },
       "ip": {
         "title": "Votre type d'adresse IP",
@@ -193,7 +193,7 @@
       },
       "connection": {
         "title": "Votre connexion",
-        "text": "Plus de débit montant et pas de limite de données laissent de la place pour plus de trafic."
+        "text": "Un meilleur débit montant et une connexion sans plafond de données laissent de la place pour plus de trafic."
       },
       "uptime": {
         "title": "Temps de fonctionnement",
@@ -231,8 +231,8 @@
     "compare": {
       "title": "CashPilot face aux autres outils",
       "lead": "Des faits sur les autres outils open source qui font tourner plusieurs de ces services. Vérifié le {date}.",
-      "caption": "CashPilot et d'autres outils open source, fonction par fonction",
-      "feature": "Fonction",
+      "caption": "CashPilot et d'autres outils open source, point par point",
+      "feature": "Fonctionnalité",
       "rows": {
         "license": "Licence",
         "balances": "Relève les soldes de vos comptes chez les fournisseurs",
@@ -248,7 +248,7 @@
         "noLicense": "Pas de fichier de licence",
         "gplReadme": "Fichier GPL-3.0, mais le README interdit les copies modifiées",
         "estimates": "Non, des estimations seulement",
-        "claimed": "Annoncé, dans du code fermé",
+        "claimed": "Annoncé, en code fermé",
         "dockerOrPodman": "Oui, ou Podman",
         "betaMining": "Oui, minage en bêta"
       },
@@ -271,7 +271,7 @@
         },
         "earn": {
           "q": "Combien vais-je gagner ?",
-          "a": "Nous ne pouvons pas vous le dire. Cela dépend de votre pays, de votre type d'adresse IP, de votre connexion, de votre temps de fonctionnement et des services que vous faites tourner. Certaines configurations rapportent très peu. Le tableau de bord montre ce que vous gagnez vraiment."
+          "a": "Nous ne pouvons pas vous le dire. Cela dépend de votre pays, de votre type d'adresse IP, de votre connexion, du temps pendant lequel vos appareils restent allumés et des services que vous faites tourner. Certaines configurations rapportent très peu. Le tableau de bord montre ce que vous gagnez vraiment."
         },
         "free": {
           "q": "Pourquoi est-ce gratuit ?",
@@ -340,7 +340,7 @@
     "windows": {
       "metaTitle": "Télécharger CashPilot pour Windows",
       "title": "CashPilot Desktop pour Windows",
-      "installer": "Télécharger le programme d'installation",
+      "installer": "Télécharger l'installateur",
       "installerType": "Programme d'installation (.exe)",
       "portable": "Version portable",
       "portableType": "Application portable (.exe), sans installation",
@@ -421,7 +421,7 @@
         },
         "casaos": {
           "title": "CasaOS",
-          "text": "Importez le fichier compose comme application personnalisée, le temps que la fiche du store soit validée.",
+          "text": "Importez le fichier compose comme application personnalisée, en attendant que sa fiche soit validée dans le store.",
           "skills": "Coller un fichier et modifier deux tags d'image",
           "tools": "CasaOS 0.4.5 ou plus récent"
         },
@@ -440,7 +440,7 @@
       }
     },
     "paths": {
-      "title": "Laquelle me faut-il ?",
+      "title": "Quelle option choisir ?",
       "recommended": "Recommandé pour la plupart des gens",
       "skills": "Compétences requises",
       "tools": "Matériel requis",
@@ -541,7 +541,7 @@
         "text": "Les gains dépendent de votre pays, de votre connexion, de votre matériel et des fournisseurs. Ils peuvent être très faibles ou nuls. Les fournisseurs peuvent changer leurs tarifs à tout moment."
       },
       "law": {
-        "title": "Votre loi et votre contrat",
+        "title": "La loi et votre contrat",
         "text": "Vérifiez la loi de votre pays et les conditions de votre fournisseur d'accès internet avant de partager votre connexion ou de faire tourner un nœud. Vous êtes responsable des impôts sur ce que vous gagnez."
       },
       "providers": {
