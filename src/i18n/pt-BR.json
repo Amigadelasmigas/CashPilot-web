@@ -23,7 +23,6 @@
     "copy": "Copiar",
     "copied": "Copiado",
     "copyFailed": "Selecione e copie",
-    "copyLabel": "Copiar o comando",
     "yes": "Sim",
     "no": "Não",
     "notStated": "Não informado",
@@ -221,8 +220,8 @@
         "minimum": "Pagamento mínimo"
       },
       "signup": "Cadastre-se",
-      "signupLabel": "Cadastrar-se no {name} (link de indicação)",
-      "signupLabelPlain": "Cadastrar-se no {name}",
+      "signupLabel": "Cadastre-se no {name} (link de indicação)",
+      "signupLabelPlain": "Cadastre-se no {name}",
       "guideLabel": "Guia do CashPilot para {name}",
       "all": "Todos os {count} serviços na documentação",
       "referrals": "Todos os links de indicação",

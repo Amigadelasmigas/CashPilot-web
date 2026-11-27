@@ -19,7 +19,6 @@ const { t, id, code } = Astro.props;
     data-copy={id}
     data-done={t("common.copied")}
     data-failed={t("common.copyFailed")}
-    aria-label={t("common.copyLabel")}
   >
     <Icon name="copy" /><span data-copy-label aria-live="polite">{t("common.copy")}</span>
   </button>

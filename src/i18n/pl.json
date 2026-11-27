@@ -23,7 +23,6 @@
     "copy": "Kopiuj",
     "copied": "Skopiowano",
     "copyFailed": "Zaznacz i skopiuj",
-    "copyLabel": "Skopiuj polecenie",
     "yes": "Tak",
     "no": "Nie",
     "notStated": "Brak danych",
@@ -221,8 +220,8 @@
         "minimum": "Minimalna wypłata"
       },
       "signup": "Zarejestruj się",
-      "signupLabel": "Rejestracja: {name} (link polecający)",
-      "signupLabelPlain": "Rejestracja: {name}",
+      "signupLabel": "Zarejestruj się: {name} (link polecający)",
+      "signupLabelPlain": "Zarejestruj się: {name}",
       "guideLabel": "Poradnik CashPilot: {name}",
       "all": "Wszystkie usługi w dokumentacji ({count})",
       "referrals": "Wszystkie linki polecające",
