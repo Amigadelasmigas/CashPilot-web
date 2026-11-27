@@ -580,6 +580,7 @@
     "android": "CashPilot pour Android",
     "mcp": "Serveur MCP",
     "feed": "Flux des versions",
+    "x": "X : {handle}",
     "agents": "Pour les agents IA",
     "contact": "Contact",
     "legal": "Vérifiez la loi de votre pays et les conditions de votre fournisseur d'accès internet. Ceci n'est pas un conseil financier.",

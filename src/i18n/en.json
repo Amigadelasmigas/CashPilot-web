@@ -580,6 +580,7 @@
     "android": "CashPilot for Android",
     "mcp": "MCP server",
     "feed": "Releases feed",
+    "x": "X: {handle}",
     "agents": "For AI agents",
     "contact": "Contact",
     "legal": "Check your local law and your internet provider's terms. Not financial advice.",
