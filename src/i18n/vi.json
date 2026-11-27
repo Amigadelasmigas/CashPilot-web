@@ -493,6 +493,8 @@
     "links": "Liên kết",
     "youGet": "Bạn nhận được",
     "codeEntry": "Liên kết không tự chuyển mã. Hãy nhập {code} khi ứng dụng hỏi mã giới thiệu.",
+    "codeReferral": "Nếu biểu mẫu đăng ký hỏi mã giới thiệu, hãy nhập {code}.",
+    "codeCoupon": "Khi thanh toán, hãy nhập mã giảm giá {code}.",
     "guide": "Hướng dẫn CashPilot",
     "guideLabel": "Hướng dẫn CashPilot cho {name}",
     "toc": "Chuyển đến một nhóm",

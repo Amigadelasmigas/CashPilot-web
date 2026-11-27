@@ -493,6 +493,8 @@
     "links": "Linki",
     "youGet": "Ty dostajesz",
     "codeEntry": "Link nie przekazuje kodu. Wpisz {code}, gdy aplikacja poprosi o kod polecający.",
+    "codeReferral": "Jeśli formularz rejestracji poprosi o kod polecający, wpisz {code}.",
+    "codeCoupon": "Przy płatności wpisz kod kuponu {code}.",
     "guide": "Poradnik CashPilot",
     "guideLabel": "Poradnik CashPilot: {name}",
     "toc": "Przejdź do grupy",

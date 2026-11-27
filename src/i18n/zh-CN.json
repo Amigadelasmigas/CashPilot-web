@@ -493,6 +493,8 @@
     "links": "链接",
     "youGet": "你获得",
     "codeEntry": "该链接不会自动带上推荐码。当应用要求输入推荐码时，请输入 {code}。",
+    "codeReferral": "如果注册表单要求输入推荐码，请输入 {code}。",
+    "codeCoupon": "结账时请输入优惠码 {code}。",
     "guide": "CashPilot 指南",
     "guideLabel": "{name} 的 CashPilot 指南",
     "toc": "跳到某个类别",

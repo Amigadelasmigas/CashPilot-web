@@ -493,6 +493,8 @@
     "links": "Link",
     "youGet": "Tu ricevi",
     "codeEntry": "Il link non trasmette il codice. Scrivi {code} quando l'app ti chiede un codice referral.",
+    "codeReferral": "Se il modulo di iscrizione chiede un codice referral, scrivi {code}.",
+    "codeCoupon": "Al pagamento, scrivi il codice coupon {code}.",
     "guide": "Guida di CashPilot",
     "guideLabel": "Guida di CashPilot per {name}",
     "toc": "Vai a un gruppo",

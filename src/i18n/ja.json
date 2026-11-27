@@ -493,6 +493,8 @@
     "links": "リンク",
     "youGet": "利用者が受け取るもの",
     "codeEntry": "このリンクではコードが引き継がれません。アプリで紹介コードを求められたら {code} と入力してください。",
+    "codeReferral": "登録フォームで紹介コードを求められたら {code} と入力してください。",
+    "codeCoupon": "購入手続きでクーポンコード {code} を入力してください。",
     "guide": "CashPilot ガイド",
     "guideLabel": "{name} の CashPilot ガイド",
     "toc": "グループへ移動",

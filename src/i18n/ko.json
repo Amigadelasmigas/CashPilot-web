@@ -493,6 +493,8 @@
     "links": "링크",
     "youGet": "사용자가 받는 것",
     "codeEntry": "이 링크는 코드를 전달하지 않습니다. 앱에서 추천 코드를 물으면 {code} 코드를 입력하세요.",
+    "codeReferral": "가입 양식에서 추천 코드를 물으면 {code} 코드를 입력하세요.",
+    "codeCoupon": "결제할 때 쿠폰 코드 칸에 {code} 코드를 입력하세요.",
     "guide": "CashPilot 가이드",
     "guideLabel": "{name} 관련 CashPilot 가이드",
     "toc": "그룹으로 이동",
