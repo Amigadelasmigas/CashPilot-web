@@ -1,4 +1,10 @@
-# cashpilot.club
+<h1 align="center">cashpilot.club</h1>
+
+<p align="center">
+  <a href="https://github.com/GeiserX/CashPilot-web/actions/workflows/pages.yml"><img src="https://img.shields.io/github/actions/workflow/status/GeiserX/CashPilot-web/pages.yml?style=flat-square&label=deploy" alt="Deploy"></a>
+  <a href="https://github.com/GeiserX/CashPilot-web/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/GeiserX/CashPilot-web/ci.yml?style=flat-square&label=CI" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0--or--later-blue?style=flat-square" alt="License: GPL-3.0-or-later"></a>
+</p>
 
 The website of [CashPilot](https://github.com/GeiserX/CashPilot): a landing page, downloads for every system, the referral disclosure, privacy and disclaimer pages. Static, dark only, no cookies, no analytics, and no request to any other host at runtime.
 
@@ -16,7 +22,7 @@ The build reads live data from GitHub and Docker Hub: the service catalog, star 
 
 Download buttons point at the exact release the page was built from, so the version, sizes and checksums on the page always match the file.
 
-## Checks
+### Checks
 
 ```sh
 bun run i18n:check     # placeholder and HTML mismatches; --strict: no missing keys; --all: all 20 files
@@ -57,6 +63,6 @@ The Desktop and Android release workflows should send that dispatch (`event_type
 - No personal data about anyone. Credit "CashPilot contributors".
 - No trackers, cookies, newsletters or third-party requests.
 
-## Licence
+## License
 
 [GPL-3.0-or-later](LICENSE). CashPilot contributors.
