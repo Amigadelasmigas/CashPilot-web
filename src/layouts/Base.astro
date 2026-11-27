@@ -35,6 +35,8 @@ const ogImage = new URL("/og.png", SITE).href;
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#07070c" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
+    {/* Proves to impact.com that we own this site. Impact reads `value`, not `content`. */}
+    <meta name="impact-site-verification" {...{ value: "bf91ce2a-c525-4978-9253-b139268c1b49" }} />
     {noindex && <meta name="robots" content="noindex" />}
     {!noindex && <link rel="canonical" href={canonical} />}
     {
