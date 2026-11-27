@@ -17,8 +17,9 @@ const { t, service, idPrefix } = Astro.props;
 const tc = typedCode(service);
 const id = `${idPrefix}-${service.slug}-code`;
 const key = tc && { required: "referrals.codeEntry", referral: "referrals.codeReferral", coupon: "referrals.codeCoupon" }[tc.kind];
-// Codes are plain letters and digits, so they go into the sentence as markup as is.
-const html = tc && key ? t(key, { code: `<code id="${id}" dir="ltr">${tc.code}</code>` }) : "";
+// The code comes from the catalog, so it is escaped before it goes into the sentence as markup.
+const esc = (v: string) => v.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+const html = tc && key ? t(key, { code: `<code id="${id}" dir="ltr">${esc(tc.code)}</code>` }) : "";
 ---
 {
   tc && (
