@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "siteName": "CashPilot",
+    "titleSuffix": "CashPilot",
+    "ogImageAlt": "CashPilot: pagkakitaan ang hardware mong nakatengga at makita ang bawat payout sa iisang dashboard."
+  },
+  "nav": {
+    "skip": "Lumaktaw sa nilalaman",
+    "home": "Home ng CashPilot",
+    "docs": "Docs",
+    "github": "GitHub",
+    "download": "I-download",
+    "main": "Pangunahin",
+    "stars": "star"
+  },
+  "lang": {
+    "label": "Wika",
+    "suggest": "Mayroon ding Filipino na bersyon ang site na ito.",
+    "switch": "Ipakita sa Filipino",
+    "dismiss": "Huwag na, salamat"
+  },
+  "common": {
+    "copy": "Kopyahin",
+    "copied": "Nakopya na",
+    "copyFailed": "Piliin at kopyahin",
+    "copyLabel": "Kopyahin ang command",
+    "yes": "Oo",
+    "no": "Hindi",
+    "notStated": "Hindi nakasaad",
+    "noLimit": "Walang limit"
+  },
+  "disclosure": {
+    "short": "Kung mag-sign up ka sa isa sa mga link na ito, maaaring magbigay ang provider ng reward sa CashPilot project. Hindi ito kinukuha sa kita mo.",
+    "more": "Paano gumagana ang referral"
+  },
+  "home": {
+    "title": "CashPilot: magpatakbo ng mga passive income service sa sarili mong hardware",
+    "description": "Libre at open-source na software na nagpapatakbo ng bandwidth sharing, DePIN, GPU compute at mining service sa sarili mong mga makina, at ipinapakita ang bawat payout sa iisang dashboard.",
+    "hero": {
+      "pill": "Libre at open source, GPL-3.0",
+      "title": "Pagkakitaan ang hardware mong nakatengga. Makita ang bawat payout sa iisang dashboard.",
+      "lead": "Sine-set up ng CashPilot ang mga passive income service sa iyong mga computer, home server at Raspberry Pi. Binabasa nito ang balance mo sa bawat provider at itinatabi ang history sa iisang lugar, sa sarili mong makina.",
+      "download": "I-download",
+      "selfhost": "I-self-host gamit ang Docker",
+      "expect": "Hindi ang CashPilot ang nagbabayad sa iyo. Ang mga provider ang nagbabayad. Nakadepende ang kita sa iyong bansa, koneksyon at hardware.",
+      "imageAlt": "Ang dashboard ng CashPilot: ang balance, ang kita ngayong araw at ngayong buwan, ang mga service sa bawat makina, at ang kita bawat araw.",
+      "imageAltMobile": "Ang dashboard ng CashPilot sa phone: ang balance, at ang kita ngayong araw at ngayong buwan."
+    },
+    "stats": {
+      "label": "Ang CashPilot sa mga numero",
+      "stars": "GitHub star",
+      "pulls": "Docker pull",
+      "services": "suportadong service",
+      "note": "Mula sa GitHub at Docker Hub noong {date}."
+    },
+    "platforms": {
+      "title": "Gumagana sa",
+      "windows": "Windows",
+      "macos": "macOS",
+      "linux": "Linux",
+      "android": "Android",
+      "docker": "Docker",
+      "pi": "Raspberry Pi"
+    },
+    "how": {
+      "title": "Paano ito gumagana",
+      "lead": "Tatlong hakbang, at walang account sa amin.",
+      "steps": {
+        "install": {
+          "title": "I-install ang CashPilot",
+          "text": "Gamitin ang desktop app sa isang computer. O patakbuhin ang server gamit ang Docker sa home server, NAS o Raspberry Pi."
+        },
+        "pick": {
+          "title": "Piliin ang mga service mo",
+          "text": "Pumili sa catalog, mag-sign up sa provider at i-paste ang login mo. Para sa mga service na may Docker image, pinapatakbo ito ng CashPilot sa sarili nitong container. Para sa iba, binabasa nito ang balance mo."
+        },
+        "watch": {
+          "title": "Bantayan ang bawat payout",
+          "text": "Binabasa ng CashPilot ang mga balance mo bawat oras at itinatabi ang history. Kapag bumaba ang isang balance, tatanungin ka nito kung nabayaran ka na."
+        }
+      }
+    },
+    "categories": {
+      "title": "{count} service sa limang grupo",
+      "count": "{count} service",
+      "bandwidth": {
+        "name": "Bandwidth sharing",
+        "text": "Ibahagi ang internet bandwidth na hindi mo ginagamit sa mga kumpanya ng data at proxy."
+      },
+      "depin": {
+        "name": "DePIN",
+        "text": "Magpatakbo ng mga node para sa mga decentralised network na nagbabayad ng token."
+      },
+      "compute": {
+        "name": "GPU compute",
+        "text": "Paupahan ang graphics card mo para sa mga AI at rendering job."
+      },
+      "storage": {
+        "name": "Storage",
+        "text": "Paupahan ang bakanteng disk space mo sa mga storage network."
+      },
+      "mining": {
+        "name": "Mining",
+        "text": "Mag-mine gamit ang CPU o GPU mo, at makita ang mga ASIC miner sa network mo. Nasa beta pa."
+      },
+      "all": {
+        "name": "Lahat ng {count} sa docs",
+        "text": "May setup guide para sa bawat service, kasama ang mga kailangan nito."
+      }
+    },
+    "tour": {
+      "title": "Silipin ang loob",
+      "lead": "Totoong mga screen mula sa mga app, gamit ang demo data. Pumili ng screen para makita ito nang buo.",
+      "fleet": {
+        "title": "Fleet",
+        "text": "Bawat makina, ang system nito, at kung kailan ito huling nag-report. Nagiging pula ang makinang tumigil sa pag-report.",
+        "alt": "Ang Fleet page: limang makina kasama ang kanilang system, version at kung kailan huling nag-report ang bawat isa. Offline ang isang makina."
+      },
+      "catalog": {
+        "title": "Catalog",
+        "text": "Lahat ng suportadong service, may filter ayon sa grupo.",
+        "alt": "Ang Catalog page: ang filter ng grupo at ang mga service na tumatakbo sa fleet mo, bawat isa kasama ang uri nito."
+      },
+      "payouts": {
+        "title": "Payouts",
+        "text": "Aling node data ang kailangan mong i-back up, at saan nagpapadala ng bayad ang bawat service.",
+        "alt": "Ang Payouts page: isang kahon na humihiling na i-back up mo ang MystNodes identity, na nasa disk lang ng isang makina."
+      },
+      "desktop": {
+        "title": "Desktop app",
+        "text": "Ang buong dashboard sa isang window sa Windows, macOS o Linux. Puwede rin itong kumonekta sa CashPilot server na pinapatakbo mo na.",
+        "alt": "Ang CashPilot Desktop sa macOS, ipinapakita ang balance at ang kita ngayong araw at ngayong buwan."
+      },
+      "android": {
+        "title": "Android companion",
+        "text": "Binabantayan ang mga earning app sa phone mo at nire-report ang status nila sa iyong CashPilot server o desktop app.",
+        "alt": "Ang home screen ng Android app: tumatakbo ang lahat ng anim na earning app, kasama ang data na nagamit ng bawat isa sa loob ng 24 oras."
+      }
+    },
+    "catch": {
+      "title": "Ano ang kapalit?",
+      "lead": "Makatwirang tanong. Narito ang mga totoo.",
+      "free": {
+        "title": "Libre",
+        "text": "Walang bayad, walang paid plan at walang ads."
+      },
+      "open": {
+        "title": "Open source",
+        "text": "GPL-3.0. Mababasa mo ang bawat linya sa GitHub."
+      },
+      "hardware": {
+        "title": "Tumatakbo sa hardware mo",
+        "text": "Sa mga makina at koneksyon mo. Wala kaming pinapatakbong server para sa iyo."
+      },
+      "account": {
+        "title": "Walang account sa amin",
+        "text": "Walang sign-up at walang email. Sa mga provider lang na pinili mo ka magsa-sign up."
+      },
+      "funding": "Paano ito napopondohan? Referral link ang ilan sa mga link ng provider. Kung mag-sign up ka sa isa sa mga ito, maaaring magbigay ang provider ng reward sa CashPilot project. Hindi ito kinukuha sa kita mo."
+    },
+    "control": {
+      "title": "Ikaw pa rin ang may kontrol",
+      "lead": "Tumatakbo ang CashPilot sa mga makina mo. Makikita mo kung ano ang ginagawa nito at mapapahinto mo ito anumang oras.",
+      "logins": {
+        "title": "Nasa makina mo lang ang mga login mo",
+        "text": "Iniimbak ito ng CashPilot nang naka-encrypt sa sarili nitong database. Ipinapadala lang ang bawat login sa service na nangangailangan nito."
+      },
+      "containers": {
+        "title": "Bawat service sa sarili nitong container",
+        "text": "Hiwalay sa iba ang bawat service na pinapatakbo ng CashPilot, tinanggalan ng sobrang pahintulot at may limit sa mga proseso nito."
+      },
+      "lan": {
+        "title": "Nakahiwalay sa home network mo",
+        "text": "Sa bagong install ng Docker, hindi maaabot ng mga service na pinapatakbo nito ang LAN mo, ang router mo, o ang makinang pinagtatakbuhan nila. <a href=\"{securityUrl}\">Pagprotekta sa home network mo</a>."
+      },
+      "stop": {
+        "title": "Ihinto ang kahit ano anumang oras",
+        "text": "Isang click lang para ihinto o alisin ang isang service. May guide kung paano tuluyang alisin ang CashPilot."
+      },
+      "ratings": "Bawat provider ay may grade mula A hanggang F batay sa parehong sampung tanong, at may link sa source ang bawat sagot.",
+      "ratingsLink": "Tingnan ang mga grade ng provider"
+    },
+    "earnings": {
+      "title": "Ano ang nakakaapekto sa kita mo",
+      "lead": "Walang makakapangako sa iyo ng eksaktong halaga. Ito ang mga bagay na nagpapagalaw dito.",
+      "country": {
+        "title": "Ang bansa mo",
+        "text": "Mas malaki ang bayad ng mga provider para sa traffic mula sa ilang bansa kaysa sa iba."
+      },
+      "ip": {
+        "title": "Uri ng IP address mo",
+        "text": "Maraming service ang nagbabayad lang sa mga koneksyon sa bahay, hindi sa mga server sa data centre."
+      },
+      "connection": {
+        "title": "Ang koneksyon mo",
+        "text": "Mas mabilis na upload at walang data cap ay nagbibigay ng puwang para sa mas maraming traffic."
+      },
+      "uptime": {
+        "title": "Uptime",
+        "text": "Mas malaki ang kita ng device na laging bukas kaysa sa device na natutulog."
+      },
+      "devices": {
+        "title": "Bilang ng device",
+        "text": "Karamihan ng service ay pumapayag ng isang device bawat IP address at takdang bilang bawat account."
+      },
+      "hardware": {
+        "title": "Ang GPU at hardware mo",
+        "text": "Nakadepende ang GPU compute at mining sa card mo, sa presyo ng kuryente mo at sa merkado."
+      },
+      "note": "May mga setup na napakaliit ng kita. Ipinapakita ng dashboard ang totoong kinikita mo, para matigil mo ang hindi sulit."
+    },
+    "services": {
+      "title": "Mga sikat na service",
+      "lead": "Ilang service mula sa bawat grupo. Nakalista sa docs ang lahat, may guide para sa bawat isa.",
+      "caption": "Mga sikat na service at ang mga kailangan nila",
+      "col": {
+        "service": "Service",
+        "homeIp": "Kailangan ng home IP",
+        "devicesPerIp": "Device bawat IP",
+        "payout": "Payout",
+        "minimum": "Minimum na payout"
+      },
+      "signup": "Mag-sign up",
+      "signupLabel": "Mag-sign up sa {name} (referral link)",
+      "signupLabelPlain": "Mag-sign up sa {name}",
+      "guideLabel": "CashPilot guide para sa {name}",
+      "all": "Lahat ng {count} service sa docs",
+      "referrals": "Lahat ng referral link",
+      "notStatedNote": "Ang – ay nangangahulugang hindi ito sinasabi ng catalog."
+    },
+    "compare": {
+      "title": "Paano ikinukumpara ang CashPilot",
+      "lead": "Mga katotohanan tungkol sa ibang open-source tool na nagpapatakbo ng ilan sa mga service na ito. Sinuri noong {date}.",
+      "caption": "Ang CashPilot at ibang open-source tool, bawat feature",
+      "feature": "Feature",
+      "rows": {
+        "license": "Lisensya",
+        "balances": "Binabasa ang balance mula sa mga provider account mo",
+        "fleet": "Iisang dashboard para sa maraming server",
+        "desktop": "Desktop app",
+        "android": "Android app",
+        "gpu": "GPU compute at mining",
+        "docker": "Kailangan ng Docker"
+      },
+      "values": {
+        "gpl": "GPL-3.0",
+        "proprietary": "Proprietary",
+        "noLicense": "Walang license file",
+        "gplReadme": "May GPL-3.0 file, pero ipinagbabawal ng README ang binagong kopya",
+        "estimates": "Hindi, tantiya lang",
+        "claimed": "Sinasabing mayroon, sa closed code",
+        "dockerOrPodman": "Oo, o Podman",
+        "betaMining": "Oo, nasa beta ang mining"
+      },
+      "more": "Buong paghahambing, may source sa bawat cell"
+    },
+    "faq": {
+      "title": "Mga tanong",
+      "items": {
+        "slow": {
+          "q": "Babagal ba ang internet ko?",
+          "a": "Puwede. Pinapadaan ng mga bandwidth service ang traffic ng ibang kumpanya sa koneksyon mo, kaya gumagamit sila ng bahagi ng upload at download mo. Ipinapakita ng CashPilot ang paggamit ng network ng bawat makina, para makita mo kung ano ang pinakamalakas gumamit at maihinto ito."
+        },
+        "legal": {
+          "q": "Legal ba ito?",
+          "a": "Depende kung saan ka nakatira at sa kontrata mo sa internet. May mga internet provider na nagbabawal sa pagbabahagi o muling pagbebenta ng koneksyon mo. Alamin ang batas sa lugar mo at ang terms ng internet provider mo bago ka magsimula. Hindi ito legal na payo."
+        },
+        "safe": {
+          "q": "Ligtas ba ito?",
+          "a": "Pinapagamit ng mga bandwidth service ang IP address mo sa traffic ng ibang tao, kaya basahin muna ang terms ng bawat provider. Pinapatakbo ng CashPilot ang bawat service na sinisimulan nito sa sarili nitong container at, sa bagong install ng Docker, inilalayo ito sa home network mo. Basahin ang <a href=\"{securityUrl}\">Pagprotekta sa home network mo</a> bago ka magsimula."
+        },
+        "earn": {
+          "q": "Magkano ang kikitain ko?",
+          "a": "Hindi namin masasabi. Nakadepende ito sa bansa mo, uri ng IP address mo, koneksyon mo, uptime mo at sa mga service na pinapatakbo mo. May mga setup na napakaliit ng kita. Ipinapakita ng dashboard ang totoong kinikita mo."
+        },
+        "free": {
+          "q": "Bakit ito libre?",
+          "a": "Ang CashPilot ay free software sa ilalim ng GPL-3.0 license, gawa ng mga contributor nito. Referral link ang ilan sa mga link ng provider, at nakakatulong ang mga reward mula rito na pondohan ang project. <a href=\"{referralsUrl}\">Paano gumagana ang referral</a>."
+        },
+        "docker": {
+          "q": "Kailangan ko ba ng Docker?",
+          "a": "Oo, para sa mga service na pinapatakbo ng CashPilot, dahil tumatakbo sila sa mga container. Gumagana ang desktop app sa Docker o Podman, at tutulungan ka ng setup wizard nito na i-install ang Docker. Hindi kailangan ng Android app ang Docker, pero nagre-report ito sa isang CashPilot server o desktop app."
+        },
+        "pi": {
+          "q": "Gumagana ba ito sa Raspberry Pi?",
+          "a": "Oo, sa Pi 3, 4 o 5 na may 64-bit na system. Karamihan ng service ay may build para sa ARM, at bago mag-deploy, sinusuri ng CashPilot kung tatakbo ang isang service sa CPU mo. <a href=\"{armUrl}\">Pagpapatakbo sa ARM</a>."
+        },
+        "data": {
+          "q": "Nakikita ba ng CashPilot project ang mga login o kita ko?",
+          "a": "Hindi. Tumatakbo ang CashPilot sa mga makina mo at walang ipinapadala sa project. Nasa sarili mong CashPilot ang mga login mo, naka-encrypt sa database nito. <a href=\"{privacyUrl}\">Privacy</a>."
+        }
+      }
+    },
+    "cta": {
+      "title": "Handa ka na bang subukan?",
+      "text": "Kunin ang desktop app, o patakbuhin ang server gamit ang Docker. Parehong libre.",
+      "download": "I-download",
+      "github": "Tingnan ang source sa GitHub",
+      "releases": "Para malaman kapag may bagong version, gamitin ang Watch sa GitHub o ang <a href=\"{feedUrl}\">releases feed</a>."
+    }
+  },
+  "download": {
+    "title": "I-download ang CashPilot",
+    "metaTitle": "I-download ang CashPilot para sa Windows, macOS, Linux, Android at Docker",
+    "description": "Libreng download ng CashPilot para sa Windows, macOS, Linux at Android, at ang Docker server para sa home server, NAS at Raspberry Pi. Walang kailangang account.",
+    "lead": "Piliin ang system mo. Libre ang bawat download. Walang account, walang email, walang sign-up.",
+    "pickerLabel": "Piliin ang system mo",
+    "detected": "Ang system mo",
+    "otherSystems": "Ibang system",
+    "ios": "Walang iPhone app. I-install ang desktop app sa isang computer, o patakbuhin ang server, saka buksan ang dashboard sa Safari.",
+    "pathsHint": "Hindi sigurado kung alin ang kailangan mo?",
+    "pathsLink": "Ikumpara ang mga opsyon",
+    "fileInfo": "{type}, {size}",
+    "version": "Version {version}",
+    "source": "Source code",
+    "allReleases": "Lahat ng release",
+    "tiles": {
+      "windows": {
+        "name": "Windows",
+        "hint": "Desktop app"
+      },
+      "macos": {
+        "name": "macOS",
+        "hint": "Desktop app"
+      },
+      "linux": {
+        "name": "Linux",
+        "hint": "Desktop app"
+      },
+      "android": {
+        "name": "Android",
+        "hint": "Companion app"
+      },
+      "docker": {
+        "name": "Docker",
+        "hint": "Server"
+      }
+    },
+    "runtime": "Tumatakbo ang mga service sa mga container. Gumagana ang app sa Docker o Podman, at tutulungan ka ng setup wizard nito na i-install ang Docker kung wala pa ito.",
+    "windows": {
+      "metaTitle": "I-download ang CashPilot para sa Windows",
+      "title": "CashPilot Desktop para sa Windows",
+      "installer": "I-download ang installer",
+      "installerType": "Installer (.exe)",
+      "portable": "Portable na bersyon",
+      "portableType": "Portable app (.exe), walang install",
+      "arch": "64-bit (x64). 64-bit ang karamihan ng PC.",
+      "requires": "Kailangan ng Windows 10 22H2, o Windows 11 23H2 o mas bago.",
+      "warnTitle": "Nagbababala ang Windows o ang antivirus mo?",
+      "warnText": "Hindi pa code-signed ang Windows app, kaya maaaring ipakita ng SmartScreen ang \"Windows protected your PC\". I-click ang More info, saka Run anyway. Para matiyak na ang file na inilabas namin ang hawak mo, ikumpara ang SHA-256 checksum nito sa listahan sa ibaba.",
+      "verify": "Sa PowerShell:"
+    },
+    "macos": {
+      "metaTitle": "I-download ang CashPilot para sa macOS",
+      "title": "CashPilot Desktop para sa macOS",
+      "button": "I-download para sa Mac",
+      "type": "Zip file",
+      "arch": "Apple silicon (M1 at mas bago).",
+      "minimum": "Kailangan ng macOS 12 Monterey o mas bago.",
+      "requires": "Naka-sign at notarized ng Apple. I-unzip ito at buksan ang cashpilot-desktop.app.",
+      "intel": "Intel na Mac? Walang Intel build ang desktop app. <a href=\"{dockerUrl}\">Patakbuhin na lang ang server gamit ang Docker</a>.",
+      "verify": "Sa Terminal:"
+    },
+    "linux": {
+      "metaTitle": "I-download ang CashPilot para sa Linux",
+      "title": "CashPilot Desktop para sa Linux",
+      "button": "I-download para sa Linux",
+      "type": "tar.gz archive",
+      "arch": "x86_64 (64-bit na PC).",
+      "minimum": "Kailangan ng glibc 2.34 o mas bago: Ubuntu 22.04, Debian 12, o mas bago.",
+      "requires": "Kailangan ng GTK 3 at WebKitGTK 4.1. I-extract ang archive at patakbuhin ang CashPilot Desktop.",
+      "server": "Magse-set up ng server o Raspberry Pi? <a href=\"{dockerUrl}\">Gamitin ang Docker</a>.",
+      "verify": "Sa terminal:"
+    },
+    "android": {
+      "metaTitle": "I-download ang CashPilot para sa Android",
+      "title": "CashPilot para sa Android",
+      "button": "I-download ang APK",
+      "type": "APK file",
+      "requires": "Android 8.0 o mas bago. Hihilingin ng phone mo na payagan ang pag-install mula sa browser mo.",
+      "what": "Binabantayan ng Android app ang mga earning app sa phone mo at nire-report ang status nila sa iyong CashPilot server o desktop app. Kailangan nito ang isa sa dalawa para may mapag-reportan.",
+      "qr": "I-scan gamit ang phone mo para i-download ang APK.",
+      "qrAlt": "QR code para sa download link ng Android APK",
+      "stores": "Wala sa Google Play. F-Droid: malapit na."
+    },
+    "docker": {
+      "metaTitle": "I-self-host ang CashPilot gamit ang Docker",
+      "title": "CashPilot server gamit ang Docker",
+      "lead": "Para sa home server, NAS, Raspberry Pi o anumang makinang laging bukas. Bubuksan mo ang dashboard sa browser.",
+      "requires": "Kailangan ng Docker na may Compose, sa Linux, macOS o Windows, amd64 o arm64.",
+      "step1": "I-download ang compose file at simulan ang CashPilot:",
+      "step2": "Ipakita ang setup token:",
+      "step3": "Buksan ang {url} at ilagay ang token. Ang setup wizard na ang bahala sa iba.",
+      "viewSource": "Basahin ang compose file bago ito patakbuhin",
+      "images": "Naka-pin sa compose file ang mga image na {ui} at {worker}.",
+      "guide": "Buong guide: Getting started"
+    },
+    "checksums": {
+      "title": "Mga SHA-256 checksum, version {version}",
+      "all": "SHA256SUMS file"
+    },
+    "homelab": {
+      "title": "Pag-install sa home server",
+      "lead": "Nakaayos mula pinakamadali hanggang pinakamahirap.",
+      "option": "Opsyon",
+      "caption": "Pag-install sa home server, mula pinakamadali hanggang pinakamahirap",
+      "skills": "Kailangang kasanayan",
+      "tools": "Kailangang gamit",
+      "items": {
+        "unraid": {
+          "title": "Unraid",
+          "text": "I-install ang dalawang CashPilot template mula sa Community Applications.",
+          "skills": "Marunong lang gumamit ng Apps tab ng Unraid",
+          "tools": "Isang Unraid server"
+        },
+        "truenas": {
+          "title": "TrueNAS SCALE",
+          "text": "Hanapin ang CashPilot sa Discover Apps, sa community train.",
+          "skills": "Marunong lang gumamit ng apps page ng TrueNAS",
+          "tools": "Isang TrueNAS SCALE server"
+        },
+        "casaos": {
+          "title": "CasaOS",
+          "text": "I-import ang compose file bilang custom app habang nire-review pa ang listing sa store.",
+          "skills": "Mag-paste ng file at mag-edit ng dalawang image tag",
+          "tools": "CasaOS 0.4.5 o mas bago"
+        },
+        "pi": {
+          "title": "Raspberry Pi",
+          "text": "Patakbuhin ang mga Docker command sa itaas sa 64-bit na Raspberry Pi OS.",
+          "skills": "Basic na paggamit ng terminal",
+          "tools": "Isang Pi 3, 4 o 5 na may Docker"
+        },
+        "fleet": {
+          "title": "Ilang makina",
+          "text": "Magpatakbo ng isang dashboard at isang worker sa bawat makina. Ipinapakita ang bawat numero ayon sa makina.",
+          "skills": "Docker Compose at ang home network mo",
+          "tools": "Dalawa o higit pang makina na may Docker"
+        }
+      }
+    },
+    "paths": {
+      "title": "Alin ang kailangan ko?",
+      "recommended": "Inirerekomenda para sa karamihan",
+      "skills": "Kailangang kasanayan",
+      "tools": "Kailangang gamit",
+      "desktop": {
+        "title": "Desktop app",
+        "text": "Ang CashPilot sa isang window sa computer mo. Pinapatakbo nito ang mga service sa computer na iyon at ipinapakita ang dashboard.",
+        "skills": "Wala",
+        "tools": "Isang Windows, Mac o Linux na computer na laging bukas"
+      },
+      "server": {
+        "title": "Server gamit ang Docker",
+        "text": "Ang CashPilot sa home server, NAS o Raspberry Pi. Kaya nitong pamahalaan ang ilang makina mula sa iisang dashboard.",
+        "skills": "Basic na paggamit ng terminal",
+        "tools": "Isang makinang laging bukas, na may Docker"
+      },
+      "android": {
+        "title": "Android companion",
+        "text": "Binabantayan ang mga earning app sa phone mo at idinadagdag ang phone sa dashboard mo.",
+        "skills": "Wala",
+        "tools": "Isang Android phone at isang CashPilot server o desktop app"
+      }
+    },
+    "more": {
+      "title": "Iba pang paraan para kumonekta",
+      "mcp": {
+        "title": "MCP server para sa mga AI assistant",
+        "text": "Hinahayaan ang isang AI assistant na basahin ang status at kita mo sa CashPilot. Version {version}, para sa Windows, macOS at Linux."
+      },
+      "ha": {
+        "title": "Home Assistant integration",
+        "text": "Ipinapakita ang kita at mga service mo sa CashPilot sa Home Assistant."
+      }
+    }
+  },
+  "referrals": {
+    "title": "Mga referral link",
+    "metaTitle": "Mga referral link ng CashPilot at kung paano gumagana ang mga ito",
+    "description": "Bawat link ng provider na may CashPilot referral code, ano ang ibig sabihin nito para sa iyo, at paano mag-sign up nang wala nito.",
+    "lead": "Nakalista sa page na ito ang bawat link ng provider na may CashPilot referral code, at ang ibig sabihin ng bawat isa para sa iyo.",
+    "howTitle": "Paano gumagana ang referral",
+    "how1": "Kung mag-sign up ka sa isang provider sa isa sa mga link na ito, maaaring magbigay ang provider ng reward sa CashPilot project. Hindi ito kinukuha sa kita mo.",
+    "how2": "May ilang provider na nagbibigay rin sa iyo ng bonus kapag nag-sign up ka sa link. Ipinapakita namin ito kung nakalista ito sa catalog.",
+    "how3": "Hindi mo kailanman kailangang gamitin ang mga link na ito. Ipinapakita rin ng bawat entry ang sariling website ng provider, para makapag-sign up ka nang walang referral.",
+    "how4": "Nakakatulong ang mga reward na pondohan ang project.",
+    "count": "{count} provider, mula sa catalog noong {date}.",
+    "code": "Code",
+    "provider": "Provider",
+    "link": "Mag-sign up gamit ang referral",
+    "website": "Website ng provider (walang referral)",
+    "links": "Mga link",
+    "youGet": "Makukuha mo",
+    "projectGets": "Makukuha ng project",
+    "codeEntry": "Hindi ipinapasa ng link ang code. I-type ang {code} kapag humingi ang app ng referral code.",
+    "guide": "CashPilot guide",
+    "guideLabel": "CashPilot guide para sa {name}",
+    "toc": "Pumunta sa isang grupo",
+    "tocCount": "{count} na may referral link",
+    "caption": "{group}: mga referral link at ang ibinibigay ng bawat isa"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "metaTitle": "Privacy",
+    "description": "Ano ang kinokolekta ng website at mga app ng CashPilot: walang kinokolekta ang website, at walang ipinapadala ang mga app sa project.",
+    "lead": "Sa madaling salita: walang kinokolekta ang website na ito, at walang ipinapadala ang mga CashPilot app sa project.",
+    "site": {
+      "title": "Ang website na ito",
+      "p1": "Walang cookie, walang analytics, walang tracking pixel at walang ads. Walang nilo-load ang page mula sa ibang website. Bahagi ng site ang mga font.",
+      "p2": "Kapag pumili ka ng wika, itinatabi ng browser mo ang pinili mo sa local storage nito. Nananatili ito sa device mo at hindi kailanman ipinapadala sa amin.",
+      "p3": "Naka-host ang site na ito sa GitHub Pages, at dinadala ng Cloudflare ang traffic papunta rito. Maaaring i-log ng dalawa ang IP address ng bawat pagbisita para sa seguridad, at maaaring hilingin ng Cloudflare sa browser mo na mag-report dito ng mga network error. Basahin ang <a href=\"{githubPrivacyUrl}\">privacy statement ng GitHub</a> at ang <a href=\"{cloudflarePrivacyUrl}\">privacy policy ng Cloudflare</a>."
+    },
+    "apps": {
+      "title": "Ang mga CashPilot app",
+      "p1": "Walang telemetry ang web server, ang desktop app at ang Android app. Wala silang ipinapadala sa CashPilot project.",
+      "p2": "Nasa sarili mong CashPilot ang mga login at kita mo. Kumokonekta lang ang mga app sa mga service na kailangan nila: ang mga provider na sine-set up mo, ang GitHub para tumingin ng bagong version, mga public IP at exchange-rate service, at mga blockchain explorer para sa mga on-chain balance.",
+      "p3": "Sa ngayon, nilo-load din ng web dashboard ang mga font nito mula sa Google Fonts at ang chart library nito mula sa jsDelivr. Nakalista sa docs ang <a href=\"{comparisonUrl}\">bawat outbound call</a> at kung paano i-off ang mga opsyonal."
+    },
+    "providers": {
+      "title": "Mga provider",
+      "p1": "Kapag nag-sign up ka sa isang provider, ang sariling privacy policy ng provider na iyon ang susundin. Sinasabi ng referral link sa provider na galing ka sa CashPilot."
+    },
+    "contact": {
+      "title": "Contact",
+      "p1": "Mga tanong tungkol sa privacy: {email}."
+    }
+  },
+  "disclaimer": {
+    "title": "Disclaimer",
+    "metaTitle": "Disclaimer",
+    "description": "Hindi nagbibigay ang CashPilot ng payong pinansyal o legal, walang ipinapangakong kita, at hindi bahagi ng mga provider na pinapatakbo nito.",
+    "lead": "Pakibasa muna ito bago ka magsimula.",
+    "items": {
+      "advice": {
+        "title": "Hindi payong pinansyal o legal",
+        "text": "Walang anuman sa site na ito o sa mga app ang payong pinansyal, legal o tungkol sa buwis."
+      },
+      "earnings": {
+        "title": "Walang ipinapangakong kita",
+        "text": "Nakadepende ang kita sa iyong bansa, koneksyon, hardware at sa mga provider. Maaari itong napakaliit o zero. Maaaring baguhin ng mga provider ang kanilang rate anumang oras."
+      },
+      "law": {
+        "title": "Ang batas at kontrata mo",
+        "text": "Alamin ang batas sa lugar mo at ang terms ng internet provider mo bago mo ibahagi ang koneksyon mo o magpatakbo ng node. Ikaw ang responsable sa anumang buwis sa kinikita mo."
+      },
+      "providers": {
+        "title": "Mga independiyenteng provider",
+        "text": "Hiwalay na mga kumpanya ang mga provider. Hindi bahagi nila ang CashPilot at hindi nito kontrolado ang kanilang terms, payout o desisyon sa account. May ilang provider na nagbibigay ng referral reward sa project."
+      },
+      "warranty": {
+        "title": "Walang warranty",
+        "text": "Ang CashPilot ay free software sa ilalim ng GPL-3.0-or-later license. Wala itong anumang warranty, ayon sa sections 15 at 16 ng license."
+      },
+      "trademarks": {
+        "title": "Mga trademark",
+        "text": "Pag-aari ng kani-kanilang may-ari ang mga pangalan at logo ng mga provider at platform. Ginagamit lang ang mga ito rito para sabihin kung ano ang gumagana kasama ng CashPilot."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Hindi nakita ang page",
+    "text": "Wala ang page na ito. Baka nailipat na ito.",
+    "home": "Pumunta sa home page",
+    "download": "Pumunta sa mga download"
+  },
+  "footer": {
+    "tagline": "Magpatakbo ng mga passive income service sa sarili mong hardware, at makita ang bawat payout sa iisang dashboard.",
+    "product": "Produkto",
+    "project": "Project",
+    "about": "Tungkol dito",
+    "download": "I-download",
+    "docs": "Dokumentasyon",
+    "referrals": "Mga referral link",
+    "privacy": "Privacy",
+    "disclaimer": "Disclaimer",
+    "web": "CashPilot server",
+    "desktop": "CashPilot Desktop",
+    "android": "CashPilot para sa Android",
+    "mcp": "MCP server",
+    "feed": "Releases feed",
+    "agents": "Para sa mga AI agent",
+    "contact": "Contact",
+    "legal": "Alamin ang batas sa lugar mo at ang terms ng internet provider mo. Hindi ito payong pinansyal.",
+    "credit": "Gawa ng mga contributor ng CashPilot. Free software sa ilalim ng GPL-3.0-or-later."
+  },
+  "categories": {
+    "bandwidth": "Bandwidth sharing",
+    "depin": "DePIN",
+    "compute": "GPU compute",
+    "storage": "Storage",
+    "mining": "Mining"
+  },
+  "payment": {
+    "paypal": "PayPal",
+    "crypto": "Crypto",
+    "giftcard": "Gift card",
+    "amazon_giftcard": "Amazon gift card",
+    "wise": "Wise",
+    "bank": "Bank transfer",
+    "stripe": "Stripe"
+  }
+}

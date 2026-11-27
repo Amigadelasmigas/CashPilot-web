@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "siteName": "CashPilot",
+    "titleSuffix": "CashPilot",
+    "ogImageAlt": "CashPilot: manfaatkan perangkat Anda yang menganggur dan lihat semua pembayaran di satu dasbor."
+  },
+  "nav": {
+    "skip": "Langsung ke konten",
+    "home": "Beranda CashPilot",
+    "docs": "Dokumentasi",
+    "github": "GitHub",
+    "download": "Unduh",
+    "main": "Utama",
+    "stars": "bintang"
+  },
+  "lang": {
+    "label": "Bahasa",
+    "suggest": "Situs ini juga tersedia dalam Bahasa Indonesia.",
+    "switch": "Tampilkan dalam Bahasa Indonesia",
+    "dismiss": "Tidak, terima kasih"
+  },
+  "common": {
+    "copy": "Salin",
+    "copied": "Tersalin",
+    "copyFailed": "Pilih lalu salin",
+    "copyLabel": "Salin perintah",
+    "yes": "Ya",
+    "no": "Tidak",
+    "notStated": "Tidak disebutkan",
+    "noLimit": "Tanpa batas"
+  },
+  "disclosure": {
+    "short": "Jika Anda mendaftar lewat salah satu tautan ini, penyedia mungkin memberi imbalan kepada proyek CashPilot. Imbalan itu tidak diambil dari penghasilan Anda.",
+    "more": "Cara kerja referral"
+  },
+  "home": {
+    "title": "CashPilot: jalankan layanan penghasilan pasif di perangkat Anda sendiri",
+    "description": "Perangkat lunak gratis dan open source yang menjalankan layanan berbagi bandwidth, DePIN, komputasi GPU, dan mining di mesin Anda sendiri, serta menampilkan semua pembayaran di satu dasbor.",
+    "hero": {
+      "pill": "Gratis dan open source, GPL-3.0",
+      "title": "Manfaatkan perangkat Anda yang menganggur. Lihat semua pembayaran di satu dasbor.",
+      "lead": "CashPilot memasang layanan penghasilan pasif di komputer, server rumahan, dan Raspberry Pi Anda. CashPilot membaca saldo Anda dari setiap penyedia dan menyimpan riwayatnya di satu tempat, di mesin Anda sendiri.",
+      "download": "Unduh",
+      "selfhost": "Self-host dengan Docker",
+      "expect": "CashPilot tidak membayar Anda. Yang membayar adalah penyedianya. Penghasilan bergantung pada negara, koneksi, dan perangkat Anda.",
+      "imageAlt": "Dasbor CashPilot: saldo, penghasilan hari ini dan bulan ini, layanan di setiap mesin, dan penghasilan per hari.",
+      "imageAltMobile": "Dasbor CashPilot di ponsel: saldo, serta penghasilan hari ini dan bulan ini."
+    },
+    "stats": {
+      "label": "CashPilot dalam angka",
+      "stars": "bintang GitHub",
+      "pulls": "pull Docker",
+      "services": "layanan yang didukung",
+      "note": "Dari GitHub dan Docker Hub pada {date}."
+    },
+    "platforms": {
+      "title": "Berjalan di",
+      "windows": "Windows",
+      "macos": "macOS",
+      "linux": "Linux",
+      "android": "Android",
+      "docker": "Docker",
+      "pi": "Raspberry Pi"
+    },
+    "how": {
+      "title": "Cara kerjanya",
+      "lead": "Tiga langkah, tanpa akun di tempat kami.",
+      "steps": {
+        "install": {
+          "title": "Pasang CashPilot",
+          "text": "Gunakan aplikasi desktop di satu komputer. Atau jalankan server dengan Docker di server rumahan, NAS, atau Raspberry Pi."
+        },
+        "pick": {
+          "title": "Pilih layanan Anda",
+          "text": "Pilih dari katalog, daftar di penyedia, lalu tempel data login Anda. Untuk layanan yang punya image Docker, CashPilot menjalankannya di container tersendiri. Untuk layanan lainnya, CashPilot membaca saldo Anda."
+        },
+        "watch": {
+          "title": "Pantau setiap pembayaran",
+          "text": "CashPilot membaca saldo Anda setiap jam dan menyimpan riwayatnya. Saat saldo turun, CashPilot bertanya apakah Anda sudah dibayar."
+        }
+      }
+    },
+    "categories": {
+      "title": "{count} layanan dalam lima kelompok",
+      "count": "{count} layanan",
+      "bandwidth": {
+        "name": "Berbagi bandwidth",
+        "text": "Bagikan bandwidth internet yang tidak Anda pakai kepada perusahaan data dan proxy."
+      },
+      "depin": {
+        "name": "DePIN",
+        "text": "Jalankan node untuk jaringan terdesentralisasi yang membayar dalam token."
+      },
+      "compute": {
+        "name": "Komputasi GPU",
+        "text": "Sewakan kartu grafis Anda untuk pekerjaan AI dan rendering."
+      },
+      "storage": {
+        "name": "Penyimpanan",
+        "text": "Sewakan ruang disk yang tidak terpakai ke jaringan penyimpanan."
+      },
+      "mining": {
+        "name": "Mining",
+        "text": "Lakukan mining dengan CPU atau GPU Anda, dan lihat miner ASIC di jaringan Anda. Masih beta."
+      },
+      "all": {
+        "name": "Semua {count} di dokumentasi",
+        "text": "Panduan penyiapan untuk setiap layanan, beserta kebutuhannya."
+      }
+    },
+    "tour": {
+      "title": "Lihat ke dalam",
+      "lead": "Tampilan asli dari aplikasi, dengan data demo. Pilih salah satu tampilan untuk melihatnya secara penuh.",
+      "fleet": {
+        "title": "Fleet",
+        "text": "Setiap mesin, sistemnya, dan kapan terakhir kali melapor. Mesin yang berhenti melapor akan berubah merah.",
+        "alt": "Halaman Fleet: lima mesin dengan sistem, versi, dan waktu terakhir masing-masing melapor. Satu mesin sedang offline."
+      },
+      "catalog": {
+        "title": "Katalog",
+        "text": "Semua layanan yang didukung, dengan filter per kelompok.",
+        "alt": "Halaman Katalog: filter kelompok dan layanan yang berjalan di fleet Anda, masing-masing dengan jenisnya."
+      },
+      "payouts": {
+        "title": "Pembayaran",
+        "text": "Data node mana yang wajib Anda cadangkan, dan ke mana setiap layanan membayar.",
+        "alt": "Halaman Pembayaran: kotak yang meminta Anda mencadangkan identitas MystNodes, yang hanya ada di disk satu mesin."
+      },
+      "desktop": {
+        "title": "Aplikasi desktop",
+        "text": "Dasbor lengkap dalam satu jendela di Windows, macOS, atau Linux. Aplikasi ini juga bisa terhubung ke server CashPilot yang sudah Anda jalankan.",
+        "alt": "CashPilot Desktop di macOS, menampilkan saldo serta penghasilan hari ini dan bulan ini."
+      },
+      "android": {
+        "title": "Aplikasi pendamping Android",
+        "text": "Memantau aplikasi penghasil uang di ponsel Anda dan melaporkan statusnya ke server CashPilot atau aplikasi desktop Anda.",
+        "alt": "Layar utama aplikasi Android: keenam aplikasi penghasil uang sedang berjalan, dengan data yang dipakai masing-masing dalam 24 jam."
+      }
+    },
+    "catch": {
+      "title": "Apa jebakannya?",
+      "lead": "Pertanyaan yang wajar. Ini faktanya.",
+      "free": {
+        "title": "Gratis",
+        "text": "Tanpa biaya, tanpa paket berbayar, dan tanpa iklan."
+      },
+      "open": {
+        "title": "Open source",
+        "text": "GPL-3.0. Anda bisa membaca setiap barisnya di GitHub."
+      },
+      "hardware": {
+        "title": "Berjalan di perangkat Anda",
+        "text": "Mesin Anda dan koneksi Anda. Kami tidak menjalankan server apa pun untuk Anda."
+      },
+      "account": {
+        "title": "Tanpa akun di tempat kami",
+        "text": "Tanpa pendaftaran dan tanpa email. Anda hanya mendaftar di penyedia yang Anda pilih."
+      },
+      "funding": "Dari mana biayanya? Sebagian tautan penyedia adalah tautan referral. Jika Anda mendaftar lewat salah satunya, penyedia mungkin memberi imbalan kepada proyek CashPilot. Imbalan itu tidak diambil dari penghasilan Anda."
+    },
+    "control": {
+      "title": "Anda tetap memegang kendali",
+      "lead": "CashPilot berjalan di mesin Anda. Anda bisa melihat apa yang dilakukannya dan menghentikannya kapan saja.",
+      "logins": {
+        "title": "Data login Anda tetap di mesin Anda",
+        "text": "CashPilot menyimpannya dalam keadaan terenkripsi di database miliknya sendiri. Setiap data login hanya dikirim ke layanan yang membutuhkannya."
+      },
+      "containers": {
+        "title": "Setiap layanan di container tersendiri",
+        "text": "Setiap layanan yang dijalankan CashPilot terpisah dari yang lain, dengan hak tambahannya dicabut dan jumlah prosesnya dibatasi."
+      },
+      "lan": {
+        "title": "Dijauhkan dari jaringan rumah Anda",
+        "text": "Pada instalasi Docker yang baru, layanan yang dijalankannya tidak bisa menjangkau LAN, router, atau mesin tempat layanan itu berjalan. <a href=\"{securityUrl}\">Melindungi jaringan rumah Anda</a>."
+      },
+      "stop": {
+        "title": "Hentikan apa saja kapan saja",
+        "text": "Satu klik menghentikan atau menghapus sebuah layanan. Ada panduan cara menghapus CashPilot sepenuhnya."
+      },
+      "ratings": "Setiap penyedia mendapat nilai A sampai F berdasarkan sepuluh pertanyaan yang sama, dan setiap jawaban menautkan ke sumbernya.",
+      "ratingsLink": "Lihat nilai penyedia"
+    },
+    "earnings": {
+      "title": "Apa yang memengaruhi penghasilan Anda",
+      "lead": "Tidak ada yang bisa menjanjikan angka tertentu. Inilah hal-hal yang memengaruhinya.",
+      "country": {
+        "title": "Negara Anda",
+        "text": "Penyedia membayar lebih untuk trafik dari negara tertentu dibanding negara lain."
+      },
+      "ip": {
+        "title": "Jenis alamat IP Anda",
+        "text": "Banyak layanan hanya membayar koneksi rumahan, bukan server di pusat data."
+      },
+      "connection": {
+        "title": "Koneksi Anda",
+        "text": "Kecepatan upload yang lebih tinggi dan tanpa batas kuota memberi ruang untuk lebih banyak trafik."
+      },
+      "uptime": {
+        "title": "Waktu aktif",
+        "text": "Perangkat yang terus menyala menghasilkan lebih banyak daripada perangkat yang tidur."
+      },
+      "devices": {
+        "title": "Jumlah perangkat",
+        "text": "Sebagian besar layanan mengizinkan satu perangkat per alamat IP dan jumlah tertentu per akun."
+      },
+      "hardware": {
+        "title": "GPU dan perangkat keras Anda",
+        "text": "Komputasi GPU dan mining bergantung pada kartu grafis Anda, harga listrik Anda, dan kondisi pasar."
+      },
+      "note": "Sebagian penyiapan menghasilkan sangat sedikit. Dasbor menampilkan penghasilan Anda yang sebenarnya, sehingga Anda bisa menghentikan yang tidak menguntungkan."
+    },
+    "services": {
+      "title": "Layanan populer",
+      "lead": "Beberapa layanan dari setiap kelompok. Dokumentasi mencantumkan semuanya, masing-masing dengan panduan.",
+      "caption": "Layanan populer dan kebutuhannya",
+      "col": {
+        "service": "Layanan",
+        "homeIp": "Perlu IP rumahan",
+        "devicesPerIp": "Perangkat per IP",
+        "payout": "Pembayaran",
+        "minimum": "Pembayaran minimum"
+      },
+      "signup": "Daftar",
+      "signupLabel": "Daftar di {name} (tautan referral)",
+      "signupLabelPlain": "Daftar di {name}",
+      "guideLabel": "Panduan CashPilot untuk {name}",
+      "all": "Semua {count} layanan di dokumentasi",
+      "referrals": "Semua tautan referral",
+      "notStatedNote": "– berarti katalog tidak menyebutkannya."
+    },
+    "compare": {
+      "title": "Perbandingan CashPilot",
+      "lead": "Fakta tentang alat open source lain yang menjalankan beberapa layanan ini. Diperiksa pada {date}.",
+      "caption": "CashPilot dan alat open source lain, fitur demi fitur",
+      "feature": "Fitur",
+      "rows": {
+        "license": "Lisensi",
+        "balances": "Membaca saldo dari akun penyedia Anda",
+        "fleet": "Satu dasbor untuk banyak server",
+        "desktop": "Aplikasi desktop",
+        "android": "Aplikasi Android",
+        "gpu": "Komputasi GPU dan mining",
+        "docker": "Butuh Docker"
+      },
+      "values": {
+        "gpl": "GPL-3.0",
+        "proprietary": "Proprietary",
+        "noLicense": "Tidak ada file lisensi",
+        "gplReadme": "Ada file GPL-3.0, README melarang salinan yang diubah",
+        "estimates": "Tidak, hanya perkiraan",
+        "claimed": "Diklaim, dalam kode tertutup",
+        "dockerOrPodman": "Ya, atau Podman",
+        "betaMining": "Ya, mining masih beta"
+      },
+      "more": "Perbandingan lengkap dengan sumber untuk setiap sel"
+    },
+    "faq": {
+      "title": "Pertanyaan",
+      "items": {
+        "slow": {
+          "q": "Apakah internet saya akan jadi lambat?",
+          "a": "Bisa. Layanan bandwidth mengalirkan trafik perusahaan lain lewat koneksi Anda, jadi layanan itu memakai sebagian upload dan download Anda. CashPilot menampilkan pemakaian jaringan setiap mesin, sehingga Anda bisa melihat mana yang paling banyak memakai dan menghentikannya."
+        },
+        "legal": {
+          "q": "Apakah ini legal?",
+          "a": "Tergantung tempat tinggal Anda dan kontrak internet Anda. Sebagian penyedia internet melarang berbagi atau menjual kembali koneksi Anda. Periksa hukum setempat dan ketentuan penyedia internet Anda sebelum memulai. Ini bukan nasihat hukum."
+        },
+        "safe": {
+          "q": "Apakah ini aman?",
+          "a": "Layanan bandwidth membiarkan trafik orang lain memakai alamat IP Anda, jadi baca dulu ketentuan setiap penyedia. CashPilot menjalankan setiap layanan yang dijalankannya di container tersendiri dan, pada instalasi Docker yang baru, menjauhkannya dari jaringan rumah Anda. Baca <a href=\"{securityUrl}\">Melindungi jaringan rumah Anda</a> sebelum memulai."
+        },
+        "earn": {
+          "q": "Berapa penghasilan saya?",
+          "a": "Kami tidak bisa memberi tahu Anda. Itu tergantung negara, jenis alamat IP, koneksi, waktu aktif, dan layanan yang Anda jalankan. Sebagian penyiapan menghasilkan sangat sedikit. Dasbor menampilkan penghasilan Anda yang sebenarnya."
+        },
+        "free": {
+          "q": "Mengapa gratis?",
+          "a": "CashPilot adalah perangkat lunak bebas dengan lisensi GPL-3.0, dibuat oleh para kontributornya. Sebagian tautan penyedia adalah tautan referral, dan imbalan dari tautan itu membantu mendanai proyek. <a href=\"{referralsUrl}\">Cara kerja referral</a>."
+        },
+        "docker": {
+          "q": "Apakah saya butuh Docker?",
+          "a": "Ya, untuk layanan yang dijalankan CashPilot, karena layanan itu berjalan di container. Aplikasi desktop bekerja dengan Docker atau Podman, dan wizard penyiapannya membantu Anda memasang Docker. Aplikasi Android tidak butuh Docker, tetapi melapor ke server CashPilot atau aplikasi desktop."
+        },
+        "pi": {
+          "q": "Apakah bisa berjalan di Raspberry Pi?",
+          "a": "Ya, di Pi 3, 4, atau 5 dengan sistem 64-bit. Sebagian besar layanan menerbitkan build untuk ARM, dan sebelum deploy CashPilot memeriksa apakah sebuah layanan bisa berjalan di CPU Anda. <a href=\"{armUrl}\">Menjalankan di ARM</a>."
+        },
+        "data": {
+          "q": "Apakah proyek CashPilot bisa melihat data login atau penghasilan saya?",
+          "a": "Tidak. CashPilot berjalan di mesin Anda dan tidak mengirim apa pun ke proyek. Data login Anda tetap di CashPilot milik Anda sendiri, terenkripsi di database-nya. <a href=\"{privacyUrl}\">Privasi</a>."
+        }
+      }
+    },
+    "cta": {
+      "title": "Siap mencobanya?",
+      "text": "Unduh aplikasi desktop, atau jalankan server dengan Docker. Keduanya gratis.",
+      "download": "Unduh",
+      "github": "Lihat kode sumber di GitHub",
+      "releases": "Untuk tahu kabar versi baru, gunakan Watch di GitHub atau <a href=\"{feedUrl}\">feed rilis</a>."
+    }
+  },
+  "download": {
+    "title": "Unduh CashPilot",
+    "metaTitle": "Unduh CashPilot untuk Windows, macOS, Linux, Android, dan Docker",
+    "description": "Unduhan gratis CashPilot untuk Windows, macOS, Linux, dan Android, serta server Docker untuk server rumahan, NAS, dan Raspberry Pi. Tanpa perlu akun.",
+    "lead": "Pilih sistem Anda. Semua unduhan gratis. Tanpa akun, tanpa email, tanpa pendaftaran.",
+    "pickerLabel": "Pilih sistem Anda",
+    "detected": "Sistem Anda",
+    "otherSystems": "Sistem lain",
+    "ios": "Tidak ada aplikasi iPhone. Pasang aplikasi desktop di komputer, atau jalankan server, lalu buka dasbor di Safari.",
+    "pathsHint": "Tidak yakin mana yang Anda butuhkan?",
+    "pathsLink": "Bandingkan pilihannya",
+    "fileInfo": "{type}, {size}",
+    "version": "Versi {version}",
+    "source": "Kode sumber",
+    "allReleases": "Semua rilis",
+    "tiles": {
+      "windows": {
+        "name": "Windows",
+        "hint": "Aplikasi desktop"
+      },
+      "macos": {
+        "name": "macOS",
+        "hint": "Aplikasi desktop"
+      },
+      "linux": {
+        "name": "Linux",
+        "hint": "Aplikasi desktop"
+      },
+      "android": {
+        "name": "Android",
+        "hint": "Aplikasi pendamping"
+      },
+      "docker": {
+        "name": "Docker",
+        "hint": "Server"
+      }
+    },
+    "runtime": "Layanan berjalan di container. Aplikasi ini bekerja dengan Docker atau Podman, dan wizard penyiapannya membantu Anda memasang Docker jika belum ada.",
+    "windows": {
+      "metaTitle": "Unduh CashPilot untuk Windows",
+      "title": "CashPilot Desktop untuk Windows",
+      "installer": "Unduh installer",
+      "installerType": "Installer (.exe)",
+      "portable": "Versi portabel",
+      "portableType": "Aplikasi portabel (.exe), tanpa instalasi",
+      "arch": "64-bit (x64). Sebagian besar PC adalah 64-bit.",
+      "requires": "Butuh Windows 10 22H2, atau Windows 11 23H2 atau yang lebih baru.",
+      "warnTitle": "Windows atau antivirus Anda memberi peringatan?",
+      "warnText": "Aplikasi Windows ini belum ditandatangani secara digital (code-signed), jadi SmartScreen mungkin menampilkan \"Windows protected your PC\". Klik More info, lalu Run anyway. Untuk memastikan Anda memegang file yang kami terbitkan, bandingkan checksum SHA-256-nya dengan daftar di bawah.",
+      "verify": "Di PowerShell:"
+    },
+    "macos": {
+      "metaTitle": "Unduh CashPilot untuk macOS",
+      "title": "CashPilot Desktop untuk macOS",
+      "button": "Unduh untuk Mac",
+      "type": "File zip",
+      "arch": "Apple silicon (M1 dan yang lebih baru).",
+      "minimum": "Butuh macOS 12 Monterey atau yang lebih baru.",
+      "requires": "Ditandatangani dan dinotarisasi oleh Apple. Ekstrak file zip lalu buka cashpilot-desktop.app.",
+      "intel": "Pakai Mac Intel? Tidak ada build Intel untuk aplikasi desktop. Sebagai gantinya, <a href=\"{dockerUrl}\">jalankan server dengan Docker</a>.",
+      "verify": "Di Terminal:"
+    },
+    "linux": {
+      "metaTitle": "Unduh CashPilot untuk Linux",
+      "title": "CashPilot Desktop untuk Linux",
+      "button": "Unduh untuk Linux",
+      "type": "Arsip tar.gz",
+      "arch": "x86_64 (PC 64-bit).",
+      "minimum": "Butuh glibc 2.34 atau yang lebih baru: Ubuntu 22.04, Debian 12, atau yang lebih baru.",
+      "requires": "Butuh GTK 3 dan WebKitGTK 4.1. Ekstrak arsipnya lalu jalankan CashPilot Desktop.",
+      "server": "Menyiapkan server atau Raspberry Pi? <a href=\"{dockerUrl}\">Gunakan Docker</a>.",
+      "verify": "Di terminal:"
+    },
+    "android": {
+      "metaTitle": "Unduh CashPilot untuk Android",
+      "title": "CashPilot untuk Android",
+      "button": "Unduh APK",
+      "type": "File APK",
+      "requires": "Android 8.0 atau yang lebih baru. Ponsel Anda akan meminta izin untuk memasang aplikasi dari browser.",
+      "what": "Aplikasi Android memantau aplikasi penghasil uang di ponsel Anda dan melaporkan statusnya ke server CashPilot atau aplikasi desktop Anda. Aplikasi ini butuh salah satunya sebagai tujuan laporan.",
+      "qr": "Pindai dengan ponsel Anda untuk mengunduh APK.",
+      "qrAlt": "Kode QR untuk tautan unduhan APK Android",
+      "stores": "Tidak ada di Google Play. F-Droid: segera hadir."
+    },
+    "docker": {
+      "metaTitle": "Self-host CashPilot dengan Docker",
+      "title": "Server CashPilot dengan Docker",
+      "lead": "Untuk server rumahan, NAS, Raspberry Pi, atau mesin apa pun yang selalu menyala. Anda membuka dasbor di browser.",
+      "requires": "Butuh Docker dengan Compose, di Linux, macOS, atau Windows, amd64 atau arm64.",
+      "step1": "Unduh file compose lalu jalankan CashPilot:",
+      "step2": "Tampilkan token penyiapan:",
+      "step3": "Buka {url} lalu masukkan token. Wizard penyiapan akan mengurus sisanya.",
+      "viewSource": "Baca file compose sebelum menjalankannya",
+      "images": "File compose mengunci image {ui} dan {worker}.",
+      "guide": "Panduan lengkap: Memulai"
+    },
+    "checksums": {
+      "title": "Checksum SHA-256, versi {version}",
+      "all": "File SHA256SUMS"
+    },
+    "homelab": {
+      "title": "Instalasi di server rumahan",
+      "lead": "Diurutkan dari yang paling mudah sampai yang paling sulit.",
+      "option": "Pilihan",
+      "caption": "Instalasi di server rumahan, dari yang paling mudah sampai yang paling sulit",
+      "skills": "Keahlian yang dibutuhkan",
+      "tools": "Alat yang dibutuhkan",
+      "items": {
+        "unraid": {
+          "title": "Unraid",
+          "text": "Pasang dua template CashPilot dari Community Applications.",
+          "skills": "Cukup bisa memakai tab Apps di Unraid",
+          "tools": "Server Unraid"
+        },
+        "truenas": {
+          "title": "TrueNAS SCALE",
+          "text": "Cari CashPilot di Discover Apps, di train community.",
+          "skills": "Cukup bisa memakai halaman aplikasi TrueNAS",
+          "tools": "Server TrueNAS SCALE"
+        },
+        "casaos": {
+          "title": "CasaOS",
+          "text": "Impor file compose sebagai aplikasi kustom selama daftar di store masih ditinjau.",
+          "skills": "Menempel file dan mengubah dua tag image",
+          "tools": "CasaOS 0.4.5 atau yang lebih baru"
+        },
+        "pi": {
+          "title": "Raspberry Pi",
+          "text": "Jalankan perintah Docker di atas di Raspberry Pi OS 64-bit.",
+          "skills": "Dasar-dasar memakai terminal",
+          "tools": "Pi 3, 4, atau 5 dengan Docker"
+        },
+        "fleet": {
+          "title": "Beberapa mesin",
+          "text": "Jalankan satu dasbor dan satu worker di setiap mesin. Setiap angka ditampilkan per mesin.",
+          "skills": "Docker Compose dan jaringan rumah Anda",
+          "tools": "Dua mesin atau lebih dengan Docker"
+        }
+      }
+    },
+    "paths": {
+      "title": "Mana yang saya butuhkan?",
+      "recommended": "Disarankan untuk kebanyakan orang",
+      "skills": "Keahlian yang dibutuhkan",
+      "tools": "Alat yang dibutuhkan",
+      "desktop": {
+        "title": "Aplikasi desktop",
+        "text": "CashPilot dalam satu jendela di komputer Anda. Aplikasi ini menjalankan layanan di komputer tersebut dan menampilkan dasbor.",
+        "skills": "Tidak ada",
+        "tools": "Komputer Windows, Mac, atau Linux yang selalu menyala"
+      },
+      "server": {
+        "title": "Server dengan Docker",
+        "text": "CashPilot di server rumahan, NAS, atau Raspberry Pi. Bisa mengelola beberapa mesin dari satu dasbor.",
+        "skills": "Dasar-dasar memakai terminal",
+        "tools": "Mesin yang selalu menyala, dengan Docker"
+      },
+      "android": {
+        "title": "Aplikasi pendamping Android",
+        "text": "Memantau aplikasi penghasil uang di ponsel Anda dan menambahkan ponsel itu ke dasbor Anda.",
+        "skills": "Tidak ada",
+        "tools": "Ponsel Android dan server CashPilot atau aplikasi desktop"
+      }
+    },
+    "more": {
+      "title": "Cara lain untuk terhubung",
+      "mcp": {
+        "title": "Server MCP untuk asisten AI",
+        "text": "Memungkinkan asisten AI membaca status dan penghasilan CashPilot Anda. Versi {version}, untuk Windows, macOS, dan Linux."
+      },
+      "ha": {
+        "title": "Integrasi Home Assistant",
+        "text": "Menampilkan penghasilan dan layanan CashPilot Anda di Home Assistant."
+      }
+    }
+  },
+  "referrals": {
+    "title": "Tautan referral",
+    "metaTitle": "Tautan referral CashPilot dan cara kerjanya",
+    "description": "Setiap tautan penyedia yang memakai kode referral CashPilot, artinya bagi Anda, dan cara mendaftar tanpa kode itu.",
+    "lead": "Halaman ini mencantumkan setiap tautan penyedia yang memuat kode referral CashPilot, dan arti masing-masing bagi Anda.",
+    "howTitle": "Cara kerja referral",
+    "how1": "Jika Anda mendaftar di penyedia lewat salah satu tautan ini, penyedia mungkin memberi imbalan kepada proyek CashPilot. Imbalan itu tidak diambil dari penghasilan Anda.",
+    "how2": "Sebagian penyedia juga memberi Anda bonus saat Anda mendaftar lewat tautan itu. Kami menampilkannya jika katalog mencantumkannya.",
+    "how3": "Anda tidak pernah wajib memakai tautan ini. Setiap entri juga menampilkan situs web resmi penyedia, sehingga Anda bisa mendaftar tanpa referral.",
+    "how4": "Imbalan tersebut membantu mendanai proyek.",
+    "count": "{count} penyedia, dari katalog pada {date}.",
+    "code": "Kode",
+    "provider": "Penyedia",
+    "link": "Daftar dengan referral",
+    "website": "Situs web penyedia (tanpa referral)",
+    "links": "Tautan",
+    "youGet": "Yang Anda dapat",
+    "projectGets": "Yang didapat proyek",
+    "codeEntry": "Tautan ini tidak meneruskan kodenya. Ketik {code} saat aplikasi meminta kode referral.",
+    "guide": "Panduan CashPilot",
+    "guideLabel": "Panduan CashPilot untuk {name}",
+    "toc": "Lompat ke kelompok",
+    "tocCount": "{count} dengan tautan referral",
+    "caption": "{group}: tautan referral dan apa yang diberikan masing-masing"
+  },
+  "privacy": {
+    "title": "Privasi",
+    "metaTitle": "Privasi",
+    "description": "Apa yang dikumpulkan situs web dan aplikasi CashPilot: situs web tidak mengumpulkan apa pun, dan aplikasi tidak mengirim apa pun ke proyek.",
+    "lead": "Singkatnya: situs web ini tidak mengumpulkan apa pun, dan aplikasi CashPilot tidak mengirim apa pun ke proyek.",
+    "site": {
+      "title": "Situs web ini",
+      "p1": "Tanpa cookie, tanpa analitik, tanpa piksel pelacak, dan tanpa iklan. Halaman ini tidak memuat apa pun dari situs web lain. Font-nya bagian dari situs ini.",
+      "p2": "Saat Anda memilih bahasa, browser Anda menyimpan pilihan itu di penyimpanan lokalnya. Pilihan itu tetap di perangkat Anda dan tidak pernah dikirim ke kami.",
+      "p3": "Situs ini di-hosting oleh GitHub Pages, dan Cloudflare meneruskan trafik ke situs ini. Keduanya mungkin mencatat alamat IP setiap kunjungan demi keamanan, dan Cloudflare mungkin meminta browser Anda melaporkan galat jaringan kepadanya. Baca <a href=\"{githubPrivacyUrl}\">pernyataan privasi GitHub</a> dan <a href=\"{cloudflarePrivacyUrl}\">kebijakan privasi Cloudflare</a>."
+    },
+    "apps": {
+      "title": "Aplikasi CashPilot",
+      "p1": "Server web, aplikasi desktop, dan aplikasi Android tidak memiliki telemetri. Semuanya tidak mengirim apa pun ke proyek CashPilot.",
+      "p2": "Data login dan penghasilan Anda tetap di CashPilot milik Anda sendiri. Aplikasi hanya terhubung ke layanan yang dibutuhkan: penyedia yang Anda siapkan, GitHub untuk memeriksa versi baru, layanan IP publik dan kurs mata uang, serta blockchain explorer untuk saldo on-chain.",
+      "p3": "Saat ini dasbor web juga memuat font-nya dari Google Fonts dan pustaka grafiknya dari jsDelivr. Dokumentasi mencantumkan <a href=\"{comparisonUrl}\">setiap koneksi keluar</a> dan cara mematikan yang opsional."
+    },
+    "providers": {
+      "title": "Penyedia",
+      "p1": "Saat Anda mendaftar di sebuah penyedia, kebijakan privasi penyedia itu sendiri yang berlaku. Tautan referral memberi tahu penyedia bahwa Anda datang dari CashPilot."
+    },
+    "contact": {
+      "title": "Kontak",
+      "p1": "Pertanyaan tentang privasi: {email}."
+    }
+  },
+  "disclaimer": {
+    "title": "Penafian",
+    "metaTitle": "Penafian",
+    "description": "CashPilot tidak memberi nasihat keuangan atau hukum, tidak menjanjikan penghasilan, dan bukan bagian dari penyedia yang dijalankannya.",
+    "lead": "Harap baca ini sebelum memulai.",
+    "items": {
+      "advice": {
+        "title": "Bukan nasihat keuangan atau hukum",
+        "text": "Tidak ada isi situs ini atau aplikasinya yang merupakan nasihat keuangan, hukum, atau pajak."
+      },
+      "earnings": {
+        "title": "Tidak ada penghasilan yang dijanjikan",
+        "text": "Penghasilan bergantung pada negara, koneksi, perangkat keras Anda, dan para penyedia. Penghasilan bisa sangat kecil atau nol. Penyedia bisa mengubah tarifnya kapan saja."
+      },
+      "law": {
+        "title": "Hukum dan kontrak Anda",
+        "text": "Periksa hukum setempat dan ketentuan penyedia internet Anda sebelum berbagi koneksi atau menjalankan node. Anda bertanggung jawab atas pajak apa pun dari penghasilan Anda."
+      },
+      "providers": {
+        "title": "Penyedia independen",
+        "text": "Para penyedia adalah perusahaan terpisah. CashPilot bukan bagian dari mereka dan tidak bisa mengendalikan ketentuan, pembayaran, atau keputusan akun mereka. Sebagian penyedia memberi proyek ini imbalan referral."
+      },
+      "warranty": {
+        "title": "Tanpa jaminan",
+        "text": "CashPilot adalah perangkat lunak bebas dengan lisensi GPL-3.0-or-later. Perangkat lunak ini diberikan tanpa jaminan apa pun, sesuai bagian 15 dan 16 lisensi tersebut."
+      },
+      "trademarks": {
+        "title": "Merek dagang",
+        "text": "Nama dan logo penyedia serta platform adalah milik pemiliknya masing-masing. Penggunaannya di sini hanya menyatakan apa saja yang bisa digunakan bersama CashPilot."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Halaman tidak ditemukan",
+    "text": "Halaman ini tidak ada. Mungkin sudah dipindahkan.",
+    "home": "Ke beranda",
+    "download": "Ke halaman unduhan"
+  },
+  "footer": {
+    "tagline": "Jalankan layanan penghasilan pasif di perangkat Anda sendiri, dan lihat semua pembayaran di satu dasbor.",
+    "product": "Produk",
+    "project": "Proyek",
+    "about": "Tentang",
+    "download": "Unduh",
+    "docs": "Dokumentasi",
+    "referrals": "Tautan referral",
+    "privacy": "Privasi",
+    "disclaimer": "Penafian",
+    "web": "Server CashPilot",
+    "desktop": "CashPilot Desktop",
+    "android": "CashPilot untuk Android",
+    "mcp": "Server MCP",
+    "feed": "Feed rilis",
+    "agents": "Untuk agen AI",
+    "contact": "Kontak",
+    "legal": "Periksa hukum setempat dan ketentuan penyedia internet Anda. Bukan nasihat keuangan.",
+    "credit": "Dibuat oleh para kontributor CashPilot. Perangkat lunak bebas dengan lisensi GPL-3.0-or-later."
+  },
+  "categories": {
+    "bandwidth": "Berbagi bandwidth",
+    "depin": "DePIN",
+    "compute": "Komputasi GPU",
+    "storage": "Penyimpanan",
+    "mining": "Mining"
+  },
+  "payment": {
+    "paypal": "PayPal",
+    "crypto": "Kripto",
+    "giftcard": "Kartu hadiah",
+    "amazon_giftcard": "Kartu hadiah Amazon",
+    "wise": "Wise",
+    "bank": "Transfer bank",
+    "stripe": "Stripe"
+  }
+}
