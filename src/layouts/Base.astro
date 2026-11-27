@@ -5,7 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import LangSuggest from "../components/LangSuggest.astro";
 import { AVAILABLE, localizedPath, type Translator } from "../i18n";
-import { SITE, feeds } from "../lib/links";
+import { SITE, feeds, social } from "../lib/links";
 import { getData } from "../data";
 
 interface Props {
@@ -59,6 +59,7 @@ const ogImage = new URL("/og.png", SITE).href;
     <meta property="og:locale" content={locale.ogLocale} />
     {!noAlternates && AVAILABLE.filter((l) => l.code !== locale.code).map((l) => <meta property="og:locale:alternate" content={l.ogLocale} />)}
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={social.xHandle} />
     <slot name="head" />
   </head>
   <body>

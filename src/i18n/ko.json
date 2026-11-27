@@ -578,6 +578,7 @@
     "android": "Android용 CashPilot",
     "mcp": "MCP 서버",
     "feed": "릴리스 피드",
+    "x": "X: {handle}",
     "agents": "AI 에이전트용",
     "contact": "문의",
     "legal": "현지 법률과 인터넷 서비스 제공업체의 약관을 확인하세요. 금융 자문이 아닙니다.",

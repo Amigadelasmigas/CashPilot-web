@@ -59,6 +59,12 @@ export const docs = {
   forAgents: `${DOCS}/for-ai-agents/`,
 };
 
+/** The project's official social accounts. */
+export const social = {
+  x: "https://x.com/CashPilotClub",
+  xHandle: "@CashPilotClub",
+};
+
 export const feeds = {
   releases: `${repo.web}/releases.atom`,
 };
