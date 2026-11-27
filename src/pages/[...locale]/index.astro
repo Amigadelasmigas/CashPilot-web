@@ -8,6 +8,7 @@ import WindowFrame from "../../components/WindowFrame.astro";
 import PhoneFrame from "../../components/PhoneFrame.astro";
 import Disclosure from "../../components/Disclosure.astro";
 import NotStated from "../../components/NotStated.astro";
+import TypedCode from "../../components/TypedCode.astro";
 import { localeFromPath, localeParams, useT } from "../../i18n";
 import { getData, isLive, isReferral, type Service } from "../../data";
 import { docs, repo, rivals, feeds } from "../../lib/links";
@@ -407,6 +408,7 @@ const faqVars = {
                           {t("home.services.signup")}
                         </a>
                       )}
+                      <TypedCode t={t} service={s} idPrefix="home" />
                     </td>
                   </tr>
                 );

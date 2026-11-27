@@ -4,6 +4,7 @@
 import snapshot from "./snapshot.json";
 import { fetchLive, type SiteData, type Service } from "./fetch";
 import { CATEGORY_ORDER } from "../lib/catalog";
+import { checkTypedCodes } from "../lib/typed-codes";
 
 export type { SiteData, Service };
 
@@ -34,6 +35,8 @@ function check(data: SiteData): SiteData {
   const known = new Set<string>(CATEGORY_ORDER);
   const unknown = [...new Set(data.services.filter((s) => !known.has(s.category)).map((s) => `${s.slug} (${s.category})`))];
   if (unknown.length) throw new Error(`[data] unknown catalog categories, add them to CATEGORY_ORDER in src/lib/catalog.ts: ${unknown.join(", ")}`);
+  const typed = checkTypedCodes(data.services);
+  if (typed.length) throw new Error(`[data] typed codes in src/lib/typed-codes.ts no longer match the catalog: ${typed.join("; ")}`);
   return data;
 }
 

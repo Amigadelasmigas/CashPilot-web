@@ -493,6 +493,8 @@
     "links": "Tautan",
     "youGet": "Yang Anda dapat",
     "codeEntry": "Tautan ini tidak meneruskan kodenya. Ketik {code} saat aplikasi meminta kode referral.",
+    "codeReferral": "Jika formulir pendaftaran meminta kode referral, ketik {code}.",
+    "codeCoupon": "Saat checkout, ketik kode kupon {code}.",
     "guide": "Panduan CashPilot",
     "guideLabel": "Panduan CashPilot untuk {name}",
     "toc": "Lompat ke kelompok",

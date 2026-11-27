@@ -493,6 +493,8 @@
     "links": "Mga link",
     "youGet": "Makukuha mo",
     "codeEntry": "Hindi ipinapasa ng link ang code. I-type ang {code} kapag humingi ang app ng referral code.",
+    "codeReferral": "Kung humingi ang sign-up form ng referral code, i-type ang {code}.",
+    "codeCoupon": "Sa checkout, i-type ang coupon code na {code}.",
     "guide": "CashPilot guide",
     "guideLabel": "CashPilot guide para sa {name}",
     "toc": "Pumunta sa isang grupo",

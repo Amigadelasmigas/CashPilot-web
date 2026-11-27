@@ -493,6 +493,8 @@
     "links": "Liens",
     "youGet": "Vous recevez",
     "codeEntry": "Le lien ne transmet pas le code. Saisissez {code} quand l'application vous demande un code de parrainage.",
+    "codeReferral": "Si le formulaire d'inscription demande un code de parrainage, saisissez {code}.",
+    "codeCoupon": "Au paiement, saisissez le code promo {code}.",
     "guide": "Guide CashPilot",
     "guideLabel": "Guide CashPilot pour {name}",
     "toc": "Aller à un groupe",

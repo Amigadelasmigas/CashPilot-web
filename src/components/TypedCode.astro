@@ -1,0 +1,40 @@
+---
+// A code the visitor types by hand, with a Copy button (shown only where the
+// clipboard works, by src/scripts/site.ts). Used on the referrals page and in
+// the home page's provider table.
+import Icon from "./Icon.astro";
+import type { Translator } from "../i18n";
+import type { Service } from "../data";
+import { typedCode } from "../lib/typed-codes";
+
+interface Props {
+  t: Translator;
+  service: Service;
+  /** Keeps the id unique when one page shows the same service twice. */
+  idPrefix: string;
+}
+const { t, service, idPrefix } = Astro.props;
+const tc = typedCode(service);
+const id = `${idPrefix}-${service.slug}-code`;
+const key = tc && { required: "referrals.codeEntry", referral: "referrals.codeReferral", coupon: "referrals.codeCoupon" }[tc.kind];
+// Codes are plain letters and digits, so they go into the sentence as markup as is.
+const html = tc && key ? t(key, { code: `<code id="${id}" dir="ltr">${tc.code}</code>` }) : "";
+---
+{
+  tc && (
+    <p class="typed-code">
+      <span set:html={html} />
+      <button
+        class="copy-btn copy-btn--sm"
+        type="button"
+        hidden
+        data-copy={id}
+        data-done={t("common.copied")}
+        data-failed={t("common.copyFailed")}
+        aria-label={`${t("common.copy")} ${service.name} ${tc.code}`}
+      >
+        <Icon name="copy" /><span data-copy-label aria-live="polite">{t("common.copy")}</span>
+      </button>
+    </p>
+  )
+}

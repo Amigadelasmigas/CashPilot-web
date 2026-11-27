@@ -493,6 +493,8 @@
     "links": "Links",
     "youGet": "Jij krijgt",
     "codeEntry": "De link geeft de code niet door. Typ {code} als de app om een verwijzingscode vraagt.",
+    "codeReferral": "Vraagt het aanmeldformulier om een verwijzingscode, typ dan {code}.",
+    "codeCoupon": "Typ bij het afrekenen de kortingscode {code}.",
     "guide": "CashPilot-handleiding",
     "guideLabel": "CashPilot-handleiding voor {name}",
     "toc": "Ga naar een groep",
