@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "siteName": "CashPilot",
+    "titleSuffix": "CashPilot",
+    "ogImageAlt": "CashPilot: Boşta duran donanımınızı çalıştırın, tüm ödemeleri tek bir panelde görün."
+  },
+  "nav": {
+    "skip": "İçeriğe geç",
+    "home": "CashPilot ana sayfası",
+    "docs": "Belgeler",
+    "github": "GitHub",
+    "download": "İndir",
+    "main": "Ana menü",
+    "stars": "yıldız"
+  },
+  "lang": {
+    "label": "Dil",
+    "suggest": "Bu sitenin Türkçesi de var.",
+    "switch": "Türkçe göster",
+    "dismiss": "Hayır, teşekkürler"
+  },
+  "common": {
+    "copy": "Kopyala",
+    "copied": "Kopyalandı",
+    "copyFailed": "Seçip kopyalayın",
+    "copyLabel": "Komutu kopyala",
+    "yes": "Evet",
+    "no": "Hayır",
+    "notStated": "Belirtilmemiş",
+    "noLimit": "Sınır yok"
+  },
+  "disclosure": {
+    "short": "Bu bağlantılardan biriyle kaydolursanız sağlayıcı, CashPilot projesine bir ödül ödeyebilir. Bu ödül kazancınızdan düşülmez.",
+    "more": "Referans bağlantıları nasıl çalışır"
+  },
+  "home": {
+    "title": "CashPilot: Pasif gelir hizmetlerini kendi donanımınızda çalıştırın",
+    "description": "Bant genişliği paylaşımı, DePIN, GPU hesaplama ve madencilik hizmetlerini kendi makinelerinizde çalıştıran ve tüm ödemeleri tek bir panelde gösteren ücretsiz, açık kaynaklı yazılım.",
+    "hero": {
+      "pill": "Ücretsiz ve açık kaynak, GPL-3.0",
+      "title": "Boşta duran donanımınızı çalıştırın. Tüm ödemeleri tek bir panelde görün.",
+      "lead": "CashPilot, pasif gelir hizmetlerini bilgisayarlarınıza, ev sunucularınıza ve Raspberry Pi'nize kurar. Her sağlayıcıdaki bakiyenizi okur ve geçmişi tek bir yerde, kendi makinenizde saklar.",
+      "download": "İndir",
+      "selfhost": "Docker ile kendiniz barındırın",
+      "expect": "CashPilot size ödeme yapmaz. Ödemeyi sağlayıcılar yapar. Kazanç; ülkenize, bağlantınıza ve donanımınıza bağlıdır.",
+      "imageAlt": "CashPilot paneli: bakiye, bugünkü ve bu ayki kazanç, her makinedeki hizmetler ve günlük kazanç.",
+      "imageAltMobile": "Telefonda CashPilot paneli: bakiye ile bugünkü ve bu ayki kazanç."
+    },
+    "stats": {
+      "label": "Rakamlarla CashPilot",
+      "stars": "GitHub yıldızı",
+      "pulls": "Docker indirmesi",
+      "services": "desteklenen hizmet",
+      "note": "GitHub ve Docker Hub verileri, {date} itibarıyla."
+    },
+    "platforms": {
+      "title": "Çalıştığı sistemler",
+      "windows": "Windows",
+      "macos": "macOS",
+      "linux": "Linux",
+      "android": "Android",
+      "docker": "Docker",
+      "pi": "Raspberry Pi"
+    },
+    "how": {
+      "title": "Nasıl çalışır?",
+      "lead": "Üç adım. Bizde hesap açmanız gerekmez.",
+      "steps": {
+        "install": {
+          "title": "CashPilot'u kurun",
+          "text": "Bir bilgisayarda masaüstü uygulamasını kullanın. Ya da sunucuyu Docker ile bir ev sunucusunda, NAS'ta veya Raspberry Pi'de çalıştırın."
+        },
+        "pick": {
+          "title": "Hizmetlerinizi seçin",
+          "text": "Katalogdan seçin, sağlayıcıya kaydolun ve giriş bilgilerinizi yapıştırın. Docker imajı olan hizmetleri CashPilot kendi konteynerinde başlatır. Diğerlerinde bakiyenizi okur."
+        },
+        "watch": {
+          "title": "Her ödemeyi takip edin",
+          "text": "CashPilot bakiyelerinizi saatte bir okur ve geçmişi saklar. Bir bakiye düştüğünde size ödeme alıp almadığınızı sorar."
+        }
+      }
+    },
+    "categories": {
+      "title": "Beş grupta {count} hizmet",
+      "count": "{count} hizmet",
+      "bandwidth": {
+        "name": "Bant genişliği paylaşımı",
+        "text": "Kullanmadığınız internet bant genişliğini veri ve proxy şirketleriyle paylaşın."
+      },
+      "depin": {
+        "name": "DePIN",
+        "text": "Token ile ödeme yapan merkeziyetsiz ağlar için düğüm çalıştırın."
+      },
+      "compute": {
+        "name": "GPU hesaplama",
+        "text": "Ekran kartınızı yapay zekâ ve render işleri için kiraya verin."
+      },
+      "storage": {
+        "name": "Depolama",
+        "text": "Boş disk alanınızı depolama ağlarına kiraya verin."
+      },
+      "mining": {
+        "name": "Madencilik",
+        "text": "CPU veya GPU'nuzla madencilik yapın ve ağınızdaki ASIC madencilerini görün. Beta aşamasında."
+      },
+      "all": {
+        "name": "{count} hizmetin tamamı belgelerde",
+        "text": "Her hizmet için gereksinimleriyle birlikte bir kurulum rehberi."
+      }
+    },
+    "tour": {
+      "title": "İçeriden bir bakış",
+      "lead": "Uygulamalardan demo verili gerçek ekranlar. Tamamını görmek için bir ekran seçin.",
+      "fleet": {
+        "title": "Makineler",
+        "text": "Her makine, sistemi ve en son ne zaman rapor verdiği. Rapor vermeyi bırakan makine kırmızıya döner.",
+        "alt": "Fleet sayfası: sistemleri, sürümleri ve en son rapor verme zamanlarıyla beş makine. Bir makine çevrimdışı."
+      },
+      "catalog": {
+        "title": "Katalog",
+        "text": "Desteklenen tüm hizmetler, gruba göre filtreyle.",
+        "alt": "Catalog sayfası: grup filtresi ve makinelerinizde çalışan hizmetler, her biri türüyle birlikte."
+      },
+      "payouts": {
+        "title": "Ödemeler",
+        "text": "Hangi düğüm verilerini yedeklemeniz gerektiği ve her hizmetin ödemeyi nereye yaptığı.",
+        "alt": "Payouts sayfası: yalnızca tek bir makinenin diskinde bulunan MystNodes kimliğini yedeklemenizi isteyen bir kutu."
+      },
+      "desktop": {
+        "title": "Masaüstü uygulaması",
+        "text": "Windows, macOS veya Linux'ta bir pencerede tam panel. Zaten çalıştırdığınız bir CashPilot sunucusuna da bağlanabilir.",
+        "alt": "macOS'ta CashPilot Desktop: bakiye ile bugünkü ve bu ayki kazanç."
+      },
+      "android": {
+        "title": "Android yardımcı uygulaması",
+        "text": "Telefonunuzdaki kazanç uygulamalarını izler ve durumlarını CashPilot sunucunuza veya masaüstü uygulamanıza bildirir.",
+        "alt": "Android uygulamasının ana ekranı: altı kazanç uygulamasının tamamı çalışıyor ve her birinin 24 saatte kullandığı veri görünüyor."
+      }
+    },
+    "catch": {
+      "title": "İşin içinde bir bit yeniği var mı?",
+      "lead": "Haklı bir soru. İşte gerçekler.",
+      "free": {
+        "title": "Ücretsiz",
+        "text": "Ücret yok, ücretli plan yok, reklam yok."
+      },
+      "open": {
+        "title": "Açık kaynak",
+        "text": "GPL-3.0. Her satırı GitHub'da okuyabilirsiniz."
+      },
+      "hardware": {
+        "title": "Kendi donanımınızda çalışır",
+        "text": "Sizin makineleriniz ve sizin bağlantınız. Sizin için hiçbir sunucu çalıştırmıyoruz."
+      },
+      "account": {
+        "title": "Bizde hesap yok",
+        "text": "Kayıt yok, e-posta yok. Yalnızca seçtiğiniz sağlayıcılara kaydolursunuz."
+      },
+      "funding": "Masraflar nasıl karşılanıyor? Bazı sağlayıcı bağlantıları referans bağlantısıdır. Bunlardan biriyle kaydolursanız sağlayıcı, CashPilot projesine bir ödül ödeyebilir. Bu ödül kazancınızdan düşülmez."
+    },
+    "control": {
+      "title": "Kontrol sizde",
+      "lead": "CashPilot sizin makinelerinizde çalışır. Ne yaptığını görebilir ve istediğiniz zaman durdurabilirsiniz.",
+      "logins": {
+        "title": "Giriş bilgileriniz makinenizde kalır",
+        "text": "CashPilot bunları kendi veritabanında şifreli olarak saklar. Her giriş bilgisi yalnızca ona ihtiyaç duyan hizmete gider."
+      },
+      "containers": {
+        "title": "Her hizmet kendi konteynerinde",
+        "text": "CashPilot'un başlattığı her hizmet diğerlerinden ayrı çalışır. Ek yetkileri kaldırılır ve süreç sayısı sınırlanır."
+      },
+      "lan": {
+        "title": "Ev ağınızdan uzak tutulur",
+        "text": "Yeni bir Docker kurulumunda, başlattığı hizmetler yerel ağınıza (LAN), yönlendiricinize ve üzerinde çalıştıkları makineye erişemez. <a href=\"{securityUrl}\">Ev ağınızı koruma</a>."
+      },
+      "stop": {
+        "title": "İstediğiniz zaman durdurun",
+        "text": "Tek tıkla bir hizmeti durdurabilir veya kaldırabilirsiniz. Bir rehber, CashPilot'u tamamen nasıl kaldıracağınızı gösterir."
+      },
+      "ratings": "Her sağlayıcı aynı on soruya göre A'dan F'ye bir not alır ve her yanıt kaynağına bağlantı verir.",
+      "ratingsLink": "Sağlayıcı notlarını görün"
+    },
+    "earnings": {
+      "title": "Kazancınızı neler etkiler?",
+      "lead": "Kimse size bir rakam vaat edemez. Kazancı belirleyen etkenler şunlar.",
+      "country": {
+        "title": "Ülkeniz",
+        "text": "Sağlayıcılar bazı ülkelerden gelen trafik için diğerlerinden daha fazla öder."
+      },
+      "ip": {
+        "title": "IP adresinizin türü",
+        "text": "Birçok hizmet yalnızca ev bağlantılarına ödeme yapar, veri merkezindeki sunuculara değil."
+      },
+      "connection": {
+        "title": "Bağlantınız",
+        "text": "Daha yüksek yükleme hızı ve kotasız internet, daha fazla trafiğe yer açar."
+      },
+      "uptime": {
+        "title": "Çalışma süresi",
+        "text": "Açık kalan bir cihaz, uyku moduna geçen bir cihazdan daha fazla kazanır."
+      },
+      "devices": {
+        "title": "Cihaz sayısı",
+        "text": "Çoğu hizmet IP adresi başına bir cihaza ve hesap başına belirli sayıda cihaza izin verir."
+      },
+      "hardware": {
+        "title": "GPU'nuz ve donanımınız",
+        "text": "GPU hesaplama ve madencilik; ekran kartınıza, elektrik fiyatınıza ve piyasaya bağlıdır."
+      },
+      "note": "Bazı kurulumlar çok az kazandırır. Panel gerçekte ne kazandığınızı gösterir. Böylece kazandırmayanı bırakabilirsiniz."
+    },
+    "services": {
+      "title": "Popüler hizmetler",
+      "lead": "Her gruptan birkaç hizmet. Belgelerde tamamı, her biri için bir rehberle birlikte listelenir.",
+      "caption": "Popüler hizmetler ve gereksinimleri",
+      "col": {
+        "service": "Hizmet",
+        "homeIp": "Ev IP'si gerekir",
+        "devicesPerIp": "IP başına cihaz",
+        "payout": "Ödeme",
+        "minimum": "En düşük ödeme"
+      },
+      "signup": "Kaydol",
+      "signupLabel": "{name} hizmetine kaydol (referans bağlantısı)",
+      "signupLabelPlain": "{name} hizmetine kaydol",
+      "guideLabel": "{name} için CashPilot rehberi",
+      "all": "{count} hizmetin tamamı belgelerde",
+      "referrals": "Tüm referans bağlantıları",
+      "notStatedNote": "– işareti, katalogda bilgi olmadığını gösterir."
+    },
+    "compare": {
+      "title": "CashPilot ve diğer araçlar",
+      "lead": "Bu hizmetlerden birkaçını çalıştıran diğer açık kaynaklı araçlarla ilgili gerçekler. {date} tarihinde kontrol edildi.",
+      "caption": "CashPilot ve diğer açık kaynaklı araçlar, özellik özellik",
+      "feature": "Özellik",
+      "rows": {
+        "license": "Lisans",
+        "balances": "Sağlayıcı hesaplarınızdan bakiye okur",
+        "fleet": "Birçok sunucu için tek panel",
+        "desktop": "Masaüstü uygulaması",
+        "android": "Android uygulaması",
+        "gpu": "GPU hesaplama ve madencilik",
+        "docker": "Docker gerektirir"
+      },
+      "values": {
+        "gpl": "GPL-3.0",
+        "proprietary": "Tescilli",
+        "noLicense": "Lisans dosyası yok",
+        "gplReadme": "GPL-3.0 dosyası var, README değiştirilmiş kopyaları yasaklıyor",
+        "estimates": "Hayır, yalnızca tahmin",
+        "claimed": "İddia ediliyor, kapalı kodda",
+        "dockerOrPodman": "Evet, ya da Podman",
+        "betaMining": "Evet, madencilik beta aşamasında"
+      },
+      "more": "Her hücre için kaynak içeren tam karşılaştırma"
+    },
+    "faq": {
+      "title": "Sorular",
+      "items": {
+        "slow": {
+          "q": "İnternetimi yavaşlatır mı?",
+          "a": "Yavaşlatabilir. Bant genişliği hizmetleri başka şirketlerin trafiğini bağlantınız üzerinden geçirir, bu yüzden yükleme ve indirme kapasitenizin bir kısmını kullanır. CashPilot her makinenin ağ kullanımını gösterir. Böylece en çok neyin kullandığını görüp onu durdurabilirsiniz."
+        },
+        "legal": {
+          "q": "Yasal mı?",
+          "a": "Nerede yaşadığınıza ve internet sözleşmenize bağlıdır. Bazı internet sağlayıcıları bağlantının paylaşılmasını veya yeniden satılmasını yasaklar. Başlamadan önce yerel yasaları ve sağlayıcınızın koşullarını kontrol edin. Bu bir hukuki tavsiye değildir."
+        },
+        "safe": {
+          "q": "Güvenli mi?",
+          "a": "Bant genişliği hizmetleri başkalarının trafiğinin IP adresinizi kullanmasına izin verir, bu yüzden önce her sağlayıcının koşullarını okuyun. CashPilot başlattığı her hizmeti kendi konteynerinde çalıştırır ve yeni bir Docker kurulumunda onu ev ağınızdan uzak tutar. Başlamadan önce <a href=\"{securityUrl}\">Ev ağınızı koruma</a> rehberini okuyun."
+        },
+        "earn": {
+          "q": "Ne kadar kazanırım?",
+          "a": "Bunu söyleyemeyiz. Ülkenize, IP adresinizin türüne, bağlantınıza, çalışma sürenize ve çalıştırdığınız hizmetlere bağlıdır. Bazı kurulumlar çok az kazandırır. Panel gerçekte ne kazandığınızı gösterir."
+        },
+        "free": {
+          "q": "Neden ücretsiz?",
+          "a": "CashPilot, katkıda bulunanların geliştirdiği, GPL-3.0 lisanslı özgür bir yazılımdır. Bazı sağlayıcı bağlantıları referans bağlantısıdır ve bunlardan gelen ödüller projenin finansmanına yardımcı olur. <a href=\"{referralsUrl}\">Referans bağlantıları nasıl çalışır</a>."
+        },
+        "docker": {
+          "q": "Docker gerekli mi?",
+          "a": "Evet, CashPilot'un başlattığı hizmetler için gerekli, çünkü bunlar konteynerlerde çalışır. Masaüstü uygulaması Docker veya Podman ile çalışır ve kurulum sihirbazı Docker'ı kurmanıza yardımcı olur. Android uygulaması Docker gerektirmez, ancak bir CashPilot sunucusuna veya masaüstü uygulamasına rapor verir."
+        },
+        "pi": {
+          "q": "Raspberry Pi'de çalışır mı?",
+          "a": "Evet, 64 bit sistemli bir Pi 3, 4 veya 5'te çalışır. Çoğu hizmet ARM için bir sürüm yayınlar ve CashPilot bir hizmeti kurmadan önce işlemcinizde çalışıp çalışmadığını kontrol eder. <a href=\"{armUrl}\">ARM üzerinde çalıştırma</a>."
+        },
+        "data": {
+          "q": "CashPilot projesi giriş bilgilerimi veya kazancımı görür mü?",
+          "a": "Hayır. CashPilot sizin makinelerinizde çalışır ve projeye hiçbir şey göndermez. Giriş bilgileriniz kendi CashPilot kurulumunuzda, veritabanında şifreli olarak kalır. <a href=\"{privacyUrl}\">Gizlilik</a>."
+        }
+      }
+    },
+    "cta": {
+      "title": "Denemeye hazır mısınız?",
+      "text": "Masaüstü uygulamasını indirin veya sunucuyu Docker ile çalıştırın. İkisi de ücretsiz.",
+      "download": "İndir",
+      "github": "Kaynak kodunu GitHub'da görün",
+      "releases": "Yeni sürümlerden haberdar olmak için GitHub'da Watch özelliğini ya da <a href=\"{feedUrl}\">sürüm akışını</a> kullanın."
+    }
+  },
+  "download": {
+    "title": "CashPilot'u indirin",
+    "metaTitle": "Windows, macOS, Linux, Android ve Docker için CashPilot'u indirin",
+    "description": "Windows, macOS, Linux ve Android için ücretsiz CashPilot indirmeleri ile ev sunucuları, NAS ve Raspberry Pi için Docker sunucusu. Hesap gerekmez.",
+    "lead": "Sisteminizi seçin. Tüm indirmeler ücretsizdir. Hesap yok, e-posta yok, kayıt yok.",
+    "pickerLabel": "Sisteminizi seçin",
+    "detected": "Sisteminiz",
+    "otherSystems": "Diğer sistemler",
+    "ios": "iPhone uygulaması yoktur. Masaüstü uygulamasını bir bilgisayara kurun veya sunucuyu çalıştırın, ardından paneli Safari'de açın.",
+    "pathsHint": "Hangisine ihtiyacınız olduğundan emin değil misiniz?",
+    "pathsLink": "Seçenekleri karşılaştırın",
+    "fileInfo": "{type}, {size}",
+    "version": "Sürüm {version}",
+    "source": "Kaynak kodu",
+    "allReleases": "Tüm sürümler",
+    "tiles": {
+      "windows": {
+        "name": "Windows",
+        "hint": "Masaüstü uygulaması"
+      },
+      "macos": {
+        "name": "macOS",
+        "hint": "Masaüstü uygulaması"
+      },
+      "linux": {
+        "name": "Linux",
+        "hint": "Masaüstü uygulaması"
+      },
+      "android": {
+        "name": "Android",
+        "hint": "Yardımcı uygulama"
+      },
+      "docker": {
+        "name": "Docker",
+        "hint": "Sunucu"
+      }
+    },
+    "runtime": "Hizmetler konteynerlerde çalışır. Uygulama Docker veya Podman ile çalışır. Docker yüklü değilse kurulum sihirbazı kurmanıza yardımcı olur.",
+    "windows": {
+      "metaTitle": "Windows için CashPilot'u indirin",
+      "title": "Windows için CashPilot Desktop",
+      "installer": "Yükleyiciyi indirin",
+      "installerType": "Yükleyici (.exe)",
+      "portable": "Taşınabilir sürüm",
+      "portableType": "Taşınabilir uygulama (.exe), kurulum gerektirmez",
+      "arch": "64 bit (x64). Çoğu bilgisayar 64 bittir.",
+      "requires": "Windows 10 22H2 veya Windows 11 23H2 ya da daha yenisi gerekir.",
+      "warnTitle": "Windows veya antivirüs programınız uyarı mı veriyor?",
+      "warnText": "Windows uygulaması henüz kod imzalı değildir, bu yüzden SmartScreen \"Windows bilgisayarınızı korudu\" uyarısı gösterebilir. \"Ek bilgi\"ye, ardından \"Yine de çalıştır\"a tıklayın. Yayımladığımız dosyaya sahip olduğunuzu doğrulamak için dosyanın SHA-256 sağlama toplamını aşağıdaki listeyle karşılaştırın.",
+      "verify": "PowerShell'de:"
+    },
+    "macos": {
+      "metaTitle": "macOS için CashPilot'u indirin",
+      "title": "macOS için CashPilot Desktop",
+      "button": "Mac için indirin",
+      "type": "Zip dosyası",
+      "arch": "Apple silicon (M1 ve sonrası).",
+      "minimum": "macOS 12 Monterey veya daha yenisi gerekir.",
+      "requires": "Apple tarafından imzalanmış ve onaylanmıştır (notarized). Arşivi açın ve cashpilot-desktop.app uygulamasını çalıştırın.",
+      "intel": "Intel işlemcili Mac mi? Masaüstü uygulamasının Intel sürümü yoktur. Bunun yerine <a href=\"{dockerUrl}\">sunucuyu Docker ile çalıştırın</a>.",
+      "verify": "Terminal'de:"
+    },
+    "linux": {
+      "metaTitle": "Linux için CashPilot'u indirin",
+      "title": "Linux için CashPilot Desktop",
+      "button": "Linux için indirin",
+      "type": "tar.gz arşivi",
+      "arch": "x86_64 (64 bit PC).",
+      "minimum": "glibc 2.34 veya daha yenisi gerekir: Ubuntu 22.04, Debian 12 ya da daha yenisi.",
+      "requires": "GTK 3 ve WebKitGTK 4.1 gerekir. Arşivi açın ve CashPilot Desktop'ı çalıştırın.",
+      "server": "Bir sunucu veya Raspberry Pi mi kuruyorsunuz? <a href=\"{dockerUrl}\">Docker kullanın</a>.",
+      "verify": "Bir terminalde:"
+    },
+    "android": {
+      "metaTitle": "Android için CashPilot'u indirin",
+      "title": "Android için CashPilot",
+      "button": "APK'yı indirin",
+      "type": "APK dosyası",
+      "requires": "Android 8.0 veya daha yenisi. Telefonunuz, tarayıcınızdan yükleme yapılmasına izin vermenizi ister.",
+      "what": "Android uygulaması telefonunuzdaki kazanç uygulamalarını izler ve durumlarını CashPilot sunucunuza veya masaüstü uygulamanıza bildirir. Rapor verebilmesi için bunlardan birine ihtiyaç duyar.",
+      "qr": "APK'yı indirmek için telefonunuzla tarayın.",
+      "qrAlt": "Android APK indirme bağlantısının QR kodu",
+      "stores": "Google Play'de yok. F-Droid: hazırlanıyor."
+    },
+    "docker": {
+      "metaTitle": "CashPilot'u Docker ile kendiniz barındırın",
+      "title": "Docker ile CashPilot sunucusu",
+      "lead": "Ev sunucusu, NAS, Raspberry Pi veya sürekli açık kalan herhangi bir makine için. Paneli bir tarayıcıda açarsınız.",
+      "requires": "Docker ve Compose gerekir. Linux, macOS veya Windows üzerinde, amd64 veya arm64.",
+      "step1": "Compose dosyasını indirin ve CashPilot'u başlatın:",
+      "step2": "Kurulum token'ını görüntüleyin:",
+      "step3": "{url} adresini açın ve token'ı girin. Gerisini kurulum sihirbazı halleder.",
+      "viewSource": "Çalıştırmadan önce compose dosyasını okuyun",
+      "images": "Compose dosyası {ui} ve {worker} imajlarını sabitler.",
+      "guide": "Tam rehber: Başlarken"
+    },
+    "checksums": {
+      "title": "SHA-256 sağlama toplamları, sürüm {version}",
+      "all": "SHA256SUMS dosyası"
+    },
+    "homelab": {
+      "title": "Ev sunucusu kurulumları",
+      "lead": "En kolaydan en zora doğru sıralanmıştır.",
+      "option": "Seçenek",
+      "caption": "Ev sunucusu kurulumları, en kolaydan en zora",
+      "skills": "Gereken beceriler",
+      "tools": "Gereken araçlar",
+      "items": {
+        "unraid": {
+          "title": "Unraid",
+          "text": "Community Applications'tan iki CashPilot şablonunu kurun.",
+          "skills": "Unraid'in Apps sekmesini kullanmak yeterli",
+          "tools": "Bir Unraid sunucusu"
+        },
+        "truenas": {
+          "title": "TrueNAS SCALE",
+          "text": "CashPilot'u Discover Apps içinde, community train'de bulun.",
+          "skills": "TrueNAS uygulamalar sayfasını kullanmak yeterli",
+          "tools": "Bir TrueNAS SCALE sunucusu"
+        },
+        "casaos": {
+          "title": "CasaOS",
+          "text": "Mağaza kaydı incelemedeyken compose dosyasını özel uygulama olarak içe aktarın.",
+          "skills": "Bir dosya yapıştırmak ve iki imaj etiketini düzenlemek",
+          "tools": "CasaOS 0.4.5 veya daha yenisi"
+        },
+        "pi": {
+          "title": "Raspberry Pi",
+          "text": "Yukarıdaki Docker komutlarını 64 bit Raspberry Pi OS üzerinde çalıştırın.",
+          "skills": "Temel terminal kullanımı",
+          "tools": "Docker kurulu bir Pi 3, 4 veya 5"
+        },
+        "fleet": {
+          "title": "Birden çok makine",
+          "text": "Tek bir panel ve her makinede bir worker çalıştırın. Her rakam makine bazında gösterilir.",
+          "skills": "Docker Compose ve ev ağı bilgisi",
+          "tools": "Docker kurulu iki veya daha fazla makine"
+        }
+      }
+    },
+    "paths": {
+      "title": "Hangisine ihtiyacım var?",
+      "recommended": "Çoğu kişi için önerilen",
+      "skills": "Gereken beceriler",
+      "tools": "Gereken araçlar",
+      "desktop": {
+        "title": "Masaüstü uygulaması",
+        "text": "Bilgisayarınızda bir pencerede CashPilot. Hizmetleri o bilgisayarda çalıştırır ve paneli gösterir.",
+        "skills": "Gerekmez",
+        "tools": "Sürekli açık kalan bir Windows, Mac veya Linux bilgisayar"
+      },
+      "server": {
+        "title": "Docker ile sunucu",
+        "text": "Bir ev sunucusunda, NAS'ta veya Raspberry Pi'de CashPilot. Birden çok makineyi tek bir panelden yönetebilir.",
+        "skills": "Temel terminal kullanımı",
+        "tools": "Docker kurulu, sürekli açık bir makine"
+      },
+      "android": {
+        "title": "Android yardımcı uygulaması",
+        "text": "Telefonunuzdaki kazanç uygulamalarını izler ve telefonu panelinize ekler.",
+        "skills": "Gerekmez",
+        "tools": "Bir Android telefon ve bir CashPilot sunucusu veya masaüstü uygulaması"
+      }
+    },
+    "more": {
+      "title": "Diğer bağlantı yolları",
+      "mcp": {
+        "title": "Yapay zekâ asistanları için MCP sunucusu",
+        "text": "Bir yapay zekâ asistanının CashPilot durumunuzu ve kazancınızı okumasını sağlar. Sürüm {version}; Windows, macOS ve Linux için."
+      },
+      "ha": {
+        "title": "Home Assistant entegrasyonu",
+        "text": "CashPilot kazancınızı ve hizmetlerinizi Home Assistant'ta gösterir."
+      }
+    }
+  },
+  "referrals": {
+    "title": "Referans bağlantıları",
+    "metaTitle": "CashPilot referans bağlantıları ve nasıl çalıştıkları",
+    "description": "CashPilot referans kodu taşıyan tüm sağlayıcı bağlantıları, bunların sizin için ne anlama geldiği ve referans olmadan nasıl kaydolacağınız.",
+    "lead": "Bu sayfa, CashPilot referans kodu taşıyan tüm sağlayıcı bağlantılarını ve her birinin sizin için ne anlama geldiğini listeler.",
+    "howTitle": "Referans bağlantıları nasıl çalışır",
+    "how1": "Bu bağlantılardan biriyle bir sağlayıcıya kaydolursanız sağlayıcı, CashPilot projesine bir ödül ödeyebilir. Bu ödül kazancınızdan düşülmez.",
+    "how2": "Bazı sağlayıcılar bağlantıyla kaydolduğunuzda size de bir bonus verir. Katalogda yer alıyorsa bunu gösteriyoruz.",
+    "how3": "Bu bağlantıları kullanmak zorunda değilsiniz. Her kayıt sağlayıcının kendi web sitesini de gösterir. Böylece referans olmadan kaydolabilirsiniz.",
+    "how4": "Ödüller projenin finansmanına yardımcı olur.",
+    "count": "{count} sağlayıcı, {date} tarihli katalogdan.",
+    "code": "Kod",
+    "provider": "Sağlayıcı",
+    "link": "Referansla kaydol",
+    "website": "Sağlayıcının web sitesi (referanssız)",
+    "links": "Bağlantılar",
+    "youGet": "Size kazandırdığı",
+    "projectGets": "Projeye kazandırdığı",
+    "codeEntry": "Bağlantı kodu iletmez. Uygulama referans kodu istediğinde {code} yazın.",
+    "guide": "CashPilot rehberi",
+    "guideLabel": "{name} için CashPilot rehberi",
+    "toc": "Bir gruba git",
+    "tocCount": "{count} referans bağlantılı",
+    "caption": "{group}: referans bağlantıları ve her birinin sağladıkları"
+  },
+  "privacy": {
+    "title": "Gizlilik",
+    "metaTitle": "Gizlilik",
+    "description": "CashPilot web sitesi ve uygulamaları neler toplar: web sitesi hiçbir şey toplamaz, uygulamalar da projeye hiçbir şey göndermez.",
+    "lead": "Kısaca: bu web sitesi hiçbir şey toplamaz ve CashPilot uygulamaları projeye hiçbir şey göndermez.",
+    "site": {
+      "title": "Bu web sitesi",
+      "p1": "Çerez yok, analiz aracı yok, izleme pikseli yok, reklam yok. Sayfa başka web sitelerinden hiçbir şey yüklemez. Yazı tipleri sitenin bir parçasıdır.",
+      "p2": "Bir dil seçtiğinizde tarayıcınız bu seçimi kendi yerel depolamasında tutar. Seçim cihazınızda kalır ve bize asla gönderilmez.",
+      "p3": "Bu siteyi GitHub Pages barındırır ve trafiği Cloudflare taşır. Her ikisi de güvenlik için her ziyaretin IP adresini kaydedebilir. Cloudflare ayrıca tarayıcınızdan ağ hatalarını kendisine bildirmesini isteyebilir. <a href=\"{githubPrivacyUrl}\">GitHub gizlilik bildirimini</a> ve <a href=\"{cloudflarePrivacyUrl}\">Cloudflare gizlilik politikasını</a> okuyun."
+    },
+    "apps": {
+      "title": "CashPilot uygulamaları",
+      "p1": "Web sunucusu, masaüstü uygulaması ve Android uygulamasında telemetri yoktur. CashPilot projesine hiçbir şey göndermezler.",
+      "p2": "Giriş bilgileriniz ve kazancınız kendi CashPilot kurulumunuzda kalır. Uygulamalar yalnızca ihtiyaç duydukları hizmetlere bağlanır: kurduğunuz sağlayıcılar, yeni sürüm kontrolü için GitHub, herkese açık IP ve döviz kuru hizmetleri ve zincir üstü bakiyeler için blokzincir gezginleri.",
+      "p3": "Şu anda web paneli yazı tiplerini Google Fonts'tan, grafik kütüphanesini de jsDelivr'den yükler. Belgeler <a href=\"{comparisonUrl}\">tüm giden bağlantıları</a> ve isteğe bağlı olanların nasıl kapatılacağını listeler."
+    },
+    "providers": {
+      "title": "Sağlayıcılar",
+      "p1": "Bir sağlayıcıya kaydolduğunuzda o sağlayıcının kendi gizlilik politikası geçerlidir. Referans bağlantısı, sağlayıcıya CashPilot üzerinden geldiğinizi bildirir."
+    },
+    "contact": {
+      "title": "İletişim",
+      "p1": "Gizlilikle ilgili sorular: {email}."
+    }
+  },
+  "disclaimer": {
+    "title": "Sorumluluk reddi",
+    "metaTitle": "Sorumluluk reddi",
+    "description": "CashPilot finansal veya hukuki tavsiye vermez, kazanç vaat etmez ve hizmetlerini çalıştırdığı sağlayıcıların bir parçası değildir.",
+    "lead": "Başlamadan önce lütfen bunu okuyun.",
+    "items": {
+      "advice": {
+        "title": "Finansal veya hukuki tavsiye değildir",
+        "text": "Bu sitedeki veya uygulamalardaki hiçbir şey finansal, hukuki veya vergi tavsiyesi değildir."
+      },
+      "earnings": {
+        "title": "Kazanç vaadi yoktur",
+        "text": "Kazanç; ülkenize, bağlantınıza, donanımınıza ve sağlayıcılara bağlıdır. Çok düşük veya sıfır olabilir. Sağlayıcılar ücretlerini istedikleri zaman değiştirebilir."
+      },
+      "law": {
+        "title": "Yasalarınız ve sözleşmeniz",
+        "text": "Bağlantınızı paylaşmadan veya bir düğüm çalıştırmadan önce yerel yasaları ve internet sağlayıcınızın koşullarını kontrol edin. Kazancınızdan doğan vergilerden siz sorumlusunuz."
+      },
+      "providers": {
+        "title": "Bağımsız sağlayıcılar",
+        "text": "Sağlayıcılar ayrı şirketlerdir. CashPilot onların bir parçası değildir ve koşullarını, ödemelerini veya hesaplarla ilgili kararlarını kontrol edemez. Bazı sağlayıcılar projeye referans ödülü öder."
+      },
+      "warranty": {
+        "title": "Garanti yoktur",
+        "text": "CashPilot, GPL-3.0-or-later lisansı altında özgür bir yazılımdır. Lisansın 15. ve 16. bölümlerinde belirtildiği gibi hiçbir garanti olmadan sunulur."
+      },
+      "trademarks": {
+        "title": "Ticari markalar",
+        "text": "Sağlayıcı ve platform adları ile logoları sahiplerine aittir. Burada kullanılmaları yalnızca CashPilot'un neyle çalıştığını belirtir."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Sayfa bulunamadı",
+    "text": "Bu sayfa mevcut değil. Taşınmış olabilir.",
+    "home": "Ana sayfaya git",
+    "download": "İndirmelere git"
+  },
+  "footer": {
+    "tagline": "Pasif gelir hizmetlerini kendi donanımınızda çalıştırın, tüm ödemeleri tek bir panelde görün.",
+    "product": "Ürün",
+    "project": "Proje",
+    "about": "Hakkında",
+    "download": "İndir",
+    "docs": "Belgeler",
+    "referrals": "Referans bağlantıları",
+    "privacy": "Gizlilik",
+    "disclaimer": "Sorumluluk reddi",
+    "web": "CashPilot sunucusu",
+    "desktop": "CashPilot Desktop",
+    "android": "Android için CashPilot",
+    "mcp": "MCP sunucusu",
+    "feed": "Sürüm akışı",
+    "agents": "Yapay zekâ ajanları için",
+    "contact": "İletişim",
+    "legal": "Yerel yasaları ve internet sağlayıcınızın koşullarını kontrol edin. Finansal tavsiye değildir.",
+    "credit": "CashPilot katkıcıları tarafından geliştirilmiştir. GPL-3.0-or-later lisanslı özgür yazılım."
+  },
+  "categories": {
+    "bandwidth": "Bant genişliği paylaşımı",
+    "depin": "DePIN",
+    "compute": "GPU hesaplama",
+    "storage": "Depolama",
+    "mining": "Madencilik"
+  },
+  "payment": {
+    "paypal": "PayPal",
+    "crypto": "Kripto",
+    "giftcard": "Hediye kartları",
+    "amazon_giftcard": "Amazon hediye kartları",
+    "wise": "Wise",
+    "bank": "Banka havalesi",
+    "stripe": "Stripe"
+  }
+}

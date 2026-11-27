@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "siteName": "CashPilot",
+    "titleSuffix": "CashPilot",
+    "ogImageAlt": "CashPilot: zaprzęgnij nieużywany sprzęt do pracy i zobacz wszystkie wypłaty w jednym panelu."
+  },
+  "nav": {
+    "skip": "Przejdź do treści",
+    "home": "Strona główna CashPilot",
+    "docs": "Dokumentacja",
+    "github": "GitHub",
+    "download": "Pobierz",
+    "main": "Menu główne",
+    "stars": "gwiazdek"
+  },
+  "lang": {
+    "label": "Język",
+    "suggest": "Ta strona jest też dostępna po polsku.",
+    "switch": "Pokaż po polsku",
+    "dismiss": "Nie, dziękuję"
+  },
+  "common": {
+    "copy": "Kopiuj",
+    "copied": "Skopiowano",
+    "copyFailed": "Zaznacz i skopiuj",
+    "copyLabel": "Skopiuj polecenie",
+    "yes": "Tak",
+    "no": "Nie",
+    "notStated": "Brak danych",
+    "noLimit": "Bez limitu"
+  },
+  "disclosure": {
+    "short": "Jeśli zarejestrujesz się przez jeden z tych linków, dostawca może zapłacić projektowi CashPilot nagrodę. Nie pochodzi ona z twoich zarobków.",
+    "more": "Jak działają linki polecające"
+  },
+  "home": {
+    "title": "CashPilot: usługi dochodu pasywnego na twoim własnym sprzęcie",
+    "description": "Darmowe oprogramowanie open source, które uruchamia usługi udostępniania łącza, DePIN, obliczeń GPU i kopania kryptowalut na twoich własnych maszynach i pokazuje wszystkie wypłaty w jednym panelu.",
+    "hero": {
+      "pill": "Darmowe i open source, GPL-3.0",
+      "title": "Zaprzęgnij nieużywany sprzęt do pracy. Zobacz wszystkie wypłaty w jednym panelu.",
+      "lead": "CashPilot konfiguruje usługi dochodu pasywnego na twoich komputerach, serwerach domowych i Raspberry Pi. Odczytuje twoje saldo u każdego dostawcy i przechowuje historię w jednym miejscu, na twojej własnej maszynie.",
+      "download": "Pobierz",
+      "selfhost": "Własny serwer z Dockerem",
+      "expect": "CashPilot ci nie płaci. Płacą dostawcy. Zarobki zależą od twojego kraju, łącza i sprzętu.",
+      "imageAlt": "Panel CashPilot: saldo, zarobki z dziś i z tego miesiąca, usługi na każdej maszynie i zarobki dzienne.",
+      "imageAltMobile": "Panel CashPilot na telefonie: saldo oraz zarobki z dziś i z tego miesiąca."
+    },
+    "stats": {
+      "label": "CashPilot w liczbach",
+      "stars": "gwiazdki na GitHubie",
+      "pulls": "pobrania z Docker Hub",
+      "services": "obsługiwane usługi",
+      "note": "Dane z GitHuba i Docker Hub z dnia {date}."
+    },
+    "platforms": {
+      "title": "Działa na",
+      "windows": "Windows",
+      "macos": "macOS",
+      "linux": "Linux",
+      "android": "Android",
+      "docker": "Docker",
+      "pi": "Raspberry Pi"
+    },
+    "how": {
+      "title": "Jak to działa",
+      "lead": "Trzy kroki i żadnego konta u nas.",
+      "steps": {
+        "install": {
+          "title": "Zainstaluj CashPilot",
+          "text": "Użyj aplikacji na komputer. Albo uruchom serwer z Dockerem na serwerze domowym, NAS-ie lub Raspberry Pi."
+        },
+        "pick": {
+          "title": "Wybierz usługi",
+          "text": "Wybierz z katalogu, zarejestruj się u dostawcy i wklej swoje dane logowania. Usługi z obrazem Dockera CashPilot uruchamia w osobnym kontenerze. W pozostałych odczytuje twoje saldo."
+        },
+        "watch": {
+          "title": "Śledź każdą wypłatę",
+          "text": "CashPilot co godzinę odczytuje twoje salda i zapisuje historię. Gdy saldo spada, pyta cię, czy była to wypłata."
+        }
+      }
+    },
+    "categories": {
+      "title": "Pięć grup usług, łącznie {count}",
+      "count": "Usługi: {count}",
+      "bandwidth": {
+        "name": "Udostępnianie łącza",
+        "text": "Udostępniaj niewykorzystaną przepustowość internetu firmom zajmującym się danymi i proxy."
+      },
+      "depin": {
+        "name": "DePIN",
+        "text": "Uruchamiaj węzły zdecentralizowanych sieci, które płacą w tokenach."
+      },
+      "compute": {
+        "name": "Obliczenia GPU",
+        "text": "Wynajmij kartę graficzną do zadań AI i renderowania."
+      },
+      "storage": {
+        "name": "Przestrzeń dyskowa",
+        "text": "Wynajmij wolne miejsce na dysku sieciom przechowywania danych."
+      },
+      "mining": {
+        "name": "Kopanie",
+        "text": "Kop kryptowaluty na CPU lub GPU i zobacz koparki ASIC w swojej sieci. W wersji beta."
+      },
+      "all": {
+        "name": "Pełna lista ({count}) w dokumentacji",
+        "text": "Poradnik konfiguracji dla każdej usługi, z jej wymaganiami."
+      }
+    },
+    "tour": {
+      "title": "Zajrzyj do środka",
+      "lead": "Prawdziwe ekrany z aplikacji, z danymi demonstracyjnymi. Wybierz ekran, aby zobaczyć go w całości.",
+      "fleet": {
+        "title": "Maszyny",
+        "text": "Każda maszyna, jej system i czas ostatniego zgłoszenia. Maszyna, która przestaje się zgłaszać, robi się czerwona.",
+        "alt": "Strona Fleet: pięć maszyn z systemem, wersją i czasem ostatniego zgłoszenia. Jedna maszyna jest offline."
+      },
+      "catalog": {
+        "title": "Katalog",
+        "text": "Każda obsługiwana usługa, z filtrem według grupy.",
+        "alt": "Strona Catalog: filtr grup i usługi działające na twoich maszynach, każda z jej rodzajem."
+      },
+      "payouts": {
+        "title": "Wypłaty",
+        "text": "Z których danych węzłów musisz zrobić kopię zapasową i dokąd wypłaca każda usługa.",
+        "alt": "Strona Payouts: komunikat z prośbą o kopię zapasową tożsamości MystNodes, która istnieje tylko na dysku jednej maszyny."
+      },
+      "desktop": {
+        "title": "Aplikacja na komputer",
+        "text": "Pełny panel w oknie na Windows, macOS lub Linux. Aplikacja może też dołączyć do serwera CashPilot, który już u ciebie działa.",
+        "alt": "CashPilot Desktop na macOS z saldem oraz zarobkami z dziś i z tego miesiąca."
+      },
+      "android": {
+        "title": "Aplikacja towarzysząca na Androida",
+        "text": "Śledzi aplikacje zarobkowe na twoim telefonie i zgłasza ich stan do twojego serwera CashPilot lub aplikacji na komputer.",
+        "alt": "Ekran główny aplikacji na Androida: wszystkie sześć aplikacji zarobkowych działa, z ilością danych zużytych przez każdą w ciągu 24 godzin."
+      }
+    },
+    "catch": {
+      "title": "Gdzie jest haczyk?",
+      "lead": "Uczciwe pytanie. Oto fakty.",
+      "free": {
+        "title": "Za darmo",
+        "text": "Bez ceny, bez płatnego planu i bez reklam."
+      },
+      "open": {
+        "title": "Open source",
+        "text": "GPL-3.0. Każdą linijkę możesz przeczytać na GitHubie."
+      },
+      "hardware": {
+        "title": "Działa na twoim sprzęcie",
+        "text": "Twoje maszyny i twoje łącze. Nie utrzymujemy dla ciebie żadnych serwerów."
+      },
+      "account": {
+        "title": "Bez konta u nas",
+        "text": "Bez rejestracji i bez e-maila. Rejestrujesz się tylko u wybranych przez siebie dostawców."
+      },
+      "funding": "Kto za to płaci? Niektóre linki do dostawców to linki polecające. Jeśli zarejestrujesz się przez jeden z nich, dostawca może zapłacić projektowi CashPilot nagrodę. Nie pochodzi ona z twoich zarobków."
+    },
+    "control": {
+      "title": "Kontrola zostaje w twoich rękach",
+      "lead": "CashPilot działa na twoich maszynach. Widzisz, co robi, i możesz go zatrzymać w każdej chwili.",
+      "logins": {
+        "title": "Twoje dane logowania zostają na twojej maszynie",
+        "text": "CashPilot przechowuje je zaszyfrowane we własnej bazie danych. Dane logowania trafiają tylko do usługi, która ich potrzebuje."
+      },
+      "containers": {
+        "title": "Każda usługa we własnym kontenerze",
+        "text": "Każda usługa uruchomiona przez CashPilot działa oddzielnie od innych, bez dodatkowych uprawnień i z limitem procesów."
+      },
+      "lan": {
+        "title": "Z dala od twojej sieci domowej",
+        "text": "Przy nowej instalacji Dockera uruchomione usługi nie mają dostępu do twojej sieci LAN, routera ani maszyny, na której działają. <a href=\"{securityUrl}\">Ochrona sieci domowej</a>."
+      },
+      "stop": {
+        "title": "Zatrzymaj wszystko w każdej chwili",
+        "text": "Jedno kliknięcie zatrzymuje lub usuwa usługę. Poradnik pokazuje, jak całkowicie usunąć CashPilot."
+      },
+      "ratings": "Każdy dostawca dostaje ocenę od A do F na podstawie tych samych dziesięciu pytań, a każda odpowiedź ma link do źródła.",
+      "ratingsLink": "Zobacz oceny dostawców"
+    },
+    "earnings": {
+      "title": "Od czego zależą zarobki",
+      "lead": "Nikt nie może obiecać ci konkretnej kwoty. Oto, co na nią wpływa.",
+      "country": {
+        "title": "Twój kraj",
+        "text": "Dostawcy płacą więcej za ruch z niektórych krajów niż z innych."
+      },
+      "ip": {
+        "title": "Rodzaj twojego adresu IP",
+        "text": "Wiele usług płaci tylko za łącza domowe, a nie za serwery w centrum danych."
+      },
+      "connection": {
+        "title": "Twoje łącze",
+        "text": "Większa prędkość wysyłania i brak limitu danych dają miejsce na większy ruch."
+      },
+      "uptime": {
+        "title": "Czas działania",
+        "text": "Urządzenie, które jest stale włączone, zarabia więcej niż takie, które przechodzi w uśpienie."
+      },
+      "devices": {
+        "title": "Liczba urządzeń",
+        "text": "Większość usług pozwala na jedno urządzenie na adres IP i określoną liczbę urządzeń na konto."
+      },
+      "hardware": {
+        "title": "Twoja karta graficzna i sprzęt",
+        "text": "Obliczenia GPU i kopanie zależą od twojej karty, ceny prądu i rynku."
+      },
+      "note": "Niektóre konfiguracje zarabiają bardzo mało. Panel pokazuje, ile naprawdę zarabiasz, więc możesz zrezygnować z tego, co się nie opłaca."
+    },
+    "services": {
+      "title": "Popularne usługi",
+      "lead": "Kilka usług z każdej grupy. Dokumentacja wymienia wszystkie, z poradnikiem dla każdej.",
+      "caption": "Popularne usługi i ich wymagania",
+      "col": {
+        "service": "Usługa",
+        "homeIp": "Wymaga domowego IP",
+        "devicesPerIp": "Urządzeń na IP",
+        "payout": "Wypłata",
+        "minimum": "Minimalna wypłata"
+      },
+      "signup": "Zarejestruj się",
+      "signupLabel": "Rejestracja: {name} (link polecający)",
+      "signupLabelPlain": "Rejestracja: {name}",
+      "guideLabel": "Poradnik CashPilot: {name}",
+      "all": "Wszystkie usługi w dokumentacji ({count})",
+      "referrals": "Wszystkie linki polecające",
+      "notStatedNote": "– oznacza, że katalog tego nie podaje."
+    },
+    "compare": {
+      "title": "CashPilot na tle innych",
+      "lead": "Fakty o innych narzędziach open source, które uruchamiają kilka z tych usług. Sprawdzone {date}.",
+      "caption": "CashPilot i inne narzędzia open source, funkcja po funkcji",
+      "feature": "Funkcja",
+      "rows": {
+        "license": "Licencja",
+        "balances": "Odczytuje salda z twoich kont u dostawców",
+        "fleet": "Jeden panel dla wielu serwerów",
+        "desktop": "Aplikacja na komputer",
+        "android": "Aplikacja na Androida",
+        "gpu": "Obliczenia GPU i kopanie",
+        "docker": "Wymaga Dockera"
+      },
+      "values": {
+        "gpl": "GPL-3.0",
+        "proprietary": "Własnościowa",
+        "noLicense": "Brak pliku licencji",
+        "gplReadme": "Plik GPL-3.0, README zabrania zmienionych kopii",
+        "estimates": "Nie, tylko szacunki",
+        "claimed": "Deklarowane, w zamkniętym kodzie",
+        "dockerOrPodman": "Tak, lub Podman",
+        "betaMining": "Tak, kopanie w wersji beta"
+      },
+      "more": "Pełne porównanie ze źródłem dla każdej komórki"
+    },
+    "faq": {
+      "title": "Pytania",
+      "items": {
+        "slow": {
+          "q": "Czy to spowolni mój internet?",
+          "a": "Może. Usługi udostępniania łącza przesyłają ruch innych firm przez twoje łącze, więc zużywają część wysyłania i pobierania. CashPilot pokazuje zużycie sieci przez każdą maszynę, więc widzisz, co zużywa najwięcej, i możesz to zatrzymać."
+        },
+        "legal": {
+          "q": "Czy to legalne?",
+          "a": "To zależy od miejsca zamieszkania i twojej umowy z dostawcą internetu. Niektórzy dostawcy internetu zabraniają udostępniania lub odsprzedawania łącza. Zanim zaczniesz, sprawdź lokalne prawo i warunki swojego dostawcy. To nie jest porada prawna."
+        },
+        "safe": {
+          "q": "Czy to bezpieczne?",
+          "a": "Usługi udostępniania łącza pozwalają, by ruch innych osób korzystał z twojego adresu IP, więc najpierw przeczytaj warunki każdego dostawcy. CashPilot uruchamia każdą usługę we własnym kontenerze i przy nowej instalacji Dockera trzyma ją z dala od twojej sieci domowej. Zanim zaczniesz, przeczytaj poradnik <a href=\"{securityUrl}\">Ochrona sieci domowej</a>."
+        },
+        "earn": {
+          "q": "Ile zarobię?",
+          "a": "Nie możemy tego powiedzieć. To zależy od twojego kraju, rodzaju adresu IP, łącza, czasu działania i usług, które uruchamiasz. Niektóre konfiguracje zarabiają bardzo mało. Panel pokazuje, ile naprawdę zarabiasz."
+        },
+        "free": {
+          "q": "Dlaczego to jest za darmo?",
+          "a": "CashPilot to wolne oprogramowanie na licencji GPL-3.0, tworzone przez jego współtwórców. Niektóre linki do dostawców to linki polecające, a nagrody z nich pomagają finansować projekt. <a href=\"{referralsUrl}\">Jak działają linki polecające</a>."
+        },
+        "docker": {
+          "q": "Czy potrzebuję Dockera?",
+          "a": "Tak, dla usług uruchamianych przez CashPilot, bo działają w kontenerach. Aplikacja na komputer działa z Dockerem lub Podmanem, a jej kreator konfiguracji pomaga zainstalować Dockera. Aplikacja na Androida nie potrzebuje Dockera, ale zgłasza dane do serwera CashPilot lub aplikacji na komputer."
+        },
+        "pi": {
+          "q": "Czy działa na Raspberry Pi?",
+          "a": "Tak, na Pi 3, 4 lub 5 z systemem 64-bitowym. Większość usług publikuje wersję na ARM, a CashPilot przed wdrożeniem sprawdza, czy usługa działa na twoim procesorze. <a href=\"{armUrl}\">Uruchamianie na ARM</a>."
+        },
+        "data": {
+          "q": "Czy projekt CashPilot widzi moje dane logowania lub zarobki?",
+          "a": "Nie. CashPilot działa na twoich maszynach i nic nie wysyła do projektu. Twoje dane logowania zostają w twoim własnym CashPilot, zaszyfrowane w jego bazie danych. <a href=\"{privacyUrl}\">Prywatność</a>."
+        }
+      }
+    },
+    "cta": {
+      "title": "Chcesz spróbować?",
+      "text": "Pobierz aplikację na komputer albo uruchom serwer z Dockerem. Obie opcje są darmowe.",
+      "download": "Pobierz",
+      "github": "Zobacz kod źródłowy na GitHubie",
+      "releases": "Aby dowiadywać się o nowych wersjach, użyj Watch na GitHubie lub <a href=\"{feedUrl}\">kanału wydań</a>."
+    }
+  },
+  "download": {
+    "title": "Pobierz CashPilot",
+    "metaTitle": "Pobierz CashPilot na Windows, macOS, Linux, Androida i Dockera",
+    "description": "Darmowe pobieranie CashPilot na Windows, macOS, Linux i Androida oraz serwer w Dockerze na serwery domowe, NAS i Raspberry Pi. Bez zakładania konta.",
+    "lead": "Wybierz swój system. Każde pobranie jest darmowe. Bez konta, bez e-maila, bez rejestracji.",
+    "pickerLabel": "Wybierz system",
+    "detected": "Twój system",
+    "otherSystems": "Inne systemy",
+    "ios": "Nie ma aplikacji na iPhone'a. Zainstaluj aplikację na komputerze albo uruchom serwer, a potem otwórz panel w Safari.",
+    "pathsHint": "Nie wiesz, czego potrzebujesz?",
+    "pathsLink": "Porównaj opcje",
+    "fileInfo": "{type}, {size}",
+    "version": "Wersja {version}",
+    "source": "Kod źródłowy",
+    "allReleases": "Wszystkie wydania",
+    "tiles": {
+      "windows": {
+        "name": "Windows",
+        "hint": "Aplikacja na komputer"
+      },
+      "macos": {
+        "name": "macOS",
+        "hint": "Aplikacja na komputer"
+      },
+      "linux": {
+        "name": "Linux",
+        "hint": "Aplikacja na komputer"
+      },
+      "android": {
+        "name": "Android",
+        "hint": "Aplikacja towarzysząca"
+      },
+      "docker": {
+        "name": "Docker",
+        "hint": "Serwer"
+      }
+    },
+    "runtime": "Usługi działają w kontenerach. Aplikacja działa z Dockerem lub Podmanem, a jej kreator konfiguracji pomaga zainstalować Dockera, jeśli go brakuje.",
+    "windows": {
+      "metaTitle": "Pobierz CashPilot na Windows",
+      "title": "CashPilot Desktop na Windows",
+      "installer": "Pobierz instalator",
+      "installerType": "Instalator (.exe)",
+      "portable": "Wersja przenośna",
+      "portableType": "Aplikacja przenośna (.exe), bez instalacji",
+      "arch": "64-bitowy (x64). Większość komputerów PC jest 64-bitowa.",
+      "requires": "Wymaga Windows 10 22H2 albo Windows 11 23H2 lub nowszego.",
+      "warnTitle": "Windows lub antywirus wyświetla ostrzeżenie?",
+      "warnText": "Aplikacja na Windows nie jest jeszcze podpisana cyfrowo, więc SmartScreen może pokazać komunikat „System Windows ochronił ten komputer”. Kliknij Więcej informacji, a potem Uruchom mimo to. Aby sprawdzić, czy masz plik, który opublikowaliśmy, porównaj jego sumę kontrolną SHA-256 z listą poniżej.",
+      "verify": "W PowerShell:"
+    },
+    "macos": {
+      "metaTitle": "Pobierz CashPilot na macOS",
+      "title": "CashPilot Desktop na macOS",
+      "button": "Pobierz na Maca",
+      "type": "Plik ZIP",
+      "arch": "Apple silicon (M1 i nowsze).",
+      "minimum": "Wymaga macOS 12 Monterey lub nowszego.",
+      "requires": "Podpisany i poświadczony notarialnie przez Apple. Rozpakuj plik i otwórz cashpilot-desktop.app.",
+      "intel": "Mac z procesorem Intel? Nie ma wersji aplikacji na komputer dla procesorów Intel. <a href=\"{dockerUrl}\">Uruchom zamiast tego serwer z Dockerem</a>.",
+      "verify": "W Terminalu:"
+    },
+    "linux": {
+      "metaTitle": "Pobierz CashPilot dla systemu Linux",
+      "title": "CashPilot Desktop dla systemu Linux",
+      "button": "Pobierz dla systemu Linux",
+      "type": "Archiwum tar.gz",
+      "arch": "x86_64 (64-bitowy PC).",
+      "minimum": "Wymaga glibc 2.34 lub nowszej: Ubuntu 22.04, Debian 12 lub nowszy.",
+      "requires": "Wymaga GTK 3 i WebKitGTK 4.1. Rozpakuj archiwum i uruchom CashPilot Desktop.",
+      "server": "Konfigurujesz serwer lub Raspberry Pi? <a href=\"{dockerUrl}\">Użyj Dockera</a>.",
+      "verify": "W terminalu:"
+    },
+    "android": {
+      "metaTitle": "Pobierz CashPilot na Androida",
+      "title": "CashPilot na Androida",
+      "button": "Pobierz APK",
+      "type": "Plik APK",
+      "requires": "Android 8.0 lub nowszy. Telefon poprosi o zgodę na instalowanie aplikacji z przeglądarki.",
+      "what": "Aplikacja na Androida śledzi aplikacje zarobkowe na twoim telefonie i zgłasza ich stan do twojego serwera CashPilot lub aplikacji na komputer. Potrzebuje jednego z nich, aby mieć dokąd wysyłać dane.",
+      "qr": "Zeskanuj telefonem, aby pobrać APK.",
+      "qrAlt": "Kod QR z linkiem do pobrania APK na Androida",
+      "stores": "Nie ma jej w Google Play. F-Droid: w przygotowaniu."
+    },
+    "docker": {
+      "metaTitle": "Własny serwer CashPilot z Dockerem",
+      "title": "Serwer CashPilot z Dockerem",
+      "lead": "Na serwer domowy, NAS, Raspberry Pi lub dowolną maszynę, która jest stale włączona. Panel otwierasz w przeglądarce.",
+      "requires": "Wymaga Dockera z Compose, na Linux, macOS lub Windows, amd64 lub arm64.",
+      "step1": "Pobierz plik compose i uruchom CashPilot:",
+      "step2": "Wyświetl token konfiguracji:",
+      "step3": "Otwórz {url} i wpisz token. Kreator konfiguracji zrobi resztę.",
+      "viewSource": "Przeczytaj plik compose, zanim go uruchomisz",
+      "images": "Plik compose przypina obrazy {ui} i {worker}.",
+      "guide": "Pełny poradnik: Pierwsze kroki"
+    },
+    "checksums": {
+      "title": "Sumy kontrolne SHA-256, wersja {version}",
+      "all": "Plik SHA256SUMS"
+    },
+    "homelab": {
+      "title": "Instalacja na serwerze domowym",
+      "lead": "Od najłatwiejszej do najtrudniejszej.",
+      "option": "Opcja",
+      "caption": "Instalacja na serwerze domowym, od najłatwiejszej do najtrudniejszej",
+      "skills": "Potrzebne umiejętności",
+      "tools": "Potrzebny sprzęt",
+      "items": {
+        "unraid": {
+          "title": "Unraid",
+          "text": "Zainstaluj dwa szablony CashPilot z Community Applications.",
+          "skills": "Tylko obsługa zakładki Apps w Unraid",
+          "tools": "Serwer Unraid"
+        },
+        "truenas": {
+          "title": "TrueNAS SCALE",
+          "text": "Znajdź CashPilot w Discover Apps, w kanale community.",
+          "skills": "Tylko obsługa strony aplikacji TrueNAS",
+          "tools": "Serwer TrueNAS SCALE"
+        },
+        "casaos": {
+          "title": "CasaOS",
+          "text": "Zaimportuj plik compose jako własną aplikację, dopóki wpis w sklepie czeka na sprawdzenie.",
+          "skills": "Wklejenie pliku i zmiana dwóch tagów obrazów",
+          "tools": "CasaOS 0.4.5 lub nowszy"
+        },
+        "pi": {
+          "title": "Raspberry Pi",
+          "text": "Uruchom powyższe polecenia Dockera na 64-bitowym Raspberry Pi OS.",
+          "skills": "Podstawy pracy w terminalu",
+          "tools": "Pi 3, 4 lub 5 z Dockerem"
+        },
+        "fleet": {
+          "title": "Kilka maszyn",
+          "text": "Uruchom jeden panel i workera na każdej maszynie. Każda liczba jest pokazywana osobno dla każdej maszyny.",
+          "skills": "Docker Compose i twoja sieć domowa",
+          "tools": "Co najmniej dwie maszyny z Dockerem"
+        }
+      }
+    },
+    "paths": {
+      "title": "Czego potrzebuję?",
+      "recommended": "Polecane dla większości osób",
+      "skills": "Potrzebne umiejętności",
+      "tools": "Potrzebny sprzęt",
+      "desktop": {
+        "title": "Aplikacja na komputer",
+        "text": "CashPilot w oknie na twoim komputerze. Uruchamia usługi na tym komputerze i pokazuje panel.",
+        "skills": "Żadne",
+        "tools": "Stale włączony komputer z Windows lub Linux albo Mac"
+      },
+      "server": {
+        "title": "Serwer z Dockerem",
+        "text": "CashPilot na serwerze domowym, NAS-ie lub Raspberry Pi. Może zarządzać wieloma maszynami z jednego panelu.",
+        "skills": "Podstawy pracy w terminalu",
+        "tools": "Stale włączona maszyna z Dockerem"
+      },
+      "android": {
+        "title": "Aplikacja towarzysząca na Androida",
+        "text": "Śledzi aplikacje zarobkowe na twoim telefonie i dodaje telefon do twojego panelu.",
+        "skills": "Żadne",
+        "tools": "Telefon z Androidem i serwer CashPilot lub aplikacja na komputer"
+      }
+    },
+    "more": {
+      "title": "Więcej sposobów połączenia",
+      "mcp": {
+        "title": "Serwer MCP dla asystentów AI",
+        "text": "Pozwala asystentowi AI odczytać stan i zarobki z twojego CashPilot. Wersja {version}, na Windows, macOS i Linux."
+      },
+      "ha": {
+        "title": "Integracja z Home Assistant",
+        "text": "Pokazuje twoje zarobki i usługi CashPilot w Home Assistant."
+      }
+    }
+  },
+  "referrals": {
+    "title": "Linki polecające",
+    "metaTitle": "Linki polecające CashPilot i jak działają",
+    "description": "Każdy link do dostawcy z kodem polecającym CashPilot, co oznacza dla ciebie i jak zarejestrować się bez niego.",
+    "lead": "Ta strona wymienia każdy link do dostawcy z kodem polecającym CashPilot i wyjaśnia, co każdy z nich oznacza dla ciebie.",
+    "howTitle": "Jak działają linki polecające",
+    "how1": "Jeśli zarejestrujesz się u dostawcy przez jeden z tych linków, dostawca może zapłacić projektowi CashPilot nagrodę. Nie pochodzi ona z twoich zarobków.",
+    "how2": "Niektórzy dostawcy dają też tobie bonus za rejestrację przez link. Pokazujemy go tam, gdzie podaje go katalog.",
+    "how3": "Nigdy nie musisz używać tych linków. Każdy wpis pokazuje też stronę dostawcy, więc możesz zarejestrować się bez polecenia.",
+    "how4": "Nagrody pomagają finansować projekt.",
+    "count": "Dostawcy: {count}, według katalogu z {date}.",
+    "code": "Kod",
+    "provider": "Dostawca",
+    "link": "Rejestracja z poleceniem",
+    "website": "Strona dostawcy (bez polecenia)",
+    "links": "Linki",
+    "youGet": "Ty dostajesz",
+    "projectGets": "Projekt dostaje",
+    "codeEntry": "Link nie przekazuje kodu. Wpisz {code}, gdy aplikacja poprosi o kod polecający.",
+    "guide": "Poradnik CashPilot",
+    "guideLabel": "Poradnik CashPilot: {name}",
+    "toc": "Przejdź do grupy",
+    "tocCount": "z linkiem polecającym: {count}",
+    "caption": "{group}: linki polecające i co daje każdy z nich"
+  },
+  "privacy": {
+    "title": "Prywatność",
+    "metaTitle": "Prywatność",
+    "description": "Co zbierają strona i aplikacje CashPilot: strona nie zbiera niczego, a aplikacje nic nie wysyłają do projektu.",
+    "lead": "W skrócie: ta strona nie zbiera niczego, a aplikacje CashPilot nic nie wysyłają do projektu.",
+    "site": {
+      "title": "Ta strona",
+      "p1": "Bez plików cookie, bez analityki, bez pikseli śledzących i bez reklam. Strona nie ładuje niczego z innych witryn. Czcionki są częścią strony.",
+      "p2": "Gdy wybierasz język, przeglądarka zapisuje ten wybór w swojej pamięci lokalnej. Zostaje on na twoim urządzeniu i nigdy nie jest do nas wysyłany.",
+      "p3": "Stronę hostuje GitHub Pages, a ruch do niej przenosi Cloudflare. Obie firmy mogą ze względów bezpieczeństwa zapisywać adres IP każdej wizyty, a Cloudflare może poprosić twoją przeglądarkę o zgłaszanie mu błędów sieci. Przeczytaj <a href=\"{githubPrivacyUrl}\">oświadczenie o prywatności GitHuba</a> i <a href=\"{cloudflarePrivacyUrl}\">politykę prywatności Cloudflare</a>."
+    },
+    "apps": {
+      "title": "Aplikacje CashPilot",
+      "p1": "Serwer webowy, aplikacja na komputer i aplikacja na Androida nie mają telemetrii. Nic nie wysyłają do projektu CashPilot.",
+      "p2": "Twoje dane logowania i zarobki zostają w twoim własnym CashPilot. Aplikacje łączą się tylko z usługami, których potrzebują: z dostawcami, których skonfigurujesz, z GitHubem, aby sprawdzić nową wersję, z publicznymi usługami adresu IP i kursów walut oraz z eksploratorami blockchain, aby odczytać salda on-chain.",
+      "p3": "Obecnie panel webowy ładuje też czcionki z Google Fonts i bibliotekę wykresów z jsDelivr. Dokumentacja wymienia <a href=\"{comparisonUrl}\">każde połączenie wychodzące</a> i opisuje, jak wyłączyć te opcjonalne."
+    },
+    "providers": {
+      "title": "Dostawcy",
+      "p1": "Gdy rejestrujesz się u dostawcy, obowiązuje jego własna polityka prywatności. Link polecający informuje dostawcę, że przychodzisz z CashPilot."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "p1": "Pytania dotyczące prywatności: {email}."
+    }
+  },
+  "disclaimer": {
+    "title": "Zastrzeżenia",
+    "metaTitle": "Zastrzeżenia",
+    "description": "CashPilot nie udziela porad finansowych ani prawnych, nie obiecuje zarobków i nie jest częścią dostawców, których usługi uruchamia.",
+    "lead": "Przeczytaj to, zanim zaczniesz.",
+    "items": {
+      "advice": {
+        "title": "Brak porad finansowych i prawnych",
+        "text": "Nic na tej stronie ani w aplikacjach nie jest poradą finansową, prawną ani podatkową."
+      },
+      "earnings": {
+        "title": "Brak obiecanych zarobków",
+        "text": "Zarobki zależą od twojego kraju, łącza, sprzętu i dostawców. Mogą być bardzo małe lub zerowe. Dostawcy mogą w każdej chwili zmienić stawki."
+      },
+      "law": {
+        "title": "Twoje prawo i twoja umowa",
+        "text": "Zanim udostępnisz łącze lub uruchomisz węzeł, sprawdź lokalne prawo i warunki swojego dostawcy internetu. Odpowiadasz za wszelkie podatki od tego, co zarobisz."
+      },
+      "providers": {
+        "title": "Niezależni dostawcy",
+        "text": "Dostawcy to odrębne firmy. CashPilot nie jest ich częścią i nie ma wpływu na ich warunki, wypłaty ani decyzje dotyczące kont. Niektórzy dostawcy płacą projektowi nagrody za polecenia."
+      },
+      "warranty": {
+        "title": "Brak gwarancji",
+        "text": "CashPilot to wolne oprogramowanie na licencji GPL-3.0-or-later. Jest dostarczane bez żadnej gwarancji, jak mówią sekcje 15 i 16 licencji."
+      },
+      "trademarks": {
+        "title": "Znaki towarowe",
+        "text": "Nazwy i logo dostawców i platform należą do ich właścicieli. Ich użycie tutaj mówi tylko, z czym współpracuje CashPilot."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Nie znaleziono strony",
+    "text": "Ta strona nie istnieje. Mogła zostać przeniesiona.",
+    "home": "Przejdź do strony głównej",
+    "download": "Przejdź do pobierania"
+  },
+  "footer": {
+    "tagline": "Uruchamiaj usługi dochodu pasywnego na własnym sprzęcie i zobacz wszystkie wypłaty w jednym panelu.",
+    "product": "Produkt",
+    "project": "Projekt",
+    "about": "Informacje",
+    "download": "Pobierz",
+    "docs": "Dokumentacja",
+    "referrals": "Linki polecające",
+    "privacy": "Prywatność",
+    "disclaimer": "Zastrzeżenia",
+    "web": "Serwer CashPilot",
+    "desktop": "CashPilot Desktop",
+    "android": "CashPilot na Androida",
+    "mcp": "Serwer MCP",
+    "feed": "Kanał wydań",
+    "agents": "Dla agentów AI",
+    "contact": "Kontakt",
+    "legal": "Sprawdź lokalne prawo i warunki swojego dostawcy internetu. To nie jest porada finansowa.",
+    "credit": "Tworzone przez współtwórców CashPilot. Wolne oprogramowanie na licencji GPL-3.0-or-later."
+  },
+  "categories": {
+    "bandwidth": "Udostępnianie łącza",
+    "depin": "DePIN",
+    "compute": "Obliczenia GPU",
+    "storage": "Przestrzeń dyskowa",
+    "mining": "Kopanie"
+  },
+  "payment": {
+    "paypal": "PayPal",
+    "crypto": "Kryptowaluty",
+    "giftcard": "Karty podarunkowe",
+    "amazon_giftcard": "Karty podarunkowe Amazon",
+    "wise": "Wise",
+    "bank": "Przelew bankowy",
+    "stripe": "Stripe"
+  }
+}

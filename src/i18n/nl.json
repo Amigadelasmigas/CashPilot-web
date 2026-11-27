@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "siteName": "CashPilot",
+    "titleSuffix": "CashPilot",
+    "ogImageAlt": "CashPilot: zet je ongebruikte hardware aan het werk en zie elke uitbetaling in één dashboard."
+  },
+  "nav": {
+    "skip": "Naar de inhoud",
+    "home": "CashPilot-startpagina",
+    "docs": "Docs",
+    "github": "GitHub",
+    "download": "Downloaden",
+    "main": "Hoofdmenu",
+    "stars": "sterren"
+  },
+  "lang": {
+    "label": "Taal",
+    "suggest": "Deze site is er ook in het Nederlands.",
+    "switch": "Toon in het Nederlands",
+    "dismiss": "Nee, bedankt"
+  },
+  "common": {
+    "copy": "Kopiëren",
+    "copied": "Gekopieerd",
+    "copyFailed": "Selecteer en kopieer",
+    "copyLabel": "Kopieer de opdracht",
+    "yes": "Ja",
+    "no": "Nee",
+    "notStated": "Niet vermeld",
+    "noLimit": "Geen limiet"
+  },
+  "disclosure": {
+    "short": "Als je je via een van deze links aanmeldt, kan de aanbieder het CashPilot-project een beloning betalen. Die gaat niet af van je inkomsten.",
+    "more": "Zo werken verwijzingslinks"
+  },
+  "home": {
+    "title": "CashPilot: diensten voor passief inkomen op je eigen hardware",
+    "description": "Gratis opensourcesoftware die bandbreedte delen, DePIN, GPU-rekenkracht en mining op je eigen machines draait, en elke uitbetaling in één dashboard toont.",
+    "hero": {
+      "pill": "Gratis en open source, GPL-3.0",
+      "title": "Zet je ongebruikte hardware aan het werk. Zie elke uitbetaling in één dashboard.",
+      "lead": "CashPilot richt diensten voor passief inkomen in op je computers, thuisservers en Raspberry Pi. Het leest je saldo bij elke aanbieder uit en bewaart de geschiedenis op één plek, op je eigen machine.",
+      "download": "Downloaden",
+      "selfhost": "Zelf hosten met Docker",
+      "expect": "CashPilot betaalt je niet. Dat doen de aanbieders. Je inkomsten hangen af van je land, je verbinding en je hardware.",
+      "imageAlt": "Het CashPilot-dashboard: het saldo, de inkomsten van vandaag en deze maand, de diensten op elke machine en de inkomsten per dag.",
+      "imageAltMobile": "Het CashPilot-dashboard op een telefoon: het saldo en de inkomsten van vandaag en deze maand."
+    },
+    "stats": {
+      "label": "CashPilot in cijfers",
+      "stars": "GitHub-sterren",
+      "pulls": "Docker-pulls",
+      "services": "ondersteunde diensten",
+      "note": "Van GitHub en Docker Hub, op {date}."
+    },
+    "platforms": {
+      "title": "Werkt op",
+      "windows": "Windows",
+      "macos": "macOS",
+      "linux": "Linux",
+      "android": "Android",
+      "docker": "Docker",
+      "pi": "Raspberry Pi"
+    },
+    "how": {
+      "title": "Zo werkt het",
+      "lead": "Drie stappen, en geen account bij ons.",
+      "steps": {
+        "install": {
+          "title": "Installeer CashPilot",
+          "text": "Gebruik de desktop-app op één computer. Of draai de server met Docker op een thuisserver, NAS of Raspberry Pi."
+        },
+        "pick": {
+          "title": "Kies je diensten",
+          "text": "Kies uit de catalogus, meld je aan bij de aanbieder en plak je inloggegevens. Diensten met een Docker-image start CashPilot in een eigen container. Bij de andere leest het je saldo uit."
+        },
+        "watch": {
+          "title": "Volg elke uitbetaling",
+          "text": "CashPilot leest je saldi elk uur uit en bewaart de geschiedenis. Daalt een saldo, dan vraagt het of je bent uitbetaald."
+        }
+      }
+    },
+    "categories": {
+      "title": "{count} diensten in vijf groepen",
+      "count": "{count} diensten",
+      "bandwidth": {
+        "name": "Bandbreedte delen",
+        "text": "Deel de internetbandbreedte die je niet gebruikt met data- en proxybedrijven."
+      },
+      "depin": {
+        "name": "DePIN",
+        "text": "Draai nodes voor gedecentraliseerde netwerken die in tokens betalen."
+      },
+      "compute": {
+        "name": "GPU-rekenkracht",
+        "text": "Verhuur je videokaart voor AI- en renderopdrachten."
+      },
+      "storage": {
+        "name": "Opslag",
+        "text": "Verhuur vrije schijfruimte aan opslagnetwerken."
+      },
+      "mining": {
+        "name": "Mining",
+        "text": "Mine met je CPU of GPU, en zie ASIC-miners in je netwerk. In bèta."
+      },
+      "all": {
+        "name": "Alle {count} in de docs",
+        "text": "Een installatiegids voor elke dienst, met wat die nodig heeft."
+      }
+    },
+    "tour": {
+      "title": "Een kijkje binnen",
+      "lead": "Echte schermen uit de apps, met demogegevens. Kies een scherm om het helemaal te zien.",
+      "fleet": {
+        "title": "Machines",
+        "text": "Elke machine, het systeem en wanneer die zich voor het laatst meldde. Een machine die zich niet meer meldt, wordt rood.",
+        "alt": "De pagina Fleet: vijf machines met hun systeem, versie en wanneer elk zich voor het laatst meldde. Eén machine is offline."
+      },
+      "catalog": {
+        "title": "Catalogus",
+        "text": "Elke ondersteunde dienst, met een filter per groep.",
+        "alt": "De pagina Catalog: het groepsfilter en de diensten die op je machines draaien, elk met zijn soort."
+      },
+      "payouts": {
+        "title": "Uitbetalingen",
+        "text": "Van welke nodegegevens je een back-up moet maken en waar elke dienst uitbetaalt.",
+        "alt": "De pagina Payouts: een melding die vraagt een back-up te maken van de MystNodes-identiteit, die alleen op de schijf van één machine staat."
+      },
+      "desktop": {
+        "title": "Desktop-app",
+        "text": "Het volledige dashboard in een venster op Windows, macOS of Linux. De app kan ook verbinden met een CashPilot-server die je al draait.",
+        "alt": "CashPilot Desktop op macOS, met het saldo en de inkomsten van vandaag en deze maand."
+      },
+      "android": {
+        "title": "Begeleidende Android-app",
+        "text": "Houdt de verdien-apps op je telefoon in de gaten en meldt hun status aan je CashPilot-server of desktop-app.",
+        "alt": "Het startscherm van de Android-app: alle zes verdien-apps draaien, met de data die elk in 24 uur gebruikte."
+      }
+    },
+    "catch": {
+      "title": "Waar zit het addertje?",
+      "lead": "Een terechte vraag. Dit zijn de feiten.",
+      "free": {
+        "title": "Gratis",
+        "text": "Geen prijs, geen betaald abonnement en geen advertenties."
+      },
+      "open": {
+        "title": "Open source",
+        "text": "GPL-3.0. Je kunt elke regel lezen op GitHub."
+      },
+      "hardware": {
+        "title": "Draait op je eigen hardware",
+        "text": "Jouw machines en jouw verbinding. Wij draaien geen servers voor je."
+      },
+      "account": {
+        "title": "Geen account bij ons",
+        "text": "Geen registratie en geen e-mail. Je meldt je alleen aan bij de aanbieders die je kiest."
+      },
+      "funding": "Hoe wordt het betaald? Sommige links naar aanbieders zijn verwijzingslinks. Als je je via zo'n link aanmeldt, kan de aanbieder het CashPilot-project een beloning betalen. Die gaat niet af van je inkomsten."
+    },
+    "control": {
+      "title": "Jij houdt de controle",
+      "lead": "CashPilot draait op je machines. Je ziet wat het doet en kunt het op elk moment stoppen.",
+      "logins": {
+        "title": "Je inloggegevens blijven op je machine",
+        "text": "CashPilot bewaart ze versleuteld in zijn eigen database. Elke login gaat alleen naar de dienst die hem nodig heeft."
+      },
+      "containers": {
+        "title": "Elke dienst in een eigen container",
+        "text": "Elke dienst die CashPilot start, draait los van de andere, zonder extra rechten en met een limiet op het aantal processen."
+      },
+      "lan": {
+        "title": "Weg van je thuisnetwerk",
+        "text": "Bij een nieuwe Docker-installatie kunnen de diensten die het start je LAN, je router en de machine waarop ze draaien niet bereiken. <a href=\"{securityUrl}\">Je thuisnetwerk beschermen</a>."
+      },
+      "stop": {
+        "title": "Stop alles op elk moment",
+        "text": "Eén klik stopt of verwijdert een dienst. Een handleiding laat zien hoe je CashPilot volledig verwijdert."
+      },
+      "ratings": "Elke aanbieder krijgt een cijfer van A tot F op dezelfde tien vragen, en elk antwoord linkt naar de bron.",
+      "ratingsLink": "Bekijk de cijfers van de aanbieders"
+    },
+    "earnings": {
+      "title": "Wat je inkomsten bepaalt",
+      "lead": "Niemand kan je een bedrag beloven. Dit zijn de dingen die het bepalen.",
+      "country": {
+        "title": "Je land",
+        "text": "Aanbieders betalen voor verkeer uit sommige landen meer dan uit andere."
+      },
+      "ip": {
+        "title": "Je soort IP-adres",
+        "text": "Veel diensten betalen alleen voor thuisverbindingen, niet voor servers in een datacenter."
+      },
+      "connection": {
+        "title": "Je verbinding",
+        "text": "Meer uploadsnelheid en geen datalimiet geven ruimte voor meer verkeer."
+      },
+      "uptime": {
+        "title": "Uptime",
+        "text": "Een apparaat dat aan blijft, verdient meer dan een apparaat dat in slaapstand gaat."
+      },
+      "devices": {
+        "title": "Aantal apparaten",
+        "text": "De meeste diensten staan één apparaat per IP-adres toe en een vast aantal per account."
+      },
+      "hardware": {
+        "title": "Je GPU en hardware",
+        "text": "GPU-rekenkracht en mining hangen af van je videokaart, je stroomprijs en de markt."
+      },
+      "note": "Sommige opstellingen leveren heel weinig op. Het dashboard toont wat je echt verdient, zodat je kunt stoppen met wat niet loont."
+    },
+    "services": {
+      "title": "Populaire diensten",
+      "lead": "Een paar diensten uit elke groep. De docs noemen ze allemaal, met een handleiding voor elk.",
+      "caption": "Populaire diensten en wat ze nodig hebben",
+      "col": {
+        "service": "Dienst",
+        "homeIp": "Thuis-IP nodig",
+        "devicesPerIp": "Apparaten per IP",
+        "payout": "Uitbetaling",
+        "minimum": "Minimale uitbetaling"
+      },
+      "signup": "Aanmelden",
+      "signupLabel": "Aanmelden bij {name} (verwijzingslink)",
+      "signupLabelPlain": "Aanmelden bij {name}",
+      "guideLabel": "CashPilot-handleiding voor {name}",
+      "all": "Alle {count} diensten in de docs",
+      "referrals": "Alle verwijzingslinks",
+      "notStatedNote": "– betekent dat de catalogus het niet vermeldt."
+    },
+    "compare": {
+      "title": "Hoe CashPilot zich verhoudt",
+      "lead": "Feiten over de andere opensourcetools die meerdere van deze diensten draaien. Gecontroleerd op {date}.",
+      "caption": "CashPilot en andere opensourcetools, functie voor functie",
+      "feature": "Functie",
+      "rows": {
+        "license": "Licentie",
+        "balances": "Leest saldi uit je accounts bij aanbieders",
+        "fleet": "Eén dashboard voor veel servers",
+        "desktop": "Desktop-app",
+        "android": "Android-app",
+        "gpu": "GPU-rekenkracht en mining",
+        "docker": "Vereist Docker"
+      },
+      "values": {
+        "gpl": "GPL-3.0",
+        "proprietary": "Propriëtair",
+        "noLicense": "Geen licentiebestand",
+        "gplReadme": "GPL-3.0-bestand, README verbiedt gewijzigde kopieën",
+        "estimates": "Nee, alleen schattingen",
+        "claimed": "Beweerd, in gesloten code",
+        "dockerOrPodman": "Ja, of Podman",
+        "betaMining": "Ja, mining in bèta"
+      },
+      "more": "Volledige vergelijking met een bron voor elke cel"
+    },
+    "faq": {
+      "title": "Vragen",
+      "items": {
+        "slow": {
+          "q": "Wordt mijn internet er trager van?",
+          "a": "Dat kan. Bandbreedtediensten sturen verkeer van andere bedrijven via je verbinding, dus ze gebruiken een deel van je upload en download. CashPilot toont het netwerkgebruik van elke machine, zodat je ziet wat het meest gebruikt en dat kunt stoppen."
+        },
+        "legal": {
+          "q": "Is het legaal?",
+          "a": "Dat hangt af van waar je woont en van je internetabonnement. Sommige internetproviders verbieden het delen of doorverkopen van je verbinding. Controleer de lokale wetgeving en de voorwaarden van je provider voordat je begint. Dit is geen juridisch advies."
+        },
+        "safe": {
+          "q": "Is het veilig?",
+          "a": "Bandbreedtediensten laten verkeer van anderen je IP-adres gebruiken, dus lees eerst de voorwaarden van elke aanbieder. CashPilot draait elke dienst die het start in een eigen container en houdt die bij een nieuwe Docker-installatie weg van je thuisnetwerk. Lees <a href=\"{securityUrl}\">Je thuisnetwerk beschermen</a> voordat je begint."
+        },
+        "earn": {
+          "q": "Hoeveel ga ik verdienen?",
+          "a": "Dat kunnen we je niet zeggen. Het hangt af van je land, je soort IP-adres, je verbinding, je uptime en de diensten die je draait. Sommige opstellingen leveren heel weinig op. Het dashboard toont wat je echt verdient."
+        },
+        "free": {
+          "q": "Waarom is het gratis?",
+          "a": "CashPilot is vrije software onder de GPL-3.0-licentie, gemaakt door de bijdragers. Sommige links naar aanbieders zijn verwijzingslinks, en de beloningen daarvan helpen het project te financieren. <a href=\"{referralsUrl}\">Zo werken verwijzingslinks</a>."
+        },
+        "docker": {
+          "q": "Heb ik Docker nodig?",
+          "a": "Ja, voor de diensten die CashPilot start, want die draaien in containers. De desktop-app werkt met Docker of Podman, en de installatiewizard helpt je Docker te installeren. De Android-app heeft geen Docker nodig, maar meldt zich bij een CashPilot-server of desktop-app."
+        },
+        "pi": {
+          "q": "Draait het op een Raspberry Pi?",
+          "a": "Ja, op een Pi 3, 4 of 5 met het 64-bitsysteem. De meeste diensten publiceren een versie voor ARM, en CashPilot controleert voor de installatie of een dienst op je CPU draait. <a href=\"{armUrl}\">Draaien op ARM</a>."
+        },
+        "data": {
+          "q": "Ziet het CashPilot-project mijn inloggegevens of inkomsten?",
+          "a": "Nee. CashPilot draait op je machines en stuurt niets naar het project. Je inloggegevens blijven in je eigen CashPilot, versleuteld in de database. <a href=\"{privacyUrl}\">Privacy</a>."
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om het te proberen?",
+      "text": "Download de desktop-app of draai de server met Docker. Allebei gratis.",
+      "download": "Downloaden",
+      "github": "Bekijk de broncode op GitHub",
+      "releases": "Wil je horen over nieuwe versies? Gebruik Watch op GitHub of de <a href=\"{feedUrl}\">releasefeed</a>."
+    }
+  },
+  "download": {
+    "title": "CashPilot downloaden",
+    "metaTitle": "CashPilot downloaden voor Windows, macOS, Linux, Android en Docker",
+    "description": "Gratis downloads van CashPilot voor Windows, macOS, Linux en Android, en de Docker-server voor thuisservers, NAS en Raspberry Pi. Geen account nodig.",
+    "lead": "Kies je systeem. Elke download is gratis. Geen account, geen e-mail, geen registratie.",
+    "pickerLabel": "Kies je systeem",
+    "detected": "Jouw systeem",
+    "otherSystems": "Andere systemen",
+    "ios": "Er is geen iPhone-app. Installeer de desktop-app op een computer of draai de server, en open dan het dashboard in Safari.",
+    "pathsHint": "Weet je niet welke je nodig hebt?",
+    "pathsLink": "Vergelijk de opties",
+    "fileInfo": "{type}, {size}",
+    "version": "Versie {version}",
+    "source": "Broncode",
+    "allReleases": "Alle releases",
+    "tiles": {
+      "windows": {
+        "name": "Windows",
+        "hint": "Desktop-app"
+      },
+      "macos": {
+        "name": "macOS",
+        "hint": "Desktop-app"
+      },
+      "linux": {
+        "name": "Linux",
+        "hint": "Desktop-app"
+      },
+      "android": {
+        "name": "Android",
+        "hint": "Begeleidende app"
+      },
+      "docker": {
+        "name": "Docker",
+        "hint": "Server"
+      }
+    },
+    "runtime": "De diensten draaien in containers. De app werkt met Docker of Podman, en de installatiewizard helpt je Docker te installeren als het ontbreekt.",
+    "windows": {
+      "metaTitle": "CashPilot downloaden voor Windows",
+      "title": "CashPilot Desktop voor Windows",
+      "installer": "Download het installatieprogramma",
+      "installerType": "Installatieprogramma (.exe)",
+      "portable": "Draagbare versie",
+      "portableType": "Draagbare app (.exe), zonder installatie",
+      "arch": "64-bit (x64). De meeste pc's zijn 64-bit.",
+      "requires": "Vereist Windows 10 22H2, of Windows 11 23H2 of nieuwer.",
+      "warnTitle": "Waarschuwt Windows of je antivirus je?",
+      "warnText": "De Windows-app is nog niet digitaal ondertekend, dus SmartScreen kan \"Windows heeft uw pc beschermd\" tonen. Klik op Meer informatie en dan op Toch uitvoeren. Wil je controleren of je het bestand hebt dat wij publiceerden? Vergelijk dan de SHA-256-controlesom met de lijst hieronder.",
+      "verify": "In PowerShell:"
+    },
+    "macos": {
+      "metaTitle": "CashPilot downloaden voor macOS",
+      "title": "CashPilot Desktop voor macOS",
+      "button": "Downloaden voor Mac",
+      "type": "Zip-bestand",
+      "arch": "Apple silicon (M1 en nieuwer).",
+      "minimum": "Vereist macOS 12 Monterey of nieuwer.",
+      "requires": "Ondertekend en genotariseerd door Apple. Pak het bestand uit en open cashpilot-desktop.app.",
+      "intel": "Intel-Mac? Er is geen Intel-versie van de desktop-app. <a href=\"{dockerUrl}\">Draai in plaats daarvan de server met Docker</a>.",
+      "verify": "In Terminal:"
+    },
+    "linux": {
+      "metaTitle": "CashPilot downloaden voor Linux",
+      "title": "CashPilot Desktop voor Linux",
+      "button": "Downloaden voor Linux",
+      "type": "tar.gz-archief",
+      "arch": "x86_64 (64-bit pc).",
+      "minimum": "Vereist glibc 2.34 of nieuwer: Ubuntu 22.04, Debian 12 of nieuwer.",
+      "requires": "Vereist GTK 3 en WebKitGTK 4.1. Pak het archief uit en start CashPilot Desktop.",
+      "server": "Zet je een server of een Raspberry Pi op? <a href=\"{dockerUrl}\">Gebruik Docker</a>.",
+      "verify": "In een terminal:"
+    },
+    "android": {
+      "metaTitle": "CashPilot downloaden voor Android",
+      "title": "CashPilot voor Android",
+      "button": "Download de APK",
+      "type": "APK-bestand",
+      "requires": "Android 8.0 of nieuwer. Je telefoon vraagt je om installaties vanuit je browser toe te staan.",
+      "what": "De Android-app houdt de verdien-apps op je telefoon in de gaten en meldt hun status aan je CashPilot-server of desktop-app. De app heeft een van die twee nodig om zich bij te melden.",
+      "qr": "Scan met je telefoon om de APK te downloaden.",
+      "qrAlt": "QR-code voor de downloadlink van de Android-APK",
+      "stores": "Niet in Google Play. F-Droid: volgt."
+    },
+    "docker": {
+      "metaTitle": "CashPilot zelf hosten met Docker",
+      "title": "CashPilot-server met Docker",
+      "lead": "Voor een thuisserver, een NAS, een Raspberry Pi of elke machine die aan blijft. Je opent het dashboard in een browser.",
+      "requires": "Vereist Docker met Compose, op Linux, macOS of Windows, amd64 of arm64.",
+      "step1": "Download het compose-bestand en start CashPilot:",
+      "step2": "Toon het installatietoken:",
+      "step3": "Open {url} en voer het token in. De installatiewizard doet de rest.",
+      "viewSource": "Lees het compose-bestand voordat je het uitvoert",
+      "images": "Het compose-bestand legt de images {ui} en {worker} vast.",
+      "guide": "Volledige handleiding: Aan de slag"
+    },
+    "checksums": {
+      "title": "SHA-256-controlesommen, versie {version}",
+      "all": "SHA256SUMS-bestand"
+    },
+    "homelab": {
+      "title": "Installaties op een thuisserver",
+      "lead": "Van makkelijkst naar moeilijkst.",
+      "option": "Optie",
+      "caption": "Installaties op een thuisserver, van makkelijkst naar moeilijkst",
+      "skills": "Benodigde kennis",
+      "tools": "Benodigde middelen",
+      "items": {
+        "unraid": {
+          "title": "Unraid",
+          "text": "Installeer de twee CashPilot-sjablonen uit Community Applications.",
+          "skills": "Niets meer dan het tabblad Apps van Unraid",
+          "tools": "Een Unraid-server"
+        },
+        "truenas": {
+          "title": "TrueNAS SCALE",
+          "text": "Zoek CashPilot in Discover Apps, in de community-train.",
+          "skills": "Niets meer dan de apps-pagina van TrueNAS",
+          "tools": "Een TrueNAS SCALE-server"
+        },
+        "casaos": {
+          "title": "CasaOS",
+          "text": "Importeer het compose-bestand als eigen app zolang de vermelding in de store wordt beoordeeld.",
+          "skills": "Een bestand plakken en twee image-tags aanpassen",
+          "tools": "CasaOS 0.4.5 of nieuwer"
+        },
+        "pi": {
+          "title": "Raspberry Pi",
+          "text": "Voer de Docker-opdrachten hierboven uit op het 64-bit Raspberry Pi OS.",
+          "skills": "Basiskennis van de terminal",
+          "tools": "Een Pi 3, 4 of 5 met Docker"
+        },
+        "fleet": {
+          "title": "Meerdere machines",
+          "text": "Draai één dashboard en een worker op elke machine. Elk cijfer wordt per machine getoond.",
+          "skills": "Docker Compose en je thuisnetwerk",
+          "tools": "Twee of meer machines met Docker"
+        }
+      }
+    },
+    "paths": {
+      "title": "Welke heb ik nodig?",
+      "recommended": "Aanbevolen voor de meeste mensen",
+      "skills": "Benodigde kennis",
+      "tools": "Benodigde middelen",
+      "desktop": {
+        "title": "Desktop-app",
+        "text": "CashPilot in een venster op je computer. De app draait de diensten op die computer en toont het dashboard.",
+        "skills": "Geen",
+        "tools": "Een Windows-, Mac- of Linux-computer die aan blijft"
+      },
+      "server": {
+        "title": "Server met Docker",
+        "text": "CashPilot op een thuisserver, NAS of Raspberry Pi. De server kan meerdere machines beheren vanuit één dashboard.",
+        "skills": "Basiskennis van de terminal",
+        "tools": "Een machine met Docker die aan blijft"
+      },
+      "android": {
+        "title": "Begeleidende Android-app",
+        "text": "Houdt de verdien-apps op je telefoon in de gaten en voegt de telefoon toe aan je dashboard.",
+        "skills": "Geen",
+        "tools": "Een Android-telefoon en een CashPilot-server of desktop-app"
+      }
+    },
+    "more": {
+      "title": "Meer manieren om te koppelen",
+      "mcp": {
+        "title": "MCP-server voor AI-assistenten",
+        "text": "Laat een AI-assistent je CashPilot-status en inkomsten lezen. Versie {version}, voor Windows, macOS en Linux."
+      },
+      "ha": {
+        "title": "Home Assistant-integratie",
+        "text": "Toont je CashPilot-inkomsten en -diensten in Home Assistant."
+      }
+    }
+  },
+  "referrals": {
+    "title": "Verwijzingslinks",
+    "metaTitle": "CashPilot-verwijzingslinks en hoe ze werken",
+    "description": "Elke link naar een aanbieder met een CashPilot-verwijzingscode, wat die voor jou betekent en hoe je je zonder code aanmeldt.",
+    "lead": "Deze pagina toont elke link naar een aanbieder met een CashPilot-verwijzingscode, en wat elke link voor jou betekent.",
+    "howTitle": "Zo werken verwijzingslinks",
+    "how1": "Als je je via een van deze links bij een aanbieder aanmeldt, kan de aanbieder het CashPilot-project een beloning betalen. Die gaat niet af van je inkomsten.",
+    "how2": "Sommige aanbieders geven jou ook een bonus als je je via de link aanmeldt. We tonen die als de catalogus hem vermeldt.",
+    "how3": "Je hoeft deze links nooit te gebruiken. Elke vermelding toont ook de eigen website van de aanbieder, zodat je je zonder verwijzing kunt aanmelden.",
+    "how4": "De beloningen helpen het project te financieren.",
+    "count": "{count} aanbieders, uit de catalogus van {date}.",
+    "code": "Code",
+    "provider": "Aanbieder",
+    "link": "Aanmelden met verwijzing",
+    "website": "Website van de aanbieder (zonder verwijzing)",
+    "links": "Links",
+    "youGet": "Jij krijgt",
+    "projectGets": "Het project krijgt",
+    "codeEntry": "De link geeft de code niet door. Typ {code} als de app om een verwijzingscode vraagt.",
+    "guide": "CashPilot-handleiding",
+    "guideLabel": "CashPilot-handleiding voor {name}",
+    "toc": "Ga naar een groep",
+    "tocCount": "{count} met verwijzingslinks",
+    "caption": "{group}: verwijzingslinks en wat elke link oplevert"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "metaTitle": "Privacy",
+    "description": "Wat de CashPilot-website en -apps verzamelen: de website verzamelt niets, en de apps sturen niets naar het project.",
+    "lead": "Kort gezegd: deze website verzamelt niets, en de CashPilot-apps sturen niets naar het project.",
+    "site": {
+      "title": "Deze website",
+      "p1": "Geen cookies, geen analytics, geen trackingpixels en geen advertenties. De pagina laadt niets van andere websites. De lettertypen zijn onderdeel van de site.",
+      "p2": "Als je een taal kiest, bewaart je browser die keuze in zijn lokale opslag. Die blijft op je apparaat en wordt nooit naar ons gestuurd.",
+      "p3": "GitHub Pages host deze site, en Cloudflare leidt het verkeer ernaartoe. Beide kunnen voor de beveiliging het IP-adres van elk bezoek loggen, en Cloudflare kan je browser vragen netwerkfouten aan Cloudflare te melden. Lees de <a href=\"{githubPrivacyUrl}\">privacyverklaring van GitHub</a> en het <a href=\"{cloudflarePrivacyUrl}\">privacybeleid van Cloudflare</a>."
+    },
+    "apps": {
+      "title": "De CashPilot-apps",
+      "p1": "De webserver, de desktop-app en de Android-app hebben geen telemetrie. Ze sturen niets naar het CashPilot-project.",
+      "p2": "Je inloggegevens en inkomsten blijven in je eigen CashPilot. De apps verbinden alleen met de diensten die ze nodig hebben: de aanbieders die je instelt, GitHub om te controleren op een nieuwe versie, openbare diensten voor IP-adressen en wisselkoersen, en blockchain-explorers voor saldi op de blockchain.",
+      "p3": "Op dit moment laadt het webdashboard ook zijn lettertypen van Google Fonts en zijn grafiekbibliotheek van jsDelivr. De docs noemen <a href=\"{comparisonUrl}\">elke uitgaande verbinding</a> en hoe je de optionele uitzet."
+    },
+    "providers": {
+      "title": "Aanbieders",
+      "p1": "Als je je bij een aanbieder aanmeldt, geldt het eigen privacybeleid van die aanbieder. Een verwijzingslink vertelt de aanbieder dat je via CashPilot komt."
+    },
+    "contact": {
+      "title": "Contact",
+      "p1": "Vragen over privacy: {email}."
+    }
+  },
+  "disclaimer": {
+    "title": "Disclaimer",
+    "metaTitle": "Disclaimer",
+    "description": "CashPilot geeft geen financieel of juridisch advies, belooft geen inkomsten en hoort niet bij de aanbieders waarvan het de diensten draait.",
+    "lead": "Lees dit voordat je begint.",
+    "items": {
+      "advice": {
+        "title": "Geen financieel of juridisch advies",
+        "text": "Niets op deze site of in de apps is financieel, juridisch of fiscaal advies."
+      },
+      "earnings": {
+        "title": "Geen beloofde inkomsten",
+        "text": "Inkomsten hangen af van je land, je verbinding, je hardware en de aanbieders. Ze kunnen heel klein of nul zijn. Aanbieders kunnen hun tarieven op elk moment wijzigen."
+      },
+      "law": {
+        "title": "Jouw wetgeving en jouw abonnement",
+        "text": "Controleer de lokale wetgeving en de voorwaarden van je internetprovider voordat je je verbinding deelt of een node draait. Je bent zelf verantwoordelijk voor belastingen over wat je verdient."
+      },
+      "providers": {
+        "title": "Onafhankelijke aanbieders",
+        "text": "De aanbieders zijn aparte bedrijven. CashPilot hoort niet bij hen en heeft geen invloed op hun voorwaarden, uitbetalingen of beslissingen over accounts. Sommige aanbieders betalen het project verwijzingsbeloningen."
+      },
+      "warranty": {
+        "title": "Geen garantie",
+        "text": "CashPilot is vrije software onder de licentie GPL-3.0-or-later. Het komt zonder enige garantie, zoals artikel 15 en 16 van de licentie zeggen."
+      },
+      "trademarks": {
+        "title": "Handelsmerken",
+        "text": "Namen en logo's van aanbieders en platforms zijn van hun eigenaars. Het gebruik hier zegt alleen waarmee CashPilot werkt."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "text": "Deze pagina bestaat niet. Misschien is ze verplaatst.",
+    "home": "Naar de startpagina",
+    "download": "Naar de downloads"
+  },
+  "footer": {
+    "tagline": "Draai diensten voor passief inkomen op je eigen hardware en zie elke uitbetaling in één dashboard.",
+    "product": "Product",
+    "project": "Project",
+    "about": "Over",
+    "download": "Downloaden",
+    "docs": "Documentatie",
+    "referrals": "Verwijzingslinks",
+    "privacy": "Privacy",
+    "disclaimer": "Disclaimer",
+    "web": "CashPilot-server",
+    "desktop": "CashPilot Desktop",
+    "android": "CashPilot voor Android",
+    "mcp": "MCP-server",
+    "feed": "Releasefeed",
+    "agents": "Voor AI-agents",
+    "contact": "Contact",
+    "legal": "Controleer de lokale wetgeving en de voorwaarden van je internetprovider. Geen financieel advies.",
+    "credit": "Gemaakt door de bijdragers van CashPilot. Vrije software onder GPL-3.0-or-later."
+  },
+  "categories": {
+    "bandwidth": "Bandbreedte delen",
+    "depin": "DePIN",
+    "compute": "GPU-rekenkracht",
+    "storage": "Opslag",
+    "mining": "Mining"
+  },
+  "payment": {
+    "paypal": "PayPal",
+    "crypto": "Crypto",
+    "giftcard": "Cadeaubonnen",
+    "amazon_giftcard": "Amazon-cadeaubonnen",
+    "wise": "Wise",
+    "bank": "Bankoverschrijving",
+    "stripe": "Stripe"
+  }
+}
