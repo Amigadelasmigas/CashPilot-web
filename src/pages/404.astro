@@ -1,13 +1,14 @@
 ---
 // GitHub Pages serves one 404.html for every missing path, so this page is in
-// English and links to the home page and the downloads.
+// English and links to the home page and the downloads. Its route is the home
+// page, so the language picker leads to each language's home, not to a 404.
 import Base from "../layouts/Base.astro";
 import Icon from "../components/Icon.astro";
 import { DEFAULT_LOCALE, getLocale, useT } from "../i18n";
 
 const t = useT(getLocale(DEFAULT_LOCALE));
 ---
-<Base t={t} route="/404/" title={t("notFound.title")} description={t("notFound.text")} noAlternates noindex>
+<Base t={t} route="/" title={t("notFound.title")} description={t("notFound.text")} noAlternates noindex>
   <section class="page-hero nf">
     <div class="container">
       <p class="nf__code num" aria-hidden="true">404</p>
