@@ -19,6 +19,7 @@ bun run a11y && bun run overflow    # need a build and a Playwright Chromium
 - No earnings figure stated as typical. No trackers, cookies or third-party requests. No personal data about anyone.
 - Dark theme only. Pinned versions, never `:latest`.
 - Build and screenshot on a build box, not a laptop that runs other work.
+- The tracker needs bd 1.2.2 or newer: the Codex hooks in `.codex/hooks.json` call `bd codex-hook`, which older versions lack.
 
 <!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:970c3bf2 -->
 ## Beads Issue Tracker
