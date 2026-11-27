@@ -38,7 +38,7 @@
     "hero": {
       "pill": "Gratis en open source, GPL-3.0",
       "title": "Zet je ongebruikte hardware aan het werk. Bekijk elke uitbetaling in één dashboard.",
-      "lead": "CashPilot richt diensten voor bandbreedte delen, DePIN, mining, GPU en opslag in op je computers, thuisservers en Raspberry Pi. Bij een nieuwe Docker-installatie kunnen de diensten die het start je LAN, je router en de machine waarop ze draaien niet bereiken. Het leest je saldo bij elke aanbieder uit en bewaart de geschiedenis op één plek, op je eigen machine.",
+      "lead": "CashPilot richt diensten voor bandbreedte delen, DePIN, mining, GPU en opslag in op je computers, thuisservers en Raspberry Pi. Het kan deze apps afschermen van je thuisnetwerk, zodat ze het internet bereiken en verder niets. Het leest je saldo bij elke aanbieder uit en bewaart de geschiedenis op één plek, op je eigen machine.",
       "download": "Downloaden",
       "selfhost": "Zelf hosten met Docker",
       "expect": "CashPilot betaalt je niet. Dat doen de aanbieders. Je inkomsten hangen af van je land, je verbinding en je hardware.",
@@ -170,7 +170,7 @@
       },
       "lan": {
         "title": "Afgeschermd van je thuisnetwerk",
-        "text": "Bij een nieuwe Docker-installatie kunnen de diensten die het start je LAN, je router en de machine waarop ze draaien niet bereiken. <a href=\"{securityUrl}\">Je thuisnetwerk beschermen</a>."
+        "text": "CashPilot kan de apps die het draait afschermen van je thuisnetwerk, zodat ze het internet bereiken en verder niets. <a href=\"{securityUrl}\">Je thuisnetwerk beschermen</a>."
       },
       "stop": {
         "title": "Stop alles op elk moment",
@@ -271,7 +271,7 @@
         },
         "safe": {
           "q": "Is het veilig?",
-          "a": "Bandbreedtediensten laten verkeer van anderen je IP-adres gebruiken, dus lees eerst de voorwaarden van elke aanbieder. CashPilot draait elke dienst die het start in een eigen container en houdt die bij een nieuwe Docker-installatie weg van je thuisnetwerk. Lees <a href=\"{securityUrl}\">Je thuisnetwerk beschermen</a> voordat je begint."
+          "a": "Bandbreedtediensten laten verkeer van anderen je IP-adres gebruiken, dus lees eerst de voorwaarden van elke aanbieder. CashPilot draait elke dienst die het start in een eigen container en kan die afschermen van je thuisnetwerk, zodat die het internet bereikt en verder niets. Lees <a href=\"{securityUrl}\">Je thuisnetwerk beschermen</a> voordat je begint."
         },
         "earn": {
           "q": "Hoeveel ga ik verdienen?",

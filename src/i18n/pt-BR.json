@@ -38,7 +38,7 @@
     "hero": {
       "pill": "Livre e de código aberto, GPL-3.0",
       "title": "Coloque seu hardware parado para trabalhar. Veja todos os pagamentos em um só painel.",
-      "lead": "O CashPilot configura serviços de compartilhamento de banda, DePIN, mineração, GPU e armazenamento nos seus computadores, servidores caseiros e Raspberry Pi. Em uma instalação nova do Docker, os serviços que ele inicia não conseguem acessar sua rede local, seu roteador nem a máquina em que rodam. Ele lê o seu saldo em cada provedor e guarda o histórico em um só lugar, na sua própria máquina.",
+      "lead": "O CashPilot configura serviços de compartilhamento de banda, DePIN, mineração, GPU e armazenamento nos seus computadores, servidores caseiros e Raspberry Pi. Ele pode isolar esses apps da sua rede doméstica, para que acessem a internet e nada mais. Ele lê o seu saldo em cada provedor e guarda o histórico em um só lugar, na sua própria máquina.",
       "download": "Baixar",
       "selfhost": "Rode no seu servidor com Docker",
       "expect": "O CashPilot não paga você. Quem paga são os provedores. Os ganhos dependem do seu país, da sua conexão e do seu hardware.",
@@ -170,7 +170,7 @@
       },
       "lan": {
         "title": "Fora da sua rede doméstica",
-        "text": "Em uma instalação nova do Docker, os serviços que ele inicia não conseguem acessar sua rede local, seu roteador nem a máquina em que rodam. <a href=\"{securityUrl}\">Como proteger sua rede doméstica</a>."
+        "text": "O CashPilot pode isolar da sua rede doméstica os apps que roda, para que acessem a internet e nada mais. <a href=\"{securityUrl}\">Como proteger sua rede doméstica</a>."
       },
       "stop": {
         "title": "Pare qualquer coisa a qualquer momento",
@@ -271,7 +271,7 @@
         },
         "safe": {
           "q": "É seguro?",
-          "a": "Os serviços de banda deixam o tráfego de outras pessoas usar o seu endereço IP, então leia antes os termos de cada provedor. O CashPilot roda cada serviço que inicia em um contêiner próprio e, em uma instalação nova do Docker, o mantém fora da sua rede doméstica. Leia <a href=\"{securityUrl}\">Como proteger sua rede doméstica</a> antes de começar."
+          "a": "Os serviços de banda deixam o tráfego de outras pessoas usar o seu endereço IP, então leia antes os termos de cada provedor. O CashPilot roda cada serviço que inicia em um contêiner próprio e pode isolá-lo da sua rede doméstica, para que acesse a internet e nada mais. Leia <a href=\"{securityUrl}\">Como proteger sua rede doméstica</a> antes de começar."
         },
         "earn": {
           "q": "Quanto vou ganhar?",

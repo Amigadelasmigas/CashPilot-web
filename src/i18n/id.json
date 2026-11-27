@@ -38,7 +38,7 @@
     "hero": {
       "pill": "Gratis dan open source, GPL-3.0",
       "title": "Manfaatkan perangkat Anda yang menganggur. Lihat semua pembayaran di satu dasbor.",
-      "lead": "CashPilot memasang layanan berbagi bandwidth, DePIN, mining, GPU, dan penyimpanan di komputer, server rumahan, dan Raspberry Pi Anda. Pada instalasi Docker yang baru, layanan yang dijalankannya tidak bisa menjangkau LAN, router, atau mesin tempat layanan itu berjalan. CashPilot membaca saldo Anda dari setiap penyedia dan menyimpan riwayatnya di satu tempat, di mesin Anda sendiri.",
+      "lead": "CashPilot memasang layanan berbagi bandwidth, DePIN, mining, GPU, dan penyimpanan di komputer, server rumahan, dan Raspberry Pi Anda. CashPilot dapat memisahkan aplikasi-aplikasi ini dari jaringan rumah Anda, sehingga aplikasi itu menjangkau internet dan tidak menjangkau apa pun selain itu. CashPilot membaca saldo Anda dari setiap penyedia dan menyimpan riwayatnya di satu tempat, di mesin Anda sendiri.",
       "download": "Unduh",
       "selfhost": "Self-host dengan Docker",
       "expect": "CashPilot tidak membayar Anda. Yang membayar adalah penyedianya. Penghasilan bergantung pada negara, koneksi, dan perangkat Anda.",
@@ -170,7 +170,7 @@
       },
       "lan": {
         "title": "Terpisah dari jaringan rumah Anda",
-        "text": "Pada instalasi Docker yang baru, layanan yang dijalankannya tidak bisa menjangkau LAN, router, atau mesin tempat layanan itu berjalan. <a href=\"{securityUrl}\">Melindungi jaringan rumah Anda</a>."
+        "text": "CashPilot dapat memisahkan aplikasi yang dijalankannya dari jaringan rumah Anda, sehingga aplikasi itu menjangkau internet dan tidak menjangkau apa pun selain itu. <a href=\"{securityUrl}\">Melindungi jaringan rumah Anda</a>."
       },
       "stop": {
         "title": "Hentikan apa saja kapan saja",
@@ -271,7 +271,7 @@
         },
         "safe": {
           "q": "Apakah ini aman?",
-          "a": "Layanan bandwidth membiarkan trafik orang lain memakai alamat IP Anda, jadi baca dulu ketentuan setiap penyedia. CashPilot menjalankan setiap layanan yang dijalankannya di container tersendiri dan, pada instalasi Docker yang baru, memisahkannya dari jaringan rumah Anda. Baca <a href=\"{securityUrl}\">Melindungi jaringan rumah Anda</a> sebelum memulai."
+          "a": "Layanan bandwidth membiarkan trafik orang lain memakai alamat IP Anda, jadi baca dulu ketentuan setiap penyedia. CashPilot menjalankan setiap layanan yang dijalankannya di container tersendiri dan dapat memisahkannya dari jaringan rumah Anda, sehingga layanan itu menjangkau internet dan tidak menjangkau apa pun selain itu. Baca <a href=\"{securityUrl}\">Melindungi jaringan rumah Anda</a> sebelum memulai."
         },
         "earn": {
           "q": "Berapa penghasilan saya?",
