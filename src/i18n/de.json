@@ -38,7 +38,7 @@
     "hero": {
       "pill": "Kostenlos und Open Source, GPL-3.0",
       "title": "Lass deine ungenutzte Hardware arbeiten. Alle Auszahlungen in einem Dashboard.",
-      "lead": "CashPilot richtet Dienste für Bandbreiten-Sharing, DePIN, Mining, GPU-Computing und Speicher auf deinen Computern, Heimservern und deinem Raspberry Pi ein. Bei einer neuen Docker-Installation können die gestarteten Dienste weder dein LAN noch deinen Router noch das Gerät erreichen, auf dem sie laufen. Es liest dein Guthaben bei jedem Anbieter aus und speichert den Verlauf an einem Ort, auf deinem eigenen Gerät.",
+      "lead": "CashPilot richtet Dienste für Bandbreiten-Sharing, DePIN, Mining, GPU-Computing und Speicher auf deinen Computern, Heimservern und deinem Raspberry Pi ein. Es kann diese Apps von deinem Heimnetz abschotten, sodass sie das Internet erreichen und sonst nichts. Es liest dein Guthaben bei jedem Anbieter aus und speichert den Verlauf an einem Ort, auf deinem eigenen Gerät.",
       "download": "Herunterladen",
       "selfhost": "Selbst hosten mit Docker",
       "expect": "CashPilot zahlt dir nichts. Das tun die Anbieter. Die Einnahmen hängen von deinem Land, deiner Verbindung und deiner Hardware ab.",
@@ -170,7 +170,7 @@
       },
       "lan": {
         "title": "Von deinem Heimnetz ferngehalten",
-        "text": "Bei einer neuen Docker-Installation können die gestarteten Dienste weder dein LAN noch deinen Router noch das Gerät erreichen, auf dem sie laufen. <a href=\"{securityUrl}\">Dein Heimnetz schützen</a>."
+        "text": "CashPilot kann die Apps, die es startet, von deinem Heimnetz abschotten, sodass sie das Internet erreichen und sonst nichts. <a href=\"{securityUrl}\">Dein Heimnetz schützen</a>."
       },
       "stop": {
         "title": "Alles jederzeit stoppen",
@@ -271,7 +271,7 @@
         },
         "safe": {
           "q": "Ist das sicher?",
-          "a": "Bandbreiten-Dienste lassen den Traffic anderer Leute über deine IP-Adresse laufen. Lies deshalb zuerst die Bedingungen jedes Anbieters. CashPilot startet jeden Dienst in einem eigenen Container und hält ihn bei einer neuen Docker-Installation von deinem Heimnetz fern. Lies <a href=\"{securityUrl}\">Dein Heimnetz schützen</a>, bevor du loslegst."
+          "a": "Bandbreiten-Dienste lassen den Traffic anderer Leute über deine IP-Adresse laufen. Lies deshalb zuerst die Bedingungen jedes Anbieters. CashPilot startet jeden Dienst in einem eigenen Container und kann ihn von deinem Heimnetz abschotten, sodass er das Internet erreicht und sonst nichts. Lies <a href=\"{securityUrl}\">Dein Heimnetz schützen</a>, bevor du loslegst."
         },
         "earn": {
           "q": "Wie viel werde ich verdienen?",

@@ -38,7 +38,7 @@
     "hero": {
       "pill": "Ücretsiz ve açık kaynak, GPL-3.0",
       "title": "Boşta duran donanımınızı değerlendirin. Tüm ödemeleri tek bir panelde görün.",
-      "lead": "CashPilot; bant genişliği paylaşımı, DePIN, madencilik, GPU ve depolama hizmetlerini bilgisayarlarınıza, ev sunucularınıza ve Raspberry Pi'nize kurar. Yeni bir Docker kurulumunda, başlattığı hizmetler yerel ağınıza (LAN), yönlendiricinize ve üzerinde çalıştıkları makineye erişemez. Her sağlayıcıdaki bakiyenizi okur ve geçmişi tek bir yerde, kendi makinenizde saklar.",
+      "lead": "CashPilot; bant genişliği paylaşımı, DePIN, madencilik, GPU ve depolama hizmetlerini bilgisayarlarınıza, ev sunucularınıza ve Raspberry Pi'nize kurar. Bu uygulamaları ev ağınızdan yalıtabilir; böylece internete erişirler ve başka hiçbir yere erişemezler. Her sağlayıcıdaki bakiyenizi okur ve geçmişi tek bir yerde, kendi makinenizde saklar.",
       "download": "İndir",
       "selfhost": "Docker ile kendiniz barındırın",
       "expect": "CashPilot size ödeme yapmaz. Ödemeyi sağlayıcılar yapar. Kazanç; ülkenize, bağlantınıza ve donanımınıza bağlıdır.",
@@ -170,7 +170,7 @@
       },
       "lan": {
         "title": "Ev ağınızdan uzak tutulur",
-        "text": "Yeni bir Docker kurulumunda, başlattığı hizmetler yerel ağınıza (LAN), yönlendiricinize ve üzerinde çalıştıkları makineye erişemez. <a href=\"{securityUrl}\">Ev ağınızı koruma</a>."
+        "text": "CashPilot, çalıştırdığı uygulamaları ev ağınızdan yalıtabilir; böylece internete erişirler ve başka hiçbir yere erişemezler. <a href=\"{securityUrl}\">Ev ağınızı koruma</a>."
       },
       "stop": {
         "title": "İstediğiniz zaman durdurun",
@@ -271,7 +271,7 @@
         },
         "safe": {
           "q": "Güvenli mi?",
-          "a": "Bant genişliği hizmetleri, başkalarının trafiğini IP adresiniz üzerinden geçirir. Bu yüzden önce her sağlayıcının koşullarını okuyun. CashPilot başlattığı her hizmeti kendi konteynerinde çalıştırır ve yeni bir Docker kurulumunda onu ev ağınızdan uzak tutar. Başlamadan önce <a href=\"{securityUrl}\">Ev ağınızı koruma</a> rehberini okuyun."
+          "a": "Bant genişliği hizmetleri, başkalarının trafiğini IP adresiniz üzerinden geçirir. Bu yüzden önce her sağlayıcının koşullarını okuyun. CashPilot başlattığı her hizmeti kendi konteynerinde çalıştırır ve onu ev ağınızdan yalıtabilir; böylece hizmet internete erişir ve başka hiçbir yere erişemez. Başlamadan önce <a href=\"{securityUrl}\">Ev ağınızı koruma</a> rehberini okuyun."
         },
         "earn": {
           "q": "Ne kadar kazanırım?",
