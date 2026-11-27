@@ -52,15 +52,20 @@ jobs:
           BRANCH: bot/pins-${{ steps.bump.outputs.slug }}
         run: |
           if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null; then
-            echo "$BRANCH exists already, its PR is open or merged"
-            exit 0
+            # The branch is there. If its PR is too, open, merged or closed, we are done.
+            # If not, an earlier run pushed it and then failed to open the PR: open it now.
+            if [ -n "$(gh pr list --head "$BRANCH" --state all --json number --jq '.[].number')" ]; then
+              echo "$BRANCH has a PR already"
+              exit 0
+            fi
+          else
+            git config user.name GeiserX
+            git config user.email 9169332+GeiserX@users.noreply.github.com
+            git switch -c "$BRANCH"
+            git add src/data/pins.json
+            git commit -m "chore(downloads): pin the latest releases" -m "$(cat bump-summary.md)"
+            git push origin "$BRANCH"
           fi
-          git config user.name GeiserX
-          git config user.email 9169332+GeiserX@users.noreply.github.com
-          git switch -c "$BRANCH"
-          git add src/data/pins.json
-          git commit -m "chore(downloads): pin the latest releases" -m "$(cat bump-summary.md)"
-          git push origin "$BRANCH"
           {
             echo "New releases are out. This PR points the site's download links at them."
             echo

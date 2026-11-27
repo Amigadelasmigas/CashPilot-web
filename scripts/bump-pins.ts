@@ -45,6 +45,20 @@ async function status(url: string): Promise<number> {
   }
 }
 
+/** The body of a file the page reads, or an error: a failed read never counts as checked. */
+async function text(url: string): Promise<string> {
+  for (let i = 1; ; i++) {
+    try {
+      const res = await fetch(url, { headers: { "User-Agent": "cashpilot-web-bump" }, signal: AbortSignal.timeout(30_000) });
+      if (res.ok) return await res.text();
+      if (res.status < 500 || i >= 3) throw new Error(`${res.status} ${url}`);
+    } catch (e) {
+      if (i >= 3 || String(e).includes(" http")) throw e;
+    }
+    await new Promise((r) => setTimeout(r, 1000 * i));
+  }
+}
+
 /** Every URL the site links for this release, plus what the page reads from it. */
 async function linkedUrls(key: Pinned, tag: string): Promise<{ urls: string[]; problems: string[] }> {
   const problems: string[] = [];
@@ -53,25 +67,19 @@ async function linkedUrls(key: Pinned, tag: string): Promise<{ urls: string[]; p
     const names = [files.winInstaller, files.winPortable, files.mac, files.linux];
     const urls = [...names, files.sums].map((n) => `${base}/${n}`);
     // The download page prints each file's checksum from SHA256SUMS.
-    const sums = await fetch(`${base}/${files.sums}`, { signal: AbortSignal.timeout(30_000) });
-    if (sums.ok) {
-      const listed = parseSha256Sums(await sums.text());
-      for (const n of names) if (!listed[n]) problems.push(`${files.sums} of ${tag} has no line for ${n}`);
-    }
+    const listed = parseSha256Sums(await text(`${base}/${files.sums}`));
+    for (const n of names) if (!listed[n]) problems.push(`${files.sums} of ${tag} has no line for ${n}`);
     return { urls, problems };
   }
   if (key === "android") return { urls: [`${repo.android}/releases/download/${tag}/${files.apk}`], problems };
   // web: the compose file the install command downloads, its source view, and
   // the two images it pulls.
   const urls = [composeUrl(tag), composeView(tag)];
-  const compose = await fetch(composeUrl(tag), { signal: AbortSignal.timeout(30_000) });
-  if (compose.ok) {
-    const text = await compose.text();
-    for (const name of ["cashpilot", "cashpilot-worker"]) {
-      const m = text.match(new RegExp(`image:\\s*drumsergio/${name}:([^\\s"']+)`));
-      if (!m) problems.push(`docker-compose.yml of ${tag} names no drumsergio/${name} image`);
-      else urls.push(`https://hub.docker.com/v2/repositories/drumsergio/${name}/tags/${m[1]}`);
-    }
+  const compose = await text(composeUrl(tag));
+  for (const name of ["cashpilot", "cashpilot-worker"]) {
+    const m = compose.match(new RegExp(`image:\\s*drumsergio/${name}:([^\\s"']+)`));
+    if (!m) problems.push(`docker-compose.yml of ${tag} names no drumsergio/${name} image`);
+    else urls.push(`https://hub.docker.com/v2/repositories/drumsergio/${name}/tags/${m[1]}`);
   }
   return { urls, problems };
 }
@@ -81,24 +89,30 @@ const failed: string[] = [];
 let changed = false;
 for (const key of ["desktop", "android", "web"] as Pinned[]) {
   const r = REPOS[key];
-  const tag = await latestTag(r);
-  if (tag === pins[key]) {
-    console.log(`${r}: ${tag} is pinned already`);
-    continue;
+  // An error in one repo (a timeout, a 5xx) fails that repo only, so the
+  // others still get their PR.
+  try {
+    const tag = await latestTag(r);
+    if (tag === pins[key]) {
+      console.log(`${r}: ${tag} is pinned already`);
+      continue;
+    }
+    const { urls, problems } = await linkedUrls(key, tag);
+    for (const u of urls) {
+      const code = await status(u);
+      console.log(`${r} ${tag}: ${code} ${u}`);
+      if (code !== 200) problems.push(`${code} ${u}`);
+    }
+    if (problems.length) {
+      failed.push(`${r} ${tag} not pinned:\n${problems.map((p) => `  ${p}`).join("\n")}`);
+      continue;
+    }
+    lines.push(`- ${r}: ${pins[key]} to ${tag}, ${urls.length} links answered 200 (https://github.com/${OWNER}/${r}/releases/tag/${tag})`);
+    pins[key] = tag;
+    changed = true;
+  } catch (e) {
+    failed.push(`${r} not checked: ${(e as Error).message}`);
   }
-  const { urls, problems } = await linkedUrls(key, tag);
-  for (const u of urls) {
-    const code = await status(u);
-    console.log(`${r} ${tag}: ${code} ${u}`);
-    if (code !== 200) problems.push(`${code} ${u}`);
-  }
-  if (problems.length) {
-    failed.push(`${r} ${tag} not pinned:\n${problems.map((p) => `  ${p}`).join("\n")}`);
-    continue;
-  }
-  lines.push(`- ${r}: ${pins[key]} to ${tag}, ${urls.length} links answered 200 (https://github.com/${OWNER}/${r}/releases/tag/${tag})`);
-  pins[key] = tag;
-  changed = true;
 }
 
 if (changed && !dryRun) writeFileSync(PINS, JSON.stringify(pins, null, 2) + "\n");
