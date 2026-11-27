@@ -493,6 +493,8 @@
     "links": "Bağlantılar",
     "youGet": "Sizin aldığınız",
     "codeEntry": "Bağlantı kodu iletmez. Uygulama referans kodu istediğinde {code} yazın.",
+    "codeReferral": "Kayıt formu referans kodu isterse {code} yazın.",
+    "codeCoupon": "Ödeme sırasında {code} kupon kodunu yazın.",
     "guide": "CashPilot rehberi",
     "guideLabel": "{name} için CashPilot rehberi",
     "toc": "Bir gruba git",

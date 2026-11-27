@@ -493,6 +493,8 @@
     "links": "Links",
     "youGet": "You get",
     "codeEntry": "The link does not pass the code on. Type {code} when the app asks for a referral code.",
+    "codeReferral": "If the sign-up form asks for a referral code, type {code}.",
+    "codeCoupon": "At checkout, type the coupon code {code}.",
     "guide": "CashPilot guide",
     "guideLabel": "CashPilot guide for {name}",
     "toc": "Jump to a group",

@@ -493,6 +493,8 @@
     "links": "Links",
     "youGet": "Você recebe",
     "codeEntry": "O link não repassa o código. Digite {code} quando o app pedir um código de indicação.",
+    "codeReferral": "Se o formulário de cadastro pedir um código de indicação, digite {code}.",
+    "codeCoupon": "Na finalização da compra, digite o cupom {code}.",
     "guide": "Guia do CashPilot",
     "guideLabel": "Guia do CashPilot para {name}",
     "toc": "Ir para um grupo",

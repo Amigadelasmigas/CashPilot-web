@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import Icon from "../../components/Icon.astro";
 import Disclosure from "../../components/Disclosure.astro";
+import TypedCode from "../../components/TypedCode.astro";
 import { localeFromPath, localeParams, useT } from "../../i18n";
 import { getData, isLive, isReferral } from "../../data";
 import { docs } from "../../lib/links";
@@ -88,7 +89,7 @@ const groups = CATEGORY_ORDER.map((key) => ({
                         {t("referrals.link")}
                       </a>
                       <span class="url" dir="ltr">{s.signupUrl}</span>
-                      {s.codeEntry && <p class="ref__note">{t("referrals.codeEntry", { code: s.codeEntry })}</p>}
+                      <TypedCode t={t} service={s} idPrefix="ref" />
                     </td>
                   </tr>
                 ))}
@@ -232,12 +233,7 @@ const groups = CATEGORY_ORDER.map((key) => ({
     line-height: 1.45;
     overflow-wrap: anywhere;
   }
-  .ref__note {
-    margin-top: 0.35rem;
-    font-size: 0.875rem;
-    color: var(--muted);
-  }
-  /* Phones: one compact card per provider. Empty facts are left out. */
+    /* Phones: one compact card per provider. Empty facts are left out. */
   @media (max-width: 760px) {
     .ref__table {
       border: 0;

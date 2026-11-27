@@ -493,6 +493,8 @@
     "links": "Links",
     "youGet": "Du bekommst",
     "codeEntry": "Der Link gibt den Code nicht weiter. Gib {code} ein, wenn die App nach einem Empfehlungscode fragt.",
+    "codeReferral": "Wenn das Anmeldeformular nach einem Empfehlungscode fragt, gib {code} ein.",
+    "codeCoupon": "Gib an der Kasse den Gutscheincode {code} ein.",
     "guide": "CashPilot-Anleitung",
     "guideLabel": "CashPilot-Anleitung für {name}",
     "toc": "Zu einer Gruppe springen",
