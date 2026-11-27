@@ -1,7 +1,7 @@
 ---
 import Logo from "./Logo.astro";
 import type { Translator } from "../i18n";
-import { docs, repo, feeds, CONTACT_EMAIL } from "../lib/links";
+import { docs, repo, feeds, social, CONTACT_EMAIL } from "../lib/links";
 import { getData } from "../data";
 
 interface Props {
@@ -38,6 +38,7 @@ const { agentsDoc } = await getData();
           <li><a href={repo.android}>{t("footer.android")}</a></li>
           <li><a href={repo.mcp}>{t("footer.mcp")}</a></li>
           <li><a href={feeds.releases}>{t("footer.feed")}</a></li>
+          <li><a href={social.x} rel="me">{t("footer.x", { handle: social.xHandle })}</a></li>
         </ul>
       </nav>
       <nav aria-labelledby="ft-about">
