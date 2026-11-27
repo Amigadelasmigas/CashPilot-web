@@ -238,8 +238,7 @@
         "fleet": "Un solo panel para muchos servidores",
         "desktop": "App de escritorio",
         "android": "App para Android",
-        "gpu": "Computación con GPU y minería",
-        "docker": "Necesita Docker"
+        "gpu": "Computación con GPU y minería"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "Archivo GPL-3.0, pero el README prohíbe copias modificadas",
         "estimates": "No, solo estimaciones",
         "claimed": "Lo afirma, en código cerrado",
-        "dockerOrPodman": "Sí, o Podman",
         "betaMining": "Sí, minería en beta"
       },
       "more": "Comparativa completa con una fuente para cada celda"

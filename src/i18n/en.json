@@ -234,12 +234,14 @@
       "feature": "Feature",
       "rows": {
         "license": "Licence",
+        "lanIsolation": "Keeps the apps off your home network by default",
+        "lockedDown": "Locks down each app's container",
+        "dockerAccess": "Limits who can control your containers",
         "balances": "Reads balances from your provider accounts",
         "fleet": "One dashboard for many servers",
         "desktop": "Desktop app",
         "android": "Android app",
-        "gpu": "GPU compute and mining",
-        "docker": "Needs Docker"
+        "gpu": "GPU compute and mining"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,9 +250,12 @@
         "gplReadme": "GPL-3.0 file, README forbids changed copies",
         "estimates": "No, estimates only",
         "claimed": "Claimed, in closed code",
-        "dockerOrPodman": "Yes, or Podman",
-        "betaMining": "Yes, mining in beta"
+        "betaMining": "Yes, mining in beta",
+        "lanReachable": "No, your network stays reachable",
+        "partly": "Partly",
+        "readOnlyMount": "Only a read-only mount"
       },
+      "security": "Security comes first in CashPilot. Every app it starts runs locked down and, by default, cannot reach your home network. <a href=\"{securityUrl}\">Read the security defaults</a>.",
       "more": "Full comparison with a source for every cell"
     },
     "faq": {

@@ -77,15 +77,17 @@ const compareCols = [
   { name: "InternetIncome", url: rivals.internetIncome },
   { name: "CashFactory", url: rivals.cashFactory },
 ];
-// `plain`: a requirement, not a feature, so its cells are text without a check mark.
-const compareRows: { key: string; cells: Cell[]; plain?: boolean }[] = [
+const compareRows: { key: string; cells: Cell[] }[] = [
   { key: "license", cells: ["values.gpl", "values.gpl", "values.proprietary", "values.noLicense", "values.gplReadme"] },
+  // Security rows: "LAN isolation", "Earner container settings" and "Docker socket mounted into" in docs/comparison.md.
+  { key: "lanIsolation", cells: ["yes", "values.lanReachable", "no", "no", "no"] },
+  { key: "lockedDown", cells: ["yes", "values.partly", "no", "no", "no"] },
+  { key: "dockerAccess", cells: ["yes", "no", "values.readOnlyMount", "no", "no"] },
   { key: "balances", cells: ["yes", "values.estimates", "no", "no", "no"] },
   { key: "fleet", cells: ["yes", "no", "values.claimed", "no", "no"] },
   { key: "desktop", cells: ["yes", "no", "no", "no", "no"] },
   { key: "android", cells: ["yes", "no", "no", "no", "no"] },
   { key: "gpu", cells: ["values.betaMining", "no", "no", "no", "no"] },
-  { key: "docker", cells: ["values.dockerOrPodman", "yes", "yes", "yes", "yes"], plain: true },
 ];
 const cellText = (c: Cell) => (c === "yes" ? t("common.yes") : c === "no" ? t("common.no") : t(`home.compare.${c}`));
 
@@ -470,9 +472,7 @@ const faqVars = {
                   <th scope="row">{t(`home.compare.rows.${r.key}`)}</th>
                   {r.cells.map((c, i) => (
                     <td class:list={{ "is-us": i === 0 }}>
-                      {r.plain ? (
-                        cellText(c)
-                      ) : c === "yes" ? (
+                      {c === "yes" ? (
                         <span class="yes">
                           <Icon name="check" />
                           {t("common.yes")}
@@ -493,6 +493,7 @@ const faqVars = {
           </tbody>
         </table>
       </div>
+      <p class="compare-note" set:html={t("home.compare.security", { securityUrl: docs.securityDefaults })} />
       <p class="links-row">
         <a href={docs.comparison}>{t("home.compare.more")} <Icon name="arrow" class="flip" /></a>
       </p>
@@ -1029,6 +1030,10 @@ const faqVars = {
   .no :global(.icon) {
     width: 1rem;
     height: 1rem;
+  }
+  .compare-note {
+    margin-top: 1.25rem;
+    max-width: 65ch;
   }
   .links-row {
     display: flex;

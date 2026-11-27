@@ -238,8 +238,7 @@
         "fleet": "Iisang dashboard para sa maraming server",
         "desktop": "Desktop app",
         "android": "Android app",
-        "gpu": "GPU compute at mining",
-        "docker": "Kailangan ng Docker"
+        "gpu": "GPU compute at mining"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "May GPL-3.0 file, pero ipinagbabawal ng README ang binagong kopya",
         "estimates": "Hindi, tantiya lang",
         "claimed": "Sinasabing mayroon, sa closed code",
-        "dockerOrPodman": "Oo, o Podman",
         "betaMining": "Oo, nasa beta ang mining"
       },
       "more": "Buong paghahambing, may source sa bawat cell"

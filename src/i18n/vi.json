@@ -238,8 +238,7 @@
         "fleet": "Một bảng điều khiển cho nhiều máy chủ",
         "desktop": "Ứng dụng máy tính",
         "android": "Ứng dụng Android",
-        "gpu": "Điện toán GPU và đào coin",
-        "docker": "Cần Docker"
+        "gpu": "Điện toán GPU và đào coin"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "Có tệp GPL-3.0, README cấm bản sao có sửa đổi",
         "estimates": "Không, chỉ ước tính",
         "claimed": "Có (theo tuyên bố), mã nguồn đóng",
-        "dockerOrPodman": "Có, hoặc Podman",
         "betaMining": "Có, đào coin đang beta"
       },
       "more": "Bảng so sánh đầy đủ, mỗi ô đều có nguồn"

@@ -238,8 +238,7 @@
         "fleet": "Un'unica dashboard per più server",
         "desktop": "App desktop",
         "android": "App Android",
-        "gpu": "Calcolo su GPU e mining",
-        "docker": "Richiede Docker"
+        "gpu": "Calcolo su GPU e mining"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "File GPL-3.0, ma il README vieta copie modificate",
         "estimates": "No, solo stime",
         "claimed": "Dichiarato, in codice chiuso",
-        "dockerOrPodman": "Sì, o Podman",
         "betaMining": "Sì, mining in beta"
       },
       "more": "Confronto completo con una fonte per ogni cella"

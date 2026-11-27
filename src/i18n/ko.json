@@ -238,8 +238,7 @@
         "fleet": "여러 서버를 하나의 대시보드로",
         "desktop": "데스크톱 앱",
         "android": "Android 앱",
-        "gpu": "GPU 컴퓨팅과 채굴",
-        "docker": "Docker 필요"
+        "gpu": "GPU 컴퓨팅과 채굴"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "GPL-3.0 파일이 있지만 README에서 수정본을 금지",
         "estimates": "아니요, 추정치만",
         "claimed": "지원한다고 주장하지만 코드 비공개",
-        "dockerOrPodman": "예, 또는 Podman",
         "betaMining": "예, 채굴은 베타"
       },
       "more": "모든 항목에 출처를 단 전체 비교"

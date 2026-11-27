@@ -238,8 +238,7 @@
         "fleet": "複数サーバーを一括管理",
         "desktop": "デスクトップアプリ",
         "android": "Android アプリ",
-        "gpu": "GPU コンピューティングとマイニング",
-        "docker": "Docker が必要"
+        "gpu": "GPU コンピューティングとマイニング"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "GPL-3.0 のファイルはあるが、README で改変版を禁止",
         "estimates": "いいえ、推定値のみ",
         "claimed": "対応をうたっているが、コードは非公開",
-        "dockerOrPodman": "はい、または Podman",
         "betaMining": "はい、マイニングはベータ版"
       },
       "more": "すべての項目に出典を付けた詳しい比較"

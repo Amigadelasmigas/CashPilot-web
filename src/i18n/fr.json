@@ -238,8 +238,7 @@
         "fleet": "Un seul tableau de bord pour plusieurs serveurs",
         "desktop": "Application de bureau",
         "android": "Application Android",
-        "gpu": "Calcul GPU et minage",
-        "docker": "Nécessite Docker"
+        "gpu": "Calcul GPU et minage"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "Fichier GPL-3.0, mais le README interdit les copies modifiées",
         "estimates": "Non, des estimations seulement",
         "claimed": "Annoncé, en code fermé",
-        "dockerOrPodman": "Oui, ou Podman",
         "betaMining": "Oui, minage en bêta"
       },
       "more": "Comparaison complète avec une source pour chaque case"

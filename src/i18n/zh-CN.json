@@ -238,8 +238,7 @@
         "fleet": "一个仪表盘管理多台服务器",
         "desktop": "桌面应用",
         "android": "Android 应用",
-        "gpu": "GPU 算力和挖矿",
-        "docker": "需要 Docker"
+        "gpu": "GPU 算力和挖矿"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "有 GPL-3.0 文件，但 README 禁止修改版",
         "estimates": "否，仅有估算",
         "claimed": "声称支持，代码不公开",
-        "dockerOrPodman": "是，或 Podman",
         "betaMining": "是，挖矿为测试版"
       },
       "more": "完整对比，每一项都附有来源"

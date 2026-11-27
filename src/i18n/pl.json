@@ -238,8 +238,7 @@
         "fleet": "Jeden panel dla wielu serwerów",
         "desktop": "Aplikacja na komputer",
         "android": "Aplikacja na Androida",
-        "gpu": "Obliczenia GPU i kopanie",
-        "docker": "Wymaga Dockera"
+        "gpu": "Obliczenia GPU i kopanie"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "Plik GPL-3.0, README zabrania zmienionych kopii",
         "estimates": "Nie, tylko szacunki",
         "claimed": "Deklarowane, w zamkniętym kodzie",
-        "dockerOrPodman": "Tak, Docker lub Podman",
         "betaMining": "Tak, kopanie w wersji beta"
       },
       "more": "Pełne porównanie ze źródłem dla każdej komórki"

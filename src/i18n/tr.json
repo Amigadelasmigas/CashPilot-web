@@ -238,8 +238,7 @@
         "fleet": "Birçok sunucu için tek panel",
         "desktop": "Masaüstü uygulaması",
         "android": "Android uygulaması",
-        "gpu": "GPU hesaplama ve madencilik",
-        "docker": "Docker gerektirir"
+        "gpu": "GPU hesaplama ve madencilik"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "GPL-3.0 dosyası var, README değiştirilmiş kopyaları yasaklıyor",
         "estimates": "Hayır, yalnızca tahmin",
         "claimed": "İddia ediliyor, kapalı kodda",
-        "dockerOrPodman": "Evet, Docker veya Podman",
         "betaMining": "Evet, madencilik beta aşamasında"
       },
       "more": "Her hücre için kaynak içeren tam karşılaştırma"

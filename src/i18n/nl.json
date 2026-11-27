@@ -238,8 +238,7 @@
         "fleet": "Eén dashboard voor veel servers",
         "desktop": "Desktop-app",
         "android": "Android-app",
-        "gpu": "GPU-rekenkracht en mining",
-        "docker": "Vereist Docker"
+        "gpu": "GPU-rekenkracht en mining"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "GPL-3.0-bestand, README verbiedt gewijzigde kopieën",
         "estimates": "Nee, alleen schattingen",
         "claimed": "Beweerd, in gesloten code",
-        "dockerOrPodman": "Ja, Docker of Podman",
         "betaMining": "Ja, mining in bèta"
       },
       "more": "Volledige vergelijking met een bron voor elke cel"

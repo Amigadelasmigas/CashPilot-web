@@ -53,6 +53,7 @@ export const docs = {
   guide: (slug: string) => `${DOCS}/guides/${slug}/`,
   ratings: `${DOCS}/ratings/`,
   homeSecurity: `${DOCS}/home-network-security/`,
+  securityDefaults: `${DOCS}/security-defaults/`,
   comparison: `${DOCS}/comparison/`,
   comparisonOutbound: `${DOCS}/comparison/#side-by-side`,
   forAgents: `${DOCS}/for-ai-agents/`,

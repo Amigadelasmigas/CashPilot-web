@@ -238,8 +238,7 @@
         "fleet": "Ein Dashboard für viele Server",
         "desktop": "Desktop-App",
         "android": "Android-App",
-        "gpu": "GPU-Computing und Mining",
-        "docker": "Benötigt Docker"
+        "gpu": "GPU-Computing und Mining"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "GPL-3.0-Datei, README verbietet veränderte Kopien",
         "estimates": "Nein, nur Schätzungen",
         "claimed": "Behauptet, in geschlossenem Code",
-        "dockerOrPodman": "Ja, Docker oder Podman",
         "betaMining": "Ja, Mining in der Beta"
       },
       "more": "Vollständiger Vergleich mit einer Quelle für jede Zelle"

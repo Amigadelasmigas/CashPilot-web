@@ -238,8 +238,7 @@
         "fleet": "Satu dasbor untuk banyak server",
         "desktop": "Aplikasi desktop",
         "android": "Aplikasi Android",
-        "gpu": "Komputasi GPU dan mining",
-        "docker": "Butuh Docker"
+        "gpu": "Komputasi GPU dan mining"
       },
       "values": {
         "gpl": "GPL-3.0",
@@ -248,7 +247,6 @@
         "gplReadme": "Ada file GPL-3.0, README melarang salinan yang diubah",
         "estimates": "Tidak, hanya perkiraan",
         "claimed": "Diklaim, dalam kode tertutup",
-        "dockerOrPodman": "Ya, atau Podman",
         "betaMining": "Ya, mining masih beta"
       },
       "more": "Perbandingan lengkap dengan sumber untuk setiap sel"
