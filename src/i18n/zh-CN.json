@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "siteName": "CashPilot",
+    "titleSuffix": "CashPilot",
+    "ogImageAlt": "CashPilot：让闲置的硬件为你赚钱，在一个仪表盘里看到每一笔收益。"
+  },
+  "nav": {
+    "skip": "跳到正文",
+    "home": "CashPilot 首页",
+    "docs": "文档",
+    "github": "GitHub",
+    "download": "下载",
+    "main": "主导航",
+    "stars": "星标"
+  },
+  "lang": {
+    "label": "语言",
+    "suggest": "本网站也有英文版。",
+    "switch": "切换到英文",
+    "dismiss": "不用了"
+  },
+  "common": {
+    "copy": "复制",
+    "copied": "已复制",
+    "copyFailed": "请选中后复制",
+    "copyLabel": "复制命令",
+    "yes": "是",
+    "no": "否",
+    "notStated": "未注明",
+    "noLimit": "不限"
+  },
+  "disclosure": {
+    "short": "如果你通过这些链接注册，服务商可能会向 CashPilot 项目支付一笔奖励。这笔奖励不会从你的收益中扣除。",
+    "more": "推荐链接如何运作"
+  },
+  "home": {
+    "title": "CashPilot：在自己的硬件上运行被动收入服务",
+    "description": "免费的开源软件，在你自己的设备上运行带宽共享、DePIN、GPU 算力和挖矿服务，并在一个仪表盘里显示每一笔收益。",
+    "hero": {
+      "pill": "免费开源，GPL-3.0",
+      "title": "让闲置的硬件为你赚钱。在一个仪表盘里看到每一笔收益。",
+      "lead": "CashPilot 帮你在电脑、家用服务器和 Raspberry Pi 上部署被动收入服务。它会从每个服务商读取你的余额，并把历史记录集中保存在你自己的设备上。",
+      "download": "下载",
+      "selfhost": "用 Docker 自行部署",
+      "expect": "付钱给你的不是 CashPilot，而是各个服务商。收益取决于你所在的国家、网络连接和硬件。",
+      "imageAlt": "CashPilot 仪表盘：余额、今日和本月收益、每台设备上的服务，以及每日收益。",
+      "imageAltMobile": "手机上的 CashPilot 仪表盘：余额，以及今日和本月收益。"
+    },
+    "stats": {
+      "label": "CashPilot 数据一览",
+      "stars": "GitHub 星标",
+      "pulls": "Docker 拉取次数",
+      "services": "个支持的服务",
+      "note": "数据来自 GitHub 和 Docker Hub，统计于 {date}。"
+    },
+    "platforms": {
+      "title": "支持平台",
+      "windows": "Windows",
+      "macos": "macOS",
+      "linux": "Linux",
+      "android": "Android",
+      "docker": "Docker",
+      "pi": "Raspberry Pi"
+    },
+    "how": {
+      "title": "使用方法",
+      "lead": "只需三步，无需在我们这里注册账号。",
+      "steps": {
+        "install": {
+          "title": "安装 CashPilot",
+          "text": "在一台电脑上使用桌面应用。或者在家用服务器、NAS 或 Raspberry Pi 上用 Docker 运行服务器版。"
+        },
+        "pick": {
+          "title": "选择服务",
+          "text": "从服务目录中挑选，在服务商那里注册，然后粘贴你的登录信息。有 Docker 镜像的服务，CashPilot 会在独立的容器中启动它。其他服务则由 CashPilot 读取你的余额。"
+        },
+        "watch": {
+          "title": "查看每一笔收益",
+          "text": "CashPilot 每小时读取一次你的余额，并保存历史记录。余额下降时，它会问你是否已收到付款。"
+        }
+      }
+    },
+    "categories": {
+      "title": "{count} 个服务，分为五类",
+      "count": "{count} 个服务",
+      "bandwidth": {
+        "name": "带宽共享",
+        "text": "把你用不完的网络带宽分享给数据和代理公司。"
+      },
+      "depin": {
+        "name": "DePIN",
+        "text": "为以代币支付报酬的去中心化网络运行节点。"
+      },
+      "compute": {
+        "name": "GPU 算力",
+        "text": "把你的显卡出租给 AI 和渲染任务。"
+      },
+      "storage": {
+        "name": "存储",
+        "text": "把闲置的硬盘空间出租给存储网络。"
+      },
+      "mining": {
+        "name": "挖矿",
+        "text": "用 CPU 或 GPU 挖矿，并查看你网络中的 ASIC 矿机。目前为测试版。"
+      },
+      "all": {
+        "name": "文档中的全部 {count} 个服务",
+        "text": "每个服务都有一份设置指南，并写明所需条件。"
+      }
+    },
+    "tour": {
+      "title": "看看里面",
+      "lead": "应用的真实界面，使用演示数据。选择一个界面即可查看完整内容。",
+      "fleet": {
+        "title": "设备群",
+        "text": "每台设备、它的系统，以及最后一次上报的时间。停止上报的设备会变成红色。",
+        "alt": "设备群页面：五台设备及其系统、版本和各自最后一次上报的时间。其中一台设备离线。"
+      },
+      "catalog": {
+        "title": "服务目录",
+        "text": "所有支持的服务，可按类别筛选。",
+        "alt": "服务目录页面：类别筛选器，以及你的设备群中正在运行的服务和各自的类型。"
+      },
+      "payouts": {
+        "title": "收款",
+        "text": "哪些节点数据必须备份，以及每个服务把钱付到哪里。",
+        "alt": "收款页面：一个提示框，要求你备份只存在于某一台设备硬盘上的 MystNodes 身份。"
+      },
+      "desktop": {
+        "title": "桌面应用",
+        "text": "在 Windows、macOS 或 Linux 的窗口中使用完整的仪表盘。它也可以加入你已经在运行的 CashPilot 服务器。",
+        "alt": "macOS 上的 CashPilot Desktop，显示余额以及今日和本月收益。"
+      },
+      "android": {
+        "title": "Android 配套应用",
+        "text": "监控你手机上的赚钱应用，并把它们的状态上报给你的 CashPilot 服务器或桌面应用。",
+        "alt": "Android 应用主屏幕：六个赚钱应用全部在运行，并显示每个应用 24 小时内使用的流量。"
+      }
+    },
+    "catch": {
+      "title": "有什么条件吗？",
+      "lead": "这个问题问得好。以下是事实。",
+      "free": {
+        "title": "免费",
+        "text": "不收费，没有付费套餐，也没有广告。"
+      },
+      "open": {
+        "title": "开源",
+        "text": "GPL-3.0 许可。每一行代码都可以在 GitHub 上查看。"
+      },
+      "hardware": {
+        "title": "运行在你的硬件上",
+        "text": "用的是你的设备和你的网络。我们不为你运行任何服务器。"
+      },
+      "account": {
+        "title": "无需在我们这里注册",
+        "text": "不用注册，也不用提供邮箱。你只需在自己选择的服务商那里注册。"
+      },
+      "funding": "项目的经费从哪里来？部分服务商链接是推荐链接。如果你通过这样的链接注册，服务商可能会向 CashPilot 项目支付一笔奖励。这笔奖励不会从你的收益中扣除。"
+    },
+    "control": {
+      "title": "一切由你掌控",
+      "lead": "CashPilot 运行在你的设备上。你可以看到它在做什么，并随时停止它。",
+      "logins": {
+        "title": "登录信息只留在你的设备上",
+        "text": "CashPilot 把它们加密保存在自己的数据库中。每条登录信息只发送给需要它的那个服务。"
+      },
+      "containers": {
+        "title": "每个服务都在独立的容器中",
+        "text": "CashPilot 启动的每个服务都与其他服务隔离运行，去掉了多余的权限，并限制了进程数量。"
+      },
+      "lan": {
+        "title": "与你的家庭网络隔离",
+        "text": "在全新安装的 Docker 上，它启动的服务无法访问你的局域网、路由器，以及运行这些服务的设备本身。<a href=\"{securityUrl}\">保护你的家庭网络</a>。"
+      },
+      "stop": {
+        "title": "随时停止任何服务",
+        "text": "点一下就能停止或删除一个服务。还有一份指南教你如何彻底删除 CashPilot。"
+      },
+      "ratings": "每个服务商都按同样的十个问题获得 A 到 F 的评级，每个回答都附有来源链接。",
+      "ratingsLink": "查看服务商评级"
+    },
+    "earnings": {
+      "title": "影响收益的因素",
+      "lead": "没有人能向你保证具体数字。以下因素会影响你的收益。",
+      "country": {
+        "title": "你所在的国家",
+        "text": "服务商为来自某些国家的流量支付的价格比其他国家更高。"
+      },
+      "ip": {
+        "title": "你的 IP 地址类型",
+        "text": "许多服务只为家庭宽带付费，不为数据中心的服务器付费。"
+      },
+      "connection": {
+        "title": "你的网络连接",
+        "text": "上传速度越快、没有流量上限，能承载的流量就越多。"
+      },
+      "uptime": {
+        "title": "在线时间",
+        "text": "一直开着的设备比经常休眠的设备赚得多。"
+      },
+      "devices": {
+        "title": "设备数量",
+        "text": "大多数服务每个 IP 地址只允许一台设备，每个账号也有设备数量上限。"
+      },
+      "hardware": {
+        "title": "你的 GPU 和硬件",
+        "text": "GPU 算力和挖矿的收益取决于你的显卡、电价和市场行情。"
+      },
+      "note": "有些配置赚得非常少。仪表盘会显示你的实际收益，方便你停掉不赚钱的服务。"
+    },
+    "services": {
+      "title": "热门服务",
+      "lead": "每个类别中的几个服务。文档列出了全部服务，并为每个服务提供指南。",
+      "caption": "热门服务及其所需条件",
+      "col": {
+        "service": "服务",
+        "homeIp": "需要家庭 IP",
+        "devicesPerIp": "每个 IP 的设备数",
+        "payout": "付款方式",
+        "minimum": "最低提现额"
+      },
+      "signup": "注册",
+      "signupLabel": "注册 {name}（推荐链接）",
+      "signupLabelPlain": "注册 {name}",
+      "guideLabel": "{name} 的 CashPilot 指南",
+      "all": "文档中的全部 {count} 个服务",
+      "referrals": "所有推荐链接",
+      "notStatedNote": "– 表示服务目录中没有注明。"
+    },
+    "compare": {
+      "title": "CashPilot 与同类工具对比",
+      "lead": "其他能运行多个此类服务的开源工具的事实情况。核实于 {date}。",
+      "caption": "CashPilot 与其他开源工具的逐项功能对比",
+      "feature": "功能",
+      "rows": {
+        "license": "许可证",
+        "balances": "从你的服务商账户读取余额",
+        "fleet": "一个仪表盘管理多台服务器",
+        "desktop": "桌面应用",
+        "android": "Android 应用",
+        "gpu": "GPU 算力和挖矿",
+        "docker": "需要 Docker"
+      },
+      "values": {
+        "gpl": "GPL-3.0",
+        "proprietary": "专有",
+        "noLicense": "没有许可证文件",
+        "gplReadme": "有 GPL-3.0 文件，但 README 禁止修改后的副本",
+        "estimates": "否，仅有估算",
+        "claimed": "声称支持，代码不公开",
+        "dockerOrPodman": "是，或 Podman",
+        "betaMining": "是，挖矿为测试版"
+      },
+      "more": "完整对比，每一项都附有来源"
+    },
+    "faq": {
+      "title": "常见问题",
+      "items": {
+        "slow": {
+          "q": "它会拖慢我的网速吗？",
+          "a": "可能会。带宽服务会让其他公司的流量经过你的网络，因此会占用你的一部分上传和下载带宽。CashPilot 会显示每台设备的网络用量，让你看到哪个服务用得最多，并停止它。"
+        },
+        "legal": {
+          "q": "这合法吗？",
+          "a": "这取决于你所在的地区和你的宽带合同。有些宽带运营商禁止共享或转售你的网络连接。开始之前，请查阅当地法律和你的运营商条款。以上内容不构成法律建议。"
+        },
+        "safe": {
+          "q": "安全吗？",
+          "a": "带宽服务会让其他人的流量使用你的 IP 地址，所以请先阅读每个服务商的条款。CashPilot 会把它启动的每个服务放在独立的容器中运行，并且在全新安装的 Docker 上，让这些服务与你的家庭网络隔离。开始之前，请阅读<a href=\"{securityUrl}\">保护你的家庭网络</a>。"
+        },
+        "earn": {
+          "q": "我能赚多少？",
+          "a": "我们无法告诉你。这取决于你所在的国家、IP 地址类型、网络连接、在线时间以及你运行的服务。有些配置赚得非常少。仪表盘会显示你的实际收益。"
+        },
+        "free": {
+          "q": "为什么免费？",
+          "a": "CashPilot 是采用 GPL-3.0 许可的自由软件，由贡献者共同开发。部分服务商链接是推荐链接，由此获得的奖励用于资助项目。<a href=\"{referralsUrl}\">推荐链接如何运作</a>。"
+        },
+        "docker": {
+          "q": "我需要 Docker 吗？",
+          "a": "需要，CashPilot 启动的服务运行在容器中，所以需要 Docker。桌面应用支持 Docker 或 Podman，它的设置向导会帮你安装 Docker。Android 应用不需要 Docker，但它需要向 CashPilot 服务器或桌面应用上报数据。"
+        },
+        "pi": {
+          "q": "能在 Raspberry Pi 上运行吗？",
+          "a": "能，需要 Pi 3、4 或 5，并使用 64 位系统。大多数服务都提供 ARM 版本，CashPilot 会在部署前检查某个服务能否在你的 CPU 上运行。<a href=\"{armUrl}\">在 ARM 上运行</a>。"
+        },
+        "data": {
+          "q": "CashPilot 项目能看到我的登录信息或收益吗？",
+          "a": "不能。CashPilot 运行在你的设备上，不会向项目发送任何数据。你的登录信息只保存在你自己的 CashPilot 中，并在其数据库中加密。<a href=\"{privacyUrl}\">隐私</a>。"
+        }
+      }
+    },
+    "cta": {
+      "title": "准备试试了吗？",
+      "text": "下载桌面应用，或用 Docker 运行服务器版。两者都免费。",
+      "download": "下载",
+      "github": "在 GitHub 上查看源代码",
+      "releases": "想获知新版本，可以在 GitHub 上使用 Watch，或订阅<a href=\"{feedUrl}\">版本发布订阅源</a>。"
+    }
+  },
+  "download": {
+    "title": "下载 CashPilot",
+    "metaTitle": "下载适用于 Windows、macOS、Linux、Android 和 Docker 的 CashPilot",
+    "description": "免费下载适用于 Windows、macOS、Linux 和 Android 的 CashPilot，以及适用于家用服务器、NAS 和 Raspberry Pi 的 Docker 服务器版。无需账号。",
+    "lead": "选择你的系统。所有下载都是免费的。无需账号，无需邮箱，无需注册。",
+    "pickerLabel": "选择你的系统",
+    "detected": "你的系统",
+    "otherSystems": "其他系统",
+    "ios": "目前没有 iPhone 应用。请在电脑上安装桌面应用，或运行服务器版，然后在 Safari 中打开仪表盘。",
+    "pathsHint": "不确定该选哪个？",
+    "pathsLink": "比较各个选项",
+    "fileInfo": "{type}，{size}",
+    "version": "版本 {version}",
+    "source": "源代码",
+    "allReleases": "所有版本",
+    "tiles": {
+      "windows": {
+        "name": "Windows",
+        "hint": "桌面应用"
+      },
+      "macos": {
+        "name": "macOS",
+        "hint": "桌面应用"
+      },
+      "linux": {
+        "name": "Linux",
+        "hint": "桌面应用"
+      },
+      "android": {
+        "name": "Android",
+        "hint": "配套应用"
+      },
+      "docker": {
+        "name": "Docker",
+        "hint": "服务器"
+      }
+    },
+    "runtime": "各个服务运行在容器中。应用支持 Docker 或 Podman，如果没有安装 Docker，它的设置向导会帮你安装。",
+    "windows": {
+      "metaTitle": "下载 Windows 版 CashPilot",
+      "title": "Windows 版 CashPilot Desktop",
+      "installer": "下载安装程序",
+      "installerType": "安装程序（.exe）",
+      "portable": "便携版",
+      "portableType": "便携应用（.exe），无需安装",
+      "arch": "64 位（x64）。大多数电脑都是 64 位。",
+      "requires": "需要 Windows 10 22H2，或 Windows 11 23H2 及更高版本。",
+      "warnTitle": "Windows 或杀毒软件发出警告？",
+      "warnText": "Windows 应用目前还没有代码签名，所以 SmartScreen 可能会显示“Windows 已保护你的电脑”。点击“更多信息”，然后点击“仍要运行”。如果想确认你拿到的是我们发布的文件，请将它的 SHA-256 校验和与下方列表进行比对。",
+      "verify": "在 PowerShell 中："
+    },
+    "macos": {
+      "metaTitle": "下载 macOS 版 CashPilot",
+      "title": "macOS 版 CashPilot Desktop",
+      "button": "下载 Mac 版",
+      "type": "Zip 文件",
+      "arch": "Apple 芯片（M1 及更新机型）。",
+      "minimum": "需要 macOS 12 Monterey 或更高版本。",
+      "requires": "已通过 Apple 签名和公证。解压后打开 cashpilot-desktop.app。",
+      "intel": "使用 Intel Mac？桌面应用没有 Intel 版本。请改为<a href=\"{dockerUrl}\">用 Docker 运行服务器版</a>。",
+      "verify": "在“终端”中："
+    },
+    "linux": {
+      "metaTitle": "下载 Linux 版 CashPilot",
+      "title": "Linux 版 CashPilot Desktop",
+      "button": "下载 Linux 版",
+      "type": "tar.gz 压缩包",
+      "arch": "x86_64（64 位电脑）。",
+      "minimum": "需要 glibc 2.34 或更高版本：Ubuntu 22.04、Debian 12 或更新版本。",
+      "requires": "需要 GTK 3 和 WebKitGTK 4.1。解压后运行 CashPilot Desktop。",
+      "server": "要部署服务器或 Raspberry Pi？<a href=\"{dockerUrl}\">请使用 Docker</a>。",
+      "verify": "在终端中："
+    },
+    "android": {
+      "metaTitle": "下载 Android 版 CashPilot",
+      "title": "Android 版 CashPilot",
+      "button": "下载 APK",
+      "type": "APK 文件",
+      "requires": "需要 Android 8.0 或更高版本。手机会请你允许从浏览器安装应用。",
+      "what": "Android 应用会监控你手机上的赚钱应用，并把它们的状态上报给你的 CashPilot 服务器或桌面应用。它需要其中之一来接收上报。",
+      "qr": "用手机扫码下载 APK。",
+      "qrAlt": "Android APK 下载链接的二维码",
+      "stores": "未上架 Google Play。F-Droid：即将上架。"
+    },
+    "docker": {
+      "metaTitle": "用 Docker 自行部署 CashPilot",
+      "title": "用 Docker 运行 CashPilot 服务器",
+      "lead": "适用于家用服务器、NAS、Raspberry Pi 或任何一直开着的设备。你可以在浏览器中打开仪表盘。",
+      "requires": "需要带 Compose 的 Docker，可在 Linux、macOS 或 Windows 上运行，支持 amd64 或 arm64。",
+      "step1": "下载 compose 文件并启动 CashPilot：",
+      "step2": "显示设置令牌：",
+      "step3": "打开 {url} 并输入令牌。设置向导会完成剩下的步骤。",
+      "viewSource": "运行之前先阅读 compose 文件",
+      "images": "compose 文件固定使用镜像 {ui} 和 {worker}。",
+      "guide": "完整指南：快速入门"
+    },
+    "checksums": {
+      "title": "SHA-256 校验和，版本 {version}",
+      "all": "SHA256SUMS 文件"
+    },
+    "homelab": {
+      "title": "家用服务器安装方式",
+      "lead": "按从易到难排序。",
+      "option": "方式",
+      "caption": "家用服务器安装方式，从易到难",
+      "skills": "所需技能",
+      "tools": "所需工具",
+      "items": {
+        "unraid": {
+          "title": "Unraid",
+          "text": "从 Community Applications 安装两个 CashPilot 模板。",
+          "skills": "会用 Unraid 的 Apps 标签页即可",
+          "tools": "一台 Unraid 服务器"
+        },
+        "truenas": {
+          "title": "TrueNAS SCALE",
+          "text": "在 Discover Apps 的 community 列表中找到 CashPilot。",
+          "skills": "会用 TrueNAS 的应用页面即可",
+          "tools": "一台 TrueNAS SCALE 服务器"
+        },
+        "casaos": {
+          "title": "CasaOS",
+          "text": "应用商店上架审核期间，请把 compose 文件作为自定义应用导入。",
+          "skills": "粘贴一个文件并修改两个镜像标签",
+          "tools": "CasaOS 0.4.5 或更高版本"
+        },
+        "pi": {
+          "title": "Raspberry Pi",
+          "text": "在 64 位 Raspberry Pi OS 上运行上面的 Docker 命令。",
+          "skills": "会基本的终端操作",
+          "tools": "一台装有 Docker 的 Pi 3、4 或 5"
+        },
+        "fleet": {
+          "title": "多台设备",
+          "text": "运行一个仪表盘，并在每台设备上运行一个 worker。每项数据都按设备分别显示。",
+          "skills": "了解 Docker Compose 和你的家庭网络",
+          "tools": "两台或更多装有 Docker 的设备"
+        }
+      }
+    },
+    "paths": {
+      "title": "我该选哪个？",
+      "recommended": "推荐大多数人使用",
+      "skills": "所需技能",
+      "tools": "所需工具",
+      "desktop": {
+        "title": "桌面应用",
+        "text": "在你电脑的窗口中运行 CashPilot。它会在这台电脑上运行服务并显示仪表盘。",
+        "skills": "无",
+        "tools": "一台一直开着的 Windows、Mac 或 Linux 电脑"
+      },
+      "server": {
+        "title": "用 Docker 运行服务器版",
+        "text": "在家用服务器、NAS 或 Raspberry Pi 上运行 CashPilot。它可以在一个仪表盘里管理多台设备。",
+        "skills": "会基本的终端操作",
+        "tools": "一台一直开着并装有 Docker 的设备"
+      },
+      "android": {
+        "title": "Android 配套应用",
+        "text": "监控你手机上的赚钱应用，并把手机加入你的仪表盘。",
+        "skills": "无",
+        "tools": "一部 Android 手机，以及一个 CashPilot 服务器或桌面应用"
+      }
+    },
+    "more": {
+      "title": "更多连接方式",
+      "mcp": {
+        "title": "面向 AI 助手的 MCP 服务器",
+        "text": "让 AI 助手读取你的 CashPilot 状态和收益。版本 {version}，适用于 Windows、macOS 和 Linux。"
+      },
+      "ha": {
+        "title": "Home Assistant 集成",
+        "text": "在 Home Assistant 中显示你的 CashPilot 收益和服务。"
+      }
+    }
+  },
+  "referrals": {
+    "title": "推荐链接",
+    "metaTitle": "CashPilot 推荐链接及其运作方式",
+    "description": "所有带有 CashPilot 推荐码的服务商链接，它们对你意味着什么，以及如何不使用推荐码注册。",
+    "lead": "本页列出所有带有 CashPilot 推荐码的服务商链接，以及每个链接对你意味着什么。",
+    "howTitle": "推荐链接如何运作",
+    "how1": "如果你通过这些链接在服务商那里注册，服务商可能会向 CashPilot 项目支付一笔奖励。这笔奖励不会从你的收益中扣除。",
+    "how2": "有些服务商还会在你通过链接注册时给你一笔奖励。如果服务目录中列出了这笔奖励，我们会在这里显示。",
+    "how3": "你完全不必使用这些链接。每一项也列出了服务商自己的网站，你可以不通过推荐直接注册。",
+    "how4": "这些奖励用于资助项目。",
+    "count": "{count} 个服务商，数据来自 {date} 的服务目录。",
+    "code": "推荐码",
+    "provider": "服务商",
+    "link": "通过推荐注册",
+    "website": "服务商网站（无推荐）",
+    "links": "链接",
+    "youGet": "你获得",
+    "projectGets": "项目获得",
+    "codeEntry": "该链接不会自动带上推荐码。当应用要求输入推荐码时，请输入 {code}。",
+    "guide": "CashPilot 指南",
+    "guideLabel": "{name} 的 CashPilot 指南",
+    "toc": "跳到某个类别",
+    "tocCount": "{count} 个有推荐链接",
+    "caption": "{group}：推荐链接及每个链接带来的奖励"
+  },
+  "privacy": {
+    "title": "隐私",
+    "metaTitle": "隐私",
+    "description": "CashPilot 网站和应用会收集什么：网站不收集任何数据，应用也不向项目发送任何数据。",
+    "lead": "简而言之：本网站不收集任何数据，CashPilot 应用也不向项目发送任何数据。",
+    "site": {
+      "title": "本网站",
+      "p1": "没有 Cookie，没有统计分析，没有跟踪像素，也没有广告。页面不从其他网站加载任何内容。字体是网站自带的。",
+      "p2": "当你选择一种语言时，浏览器会把这个选择保存在本地存储中。它只留在你的设备上，从不发送给我们。",
+      "p3": "本网站由 GitHub Pages 托管，访问流量经过 Cloudflare。两者都可能出于安全目的记录每次访问的 IP 地址，Cloudflare 还可能要求你的浏览器向它报告网络错误。请阅读 <a href=\"{githubPrivacyUrl}\">GitHub 隐私声明</a>和 <a href=\"{cloudflarePrivacyUrl}\">Cloudflare 隐私政策</a>。"
+    },
+    "apps": {
+      "title": "CashPilot 应用",
+      "p1": "Web 服务器、桌面应用和 Android 应用都没有遥测功能。它们不向 CashPilot 项目发送任何数据。",
+      "p2": "你的登录信息和收益只保存在你自己的 CashPilot 中。应用只连接它们需要的服务：你设置的服务商、用来检查新版本的 GitHub、公网 IP 和汇率服务，以及用于查询链上余额的区块链浏览器。",
+      "p3": "目前，Web 仪表盘还会从 Google Fonts 加载字体，从 jsDelivr 加载图表库。文档列出了<a href=\"{comparisonUrl}\">所有对外连接</a>，以及如何关闭其中的可选项。"
+    },
+    "providers": {
+      "title": "服务商",
+      "p1": "当你在某个服务商那里注册时，适用的是该服务商自己的隐私政策。推荐链接会告诉服务商你是从 CashPilot 来的。"
+    },
+    "contact": {
+      "title": "联系方式",
+      "p1": "隐私相关问题：{email}。"
+    }
+  },
+  "disclaimer": {
+    "title": "免责声明",
+    "metaTitle": "免责声明",
+    "description": "CashPilot 不提供财务或法律建议，不承诺任何收益，也不隶属于它所运行的服务商。",
+    "lead": "开始之前，请先阅读以下内容。",
+    "items": {
+      "advice": {
+        "title": "不构成财务或法律建议",
+        "text": "本网站和应用中的任何内容都不构成财务、法律或税务建议。"
+      },
+      "earnings": {
+        "title": "不承诺收益",
+        "text": "收益取决于你所在的国家、网络连接、硬件和服务商。收益可能非常少，甚至为零。服务商可以随时调整费率。"
+      },
+      "law": {
+        "title": "当地法律和你的合同",
+        "text": "在共享网络连接或运行节点之前，请查阅当地法律和你的宽带运营商条款。你的收益涉及的任何税款都由你自己负责。"
+      },
+      "providers": {
+        "title": "独立的服务商",
+        "text": "这些服务商是独立的公司。CashPilot 不隶属于它们，也无法控制它们的条款、付款或账户决定。部分服务商会向项目支付推荐奖励。"
+      },
+      "warranty": {
+        "title": "无担保",
+        "text": "CashPilot 是采用 GPL-3.0-or-later 许可的自由软件。按照该许可证第 15 和第 16 条的规定，它不提供任何担保。"
+      },
+      "trademarks": {
+        "title": "商标",
+        "text": "服务商和平台的名称及标志归各自所有者所有。在此使用它们只是为了说明 CashPilot 能与哪些服务配合使用。"
+      }
+    }
+  },
+  "notFound": {
+    "title": "找不到页面",
+    "text": "此页面不存在，可能已经移动。",
+    "home": "返回首页",
+    "download": "前往下载页"
+  },
+  "footer": {
+    "tagline": "在自己的硬件上运行被动收入服务，在一个仪表盘里看到每一笔收益。",
+    "product": "产品",
+    "project": "项目",
+    "about": "关于",
+    "download": "下载",
+    "docs": "文档",
+    "referrals": "推荐链接",
+    "privacy": "隐私",
+    "disclaimer": "免责声明",
+    "web": "CashPilot 服务器",
+    "desktop": "CashPilot Desktop",
+    "android": "Android 版 CashPilot",
+    "mcp": "MCP 服务器",
+    "feed": "版本发布订阅源",
+    "agents": "面向 AI 智能体",
+    "contact": "联系方式",
+    "legal": "请查阅当地法律和你的宽带运营商条款。不构成财务建议。",
+    "credit": "由 CashPilot 贡献者开发。采用 GPL-3.0-or-later 许可的自由软件。"
+  },
+  "categories": {
+    "bandwidth": "带宽共享",
+    "depin": "DePIN",
+    "compute": "GPU 算力",
+    "storage": "存储",
+    "mining": "挖矿"
+  },
+  "payment": {
+    "paypal": "PayPal",
+    "crypto": "加密货币",
+    "giftcard": "礼品卡",
+    "amazon_giftcard": "亚马逊礼品卡",
+    "wise": "Wise",
+    "bank": "银行转账",
+    "stripe": "Stripe"
+  }
+}

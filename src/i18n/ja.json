@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "siteName": "CashPilot",
+    "titleSuffix": "CashPilot",
+    "ogImageAlt": "CashPilot：使っていないハードウェアで収益を得て、すべての支払いを1つのダッシュボードで確認できます。"
+  },
+  "nav": {
+    "skip": "本文へスキップ",
+    "home": "CashPilot ホーム",
+    "docs": "ドキュメント",
+    "github": "GitHub",
+    "download": "ダウンロード",
+    "main": "メイン",
+    "stars": "スター"
+  },
+  "lang": {
+    "label": "言語",
+    "suggest": "このサイトは英語でもご覧いただけます。",
+    "switch": "英語で表示する",
+    "dismiss": "いいえ、結構です"
+  },
+  "common": {
+    "copy": "コピー",
+    "copied": "コピーしました",
+    "copyFailed": "選択してコピーしてください",
+    "copyLabel": "コマンドをコピー",
+    "yes": "はい",
+    "no": "いいえ",
+    "notStated": "記載なし",
+    "noLimit": "制限なし"
+  },
+  "disclosure": {
+    "short": "これらのリンクから登録すると、プロバイダーが CashPilot プロジェクトに報酬を支払う場合があります。この報酬があなたの収益から差し引かれることはありません。",
+    "more": "紹介リンクのしくみ"
+  },
+  "home": {
+    "title": "CashPilot：自分のハードウェアで不労所得サービスを動かす",
+    "description": "帯域共有、DePIN、GPU コンピューティング、マイニングのサービスを自分のマシンで動かし、すべての支払いを1つのダッシュボードに表示する、無料のオープンソースソフトウェアです。",
+    "hero": {
+      "pill": "無料のオープンソース、GPL-3.0",
+      "title": "使っていないハードウェアで収益を。すべての支払いを1つのダッシュボードで。",
+      "lead": "CashPilot は、パソコン、ホームサーバー、Raspberry Pi に不労所得サービスをセットアップします。各プロバイダーから残高を読み取り、その履歴をあなた自身のマシンにまとめて保存します。",
+      "download": "ダウンロード",
+      "selfhost": "Docker でセルフホスト",
+      "expect": "お金を支払うのは CashPilot ではなく、各プロバイダーです。収益は、お住まいの国、回線、ハードウェアによって変わります。",
+      "imageAlt": "CashPilot のダッシュボード：残高、今日と今月の収益、マシンごとのサービス、日ごとの収益。",
+      "imageAltMobile": "スマートフォンで表示した CashPilot のダッシュボード：残高と、今日と今月の収益。"
+    },
+    "stats": {
+      "label": "数字で見る CashPilot",
+      "stars": "GitHub スター",
+      "pulls": "Docker プル数",
+      "services": "対応サービス",
+      "note": "{date} 時点の GitHub と Docker Hub のデータです。"
+    },
+    "platforms": {
+      "title": "対応プラットフォーム",
+      "windows": "Windows",
+      "macos": "macOS",
+      "linux": "Linux",
+      "android": "Android",
+      "docker": "Docker",
+      "pi": "Raspberry Pi"
+    },
+    "how": {
+      "title": "使い方",
+      "lead": "3ステップだけです。私たちのアカウントは必要ありません。",
+      "steps": {
+        "install": {
+          "title": "CashPilot をインストール",
+          "text": "1台のパソコンでデスクトップアプリを使います。または、ホームサーバー、NAS、Raspberry Pi で Docker を使ってサーバーを動かします。"
+        },
+        "pick": {
+          "title": "サービスを選ぶ",
+          "text": "カタログから選び、プロバイダーに登録して、ログイン情報を貼り付けます。Docker イメージがあるサービスは、CashPilot が専用のコンテナで起動します。それ以外のサービスは、残高を読み取ります。"
+        },
+        "watch": {
+          "title": "すべての支払いを確認",
+          "text": "CashPilot は1時間ごとに残高を読み取り、履歴を保存します。残高が減ったときは、支払いを受け取ったかどうかを確認します。"
+        }
+      }
+    },
+    "categories": {
+      "title": "5つのグループ、{count} のサービス",
+      "count": "{count} サービス",
+      "bandwidth": {
+        "name": "帯域共有",
+        "text": "使っていないインターネット帯域を、データ企業やプロキシ企業と共有します。"
+      },
+      "depin": {
+        "name": "DePIN",
+        "text": "トークンで報酬を支払う分散型ネットワークのノードを動かします。"
+      },
+      "compute": {
+        "name": "GPU コンピューティング",
+        "text": "グラフィックカードを AI やレンダリングの処理に貸し出します。"
+      },
+      "storage": {
+        "name": "ストレージ",
+        "text": "空いているディスク容量をストレージネットワークに貸し出します。"
+      },
+      "mining": {
+        "name": "マイニング",
+        "text": "CPU や GPU でマイニングし、ネットワーク上の ASIC マイナーも確認できます。ベータ版です。"
+      },
+      "all": {
+        "name": "ドキュメントで全 {count} サービスを見る",
+        "text": "サービスごとに、必要なものを記載したセットアップガイドがあります。"
+      }
+    },
+    "tour": {
+      "title": "中を見てみる",
+      "lead": "デモデータを使った、アプリの実際の画面です。画面を選ぶと全体が表示されます。",
+      "fleet": {
+        "title": "フリート",
+        "text": "すべてのマシン、そのシステム、最後に報告した時刻。報告が止まったマシンは赤く表示されます。",
+        "alt": "フリートページ：5台のマシンと、それぞれのシステム、バージョン、最後に報告した時刻。1台がオフラインです。"
+      },
+      "catalog": {
+        "title": "カタログ",
+        "text": "対応しているすべてのサービスを、グループで絞り込めます。",
+        "alt": "カタログページ：グループのフィルターと、フリートで動いているサービス、それぞれの種類。"
+      },
+      "payouts": {
+        "title": "支払い",
+        "text": "バックアップが必要なノードデータと、各サービスの支払い先。",
+        "alt": "支払いページ：1台のマシンのディスクにしかない MystNodes の ID をバックアップするよう求める表示。"
+      },
+      "desktop": {
+        "title": "デスクトップアプリ",
+        "text": "Windows、macOS、Linux のウィンドウで使える完全なダッシュボード。すでに動かしている CashPilot サーバーに参加することもできます。",
+        "alt": "macOS の CashPilot Desktop。残高と、今日と今月の収益を表示しています。"
+      },
+      "android": {
+        "title": "Android コンパニオン",
+        "text": "スマートフォンの収益アプリを監視し、その状態を CashPilot サーバーまたはデスクトップアプリに報告します。",
+        "alt": "Android アプリのホーム画面：6つの収益アプリがすべて動いていて、それぞれが24時間に使ったデータ量が表示されています。"
+      }
+    },
+    "catch": {
+      "title": "何か裏があるのでは？",
+      "lead": "もっともな疑問です。事実をお伝えします。",
+      "free": {
+        "title": "無料",
+        "text": "料金、有料プラン、広告はありません。"
+      },
+      "open": {
+        "title": "オープンソース",
+        "text": "GPL-3.0 です。すべてのコードを GitHub で読めます。"
+      },
+      "hardware": {
+        "title": "あなたのハードウェアで動作",
+        "text": "使うのはあなたのマシンとあなたの回線です。私たちがあなたのためにサーバーを運用することはありません。"
+      },
+      "account": {
+        "title": "私たちのアカウントは不要",
+        "text": "登録もメールアドレスも不要です。登録するのは、あなたが選んだプロバイダーだけです。"
+      },
+      "funding": "運営費はどうしているのか？一部のプロバイダーリンクは紹介リンクです。そのリンクから登録すると、プロバイダーが CashPilot プロジェクトに報酬を支払う場合があります。この報酬があなたの収益から差し引かれることはありません。"
+    },
+    "control": {
+      "title": "すべてをあなたが管理",
+      "lead": "CashPilot はあなたのマシンで動きます。何をしているかを確認でき、いつでも止められます。",
+      "logins": {
+        "title": "ログイン情報はあなたのマシンに保存",
+        "text": "CashPilot はログイン情報を暗号化して自身のデータベースに保存します。各ログイン情報は、それを必要とするサービスにだけ送られます。"
+      },
+      "containers": {
+        "title": "サービスごとに専用のコンテナ",
+        "text": "CashPilot が起動するサービスは、それぞれほかのサービスから分離して動きます。余分な権限は外され、プロセス数にも上限があります。"
+      },
+      "lan": {
+        "title": "ホームネットワークから隔離",
+        "text": "新しくインストールした Docker では、CashPilot が起動するサービスは、LAN、ルーター、そのサービスが動いているマシンにアクセスできません。<a href=\"{securityUrl}\">ホームネットワークを守る</a>。"
+      },
+      "stop": {
+        "title": "いつでも停止できる",
+        "text": "ワンクリックでサービスを停止または削除できます。CashPilot を完全に削除する方法もガイドで説明しています。"
+      },
+      "ratings": "すべてのプロバイダーに、同じ10の質問で A から F までの評価を付けています。各回答には出典へのリンクがあります。",
+      "ratingsLink": "プロバイダーの評価を見る"
+    },
+    "earnings": {
+      "title": "収益を左右するもの",
+      "lead": "具体的な金額を約束できる人はいません。収益を左右するのは次の要素です。",
+      "country": {
+        "title": "お住まいの国",
+        "text": "プロバイダーは、国によってトラフィックに支払う金額を変えています。"
+      },
+      "ip": {
+        "title": "IP アドレスの種類",
+        "text": "多くのサービスは家庭用回線にだけ支払い、データセンターのサーバーには支払いません。"
+      },
+      "connection": {
+        "title": "回線",
+        "text": "アップロード速度が速く、データ量の上限がないほど、多くのトラフィックを処理できます。"
+      },
+      "uptime": {
+        "title": "稼働時間",
+        "text": "電源が入ったままのデバイスは、スリープするデバイスより多く稼ぎます。"
+      },
+      "devices": {
+        "title": "デバイスの数",
+        "text": "ほとんどのサービスは、1つの IP アドレスにつき1台、1つのアカウントにつき決まった台数までしか使えません。"
+      },
+      "hardware": {
+        "title": "GPU とハードウェア",
+        "text": "GPU コンピューティングとマイニングは、グラフィックカード、電気料金、市場の状況によって変わります。"
+      },
+      "note": "構成によっては、ほとんど稼げないこともあります。ダッシュボードには実際の収益が表示されるので、稼げないものはやめられます。"
+    },
+    "services": {
+      "title": "人気のサービス",
+      "lead": "各グループからいくつかのサービスを紹介します。ドキュメントにはすべてのサービスと、それぞれのガイドがあります。",
+      "caption": "人気のサービスと必要なもの",
+      "col": {
+        "service": "サービス",
+        "homeIp": "家庭用 IP が必要",
+        "devicesPerIp": "IP あたりのデバイス数",
+        "payout": "支払い方法",
+        "minimum": "最低支払額"
+      },
+      "signup": "登録",
+      "signupLabel": "{name} に登録（紹介リンク）",
+      "signupLabelPlain": "{name} に登録",
+      "guideLabel": "{name} の CashPilot ガイド",
+      "all": "ドキュメントで全 {count} サービスを見る",
+      "referrals": "すべての紹介リンク",
+      "notStatedNote": "– はカタログに記載がないことを示します。"
+    },
+    "compare": {
+      "title": "CashPilot とほかのツールの比較",
+      "lead": "これらのサービスを複数動かせる、ほかのオープンソースツールについての事実です。{date} に確認しました。",
+      "caption": "CashPilot とほかのオープンソースツールの機能比較",
+      "feature": "機能",
+      "rows": {
+        "license": "ライセンス",
+        "balances": "プロバイダーのアカウントから残高を読み取る",
+        "fleet": "複数のサーバーを1つのダッシュボードで管理",
+        "desktop": "デスクトップアプリ",
+        "android": "Android アプリ",
+        "gpu": "GPU コンピューティングとマイニング",
+        "docker": "Docker が必要"
+      },
+      "values": {
+        "gpl": "GPL-3.0",
+        "proprietary": "プロプライエタリ",
+        "noLicense": "ライセンスファイルなし",
+        "gplReadme": "GPL-3.0 のファイルはあるが、README で改変版を禁止",
+        "estimates": "いいえ、推定値のみ",
+        "claimed": "対応をうたっているが、コードは非公開",
+        "dockerOrPodman": "はい、または Podman",
+        "betaMining": "はい、マイニングはベータ版"
+      },
+      "more": "すべての項目に出典を付けた詳しい比較"
+    },
+    "faq": {
+      "title": "よくある質問",
+      "items": {
+        "slow": {
+          "q": "インターネットが遅くなりますか？",
+          "a": "遅くなることがあります。帯域共有サービスは、ほかの企業のトラフィックをあなたの回線に通すため、アップロードとダウンロードの帯域を一部使います。CashPilot はマシンごとのネットワーク使用量を表示するので、どれが一番使っているかを確認して止められます。"
+        },
+        "legal": {
+          "q": "合法ですか？",
+          "a": "お住まいの地域と、インターネットの契約内容によります。回線の共有や転売を禁止しているインターネットプロバイダーもあります。始める前に、地域の法律とプロバイダーの規約を確認してください。これは法的助言ではありません。"
+        },
+        "safe": {
+          "q": "安全ですか？",
+          "a": "帯域共有サービスでは、ほかの人のトラフィックがあなたの IP アドレスを使います。まず各プロバイダーの規約を読んでください。CashPilot は起動するサービスをそれぞれ専用のコンテナで動かし、新しくインストールした Docker では、ホームネットワークから隔離します。始める前に<a href=\"{securityUrl}\">ホームネットワークを守る</a>を読んでください。"
+        },
+        "earn": {
+          "q": "どのくらい稼げますか？",
+          "a": "お答えできません。お住まいの国、IP アドレスの種類、回線、稼働時間、動かすサービスによって変わります。構成によっては、ほとんど稼げないこともあります。ダッシュボードには実際の収益が表示されます。"
+        },
+        "free": {
+          "q": "なぜ無料なのですか？",
+          "a": "CashPilot は GPL-3.0 ライセンスのフリーソフトウェアで、コントリビューターが開発しています。一部のプロバイダーリンクは紹介リンクで、そこから得られる報酬がプロジェクトの運営費になります。<a href=\"{referralsUrl}\">紹介リンクのしくみ</a>。"
+        },
+        "docker": {
+          "q": "Docker は必要ですか？",
+          "a": "はい。CashPilot が起動するサービスはコンテナで動くため、Docker が必要です。デスクトップアプリは Docker と Podman のどちらでも動き、セットアップウィザードが Docker のインストールを手伝います。Android アプリには Docker は不要ですが、報告先として CashPilot サーバーかデスクトップアプリが必要です。"
+        },
+        "pi": {
+          "q": "Raspberry Pi で動きますか？",
+          "a": "はい。64ビットのシステムを入れた Pi 3、4、5 で動きます。ほとんどのサービスは ARM 向けのビルドを公開しており、CashPilot はデプロイの前に、そのサービスがお使いの CPU で動くかを確認します。<a href=\"{armUrl}\">ARM で動かす</a>。"
+        },
+        "data": {
+          "q": "CashPilot プロジェクトは私のログイン情報や収益を見られますか？",
+          "a": "いいえ。CashPilot はあなたのマシンで動き、プロジェクトには何も送りません。ログイン情報はあなた自身の CashPilot の中に、データベースで暗号化されて保存されます。<a href=\"{privacyUrl}\">プライバシー</a>。"
+        }
+      }
+    },
+    "cta": {
+      "title": "試してみませんか？",
+      "text": "デスクトップアプリを入手するか、Docker でサーバーを動かしてください。どちらも無料です。",
+      "download": "ダウンロード",
+      "github": "GitHub でソースコードを見る",
+      "releases": "新しいバージョンの情報を受け取るには、GitHub の Watch か<a href=\"{feedUrl}\">リリースフィード</a>を使ってください。"
+    }
+  },
+  "download": {
+    "title": "CashPilot をダウンロード",
+    "metaTitle": "Windows、macOS、Linux、Android、Docker 向け CashPilot のダウンロード",
+    "description": "Windows、macOS、Linux、Android 向けの CashPilot と、ホームサーバー、NAS、Raspberry Pi 向けの Docker サーバーを無料でダウンロードできます。アカウントは不要です。",
+    "lead": "お使いのシステムを選んでください。ダウンロードはすべて無料です。アカウントもメールアドレスも登録も不要です。",
+    "pickerLabel": "システムを選択",
+    "detected": "お使いのシステム",
+    "otherSystems": "ほかのシステム",
+    "ios": "iPhone アプリはありません。パソコンにデスクトップアプリをインストールするか、サーバーを動かして、Safari でダッシュボードを開いてください。",
+    "pathsHint": "どれを選べばよいかわかりませんか？",
+    "pathsLink": "選択肢を比べる",
+    "fileInfo": "{type}、{size}",
+    "version": "バージョン {version}",
+    "source": "ソースコード",
+    "allReleases": "すべてのリリース",
+    "tiles": {
+      "windows": {
+        "name": "Windows",
+        "hint": "デスクトップアプリ"
+      },
+      "macos": {
+        "name": "macOS",
+        "hint": "デスクトップアプリ"
+      },
+      "linux": {
+        "name": "Linux",
+        "hint": "デスクトップアプリ"
+      },
+      "android": {
+        "name": "Android",
+        "hint": "コンパニオンアプリ"
+      },
+      "docker": {
+        "name": "Docker",
+        "hint": "サーバー"
+      }
+    },
+    "runtime": "サービスはコンテナで動きます。アプリは Docker と Podman のどちらでも動き、Docker が入っていない場合はセットアップウィザードがインストールを手伝います。",
+    "windows": {
+      "metaTitle": "Windows 版 CashPilot のダウンロード",
+      "title": "Windows 版 CashPilot Desktop",
+      "installer": "インストーラーをダウンロード",
+      "installerType": "インストーラー（.exe）",
+      "portable": "ポータブル版",
+      "portableType": "ポータブルアプリ（.exe）、インストール不要",
+      "arch": "64ビット（x64）。ほとんどのパソコンは64ビットです。",
+      "requires": "Windows 10 22H2、または Windows 11 23H2 以降が必要です。",
+      "warnTitle": "Windows やウイルス対策ソフトに警告されましたか？",
+      "warnText": "Windows アプリにはまだコード署名がないため、SmartScreen が「Windows によって PC が保護されました」と表示することがあります。「詳細情報」をクリックしてから「実行」をクリックしてください。私たちが公開したファイルかどうかを確かめるには、その SHA-256 チェックサムを下の一覧と比べてください。",
+      "verify": "PowerShell で："
+    },
+    "macos": {
+      "metaTitle": "macOS 版 CashPilot のダウンロード",
+      "title": "macOS 版 CashPilot Desktop",
+      "button": "Mac 版をダウンロード",
+      "type": "Zip ファイル",
+      "arch": "Apple シリコン（M1 以降）。",
+      "minimum": "macOS 12 Monterey 以降が必要です。",
+      "requires": "Apple による署名と公証済みです。解凍して cashpilot-desktop.app を開いてください。",
+      "intel": "Intel Mac をお使いですか？デスクトップアプリには Intel 版がありません。代わりに<a href=\"{dockerUrl}\">Docker でサーバーを動かしてください</a>。",
+      "verify": "ターミナルで："
+    },
+    "linux": {
+      "metaTitle": "Linux 版 CashPilot のダウンロード",
+      "title": "Linux 版 CashPilot Desktop",
+      "button": "Linux 版をダウンロード",
+      "type": "tar.gz アーカイブ",
+      "arch": "x86_64（64ビットのパソコン）。",
+      "minimum": "glibc 2.34 以降が必要です：Ubuntu 22.04、Debian 12 またはそれ以降。",
+      "requires": "GTK 3 と WebKitGTK 4.1 が必要です。アーカイブを展開して CashPilot Desktop を実行してください。",
+      "server": "サーバーや Raspberry Pi にセットアップしますか？<a href=\"{dockerUrl}\">Docker を使ってください</a>。",
+      "verify": "ターミナルで："
+    },
+    "android": {
+      "metaTitle": "Android 版 CashPilot のダウンロード",
+      "title": "Android 版 CashPilot",
+      "button": "APK をダウンロード",
+      "type": "APK ファイル",
+      "requires": "Android 8.0 以降。ブラウザからのインストールを許可するよう求められます。",
+      "what": "Android アプリはスマートフォンの収益アプリを監視し、その状態を CashPilot サーバーまたはデスクトップアプリに報告します。報告先として、そのどちらかが必要です。",
+      "qr": "スマートフォンでスキャンして APK をダウンロードできます。",
+      "qrAlt": "Android APK のダウンロードリンクの QR コード",
+      "stores": "Google Play にはありません。F-Droid：近日公開予定。"
+    },
+    "docker": {
+      "metaTitle": "Docker で CashPilot をセルフホスト",
+      "title": "Docker で動かす CashPilot サーバー",
+      "lead": "ホームサーバー、NAS、Raspberry Pi など、電源を入れたままのマシン向けです。ダッシュボードはブラウザで開きます。",
+      "requires": "Compose 付きの Docker が必要です。Linux、macOS、Windows に対応し、amd64 と arm64 で動きます。",
+      "step1": "compose ファイルをダウンロードして CashPilot を起動します：",
+      "step2": "セットアップトークンを表示します：",
+      "step3": "{url} を開いてトークンを入力します。残りはセットアップウィザードが行います。",
+      "viewSource": "実行する前に compose ファイルを読む",
+      "images": "compose ファイルではイメージ {ui} と {worker} を固定しています。",
+      "guide": "詳しいガイド：はじめに"
+    },
+    "checksums": {
+      "title": "SHA-256 チェックサム、バージョン {version}",
+      "all": "SHA256SUMS ファイル"
+    },
+    "homelab": {
+      "title": "ホームサーバーへのインストール",
+      "lead": "かんたんな順に並べています。",
+      "option": "方法",
+      "caption": "ホームサーバーへのインストール方法（かんたんな順）",
+      "skills": "必要なスキル",
+      "tools": "必要なもの",
+      "items": {
+        "unraid": {
+          "title": "Unraid",
+          "text": "Community Applications から CashPilot の2つのテンプレートをインストールします。",
+          "skills": "Unraid の Apps タブが使えれば十分",
+          "tools": "Unraid サーバー"
+        },
+        "truenas": {
+          "title": "TrueNAS SCALE",
+          "text": "Discover Apps の community トレインで CashPilot を探します。",
+          "skills": "TrueNAS のアプリページが使えれば十分",
+          "tools": "TrueNAS SCALE サーバー"
+        },
+        "casaos": {
+          "title": "CasaOS",
+          "text": "ストアへの掲載が審査中のあいだは、compose ファイルをカスタムアプリとしてインポートします。",
+          "skills": "ファイルを貼り付けて、イメージタグを2つ編集する",
+          "tools": "CasaOS 0.4.5 以降"
+        },
+        "pi": {
+          "title": "Raspberry Pi",
+          "text": "64ビット版 Raspberry Pi OS で、上の Docker コマンドを実行します。",
+          "skills": "ターミナルの基本操作",
+          "tools": "Docker を入れた Pi 3、4 または 5"
+        },
+        "fleet": {
+          "title": "複数のマシン",
+          "text": "ダッシュボードを1つ動かし、各マシンで worker を動かします。すべての数値がマシンごとに表示されます。",
+          "skills": "Docker Compose とホームネットワークの知識",
+          "tools": "Docker を入れた2台以上のマシン"
+        }
+      }
+    },
+    "paths": {
+      "title": "どれを選べばよいですか？",
+      "recommended": "ほとんどの方におすすめ",
+      "skills": "必要なスキル",
+      "tools": "必要なもの",
+      "desktop": {
+        "title": "デスクトップアプリ",
+        "text": "パソコンのウィンドウで動く CashPilot です。そのパソコンでサービスを動かし、ダッシュボードを表示します。",
+        "skills": "なし",
+        "tools": "電源を入れたままの Windows、Mac、または Linux のパソコン"
+      },
+      "server": {
+        "title": "Docker で動かすサーバー",
+        "text": "ホームサーバー、NAS、Raspberry Pi で動く CashPilot です。複数のマシンを1つのダッシュボードで管理できます。",
+        "skills": "ターミナルの基本操作",
+        "tools": "Docker を入れた、電源を入れたままのマシン"
+      },
+      "android": {
+        "title": "Android コンパニオン",
+        "text": "スマートフォンの収益アプリを監視し、スマートフォンをダッシュボードに追加します。",
+        "skills": "なし",
+        "tools": "Android スマートフォンと、CashPilot サーバーまたはデスクトップアプリ"
+      }
+    },
+    "more": {
+      "title": "そのほかの連携方法",
+      "mcp": {
+        "title": "AI アシスタント向け MCP サーバー",
+        "text": "AI アシスタントが CashPilot の状態と収益を読み取れるようにします。バージョン {version}、Windows、macOS、Linux 向け。"
+      },
+      "ha": {
+        "title": "Home Assistant 連携",
+        "text": "CashPilot の収益とサービスを Home Assistant に表示します。"
+      }
+    }
+  },
+  "referrals": {
+    "title": "紹介リンク",
+    "metaTitle": "CashPilot の紹介リンクとそのしくみ",
+    "description": "CashPilot の紹介コード付きのすべてのプロバイダーリンク、それがあなたにとって何を意味するか、そして紹介コードなしで登録する方法。",
+    "lead": "このページでは、CashPilot の紹介コードが付いたすべてのプロバイダーリンクと、それぞれがあなたにとって何を意味するかを紹介します。",
+    "howTitle": "紹介リンクのしくみ",
+    "how1": "これらのリンクからプロバイダーに登録すると、プロバイダーが CashPilot プロジェクトに報酬を支払う場合があります。この報酬があなたの収益から差し引かれることはありません。",
+    "how2": "リンクから登録すると、あなたにもボーナスを出すプロバイダーがあります。カタログに記載がある場合は、ここに表示しています。",
+    "how3": "これらのリンクを使う必要はまったくありません。各項目にはプロバイダー自身のウェブサイトも記載しているので、紹介なしで登録できます。",
+    "how4": "報酬はプロジェクトの運営費になります。",
+    "count": "{count} のプロバイダー。{date} 時点のカタログより。",
+    "code": "コード",
+    "provider": "プロバイダー",
+    "link": "紹介リンクで登録",
+    "website": "プロバイダーのウェブサイト（紹介なし）",
+    "links": "リンク",
+    "youGet": "あなたが受け取るもの",
+    "projectGets": "プロジェクトが受け取るもの",
+    "codeEntry": "このリンクではコードが引き継がれません。アプリで紹介コードを求められたら {code} と入力してください。",
+    "guide": "CashPilot ガイド",
+    "guideLabel": "{name} の CashPilot ガイド",
+    "toc": "グループへ移動",
+    "tocCount": "紹介リンクあり：{count}",
+    "caption": "{group}：紹介リンクとそれぞれの特典"
+  },
+  "privacy": {
+    "title": "プライバシー",
+    "metaTitle": "プライバシー",
+    "description": "CashPilot のウェブサイトとアプリが収集する情報：ウェブサイトは何も収集せず、アプリはプロジェクトに何も送りません。",
+    "lead": "要点：このウェブサイトは何も収集せず、CashPilot のアプリはプロジェクトに何も送りません。",
+    "site": {
+      "title": "このウェブサイト",
+      "p1": "Cookie、アクセス解析、トラッキングピクセル、広告はありません。ページはほかのウェブサイトから何も読み込みません。フォントもサイトに含まれています。",
+      "p2": "言語を選ぶと、ブラウザがその選択をローカルストレージに保存します。この情報はあなたのデバイスにとどまり、私たちに送られることはありません。",
+      "p3": "このサイトは GitHub Pages でホストされ、通信は Cloudflare を経由します。どちらもセキュリティのために各アクセスの IP アドレスを記録する場合があり、Cloudflare はネットワークエラーを報告するようブラウザに求める場合があります。<a href=\"{githubPrivacyUrl}\">GitHub のプライバシーに関する声明</a>と<a href=\"{cloudflarePrivacyUrl}\">Cloudflare のプライバシーポリシー</a>をお読みください。"
+    },
+    "apps": {
+      "title": "CashPilot のアプリ",
+      "p1": "ウェブサーバー、デスクトップアプリ、Android アプリにはテレメトリーがありません。CashPilot プロジェクトには何も送りません。",
+      "p2": "ログイン情報と収益は、あなた自身の CashPilot の中にとどまります。アプリが接続するのは必要なサービスだけです：あなたが設定したプロバイダー、新しいバージョンを確認するための GitHub、公開 IP と為替レートのサービス、オンチェーン残高のためのブロックチェーンエクスプローラー。",
+      "p3": "また現在、ウェブのダッシュボードは、フォントを Google Fonts から、グラフのライブラリーを jsDelivr から読み込んでいます。ドキュメントには<a href=\"{comparisonUrl}\">すべての外部への通信</a>と、任意のものをオフにする方法を記載しています。"
+    },
+    "providers": {
+      "title": "プロバイダー",
+      "p1": "プロバイダーに登録すると、そのプロバイダー自身のプライバシーポリシーが適用されます。紹介リンクは、あなたが CashPilot から来たことをプロバイダーに伝えます。"
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "p1": "プライバシーに関するご質問：{email}。"
+    }
+  },
+  "disclaimer": {
+    "title": "免責事項",
+    "metaTitle": "免責事項",
+    "description": "CashPilot は金融や法律に関する助言を行わず、収益を約束せず、動かしているプロバイダーとは関係がありません。",
+    "lead": "始める前に、以下をお読みください。",
+    "items": {
+      "advice": {
+        "title": "金融・法律に関する助言ではありません",
+        "text": "このサイトとアプリのいかなる内容も、金融、法律、税務に関する助言ではありません。"
+      },
+      "earnings": {
+        "title": "収益の約束はありません",
+        "text": "収益は、お住まいの国、回線、ハードウェア、プロバイダーによって変わります。ごくわずか、またはゼロになることもあります。プロバイダーはいつでも料率を変更できます。"
+      },
+      "law": {
+        "title": "地域の法律と契約",
+        "text": "回線を共有したりノードを動かしたりする前に、地域の法律とインターネットプロバイダーの規約を確認してください。収益にかかる税金については、あなたが責任を負います。"
+      },
+      "providers": {
+        "title": "独立したプロバイダー",
+        "text": "プロバイダーは別の会社です。CashPilot はそれらの一部ではなく、その規約、支払い、アカウントに関する判断を管理することはできません。一部のプロバイダーは、プロジェクトに紹介報酬を支払っています。"
+      },
+      "warranty": {
+        "title": "無保証",
+        "text": "CashPilot は GPL-3.0-or-later ライセンスのフリーソフトウェアです。ライセンスの第15条と第16条にあるとおり、いかなる保証もありません。"
+      },
+      "trademarks": {
+        "title": "商標",
+        "text": "プロバイダーとプラットフォームの名前とロゴは、それぞれの所有者に帰属します。ここでの使用は、CashPilot が何と連携するかを示すためだけのものです。"
+      }
+    }
+  },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "text": "このページは存在しません。移動した可能性があります。",
+    "home": "ホームページへ",
+    "download": "ダウンロードへ"
+  },
+  "footer": {
+    "tagline": "自分のハードウェアで不労所得サービスを動かし、すべての支払いを1つのダッシュボードで確認できます。",
+    "product": "製品",
+    "project": "プロジェクト",
+    "about": "概要",
+    "download": "ダウンロード",
+    "docs": "ドキュメント",
+    "referrals": "紹介リンク",
+    "privacy": "プライバシー",
+    "disclaimer": "免責事項",
+    "web": "CashPilot サーバー",
+    "desktop": "CashPilot Desktop",
+    "android": "Android 版 CashPilot",
+    "mcp": "MCP サーバー",
+    "feed": "リリースフィード",
+    "agents": "AI エージェント向け",
+    "contact": "お問い合わせ",
+    "legal": "地域の法律とインターネットプロバイダーの規約を確認してください。金融に関する助言ではありません。",
+    "credit": "CashPilot のコントリビューターが開発。GPL-3.0-or-later ライセンスのフリーソフトウェアです。"
+  },
+  "categories": {
+    "bandwidth": "帯域共有",
+    "depin": "DePIN",
+    "compute": "GPU コンピューティング",
+    "storage": "ストレージ",
+    "mining": "マイニング"
+  },
+  "payment": {
+    "paypal": "PayPal",
+    "crypto": "暗号資産",
+    "giftcard": "ギフトカード",
+    "amazon_giftcard": "Amazon ギフトカード",
+    "wise": "Wise",
+    "bank": "銀行振込",
+    "stripe": "Stripe"
+  }
+}
