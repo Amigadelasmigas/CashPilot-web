@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T13:20:08.808Z",
+  "fetchedAt": "2026-11-27T14:58:20.828Z",
   "services": [
     {
       "slug": "2miners-etc",
@@ -147,6 +147,30 @@
       "platforms": [
         "windows",
         "android"
+      ]
+    },
+    {
+      "slug": "clore-ai",
+      "name": "Clore.ai",
+      "category": "compute",
+      "status": "active",
+      "priority": null,
+      "website": "https://clore.ai",
+      "shortDescription": "GPU marketplace - rent out NVIDIA GPUs, paid in CLORE, BTC or USD stablecoins",
+      "signupUrl": "https://clore.ai/register?ref_id=hq5z8kvc",
+      "code": "hq5z8kvc",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": "15% (standard tier) of the platform fees paid by the hosts and renters you refer, on every rental; the code never expires; paid in the rental's currency (CLORE, BTC or USD)",
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "200 CLORE",
+      "docker": false,
+      "platforms": [
+        "linux"
       ]
     },
     {
@@ -721,11 +745,11 @@
       "priority": null,
       "website": "https://nodle.com",
       "shortDescription": "Bluetooth IoT relay - mobile app, NODL token rewards",
-      "signupUrl": "https://nodle.com",
-      "code": null,
+      "signupUrl": "https://join.nodle.com/p/YDFoLA4iO08LI7igSskPjw",
+      "code": "YDFoLA4iO08LI7igSskPjw",
       "codeEntry": null,
       "bonusReferee": null,
-      "bonusReferrer": null,
+      "bonusReferrer": "A NODL reward for each new active user who joins through the invite (Nodle does not publish the amount)",
       "residentialIp": false,
       "devicesPerIp": null,
       "paymentMethods": [
@@ -952,11 +976,11 @@
       "priority": null,
       "website": "https://proxybase.xyz",
       "shortDescription": "proxybase.xyz - SOCKS5 marketplace for AI agents, USDC payout. Generates a wallet whose volume holds the only copy of the key",
-      "signupUrl": "https://proxybase.xyz?referral=nXzS3c6iTO",
-      "code": "nXzS3c6iTO",
+      "signupUrl": "https://proxybase.xyz/console?ref=cashpilot",
+      "code": "cashpilot",
       "codeEntry": null,
-      "bonusReferee": null,
-      "bonusReferrer": null,
+      "bonusReferee": "+10% on a buyer's first deposit",
+      "bonusReferrer": "15% of every deposit a referred buyer makes, as credit for your own proxy sessions",
       "residentialIp": false,
       "devicesPerIp": null,
       "paymentMethods": [
@@ -1262,21 +1286,25 @@
       "status": "active",
       "priority": null,
       "website": "https://teneo.pro",
-      "shortDescription": "DePIN browser extension - 1,000 bonus points with a referral link",
-      "signupUrl": "https://dashboard.teneo.pro/auth/signup?referralCode=CAqef",
-      "code": "CAqef",
+      "shortDescription": "DePIN bandwidth app (Beacon) - Fragments toward seasonal USDC draws, +100 Fragments with a referral link",
+      "signupUrl": "https://hub.teneo.pro/signup?ref=PSA3BHPJ",
+      "code": "PSA3BHPJ",
       "codeEntry": null,
-      "bonusReferee": "1,000 Teneo Points at signup",
-      "bonusReferrer": null,
+      "bonusReferee": "+100 Fragments at signup, and +150 more once you reach 480 Fragments",
+      "bonusReferrer": "8% of each referred friend's Fragments and 2% of their referrals' Fragments, once the friend signs up within 7 days and earns 480 Fragments",
       "residentialIp": true,
-      "devicesPerIp": null,
+      "devicesPerIp": 1,
       "paymentMethods": [
         "crypto"
       ],
       "minimumPayout": null,
       "docker": false,
       "platforms": [
-        "browser-extension"
+        "windows",
+        "macos",
+        "linux",
+        "android",
+        "ios"
       ]
     },
     {
@@ -1543,8 +1571,8 @@
     "ha": 3
   },
   "pulls": {
-    "ui": 93824,
-    "worker": 99002
+    "ui": 93853,
+    "worker": 99024
   },
   "releases": {
     "web": {
@@ -1637,5 +1665,5 @@
     "ui": "drumsergio/cashpilot:3.0",
     "worker": "drumsergio/cashpilot-worker:3.0"
   },
-  "agentsDoc": false
+  "agentsDoc": true
 }
