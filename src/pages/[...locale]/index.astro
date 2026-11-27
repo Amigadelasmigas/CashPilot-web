@@ -1,0 +1,1116 @@
+---
+import Base from "../../layouts/Base.astro";
+import Icon from "../../components/Icon.astro";
+import PlatformIcon from "../../components/PlatformIcon.astro";
+import WindowFrame from "../../components/WindowFrame.astro";
+import PhoneFrame from "../../components/PhoneFrame.astro";
+import Disclosure from "../../components/Disclosure.astro";
+import { localeFromPath, localeParams, useT } from "../../i18n";
+import { getData, isLive } from "../../data";
+import { docs, repo, rivals, feeds } from "../../lib/links";
+import { CATEGORY_ORDER, categoryIcon } from "../../lib/catalog";
+
+import dashboardImg from "../../assets/shots/dashboard.png";
+import fleetImg from "../../assets/shots/fleet.png";
+import catalogImg from "../../assets/shots/catalog.png";
+import payoutsImg from "../../assets/shots/payouts.png";
+import desktopImg from "../../assets/shots/desktop-dashboard.png";
+import androidImg from "../../assets/shots/android-home.png";
+import dashboardMobileImg from "../../assets/shots/dashboard-mobile.png";
+
+export const getStaticPaths = () => localeParams();
+
+const t = useT(localeFromPath(Astro.params.locale));
+const data = await getData();
+const live = data.services.filter(isLive);
+
+const categories = CATEGORY_ORDER.map((key) => ({
+  key,
+  count: live.filter((s) => s.category === key).length,
+})).filter((c) => c.count > 0);
+
+const popular = live
+  .filter((s) => s.priority !== null && s.docker)
+  .sort((a, b) => a.priority! - b.priority!)
+  .slice(0, 8);
+
+const platforms = ["windows", "macos", "linux", "android", "docker", "pi"] as const;
+
+const tour = [
+  { key: "dashboard", img: dashboardImg, title: "localhost:8080" },
+  { key: "fleet", img: fleetImg, title: "localhost:8080/fleet" },
+  { key: "catalog", img: catalogImg, title: "localhost:8080/catalog" },
+  { key: "payouts", img: payoutsImg, title: "localhost:8080/payouts" },
+] as const;
+
+// Comparison facts, checked on 2026-11-04 against each project's repository.
+// Sources for every cell: docs/comparison.md in the CashPilot repo.
+const COMPARE_DATE = "2026-11-04T00:00:00Z";
+type Cell = "yes" | "no" | string;
+const compareCols = [
+  { name: "CashPilot", url: repo.web },
+  { name: "money4band", url: rivals.money4band },
+  { name: "income-generator", url: rivals.igm },
+  { name: "InternetIncome", url: rivals.internetIncome },
+  { name: "CashFactory", url: rivals.cashFactory },
+];
+const compareRows: { key: string; cells: Cell[] }[] = [
+  { key: "license", cells: ["values.gpl", "values.gpl", "values.proprietary", "values.noLicense", "values.gplReadme"] },
+  { key: "balances", cells: ["yes", "values.estimates", "no", "no", "no"] },
+  { key: "fleet", cells: ["yes", "no", "values.claimed", "no", "no"] },
+  { key: "desktop", cells: ["yes", "no", "no", "no", "no"] },
+  { key: "android", cells: ["yes", "no", "no", "no", "no"] },
+  { key: "gpu", cells: ["values.betaMining", "no", "no", "no", "no"] },
+  { key: "docker", cells: ["values.dockerOrPodman", "yes", "yes", "yes", "yes"] },
+];
+
+const faqVars = {
+  securityUrl: docs.homeSecurity,
+  referralsUrl: t.href("/referrals/"),
+  armUrl: docs.arm,
+  privacyUrl: t.href("/privacy/"),
+};
+---
+<Base t={t} route="/" title={t("home.title")} description={t("home.description")}>
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="pill"><Icon name="check" />{t("home.hero.pill")}</p>
+      <h1 class="hero__title">{t("home.hero.title")}</h1>
+      <p class="hero__lead">{t("home.hero.lead")}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href={t.href("/download/")}><Icon name="download" />{t("home.hero.download")}</a>
+        <a class="btn btn--ghost" href={t.href("/download/docker/")}><PlatformIcon name="docker" />{t("home.hero.selfhost")}</a>
+      </div>
+      <p class="hero__expect">{t("home.hero.expect")}</p>
+      <dl class="stats" aria-label={t("home.stats.label")}>
+        <div>
+          <dt>{t("home.stats.stars")}</dt>
+          <dd class="mono">{t.num(data.stars.web)}</dd>
+        </div>
+        <div>
+          <dt>{t("home.stats.pulls")}</dt>
+          <dd class="mono">{t.num(data.pulls.ui)}</dd>
+        </div>
+        <div>
+          <dt>{t("home.stats.services")}</dt>
+          <dd class="mono">{t.num(live.length)}</dd>
+        </div>
+      </dl>
+      <p class="stats__note">{t("home.stats.note", { date: t.date(data.fetchedAt) })}</p>
+    </div>
+    <div class="container hero__shot">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <WindowFrame src={dashboardImg} alt={t("home.hero.imageAlt")} title="localhost:8080" eager class="hero__desktop" />
+      <PhoneFrame src={dashboardMobileImg} alt={t("home.hero.imageAlt")} class="hero__phone" />
+    </div>
+  </section>
+
+  <section class="platforms" aria-labelledby="platforms-title">
+    <div class="container platforms__inner">
+      <h2 id="platforms-title" class="platforms__title">{t("home.platforms.title")}</h2>
+      <ul class="platforms__list">
+        {
+          platforms.map((p) => (
+            <li>
+              <PlatformIcon name={p} />
+              <span>{t(`home.platforms.${p}`)}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="how-title">{t("home.how.title")}</h2>
+        <p>{t("home.how.lead")}</p>
+      </div>
+      <ol class="steps">
+        {
+          t.keys("home.how.steps").map((k, i) => (
+            <li class="card step">
+              <span class="step__num mono" aria-hidden="true">{i + 1}</span>
+              <h3>{t(`home.how.steps.${k}.title`)}</h3>
+              <p>{t(`home.how.steps.${k}.text`)}</p>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div class="cats">
+        <h3 class="cats__title">{t("home.categories.title", { count: t.num(live.length) })}</h3>
+        <ul class="cats__grid">
+          {
+            categories.map((c) => (
+              <li class="cat">
+                <span class="cat__icon">
+                  <Icon name={categoryIcon[c.key]} />
+                </span>
+                <span class="cat__body">
+                  <span class="cat__name">{t(`home.categories.${c.key}.name`)}</span>
+                  <span class="cat__count mono">{t("home.categories.count", { count: t.num(c.count) })}</span>
+                  <span class="cat__text">{t(`home.categories.${c.key}.text`)}</span>
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="tour-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="tour-title">{t("home.tour.title")}</h2>
+        <p>{t("home.tour.lead")}</p>
+      </div>
+      <ul class="tour">
+        {
+          tour.map((s) => (
+            <li>
+              <figure>
+                <WindowFrame src={s.img} alt={t(`home.tour.${s.key}.alt`)} title={s.title} sizes="(min-width: 1160px) 540px, (min-width: 760px) 46vw, 100vw" />
+                <figcaption>
+                  <strong>{t(`home.tour.${s.key}.title`)}</strong> {t(`home.tour.${s.key}.text`)}
+                </figcaption>
+              </figure>
+            </li>
+          ))
+        }
+      </ul>
+
+      <h3 class="apps__title">{t("home.tour.apps.title")}</h3>
+      <div class="apps">
+        <figure class="apps__desktop">
+          <WindowFrame src={desktopImg} alt={t("home.tour.desktop.alt")} bare sizes="(min-width: 1160px) 760px, 100vw" />
+          <figcaption>
+            <strong>{t("home.tour.desktop.title")}</strong> {t("home.tour.desktop.text")}
+          </figcaption>
+        </figure>
+        <figure class="apps__phone">
+          <PhoneFrame src={androidImg} alt={t("home.tour.android.alt")} />
+          <figcaption>
+            <strong>{t("home.tour.android.title")}</strong> {t("home.tour.android.text")}
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="catch-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="catch-title">{t("home.catch.title")}</h2>
+        <p>{t("home.catch.lead")}</p>
+      </div>
+      <ul class="grid catch">
+        {
+          (["free", "open", "hardware", "account"] as const).map((k) => (
+            <li class="card">
+              <h3>{t(`home.catch.${k}.title`)}</h3>
+              <p>{t(`home.catch.${k}.text`)}</p>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="catch__funding">
+        {t("home.catch.funding")} <a href={t.href("/referrals/")}>{t("disclosure.more")}</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="control-title">
+    <div class="container split">
+      <div>
+        <div class="section-head">
+          <h2 id="control-title">{t("home.control.title")}</h2>
+          <p>{t("home.control.lead")}</p>
+        </div>
+        <ul class="feature-list">
+          {
+            (
+              [
+                ["logins", "lock"],
+                ["containers", "box"],
+                ["lan", "home"],
+                ["stop", "power"],
+              ] as const
+            ).map(([k, icon]) => (
+              <li>
+                <span class="feature-list__icon">
+                  <Icon name={icon} />
+                </span>
+                <div>
+                  <h3>{t(`home.control.${k}.title`)}</h3>
+                  <p>{t(`home.control.${k}.text`)}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="split__note">
+          <Icon name="shield" />
+          <span>
+            {t("home.control.ratings")}{" "}
+            <a href={docs.ratings}>{t("home.control.ratingsLink")}</a>
+          </span>
+        </p>
+      </div>
+      <div>
+        <div class="section-head">
+          <h2 id="earnings-title">{t("home.earnings.title")}</h2>
+          <p>{t("home.earnings.lead")}</p>
+        </div>
+        <ul class="factors">
+          {
+            (
+              [
+                ["country", "map"],
+                ["ip", "router"],
+                ["connection", "wifi"],
+                ["uptime", "clock"],
+                ["devices", "devices"],
+                ["hardware", "chip"],
+              ] as const
+            ).map(([k, icon]) => (
+              <li>
+                <Icon name={icon} />
+                <div>
+                  <h3>{t(`home.earnings.${k}.title`)}</h3>
+                  <p>{t(`home.earnings.${k}.text`)}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="split__note">
+          <Icon name="info" />
+          <span>{t("home.earnings.note")}</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="services-title">{t("home.services.title")}</h2>
+        <p>{t("home.services.lead")}</p>
+      </div>
+      <Disclosure t={t} />
+      <div class="table-wrap services-table" role="region" aria-labelledby="services-caption" tabindex="0">
+        <table>
+          <caption id="services-caption" class="visually-hidden">{t("home.services.caption")}</caption>
+          <thead>
+            <tr>
+              <th scope="col">{t("home.services.col.service")}</th>
+              <th scope="col">{t("home.services.col.homeIp")}</th>
+              <th scope="col">{t("home.services.col.devicesPerIp")}</th>
+              <th scope="col">{t("home.services.col.payout")}</th>
+              <th scope="col">{t("home.services.col.minimum")}</th>
+              <th scope="col"><span class="visually-hidden">{t("home.services.signup")}</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              popular.map((s) => (
+                <tr>
+                  <th scope="row">
+                    <a class="svc-name" href={docs.guide(s.slug)} aria-label={t("home.services.guideLabel", { name: s.name })}>
+                      {s.name}
+                    </a>
+                    <span class="svc-cat">{t(`categories.${s.category}`)}</span>
+                  </th>
+                  <td data-label={t("home.services.col.homeIp")}>{s.residentialIp === null ? t("common.notStated") : s.residentialIp ? t("common.yes") : t("common.no")}</td>
+                  <td data-label={t("home.services.col.devicesPerIp")}>{s.devicesPerIp === null || s.devicesPerIp === 0 ? <span class="not-stated">{t("common.notStated")}</span> : <span class="mono">{t.num(s.devicesPerIp)}</span>}</td>
+                  <td class="wrap" data-label={t("home.services.col.payout")}>{s.paymentMethods.map((m) => t(`payment.${m}`)).join(", ")}</td>
+                  <td class="wrap" data-label={t("home.services.col.minimum")}>{s.minimumPayout ?? t("common.notStated")}</td>
+                  <td class="signup">
+                    {s.signupUrl && (
+                      <a class="btn btn--ghost btn--sm" href={s.signupUrl} rel="noopener" aria-label={t("home.services.signupLabel", { name: s.name })}>
+                        {t("home.services.signup")}
+                      </a>
+                    )}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p class="links-row">
+        <a href={docs.guides}>{t("home.services.all", { count: t.num(live.length) })} <Icon name="arrow" class="flip" /></a>
+        <a href={t.href("/referrals/")}>{t("home.services.referrals")} <Icon name="arrow" class="flip" /></a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="compare-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="compare-title">{t("home.compare.title")}</h2>
+        <p>{t("home.compare.lead", { date: t.date(COMPARE_DATE) })}</p>
+      </div>
+      <div class="table-wrap compare-table" role="region" aria-labelledby="compare-caption" tabindex="0">
+        <table>
+          <caption id="compare-caption" class="visually-hidden">{t("home.compare.caption")}</caption>
+          <thead>
+            <tr>
+              <th scope="col">{t("home.compare.feature")}</th>
+              {
+                compareCols.map((c, i) => (
+                  <th scope="col" class:list={{ "is-us": i === 0 }}>
+                    <a href={c.url}>{c.name}</a>
+                  </th>
+                ))
+              }
+            </tr>
+          </thead>
+          <tbody>
+            {
+              compareRows.map((r) => (
+                <tr>
+                  <th scope="row">{t(`home.compare.rows.${r.key}`)}</th>
+                  {r.cells.map((c, i) => (
+                    <td class:list={{ "is-us": i === 0 }}>
+                      {c === "yes" ? (
+                        <span class="yes">
+                          <Icon name="check" />
+                          {t("common.yes")}
+                        </span>
+                      ) : c === "no" ? (
+                        <span class="no">
+                          <Icon name="dash" />
+                          {t("common.no")}
+                        </span>
+                      ) : (
+                        t(`home.compare.${c}`)
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p class="links-row">
+        <a href={docs.comparison}>{t("home.compare.more")} <Icon name="arrow" class="flip" /></a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="faq-title">
+    <div class="container faq-wrap">
+      <div class="section-head">
+        <h2 id="faq-title">{t("home.faq.title")}</h2>
+      </div>
+      <div class="faq">
+        {
+          t.keys("home.faq.items").map((k) => (
+            <details class="faq__item">
+              <summary>
+                <h3>{t(`home.faq.items.${k}.q`)}</h3>
+                <Icon name="chevron" class="faq__chev" />
+              </summary>
+              <p set:html={t(`home.faq.items.${k}.a`, faqVars)} />
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta">
+        <h2 id="cta-title">{t("home.cta.title")}</h2>
+        <p>{t("home.cta.text")}</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href={t.href("/download/")}><Icon name="download" />{t("home.cta.download")}</a>
+          <a class="btn btn--ghost" href={repo.web}><PlatformIcon name="github" />{t("home.cta.github")}</a>
+        </div>
+        <p class="cta__releases" set:html={t("home.cta.releases", { feedUrl: feeds.releases })} />
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    padding-top: clamp(3rem, 8vw, 6rem);
+    overflow: hidden;
+  }
+  .hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--accent-line);
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--text);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .pill :global(.icon) {
+    width: 1rem;
+    height: 1rem;
+    color: var(--accent);
+  }
+  .hero__title {
+    margin-top: 1.4rem;
+    max-width: 17ch;
+    font-size: clamp(2.35rem, 6.2vw, 4.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+  }
+  .hero__lead {
+    margin-top: 1.4rem;
+    max-width: 40rem;
+    color: var(--muted);
+    font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  }
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+  .hero__expect {
+    margin-top: 1.25rem;
+    max-width: 34rem;
+    color: var(--faint);
+    font-size: 0.9375rem;
+  }
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 2.75rem;
+    margin: 2.5rem 0 0;
+  }
+  .stats div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .stats dt {
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+  .stats dd {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .stats__note {
+    margin-top: 0.4rem;
+    color: var(--faint);
+    font-size: 0.8125rem;
+  }
+  .hero__shot {
+    position: relative;
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+  }
+  .hero__glow {
+    position: absolute;
+    inset: -10% 5% auto;
+    height: 70%;
+    background:
+      radial-gradient(50% 60% at 30% 40%, rgb(251 113 133 / 0.22), transparent 70%),
+      radial-gradient(45% 55% at 75% 35%, rgb(255 152 0 / 0.14), transparent 70%);
+    filter: blur(30px);
+    pointer-events: none;
+  }
+  .hero__shot :global(.hero__phone) {
+    display: none;
+  }
+  .hero__shot :global(.window) {
+    position: relative;
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 98%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 98%);
+  }
+
+  /* Platforms */
+  .platforms {
+    position: relative;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-alt);
+  }
+  .platforms__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem 2.5rem;
+    padding-block: 1.6rem;
+  }
+  .platforms__title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--faint);
+    letter-spacing: 0.02em;
+  }
+  .platforms__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .platforms__list li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .platforms__list :global(.platform-icon) {
+    width: 1.35rem;
+    height: 1.35rem;
+    color: var(--text);
+  }
+
+  /* How it works */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .step__num {
+    display: inline-grid;
+    place-items: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .cats {
+    margin-top: clamp(3rem, 6vw, 4.5rem);
+  }
+  .cats__title {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .cats__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .cat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  .cat__icon {
+    display: inline-grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    background: var(--surface-2);
+    color: var(--accent);
+  }
+  .cat__icon :global(.icon) {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+  .cat__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .cat__name {
+    font-weight: 600;
+  }
+  .cat__count {
+    color: var(--accent);
+    font-size: 0.875rem;
+  }
+  .cat__text {
+    margin-top: 0.35rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  /* Tour */
+  .tour {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  figure {
+    margin: 0;
+  }
+  figcaption {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+  figcaption strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .apps__title {
+    margin-top: clamp(3.5rem, 7vw, 5rem);
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+  }
+  .apps {
+    display: grid;
+    grid-template-columns: minmax(0, 2.4fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .apps__phone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .apps__phone figcaption {
+    max-width: 300px;
+  }
+
+  /* Catch */
+  .catch {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .catch .card h3 {
+    font-size: 1.3rem;
+  }
+  .catch__funding {
+    margin-top: 1.5rem;
+    max-width: 50rem;
+    color: var(--muted);
+  }
+
+  /* Control and earnings */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+  .split .section-head h2 {
+    font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  }
+  .feature-list,
+  .factors {
+    display: grid;
+    gap: 1.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .feature-list li,
+  .factors li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .feature-list__icon {
+    flex: none;
+    display: inline-grid;
+    place-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    color: var(--accent);
+  }
+  .feature-list__icon :global(.icon) {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  .feature-list h3,
+  .factors h3 {
+    font-size: 1.0625rem;
+    letter-spacing: -0.01em;
+  }
+  .feature-list p,
+  .factors p {
+    margin-top: 0.25rem;
+    color: var(--muted);
+    font-size: 0.9688rem;
+  }
+  .factors {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem 1.5rem;
+  }
+  .factors li > :global(.icon) {
+    flex: none;
+    width: 1.35rem;
+    height: 1.35rem;
+    margin-top: 0.1rem;
+    color: var(--accent);
+  }
+  .split__note {
+    display: flex;
+    gap: 0.65rem;
+    margin-top: 2rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.9688rem;
+  }
+  .split__note :global(.icon) {
+    flex: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.15rem;
+    color: var(--accent);
+  }
+
+  /* Tables */
+  .services-table,
+  .compare-table {
+    margin-top: 1rem;
+  }
+  .svc-name {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .svc-name:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .svc-cat {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--faint);
+    font-size: 0.8125rem;
+    font-weight: 400;
+  }
+  .services-table td {
+    color: var(--muted);
+  }
+  .services-table td:last-child {
+    text-align: end;
+    vertical-align: middle;
+  }
+  .services-table tbody th {
+    white-space: nowrap;
+  }
+  .services-table td.wrap {
+    min-width: 9rem;
+    max-width: 16rem;
+  }
+  .not-stated {
+    color: var(--faint);
+  }
+  .compare-table thead th a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+  .compare-table thead th a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .compare-table td {
+    color: var(--muted);
+    min-width: 9rem;
+  }
+  .compare-table tbody th {
+    min-width: 13rem;
+    font-weight: 500;
+  }
+  .compare-table tbody th,
+  .compare-table thead th:first-child {
+    position: sticky;
+    inset-inline-start: 0;
+    z-index: 1;
+    background: var(--surface);
+  }
+  .compare-table thead th:first-child {
+    background: var(--surface-2);
+  }
+  .compare-table .is-us {
+    background: var(--accent-soft);
+    color: var(--text);
+  }
+  .compare-table thead .is-us a {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .yes,
+  .no {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .yes :global(.icon) {
+    width: 1.05rem;
+    height: 1.05rem;
+    color: var(--accent);
+  }
+  .no {
+    color: var(--faint);
+  }
+  .no :global(.icon) {
+    width: 1rem;
+    height: 1rem;
+  }
+  .links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    margin-top: 1.25rem;
+  }
+  .links-row a {
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .links-row a:hover {
+    text-decoration: underline;
+  }
+  .links-row :global(.icon) {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: -0.15em;
+  }
+  :global([dir="rtl"]) .links-row :global(.flip) {
+    transform: scaleX(-1);
+  }
+
+  /* FAQ */
+  .faq-wrap {
+    max-width: 52rem;
+  }
+  .faq {
+    border-top: 1px solid var(--border);
+  }
+  .faq__item {
+    border-bottom: 1px solid var(--border);
+  }
+  .faq__item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.2rem 0.25rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq__item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq__item summary h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .faq__item summary:hover h3 {
+    color: var(--accent);
+  }
+  .faq__item :global(.faq__chev) {
+    flex: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    color: var(--faint);
+  }
+  .faq__item[open] :global(.faq__chev) {
+    transform: rotate(180deg);
+  }
+  .faq__item p {
+    padding: 0 0.25rem 1.4rem;
+    max-width: 46rem;
+    color: var(--muted);
+  }
+
+  /* Closing call to action */
+  .cta-section {
+    padding-top: 0;
+  }
+  .section + .cta-section {
+    border-top: 0;
+  }
+  .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(2.5rem, 6vw, 4rem) var(--gutter);
+    border: 1px solid var(--border-strong);
+    border-radius: 22px;
+    background:
+      radial-gradient(60% 120% at 50% 0%, rgb(251 113 133 / 0.14), transparent 70%),
+      var(--surface);
+  }
+  .cta h2 {
+    font-size: clamp(1.75rem, 3.6vw, 2.6rem);
+  }
+  .cta > p {
+    margin-top: 0.75rem;
+    color: var(--muted);
+    font-size: 1.125rem;
+  }
+  .cta .hero__actions {
+    margin-top: 1.75rem;
+  }
+  .cta__releases {
+    margin-top: 1.5rem !important;
+    font-size: 0.9375rem !important;
+    color: var(--faint) !important;
+  }
+
+  @media (max-width: 1024px) {
+    .cats__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .catch {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .split {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 760px) {
+    .steps,
+    .tour,
+    .apps {
+      grid-template-columns: 1fr;
+    }
+    .cats__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .stats {
+      gap: 0.5rem 1.75rem;
+    }
+    .stats dd {
+      font-size: 1.35rem;
+    }
+  }
+  @media (max-width: 640px) {
+    .hero__shot :global(.hero__desktop) {
+      display: none;
+    }
+    .hero__shot :global(.hero__phone) {
+      display: block;
+      margin-inline: auto;
+      max-width: 280px;
+    }
+    .hero__shot {
+      display: flex;
+      justify-content: center;
+    }
+    .services-table {
+      border: 0;
+      background: none;
+      overflow: visible;
+    }
+    .services-table thead {
+      display: none;
+    }
+    .services-table table,
+    .services-table tbody,
+    .services-table tr,
+    .services-table th,
+    .services-table td {
+      display: block;
+    }
+    .services-table tr {
+      margin-bottom: 0.75rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .services-table tbody th,
+    .services-table td {
+      padding: 0;
+      border: 0;
+    }
+    .services-table tbody th {
+      margin-bottom: 0.6rem;
+    }
+    .services-table td[data-label] {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 0.3rem;
+      border-top: 1px solid var(--border);
+      max-width: none;
+    }
+    .services-table td[data-label]::before {
+      content: attr(data-label);
+      color: var(--faint);
+      font-size: 0.875rem;
+    }
+    .services-table td.wrap {
+      text-align: end;
+    }
+    .services-table td.signup {
+      margin-top: 0.75rem;
+      text-align: start;
+    }
+    .services-table td.signup .btn {
+      width: 100%;
+    }
+    .compare-table tbody th {
+      min-width: 9.5rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .catch,
+    .factors {
+      grid-template-columns: 1fr;
+    }
+    .hero__actions {
+      width: 100%;
+      flex-direction: column;
+    }
+    .hero__actions .btn {
+      width: 100%;
+    }
+    .cats__grid {
+      grid-template-columns: 1fr;
+    }
+    .cat {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+</style>

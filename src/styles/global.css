@@ -1,0 +1,463 @@
+/* CashPilot site styles. Dark only. One accent: the rose of the CashPilot
+   wordmark (#fb7185). Contrast on --bg: --text 17:1, --muted 8.4:1,
+   --faint 5.0:1, --accent 7.6:1. */
+
+:root {
+  color-scheme: dark;
+  --bg: #07070c;
+  --bg-alt: #0b0b12;
+  --surface: #101019;
+  --surface-2: #161622;
+  --border: #23233a;
+  --border-strong: #34344f;
+  --text: #ededf4;
+  --muted: #b0aec3;
+  --faint: #8a889f;
+  --accent: #fb7185;
+  --accent-hover: #fda4af;
+  --accent-ink: #22070f;
+  --accent-soft: rgb(251 113 133 / 0.12);
+  --accent-line: rgb(251 113 133 / 0.35);
+
+  --font-brand: "Onest Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-system: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Arabic",
+    "Noto Sans Devanagari", "Noto Sans Thai", "PingFang SC", "Hiragino Sans", "Microsoft YaHei", "Apple SD Gothic Neo",
+    "Malgun Gothic", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --radius: 14px;
+  --radius-sm: 9px;
+  --container: 1160px;
+  --gutter: clamp(1.1rem, 4vw, 2rem);
+  --section: clamp(4rem, 9vw, 7rem);
+  --header-h: 64px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-brand);
+  font-size: 100%;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+}
+
+html[data-font="system"] {
+  font-family: var(--font-system);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.0625rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  flex: 1;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+:not(pre) > code {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.1em 0.35em;
+  overflow-wrap: anywhere;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section);
+}
+
+.section + .section {
+  border-top: 1px solid var(--border);
+}
+
+.section--alt {
+  background: var(--bg-alt);
+}
+
+.section-head {
+  max-width: 46rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.section-head h2 {
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+}
+
+.section-head p {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 48px;
+  padding: 0.7rem 1.35rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn svg {
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+  color: var(--accent-ink);
+}
+
+.btn--ghost {
+  border-color: var(--border-strong);
+  color: var(--text);
+  background: transparent;
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  background: var(--accent-soft);
+}
+
+.btn--sm {
+  min-height: 40px;
+  padding: 0.45rem 1rem;
+  font-size: 0.9375rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn,
+  .card,
+  .tile {
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
+  }
+}
+
+/* Cards and grids */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem;
+}
+
+.card h3 {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* Inline note with the referral disclosure */
+.disclosure {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-inline-start: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.disclosure svg {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.15rem;
+  color: var(--accent);
+}
+
+/* Tables */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.table-wrap:focus-visible {
+  outline-offset: 2px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9688rem;
+}
+
+caption {
+  text-align: start;
+}
+
+th,
+td {
+  padding: 0.85rem 1rem;
+  text-align: start;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+tr:last-child > th,
+tr:last-child > td {
+  border-bottom: 0;
+}
+
+thead th {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--faint);
+  text-transform: none;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  background: var(--surface-2);
+}
+
+tbody th {
+  font-weight: 600;
+}
+
+/* Code blocks with a copy button */
+.code {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background: #05050a;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 0.85rem 0.85rem 1rem;
+}
+
+.code pre {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text);
+  white-space: pre;
+}
+
+.code pre::before {
+  content: "";
+}
+
+.copy-btn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 34px;
+  padding: 0.3rem 0.7rem;
+  border-radius: 7px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-2);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.copy-btn svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+/* Prose pages (privacy, disclaimer) */
+.prose {
+  max-width: 44rem;
+}
+
+.prose h2 {
+  font-size: 1.375rem;
+  margin-top: 2.5rem;
+}
+
+.prose p {
+  margin-top: 0.85rem;
+  color: var(--muted);
+}
+
+.page-hero {
+  padding-block: clamp(3rem, 7vw, 5rem) clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.page-hero h1 {
+  font-size: clamp(2.1rem, 4.6vw, 3.25rem);
+}
+
+.page-hero p {
+  margin-top: 1rem;
+  max-width: 44rem;
+  color: var(--muted);
+  font-size: 1.1875rem;
+}
+
+.ext::after {
+  content: "\2197";
+  display: inline-block;
+  margin-inline-start: 0.2em;
+  font-size: 0.85em;
+  text-decoration: none;
+}
+
+[dir="rtl"] .ext::after {
+  content: "\2196";
+}
+
+[hidden] {
+  display: none !important;
+}

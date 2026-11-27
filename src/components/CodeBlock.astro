@@ -1,0 +1,25 @@
+---
+import Icon from "./Icon.astro";
+import type { Translator } from "../i18n";
+
+interface Props {
+  t: Translator;
+  id: string;
+  code: string;
+}
+const { t, id, code } = Astro.props;
+---
+<div class="code" dir="ltr">
+  <pre id={id} tabindex="0"><code>{code}</code></pre>
+  <button
+    class="copy-btn"
+    type="button"
+    hidden
+    data-copy={id}
+    data-done={t("common.copied")}
+    data-failed={t("common.copyFailed")}
+    aria-label={t("common.copyLabel")}
+  >
+    <Icon name="copy" /><span data-copy-label aria-live="polite">{t("common.copy")}</span>
+  </button>
+</div>

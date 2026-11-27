@@ -1,0 +1,1640 @@
+{
+  "fetchedAt": "2026-11-27T12:10:21.531Z",
+  "services": [
+    {
+      "slug": "2miners-etc",
+      "name": "2Miners ETC",
+      "category": "mining",
+      "status": "beta",
+      "priority": null,
+      "website": "https://etc.2miners.com/",
+      "shortDescription": "Ethereum Classic mining pool, tracked by your payout address",
+      "signupUrl": "https://etc.2miners.com/help",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": null,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "0.1 ETC (adjustable)",
+      "docker": false,
+      "platforms": []
+    },
+    {
+      "slug": "anyone-protocol",
+      "name": "Anyone Protocol",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://anyone.io",
+      "shortDescription": "Decentralized onion routing - incentivized Tor relay nodes",
+      "signupUrl": "https://anyone.io",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": true,
+      "platforms": [
+        "docker",
+        "linux"
+      ]
+    },
+    {
+      "slug": "bitping",
+      "name": "Bitping",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": null,
+      "website": "https://app.bitping.com",
+      "shortDescription": "Bandwidth sharing - decentralized network monitoring, works on VPS",
+      "signupUrl": "https://app.bitping.com",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "$0.05",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "macos",
+        "linux"
+      ]
+    },
+    {
+      "slug": "blockmesh",
+      "name": "BlockMesh (Perceptron Network)",
+      "category": "depin",
+      "status": "dropped",
+      "priority": null,
+      "website": "https://blockmesh.xyz",
+      "shortDescription": "DePIN bandwidth on Solana - rebranded from BlockMesh, shady",
+      "signupUrl": "https://blockmesh.xyz",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "browser-extension"
+      ]
+    },
+    {
+      "slug": "bytebenefit",
+      "name": "Bytebenefit",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 3,
+      "website": "https://bytebenefit.io",
+      "shortDescription": "Bandwidth sharing - PayPal/Stripe payouts, desktop/Android app",
+      "signupUrl": "https://bytebenefit.io/invited?ref=Brl4z3",
+      "code": "Brl4z3",
+      "codeEntry": null,
+      "bonusReferee": "$1 (10,000 Coins) welcome bonus",
+      "bonusReferrer": "20% of referral traffic earnings",
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "paypal"
+      ],
+      "minimumPayout": "$5",
+      "docker": false,
+      "platforms": [
+        "windows",
+        "android"
+      ]
+    },
+    {
+      "slug": "bytelixir",
+      "name": "Bytelixir",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 2,
+      "website": "https://bytelixir.com",
+      "shortDescription": "Bandwidth sharing - Windows + Android only",
+      "signupUrl": "https://bytelixir.com/r/OYEIRE0VSZBZ",
+      "code": "OYEIRE0VSZBZ",
+      "codeEntry": null,
+      "bonusReferee": "$1 greeting bonus",
+      "bonusReferrer": "50% of their profit for life",
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "$5",
+      "docker": false,
+      "platforms": [
+        "windows",
+        "android"
+      ]
+    },
+    {
+      "slug": "dawn",
+      "name": "Dawn Internet",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://infrastructure.finance/validator-extension",
+      "shortDescription": "DePIN validator - browser extension earns DAWN points",
+      "signupUrl": "https://infrastructure.finance/validator-extension?code=2QLQV97F",
+      "code": "2QLQV97F",
+      "codeEntry": "2QLQV97F",
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "browser-extension"
+      ]
+    },
+    {
+      "slug": "deeper-network",
+      "name": "Deeper Network",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://deeper.network",
+      "shortDescription": "Decentralized VPN - requires proprietary hardware device",
+      "signupUrl": "https://shop.deeper.network?sca_ref=12020100.q8Vxm3SliA",
+      "code": "12020100.q8Vxm3SliA",
+      "codeEntry": null,
+      "bonusReferee": "5% off the Deeper Connect device with coupon SERGIO",
+      "bonusReferrer": "Commission on the device sale",
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": []
+    },
+    {
+      "slug": "earncc",
+      "name": "earn.cc",
+      "category": "bandwidth",
+      "status": "dead",
+      "priority": null,
+      "website": "https://earn.cc",
+      "shortDescription": "Bandwidth sharing - SITE GONE, no DNS records since 2026",
+      "signupUrl": "https://earn.cc",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "windows",
+        "macos",
+        "linux"
+      ]
+    },
+    {
+      "slug": "earnfm",
+      "name": "Earn.fm",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 5,
+      "website": "https://earn.fm",
+      "shortDescription": "Bandwidth sharing - email/password auth, lightweight client",
+      "signupUrl": "https://earn.fm/ref/GEISYB91",
+      "code": "GEISYB91",
+      "codeEntry": null,
+      "bonusReferee": "$5 starting balance",
+      "bonusReferrer": "10% of their earnings for life",
+      "residentialIp": true,
+      "devicesPerIp": 1,
+      "paymentMethods": [
+        "crypto",
+        "paypal",
+        "giftcard",
+        "bank"
+      ],
+      "minimumPayout": "$15",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "linux"
+      ]
+    },
+    {
+      "slug": "earnapp",
+      "name": "EarnApp",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 7,
+      "website": "https://earnapp.com",
+      "shortDescription": "Bandwidth sharing - backed by Bright Data",
+      "signupUrl": "https://earnapp.com/i/TSMD9wSm",
+      "code": "TSMD9wSm",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": "10% of their earnings for life, paid on top of theirs",
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "paypal",
+        "amazon_giftcard",
+        "wise"
+      ],
+      "minimumPayout": "$10",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "macos",
+        "linux",
+        "android"
+      ]
+    },
+    {
+      "slug": "ebesucher",
+      "name": "Ebesucher",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": null,
+      "website": "https://www.ebesucher.com",
+      "shortDescription": "Traffic exchange surfbar - browser extension",
+      "signupUrl": "https://www.ebesucher.com/?ref=geiserx",
+      "code": "geiserx",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": 1,
+      "paymentMethods": [
+        "paypal"
+      ],
+      "minimumPayout": "$2",
+      "docker": false,
+      "platforms": [
+        "browser-extension"
+      ]
+    },
+    {
+      "slug": "flux",
+      "name": "Flux",
+      "category": "compute",
+      "status": "active",
+      "priority": null,
+      "website": "https://runonflux.io",
+      "shortDescription": "Decentralized compute - requires FLUX token stake",
+      "signupUrl": "https://runonflux.io",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "linux"
+      ]
+    },
+    {
+      "slug": "gaganode",
+      "name": "GagaNode",
+      "category": "depin",
+      "status": "dead",
+      "priority": null,
+      "website": "https://www.gaganode.com",
+      "shortDescription": "Multi-platform DePIN - SITE GONE, the domain is parked",
+      "signupUrl": null,
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto",
+        "paypal"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "windows",
+        "macos",
+        "linux",
+        "android"
+      ]
+    },
+    {
+      "slug": "golem",
+      "name": "Golem Network",
+      "category": "compute",
+      "status": "active",
+      "priority": null,
+      "website": "https://golem.network",
+      "shortDescription": "Decentralized compute marketplace - GLM tokens via Yagna agent",
+      "signupUrl": "https://golem.network",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "linux"
+      ]
+    },
+    {
+      "slug": "gradient",
+      "name": "Gradient Network",
+      "category": "depin",
+      "status": "broken",
+      "priority": null,
+      "website": "https://gradient.network",
+      "shortDescription": "DePIN network backed by Pantera Capital - node rewards ended August 2025",
+      "signupUrl": "https://app.gradient.network/signup?referralCode=YSKMY7",
+      "code": "YSKMY7",
+      "codeEntry": "YSKMY7",
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "browser-extension"
+      ]
+    },
+    {
+      "slug": "grass",
+      "name": "Grass",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://www.grass.io",
+      "shortDescription": "DePIN bandwidth sharing for AI data - earns GRASS tokens",
+      "signupUrl": "https://app.grass.io/register?referralCode=kn8FNEPnUr2tMqE",
+      "code": "kn8FNEPnUr2tMqE",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": "20% of direct referrals' uptime points, 10% at the second level, 5% at the third",
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "browser-extension",
+        "windows",
+        "macos",
+        "android",
+        "ios"
+      ]
+    },
+    {
+      "slug": "helium",
+      "name": "Helium",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://helium.com",
+      "shortDescription": "Decentralized wireless network - requires hardware, HNT tokens",
+      "signupUrl": "https://helium.com",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": []
+    },
+    {
+      "slug": "herominers-kas",
+      "name": "HeroMiners Kaspa",
+      "category": "mining",
+      "status": "beta",
+      "priority": null,
+      "website": "https://kaspa.herominers.com/",
+      "shortDescription": "Kaspa mining pool, tracked by your payout address",
+      "signupUrl": "https://kaspa.herominers.com/?lang=en",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": null,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "1 KAS (adjustable)",
+      "docker": false,
+      "platforms": []
+    },
+    {
+      "slug": "honeygain",
+      "name": "Honeygain",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 1,
+      "website": "https://www.honeygain.com",
+      "shortDescription": "Bandwidth sharing - most established platform",
+      "signupUrl": "https://dashboard.honeygain.com/ref/SERGIB4014",
+      "code": "SERGIB4014",
+      "codeEntry": null,
+      "bonusReferee": "$3 sign-up bonus with this link",
+      "bonusReferrer": "Up to 25% of each referred friend's earnings in Honeygain mode",
+      "residentialIp": true,
+      "devicesPerIp": 1,
+      "paymentMethods": [
+        "paypal",
+        "crypto"
+      ],
+      "minimumPayout": "$20",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "macos",
+        "linux",
+        "android"
+      ]
+    },
+    {
+      "slug": "ionet",
+      "name": "io.net",
+      "category": "compute",
+      "status": "active",
+      "priority": null,
+      "website": "https://io.net",
+      "shortDescription": "Decentralized GPU network for AI - NVIDIA GPU required",
+      "signupUrl": "https://io.net",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "linux"
+      ]
+    },
+    {
+      "slug": "iproyal",
+      "name": "IPRoyal Pawns",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 9,
+      "website": "https://pawns.app",
+      "shortDescription": "Bandwidth sharing - up to $3 bonus on your first payouts",
+      "signupUrl": "https://pawns.app?r=19266874",
+      "code": "19266874",
+      "codeEntry": null,
+      "bonusReferee": "$1 on each of your first three payouts, up to $3; miss a 1-3 week window and the rest expire",
+      "bonusReferrer": "$1 on each of their first three payouts, up to $3, if each comes within its 1-3 week window",
+      "residentialIp": true,
+      "devicesPerIp": 1,
+      "paymentMethods": [
+        "paypal",
+        "crypto",
+        "giftcard"
+      ],
+      "minimumPayout": "$5",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "macos",
+        "linux",
+        "android",
+        "ios"
+      ]
+    },
+    {
+      "slug": "koii",
+      "name": "Koii Network",
+      "category": "depin",
+      "status": "dead",
+      "priority": null,
+      "website": "https://koii.network",
+      "shortDescription": "Solana DePIN - SITE GONE, the domain serves an unrelated site",
+      "signupUrl": null,
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "windows",
+        "macos",
+        "linux"
+      ]
+    },
+    {
+      "slug": "kryptex-pearl",
+      "name": "Kryptex Pool (Pearl)",
+      "category": "mining",
+      "status": "beta",
+      "priority": null,
+      "website": "https://pool.kryptex.com/en/prl",
+      "shortDescription": "Mine Pearl on an NVIDIA GPU and get account credit in Bitcoin",
+      "signupUrl": "https://pool.kryptex.com/?ref=2444cca8",
+      "code": "2444cca8",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": "20% of Kryptex's pool income from referred users",
+      "residentialIp": null,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "0.00001 BTC via Lightning (other methods vary)",
+      "docker": true,
+      "platforms": []
+    },
+    {
+      "slug": "mysterium",
+      "name": "MystNodes",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 11,
+      "website": "https://mystnodes.com",
+      "shortDescription": "Decentralized VPN node - blockchain-based, works on VPS",
+      "signupUrl": "https://mystnodes.co/?referral_code=do7v7YOoBBpbOstKQovX2pUvZYKia4ZhH3QIdNtE",
+      "code": "do7v7YOoBBpbOstKQovX2pUvZYKia4ZhH3QIdNtE",
+      "codeEntry": null,
+      "bonusReferee": "5 MYST once your node earns its first 5 MYST (residential IP, node claimed on mystnodes.com)",
+      "bonusReferrer": "5 MYST per friend whose node earns 5 MYST (residential IPs only)",
+      "residentialIp": false,
+      "devicesPerIp": 1,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "5 MYST",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "macos",
+        "linux",
+        "android",
+        "browser-extension"
+      ]
+    },
+    {
+      "slug": "network3",
+      "name": "Network3",
+      "category": "depin",
+      "status": "dead",
+      "priority": null,
+      "website": "https://network3.io",
+      "shortDescription": "DePIN AI network - SITE GONE, the domain redirects to an unrelated site",
+      "signupUrl": null,
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "windows",
+        "macos",
+        "linux"
+      ]
+    },
+    {
+      "slug": "nodepay",
+      "name": "Nodepay",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://nodepay.ai",
+      "shortDescription": "DePIN bandwidth sharing for AI - browser extension",
+      "signupUrl": "https://app.nodepay.ai/register?ref=0wzzyznen64j9zx",
+      "code": "0wzzyznen64j9zx",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "browser-extension"
+      ]
+    },
+    {
+      "slug": "noderr",
+      "name": "Noderr Micronodes",
+      "category": "depin",
+      "status": "beta",
+      "priority": null,
+      "website": "https://micronodes.noderr.xyz",
+      "shortDescription": "Free micronode (Android connection sharing, Windows, Mac, browser) - testnet, rewards unfunded so far",
+      "signupUrl": "https://micronodes.noderr.xyz/",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": null,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "android",
+        "windows",
+        "macos",
+        "browser-extension"
+      ]
+    },
+    {
+      "slug": "nodle",
+      "name": "Nodle",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://nodle.com",
+      "shortDescription": "Bluetooth IoT relay - mobile app, NODL token rewards",
+      "signupUrl": "https://nodle.com",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "slug": "nosana",
+      "name": "Nosana",
+      "category": "compute",
+      "status": "active",
+      "priority": null,
+      "website": "https://nosana.io",
+      "shortDescription": "GPU compute on Solana - NOS tokens, RTX 3060 ~$0.048/hr",
+      "signupUrl": "https://nosana.io",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "linux"
+      ]
+    },
+    {
+      "slug": "ocean",
+      "name": "OCEAN",
+      "category": "mining",
+      "status": "beta",
+      "priority": null,
+      "website": "https://ocean.xyz",
+      "shortDescription": "Bitcoin mining pool, tracked by your payout address",
+      "signupUrl": "https://ocean.xyz/getstarted",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "0.01048576 BTC",
+      "docker": false,
+      "platforms": []
+    },
+    {
+      "slug": "packetshare",
+      "name": "PacketShare",
+      "category": "bandwidth",
+      "status": "dead",
+      "priority": null,
+      "website": "https://www.packetshare.io",
+      "shortDescription": "Bandwidth sharing - official Docker image, email/password auth",
+      "signupUrl": "https://www.packetshare.io/register.html",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "paypal",
+        "crypto"
+      ],
+      "minimumPayout": "$5",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "macos",
+        "linux"
+      ]
+    },
+    {
+      "slug": "packetstream",
+      "name": "PacketStream",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 10,
+      "website": "https://packetstream.io",
+      "shortDescription": "Bandwidth sharing - simple CID-based setup",
+      "signupUrl": "https://packetstream.io/?psr=7xgZ",
+      "code": "7xgZ",
+      "codeEntry": null,
+      "bonusReferee": "10% bonus credit on your first card or PayPal deposit (proxy customers)",
+      "bonusReferrer": "20% of their bandwidth earnings (limited-time Packeter bonus)",
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "paypal"
+      ],
+      "minimumPayout": "$5",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "linux",
+        "android"
+      ]
+    },
+    {
+      "slug": "passiveapp",
+      "name": "PassiveApp",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://passiveapp.com",
+      "shortDescription": "DePIN bandwidth/compute - Windows only, crypto and PayPal payouts",
+      "signupUrl": "https://passiveapp.com/i/bqpC4M",
+      "code": "bqpC4M",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": "10% of their earnings for life",
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto",
+        "paypal"
+      ],
+      "minimumPayout": "$5",
+      "docker": false,
+      "platforms": [
+        "windows"
+      ]
+    },
+    {
+      "slug": "peer2profit",
+      "name": "Peer2Profit",
+      "category": "bandwidth",
+      "status": "dead",
+      "priority": null,
+      "website": "https://peer2profit.com",
+      "shortDescription": "Bandwidth sharing - works on residential and datacenter IPs",
+      "signupUrl": "https://peer2profit.com",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "paypal",
+        "crypto"
+      ],
+      "minimumPayout": "$2",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "macos",
+        "linux",
+        "android"
+      ]
+    },
+    {
+      "slug": "presearch",
+      "name": "Presearch",
+      "category": "depin",
+      "status": "dead",
+      "priority": null,
+      "website": "https://presearch.com",
+      "shortDescription": "Decentralized search engine - SHUT DOWN July 2026",
+      "signupUrl": "https://presearch.com/signup?rid=4872322",
+      "code": "4872322",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": true,
+      "platforms": [
+        "docker",
+        "linux"
+      ]
+    },
+    {
+      "slug": "proxybase",
+      "name": "ProxyBase",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 12,
+      "website": "https://proxybase.org",
+      "shortDescription": "proxybase.org - bandwidth sharing, crypto payout, Access Token auth. No wallet is generated",
+      "signupUrl": "https://peer.proxybase.org/dashboard/signup?referral=nXzS3c6iTO",
+      "code": "nXzS3c6iTO",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "$0.20",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "slug": "proxybase-xyz",
+      "name": "ProxyBase Markets",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": null,
+      "website": "https://proxybase.xyz",
+      "shortDescription": "proxybase.xyz - SOCKS5 marketplace for AI agents, USDC payout. Generates a wallet whose volume holds the only copy of the key",
+      "signupUrl": "https://proxybase.xyz?referral=nXzS3c6iTO",
+      "code": "nXzS3c6iTO",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "$1",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "linux",
+        "macos",
+        "windows"
+      ]
+    },
+    {
+      "slug": "proxylite",
+      "name": "ProxyLite",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 4,
+      "website": "https://proxylite.ru",
+      "shortDescription": "Bandwidth sharing - 15% lifetime referral, works on VPS",
+      "signupUrl": "https://proxylite.ru/?r=KMUPRZIZ",
+      "code": "KMUPRZIZ",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": "15% of their earnings for life",
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto",
+        "paypal"
+      ],
+      "minimumPayout": "$5",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "slug": "proxyrack",
+      "name": "ProxyRack",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 13,
+      "website": "https://peer.proxyrack.com",
+      "shortDescription": "Bandwidth sharing - UUID per device, works on VPS",
+      "signupUrl": "https://peer.proxyrack.com/ref/mpwiok3xlaxeycnn5znqlg7ipjeutxyxr6xl7vmn",
+      "code": "mpwiok3xlaxeycnn5znqlg7ipjeutxyxr6xl7vmn",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "paypal",
+        "giftcard",
+        "bank"
+      ],
+      "minimumPayout": "$20",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "macos",
+        "linux"
+      ]
+    },
+    {
+      "slug": "repocket",
+      "name": "Repocket",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 8,
+      "website": "https://repocket.com",
+      "shortDescription": "Bandwidth sharing - max 5 devices, API key auth",
+      "signupUrl": "https://link.repocket.com/b1zM",
+      "code": "b1zM",
+      "codeEntry": null,
+      "bonusReferee": "$2 wallet bonus on sign-up",
+      "bonusReferrer": "$2 once the referee has earned $7, then 5% of their earnings for life",
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "giftcard",
+        "crypto"
+      ],
+      "minimumPayout": "$4 ($2 after the first payout)",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "macos",
+        "linux",
+        "android"
+      ]
+    },
+    {
+      "slug": "salad",
+      "name": "Salad",
+      "category": "compute",
+      "status": "active",
+      "priority": null,
+      "website": "https://salad.io",
+      "shortDescription": "GPU sharing for AI - Windows only, gift card or cash payout",
+      "signupUrl": "https://salad.io",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "paypal",
+        "giftcard"
+      ],
+      "minimumPayout": "$5",
+      "docker": false,
+      "platforms": [
+        "windows"
+      ]
+    },
+    {
+      "slug": "sentinel-dvpn",
+      "name": "Sentinel dVPN",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://sentinel.co",
+      "shortDescription": "Decentralized VPN on Cosmos - node operators sell bandwidth",
+      "signupUrl": "https://sentinel.co",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "linux"
+      ]
+    },
+    {
+      "slug": "sia-hostd",
+      "name": "Sia (hostd)",
+      "category": "storage",
+      "status": "active",
+      "priority": null,
+      "website": "https://sia.tech",
+      "shortDescription": "Sia Foundation storage node - official Docker image, earn Siacoin",
+      "signupUrl": "https://docs.sia.tech/provide-storage/setting-up-hostd/docker",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "$0",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "linux",
+        "windows",
+        "macos"
+      ]
+    },
+    {
+      "slug": "speedshare",
+      "name": "SpeedShare",
+      "category": "bandwidth",
+      "status": "dead",
+      "priority": null,
+      "website": "https://speedshare.app",
+      "shortDescription": "Bandwidth sharing - residential only, no official Docker",
+      "signupUrl": "https://speedshare.app",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto",
+        "paypal"
+      ],
+      "minimumPayout": "$5",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "macos",
+        "linux"
+      ]
+    },
+    {
+      "slug": "spide",
+      "name": "Spide",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": null,
+      "website": "https://spide.network",
+      "shortDescription": "Bandwidth sharing - machine ID based",
+      "signupUrl": "https://spide.network/register.html?f3bc51",
+      "code": "f3bc51",
+      "codeEntry": null,
+      "bonusReferee": "$5 sign-up bonus",
+      "bonusReferrer": "10% of their earnings",
+      "residentialIp": true,
+      "devicesPerIp": 1,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "$5",
+      "docker": false,
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "slug": "srbminer-multi",
+      "name": "SRBMiner-Multi (GPU mining)",
+      "category": "mining",
+      "status": "beta",
+      "priority": null,
+      "website": "https://github.com/doktor83/SRBMiner-Multi",
+      "shortDescription": "Mine Pearl and other GPU coins on an NVIDIA GPU",
+      "signupUrl": "https://github.com/doktor83/SRBMiner-Multi/releases",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "1 PRL (HeroMiners)",
+      "docker": true,
+      "platforms": []
+    },
+    {
+      "slug": "storj",
+      "name": "Storj",
+      "category": "storage",
+      "status": "active",
+      "priority": null,
+      "website": "https://www.storj.io",
+      "shortDescription": "Decentralized storage node - $1.35/TB stored + $1/TB egress",
+      "signupUrl": "https://storj.dev/node/get-started/setup",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "4x the Ethereum transaction fee, smaller balances roll over",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "slug": "supportxmr",
+      "name": "SupportXMR",
+      "category": "mining",
+      "status": "beta",
+      "priority": null,
+      "website": "https://www.supportxmr.com",
+      "shortDescription": "Monero mining pool, tracked by your payout address",
+      "signupUrl": "https://supportxmr.com",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "0.1 XMR (automatic), 0.01 XMR on request",
+      "docker": false,
+      "platforms": []
+    },
+    {
+      "slug": "teneo",
+      "name": "Teneo Protocol",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://teneo.pro",
+      "shortDescription": "DePIN browser extension - 1,000 bonus points with a referral link",
+      "signupUrl": "https://dashboard.teneo.pro/auth/signup?referralCode=CAqef",
+      "code": "CAqef",
+      "codeEntry": null,
+      "bonusReferee": "1,000 Teneo Points at signup",
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "browser-extension"
+      ]
+    },
+    {
+      "slug": "theta-edge",
+      "name": "Theta Edge Node",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://thetatoken.org",
+      "shortDescription": "Decentralized CDN + AI compute - TFUEL rewards, established project",
+      "signupUrl": "https://thetatoken.org",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "windows",
+        "macos",
+        "linux"
+      ]
+    },
+    {
+      "slug": "titan",
+      "name": "Titan Network",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://titannet.io",
+      "shortDescription": "DePIN sharing IP, storage, bandwidth - $5-30/month",
+      "signupUrl": "https://edge.titannet.info/signup?inviteCode=2GKKJ495",
+      "code": "2GKKJ495",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": false,
+      "platforms": [
+        "windows",
+        "macos",
+        "android"
+      ]
+    },
+    {
+      "slug": "traffmonetizer",
+      "name": "Traffmonetizer",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 6,
+      "website": "https://traffmonetizer.io",
+      "shortDescription": "Bandwidth sharing - works on VPS, token-based auth",
+      "signupUrl": "https://traffmonetizer.io/?aff=2111758",
+      "code": "2111758",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": "10% of every payout they request",
+      "residentialIp": false,
+      "devicesPerIp": 0,
+      "paymentMethods": [
+        "crypto",
+        "bank"
+      ],
+      "minimumPayout": "$10",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "macos",
+        "android"
+      ]
+    },
+    {
+      "slug": "unmineable",
+      "name": "unMineable (CPU mining, paid in your coin)",
+      "category": "mining",
+      "status": "beta",
+      "priority": null,
+      "website": "https://unmineable.com",
+      "shortDescription": "Mine with your CPU and get paid in the coin you choose",
+      "signupUrl": "https://unmineable.com/?ref=awk6-j1z0",
+      "code": "awk6-j1z0",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "Set per coin by unMineable (0.03 XMR on 2026-11-26)",
+      "docker": true,
+      "platforms": []
+    },
+    {
+      "slug": "uprock",
+      "name": "Uprock",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://uprock.com",
+      "shortDescription": "DePIN internet sharing - crypto payout, browser extension primary",
+      "signupUrl": "https://link.uprock.com/i/33e8492e",
+      "code": "33e8492e",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "250 UPT",
+      "docker": false,
+      "platforms": [
+        "browser-extension",
+        "android"
+      ]
+    },
+    {
+      "slug": "urnetwork",
+      "name": "URnetwork",
+      "category": "bandwidth",
+      "status": "active",
+      "priority": 14,
+      "website": "https://ur.io",
+      "shortDescription": "Decentralized VPN/bandwidth - email+password auth, JWT session in volume",
+      "signupUrl": "https://ur.io/c?bonus=1Q3G19",
+      "code": "1Q3G19",
+      "codeEntry": null,
+      "bonusReferee": "3 GiB a day of free UR data once you use at least 10 MiB through the app on 2 days within 90 days of joining; otherwise the referral ends",
+      "bonusReferrer": "3 GiB a day of free UR data per friend, up to 20 friends (data, not money)",
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": null,
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "macos",
+        "linux"
+      ]
+    },
+    {
+      "slug": "vast-ai",
+      "name": "Vast.ai",
+      "category": "compute",
+      "status": "active",
+      "priority": null,
+      "website": "https://vast.ai",
+      "shortDescription": "GPU marketplace - set your own prices, RTX 3090 ~$0.20-0.40/hr",
+      "signupUrl": "https://cloud.vast.ai/?ref_id=452772",
+      "code": "452772",
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": "3% of what referred renters spend, for the life of their account, as referral credits; up to 75% can be cashed out from a dedicated referral account",
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "wise",
+        "paypal",
+        "stripe"
+      ],
+      "minimumPayout": "$20",
+      "docker": false,
+      "platforms": [
+        "linux"
+      ]
+    },
+    {
+      "slug": "wipter",
+      "name": "Wipter",
+      "category": "depin",
+      "status": "active",
+      "priority": null,
+      "website": "https://wipter.com",
+      "shortDescription": "Bandwidth sharing - claims up to $1/GB, min payout $20",
+      "signupUrl": "https://wipter.com/register?via=FB1373FBDA",
+      "code": "FB1373FBDA",
+      "codeEntry": null,
+      "bonusReferee": "$5 sign-up bonus",
+      "bonusReferrer": "10% of their traffic earnings once they reach the payout minimum, for as many friends as you refer",
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "$20",
+      "docker": false,
+      "platforms": [
+        "windows",
+        "macos",
+        "linux",
+        "android"
+      ]
+    },
+    {
+      "slug": "wizardgain",
+      "name": "WizardGain",
+      "category": "bandwidth",
+      "status": "dead",
+      "priority": null,
+      "website": "https://wizardgain.com",
+      "shortDescription": "Bandwidth sharing - SITE GONE, domain has no name servers",
+      "signupUrl": "https://wizardgain.com",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": true,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "$5",
+      "docker": true,
+      "platforms": [
+        "docker",
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "slug": "xmrig",
+      "name": "XMRig (Monero CPU mining)",
+      "category": "mining",
+      "status": "beta",
+      "priority": null,
+      "website": "https://xmrig.com",
+      "shortDescription": "Mine Monero with your CPU and your choice of pool",
+      "signupUrl": "https://xmrig.com",
+      "code": null,
+      "codeEntry": null,
+      "bonusReferee": null,
+      "bonusReferrer": null,
+      "residentialIp": false,
+      "devicesPerIp": null,
+      "paymentMethods": [
+        "crypto"
+      ],
+      "minimumPayout": "0.003 XMR (MoneroOcean, after you lower it)",
+      "docker": true,
+      "platforms": []
+    }
+  ],
+  "stars": {
+    "web": 90,
+    "desktop": 4,
+    "android": 9,
+    "mcp": 3,
+    "ha": 3
+  },
+  "pulls": {
+    "ui": 93801,
+    "worker": 98982
+  },
+  "releases": {
+    "web": {
+      "tag": "v3.0.1",
+      "publishedAt": "2026-11-27T10:01:58Z",
+      "assets": []
+    },
+    "desktop": {
+      "tag": "v1.7.0",
+      "publishedAt": "2026-11-26T00:36:59Z",
+      "assets": [
+        {
+          "name": "CashPilot-Desktop-darwin-arm64.zip",
+          "size": 8022742
+        },
+        {
+          "name": "CashPilot-Desktop-linux-amd64.tar.gz",
+          "size": 8808997
+        },
+        {
+          "name": "CashPilot-Desktop-windows-amd64-setup.exe",
+          "size": 11027839
+        },
+        {
+          "name": "CashPilot-Desktop-windows-amd64.exe",
+          "size": 23287296
+        },
+        {
+          "name": "SHA256SUMS",
+          "size": 414
+        }
+      ]
+    },
+    "android": {
+      "tag": "v1.0.2",
+      "publishedAt": "2026-11-27T01:39:57Z",
+      "assets": [
+        {
+          "name": "app-release.aab",
+          "size": 5625467
+        },
+        {
+          "name": "app-release.apk",
+          "size": 2528614
+        }
+      ]
+    },
+    "mcp": {
+      "tag": "v0.4.0",
+      "publishedAt": "2026-11-27T02:32:21Z",
+      "assets": [
+        {
+          "name": "cashpilot-mcp_0.4.0_darwin_amd64.tar.gz",
+          "size": 4193891
+        },
+        {
+          "name": "cashpilot-mcp_0.4.0_darwin_arm64.tar.gz",
+          "size": 3803832
+        },
+        {
+          "name": "cashpilot-mcp_0.4.0_linux_amd64.tar.gz",
+          "size": 4030541
+        },
+        {
+          "name": "cashpilot-mcp_0.4.0_linux_arm64.tar.gz",
+          "size": 3649106
+        },
+        {
+          "name": "cashpilot-mcp_0.4.0_windows_amd64.zip",
+          "size": 4130536
+        },
+        {
+          "name": "cashpilot-mcp_0.4.0_windows_arm64.zip",
+          "size": 3693494
+        },
+        {
+          "name": "checksums.txt",
+          "size": 630
+        }
+      ]
+    }
+  },
+  "desktopSha256": {
+    "CashPilot-Desktop-darwin-arm64.zip": "f6da7f57b138e8fde392019a2a7c7d8e93bc9726d967e98ce4c64d8e4c3c19a1",
+    "CashPilot-Desktop-linux-amd64.tar.gz": "b52d89114e422bbfd798cfecfe74f0bb83d20f20d437dbb6147e0603defce41b",
+    "CashPilot-Desktop-windows-amd64-setup.exe": "eab95341665442311f6cdc681e6f896f8a4fd7368507c91a2901fa021b7b1f81",
+    "CashPilot-Desktop-windows-amd64.exe": "0d0d98075cb7a4911012eafaee05e0c72c00c5940a42ea4078c5fa6a8de68b85"
+  },
+  "images": {
+    "ui": "drumsergio/cashpilot:3.0",
+    "worker": "drumsergio/cashpilot-worker:3.0"
+  }
+}

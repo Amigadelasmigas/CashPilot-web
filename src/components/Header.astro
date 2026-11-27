@@ -1,0 +1,141 @@
+---
+import Logo from "./Logo.astro";
+import Icon from "./Icon.astro";
+import PlatformIcon from "./PlatformIcon.astro";
+import LanguagePicker from "./LanguagePicker.astro";
+import type { Translator } from "../i18n";
+import { docs, repo } from "../lib/links";
+
+interface Props {
+  t: Translator;
+  route: string;
+  stars: number;
+}
+const { t, route, stars } = Astro.props;
+---
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href={t.href("/")} aria-label={t("nav.home")}>
+      <Logo size={30} idSuffix="hdr" />
+      <span class="brand__name">CashPilot</span>
+    </a>
+    <nav class="site-nav" aria-label={t("nav.main")}>
+      <a class="site-nav__link site-nav__docs" href={docs.home}>{t("nav.docs")}</a>
+      <a class="site-nav__link site-nav__gh" href={repo.web}>
+        <PlatformIcon name="github" />
+        <span class="site-nav__gh-label">{t("nav.github")}</span>
+        <span class="site-nav__stars mono"><Icon name="star" />{t.num(stars)}<span class="visually-hidden"> {t("nav.stars")}</span></span>
+      </a>
+      <LanguagePicker t={t} route={route} />
+      <a class="btn btn--primary btn--sm" href={t.href("/download/")}>
+        <Icon name="download" />{t("nav.download")}
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgb(7 7 12 / 0.82);
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: var(--header-h);
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    flex: none;
+  }
+  .brand:hover {
+    color: var(--text);
+  }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .site-nav > :global(*),
+  .site-nav :global(svg) {
+    flex: none;
+  }
+  .site-nav__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 40px;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9688rem;
+    font-weight: 500;
+  }
+  .site-nav__link:hover {
+    color: var(--text);
+    background: var(--surface-2);
+  }
+  .site-nav__link :global(.platform-icon) {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+  .site-nav__stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.05rem 0.45rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+  .site-nav__stars :global(.icon) {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  @media (max-width: 760px) {
+    .site-nav__gh-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+  }
+  @media (max-width: 520px) {
+    .site-nav__docs,
+    .site-nav__stars {
+      display: none;
+    }
+    .brand__name {
+      font-size: 1.05rem;
+    }
+    .site-nav {
+      gap: 0.15rem;
+    }
+    .site-nav__link {
+      padding-inline: 0.55rem;
+    }
+  }
+  @media (max-width: 370px) {
+    .brand__name {
+      display: none;
+    }
+  }
+</style>

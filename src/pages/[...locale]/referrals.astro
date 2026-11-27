@@ -1,0 +1,242 @@
+---
+import Base from "../../layouts/Base.astro";
+import Icon from "../../components/Icon.astro";
+import Disclosure from "../../components/Disclosure.astro";
+import { localeFromPath, localeParams, useT } from "../../i18n";
+import { getData, isLive, isReferral } from "../../data";
+import { docs } from "../../lib/links";
+import { CATEGORY_ORDER, categoryIcon } from "../../lib/catalog";
+
+export const getStaticPaths = () => localeParams();
+const t = useT(localeFromPath(Astro.params.locale));
+const data = await getData();
+const referrals = data.services.filter((s) => isLive(s) && isReferral(s));
+const groups = CATEGORY_ORDER.map((key) => ({
+  key,
+  services: referrals.filter((s) => s.category === key),
+})).filter((g) => g.services.length > 0);
+---
+<Base t={t} route="/referrals/" title={t("referrals.metaTitle")} description={t("referrals.description")}>
+  <section class="page-hero">
+    <div class="container">
+      <h1>{t("referrals.title")}</h1>
+      <p>{t("referrals.lead")}</p>
+    </div>
+  </section>
+
+  <div class="container ref">
+    <section class="ref__how card" aria-labelledby="how-title">
+      <h2 id="how-title">{t("referrals.howTitle")}</h2>
+      <ul>
+        <li>{t("referrals.how1")}</li>
+        <li>{t("referrals.how2")}</li>
+        <li>{t("referrals.how3")}</li>
+        <li>{t("referrals.how4")}</li>
+      </ul>
+    </section>
+
+    <p class="ref__count">{t("referrals.count", { count: t.num(referrals.length), date: t.date(data.fetchedAt) })}</p>
+
+    <nav class="ref__toc" aria-label={t("referrals.toc")}>
+      <ul>
+        {
+          groups.map((g) => (
+            <li>
+              <a href={`#${g.key}`}>
+                {t(`categories.${g.key}`)} <span class="mono">{t.num(g.services.length)}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    {
+      groups.map((g) => (
+        <section class="ref__group" id={g.key} aria-labelledby={`h-${g.key}`}>
+          <h2 id={`h-${g.key}`}>
+            <Icon name={categoryIcon[g.key]!} />
+            {t(`categories.${g.key}`)}
+          </h2>
+          <Disclosure t={t} noLink />
+          <ul class="ref__list">
+            {g.services.map((s) => (
+              <li class="ref__item" id={`svc-${s.slug}`}>
+                <div class="ref__head">
+                  <h3>{s.name}</h3>
+                  <a class="ref__guide" href={docs.guide(s.slug)}>
+                    {t("referrals.guide")}
+                  </a>
+                </div>
+                <dl>
+                  {s.code && (
+                    <div>
+                      <dt>{t("referrals.code")}</dt>
+                      <dd>
+                        <code dir="ltr">{s.code}</code>
+                      </dd>
+                    </div>
+                  )}
+                  <div>
+                    <dt>{t("referrals.link")}</dt>
+                    <dd>
+                      <a class="url" href={s.signupUrl} rel="noopener" dir="ltr">
+                        {s.signupUrl}
+                      </a>
+                      {s.codeEntry && <p class="ref__note">{t("referrals.codeEntry", { code: s.codeEntry })}</p>}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>{t("referrals.website")}</dt>
+                    <dd>
+                      <a class="url" href={s.website} rel="noopener" dir="ltr">
+                        {s.website}
+                      </a>
+                    </dd>
+                  </div>
+                  {s.bonusReferee && (
+                    <div>
+                      <dt>{t("referrals.youGet")}</dt>
+                      <dd lang="en">{s.bonusReferee}</dd>
+                    </div>
+                  )}
+                  {s.bonusReferrer && (
+                    <div>
+                      <dt>{t("referrals.projectGets")}</dt>
+                      <dd lang="en">{s.bonusReferrer}</dd>
+                    </div>
+                  )}
+                </dl>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</Base>
+
+<style>
+  .ref {
+    padding-bottom: var(--section);
+  }
+  .ref__how {
+    max-width: 50rem;
+  }
+  .ref__how h2 {
+    font-size: 1.25rem;
+  }
+  .ref__how ul {
+    display: grid;
+    gap: 0.6rem;
+    margin: 1rem 0 0;
+    padding-inline-start: 1.2rem;
+    color: var(--muted);
+  }
+  .ref__how li::marker {
+    color: var(--accent);
+  }
+  .ref__count {
+    margin-top: 2rem;
+    color: var(--faint);
+    font-size: 0.9375rem;
+  }
+  .ref__toc ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .ref__toc a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 40px;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9375rem;
+  }
+  .ref__toc a:hover {
+    border-color: var(--accent);
+  }
+  .ref__toc .mono {
+    color: var(--accent);
+  }
+  .ref__group {
+    margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  .ref__group > h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+    margin-bottom: 1rem;
+  }
+  .ref__group > h2 :global(.icon) {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--accent);
+  }
+  .ref__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .ref__item {
+    padding: 1.2rem 1.3rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  .ref__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .ref__head h3 {
+    font-size: 1.15rem;
+  }
+  .ref__guide {
+    flex: none;
+    font-size: 0.875rem;
+  }
+  .ref__item dl {
+    display: grid;
+    gap: 0.65rem;
+    margin: 0.9rem 0 0;
+  }
+  .ref__item dt {
+    color: var(--faint);
+    font-size: 0.8125rem;
+  }
+  .ref__item dd {
+    margin: 0.1rem 0 0;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+  .url {
+    font-family: var(--font-mono);
+    font-size: 0.8438rem;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+  .ref__note {
+    margin-top: 0.35rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+  @media (max-width: 760px) {
+    .ref__list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

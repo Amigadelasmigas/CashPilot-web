@@ -1,0 +1,19 @@
+---
+// The referral note. It goes next to every block of provider links.
+import Icon from "./Icon.astro";
+import type { Translator } from "../i18n";
+
+interface Props {
+  t: Translator;
+  /** Hide the "How referrals work" link, for use on the referrals page itself. */
+  noLink?: boolean;
+}
+const { t, noLink = false } = Astro.props;
+---
+<p class="disclosure">
+  <Icon name="info" />
+  <span>
+    {t("disclosure.short")}{" "}
+    {!noLink && <a href={t.href("/referrals/")}>{t("disclosure.more")}</a>}
+  </span>
+</p>

@@ -1,0 +1,20 @@
+---
+// The CashPilot mark (app/static/favicon.svg in the CashPilot repo), inlined.
+import raw from "../assets/mark.svg?raw";
+interface Props {
+  size?: number;
+  idSuffix?: string;
+}
+const { size = 32, idSuffix = "h" } = Astro.props;
+// Strip the comment and the outer size, and give the gradient and mask ids a
+// suffix so two copies on one page do not share ids.
+const svg = raw
+  .replace(/<!--[\s\S]*?-->/g, "")
+  .replace(/<svg([^>]*?)\swidth="256" height="256"/, "<svg$1")
+  .replace(/role="img" aria-label="CashPilot"/, 'aria-hidden="true" focusable="false"')
+  .replace(/id="(\w+)"/g, `id="$1-${idSuffix}"`)
+  .replace(/url\(#(\w+)\)/g, `url(#$1-${idSuffix})`)
+  .replace(/href="#(\w+)"/g, `href="#$1-${idSuffix}"`)
+  .replace("<svg", `<svg width="${size}" height="${size}" class="logo-mark"`);
+---
+<Fragment set:html={svg} />

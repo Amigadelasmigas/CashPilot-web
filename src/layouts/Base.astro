@@ -1,0 +1,73 @@
+---
+import "@fontsource-variable/onest";
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import LangSuggest from "../components/LangSuggest.astro";
+import { AVAILABLE, localizedPath, type Translator } from "../i18n";
+import { SITE } from "../lib/links";
+import { getData } from "../data";
+
+interface Props {
+  t: Translator;
+  /** Route without the locale prefix, e.g. "/download/". */
+  route: string;
+  title: string;
+  description: string;
+  /** Set on pages that exist only in English, such as the 404 page. */
+  noAlternates?: boolean;
+  noindex?: boolean;
+}
+const { t, route, title, description, noAlternates = false, noindex = false } = Astro.props;
+const { locale } = t;
+const data = await getData();
+const canonical = new URL(localizedPath(locale, route), SITE).href;
+const fullTitle = title === t("meta.siteName") || title.startsWith("CashPilot") ? title : `${title} | ${t("meta.titleSuffix")}`;
+const ogImage = new URL("/og.png", SITE).href;
+---
+<!doctype html>
+<html lang={locale.code} dir={locale.dir} data-font={locale.font}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#07070c" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    {noindex && <meta name="robots" content="noindex" />}
+    {!noindex && <link rel="canonical" href={canonical} />}
+    {
+      !noAlternates &&
+        AVAILABLE.map((l) => <link rel="alternate" hreflang={l.code} href={new URL(localizedPath(l, route), SITE).href} />)
+    }
+    {!noAlternates && <link rel="alternate" hreflang="x-default" href={new URL(route, SITE).href} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="alternate" type="application/atom+xml" title="CashPilot releases" href="https://github.com/GeiserX/CashPilot/releases.atom" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CashPilot" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    {!noindex && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={t("meta.ogImageAlt")} />
+    <meta property="og:locale" content={locale.code.replace("-", "_")} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t("nav.skip")}</a>
+    <Header t={t} route={route} stars={data.stars.web} />
+    <LangSuggest t={t} route={route} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer t={t} />
+    <script>
+      import "../scripts/site.ts";
+    </script>
+  </body>
+</html>

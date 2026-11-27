@@ -1,0 +1,19 @@
+---
+// Platform logos from simple-icons (CC0). Windows is drawn here as four panes,
+// because simple-icons does not ship Microsoft logos.
+import { siApple, siLinux, siAndroid, siDocker, siRaspberrypi, siGithub, siHomeassistant } from "simple-icons";
+
+interface Props {
+  name: "windows" | "macos" | "linux" | "android" | "docker" | "pi" | "github" | "homeassistant";
+  class?: string;
+}
+const { name, class: cls } = Astro.props;
+const si = { macos: siApple, linux: siLinux, android: siAndroid, docker: siDocker, pi: siRaspberrypi, github: siGithub, homeassistant: siHomeassistant } as const;
+const path =
+  name === "windows"
+    ? "M2 3.5 10.6 2.3v8.3H2zM11.6 2.2 22 .8v9.8H11.6zM2 11.6h8.6v8.3L2 18.7zM11.6 11.6H22v9.7l-10.4-1.4z"
+    : si[name].path;
+---
+<svg class:list={["platform-icon", cls]} viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false">
+  <path d={path} />
+</svg>

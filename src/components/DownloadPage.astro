@@ -1,0 +1,834 @@
+---
+// /download (all systems, the visitor's own picked by script) and
+// /download/<os> (one system, shareable). Every button links straight to the
+// release file on GitHub.
+import QRCode from "qrcode";
+import Base from "../layouts/Base.astro";
+import Icon from "./Icon.astro";
+import PlatformIcon from "./PlatformIcon.astro";
+import CodeBlock from "./CodeBlock.astro";
+import Checksums from "./Checksums.astro";
+import type { Translator } from "../i18n";
+import { getData } from "../data";
+import { downloads, files, docs, repo, composeUrl, composeView } from "../lib/links";
+import { formatSize, bareVersion, OSES, type Os } from "../lib/catalog";
+
+
+interface Props {
+  t: Translator;
+  os?: Os;
+}
+const { t, os } = Astro.props;
+const data = await getData();
+const loc = t.locale.code;
+
+const desktop = data.releases.desktop;
+const android = data.releases.android;
+const web = data.releases.web;
+const size = (rel: typeof desktop, name: string) => {
+  const a = rel.assets.find((x) => x.name === name);
+  return a ? formatSize(a.size, loc) : null;
+};
+const info = (type: string, rel: typeof desktop, name: string) => {
+  const s = size(rel, name);
+  return s ? t("download.fileInfo", { type, size: s }) : type;
+};
+
+const qrSvg = await QRCode.toString(downloads.apk, {
+  type: "svg",
+  margin: 1,
+  errorCorrectionLevel: "M",
+  color: { dark: "#07070c", light: "#ffffff" },
+});
+
+const shown: readonly Os[] = os ? [os] : OSES;
+const route = os ? `/download/${os}/` : "/download/";
+const title = os ? t(`download.${os}.metaTitle`) : t("download.metaTitle");
+const tag = web.tag;
+const composeCmd = `curl -fsSLO ${composeUrl(tag)}\ndocker compose up -d`;
+const tokenCmd = `docker compose logs cashpilot-ui | grep -i "setup token"`;
+
+const homelab = [
+  { key: "unraid", url: docs.unraid },
+  { key: "truenas", url: docs.truenas },
+  { key: "casaos", url: docs.casaos },
+  { key: "pi", url: docs.arm },
+  { key: "fleet", url: docs.fleet },
+];
+
+const verifyCmd: Record<string, (f: string) => string> = {
+  windows: (f) => `Get-FileHash .\\${f} -Algorithm SHA256`,
+  macos: (f) => `shasum -a 256 ${f}`,
+  linux: (f) => `sha256sum ${f}`,
+};
+const checksumFiles: Record<string, string[]> = {
+  windows: [files.winInstaller, files.winPortable],
+  macos: [files.mac],
+  linux: [files.linux],
+};
+---
+<Base t={t} route={route} title={title} description={t("download.description")}>
+  <section class="page-hero dl-hero">
+    <div class="container">
+      <h1>{t("download.title")}</h1>
+      <p>{t("download.lead")}</p>
+    </div>
+  </section>
+
+  <div class="container dl" data-download data-os-page={os ?? ""}>
+    <nav aria-label={t("download.pickerLabel")}>
+      <ul class="tiles">
+        {
+          OSES.map((o) => (
+            <li>
+              <a class="tile" href={t.href(`/download/${o}/`)} data-os={o} aria-current={os === o ? "page" : undefined}>
+                <PlatformIcon name={o} />
+                <span class="tile__name">{t(`download.tiles.${o}.name`)}</span>
+                <span class="tile__hint">{t(`download.tiles.${o}.hint`)}</span>
+                <span class="tile__detected" hidden>
+                  {t("download.detected")}
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="panels">
+      {
+        shown.includes("windows") && (
+          <section class="panel" data-panel="windows" aria-labelledby="p-windows">
+            <div class="panel__main">
+              <div class="panel__head">
+                <PlatformIcon name="windows" />
+                <div>
+                  <h2 id="p-windows">{t("download.windows.title")}</h2>
+                  <p class="panel__version">{t("download.version", { version: bareVersion(desktop.tag) })}</p>
+                </div>
+              </div>
+              <div class="panel__buttons">
+                <div>
+                  <a class="btn btn--primary" href={downloads.winInstaller}>
+                    <Icon name="download" />
+                    {t("download.windows.installer")}
+                  </a>
+                  <p class="file-info">{info(t("download.windows.installerType"), desktop, files.winInstaller)}</p>
+                </div>
+                <div>
+                  <a class="btn btn--ghost" href={downloads.winPortable}>
+                    <Icon name="download" />
+                    {t("download.windows.portable")}
+                  </a>
+                  <p class="file-info">{info(t("download.windows.portableType"), desktop, files.winPortable)}</p>
+                </div>
+              </div>
+              <ul class="reqs">
+                <li>{t("download.windows.arch")}</li>
+                <li>{t("download.windows.requires")}</li>
+                <li>{t("download.runtime")}</li>
+              </ul>
+            </div>
+            <aside class="panel__side warn" aria-labelledby="warn-windows">
+              <h3 id="warn-windows">{t("download.windows.warnTitle")}</h3>
+              <p>{t("download.windows.warnText")}</p>
+            </aside>
+            <Checksums t={t} os="windows" files={checksumFiles.windows!} version={bareVersion(desktop.tag)} sums={data.desktopSha256} verify={verifyCmd.windows!} />
+          </section>
+        )
+      }
+      {
+        shown.includes("macos") && (
+          <section class="panel" data-panel="macos" aria-labelledby="p-macos">
+            <div class="panel__main">
+              <div class="panel__head">
+                <PlatformIcon name="macos" />
+                <div>
+                  <h2 id="p-macos">{t("download.macos.title")}</h2>
+                  <p class="panel__version">{t("download.version", { version: bareVersion(desktop.tag) })}</p>
+                </div>
+              </div>
+              <div class="panel__buttons">
+                <div>
+                  <a class="btn btn--primary" href={downloads.mac}>
+                    <Icon name="download" />
+                    {t("download.macos.button")}
+                  </a>
+                  <p class="file-info">{info(t("download.macos.type"), desktop, files.mac)}</p>
+                </div>
+              </div>
+              <ul class="reqs">
+                <li>{t("download.macos.arch")}</li>
+                <li>{t("download.macos.requires")}</li>
+                <li>{t("download.runtime")}</li>
+              </ul>
+            </div>
+            <aside class="panel__side">
+              <p set:html={t("download.macos.intel", { dockerUrl: t.href("/download/docker/") })} />
+            </aside>
+            <Checksums t={t} os="macos" files={checksumFiles.macos!} version={bareVersion(desktop.tag)} sums={data.desktopSha256} verify={verifyCmd.macos!} />
+          </section>
+        )
+      }
+      {
+        shown.includes("linux") && (
+          <section class="panel" data-panel="linux" aria-labelledby="p-linux">
+            <div class="panel__main">
+              <div class="panel__head">
+                <PlatformIcon name="linux" />
+                <div>
+                  <h2 id="p-linux">{t("download.linux.title")}</h2>
+                  <p class="panel__version">{t("download.version", { version: bareVersion(desktop.tag) })}</p>
+                </div>
+              </div>
+              <div class="panel__buttons">
+                <div>
+                  <a class="btn btn--primary" href={downloads.linux}>
+                    <Icon name="download" />
+                    {t("download.linux.button")}
+                  </a>
+                  <p class="file-info">{info(t("download.linux.type"), desktop, files.linux)}</p>
+                </div>
+              </div>
+              <ul class="reqs">
+                <li>{t("download.linux.arch")}</li>
+                <li>{t("download.linux.requires")}</li>
+                <li>{t("download.runtime")}</li>
+              </ul>
+            </div>
+            <aside class="panel__side">
+              <p set:html={t("download.linux.server", { dockerUrl: t.href("/download/docker/") })} />
+            </aside>
+            <Checksums t={t} os="linux" files={checksumFiles.linux!} version={bareVersion(desktop.tag)} sums={data.desktopSha256} verify={verifyCmd.linux!} />
+          </section>
+        )
+      }
+      {
+        shown.includes("android") && (
+          <section class="panel" data-panel="android" aria-labelledby="p-android">
+            <div class="panel__main">
+              <div class="panel__head">
+                <PlatformIcon name="android" />
+                <div>
+                  <h2 id="p-android">{t("download.android.title")}</h2>
+                  <p class="panel__version">{t("download.version", { version: bareVersion(android.tag) })}</p>
+                </div>
+              </div>
+              <p class="panel__lead">{t("download.android.what")}</p>
+              <div class="panel__buttons">
+                <div>
+                  <a class="btn btn--primary" href={downloads.apk}>
+                    <Icon name="download" />
+                    {t("download.android.button")}
+                  </a>
+                  <p class="file-info">{info(t("download.android.type"), android, files.apk)}</p>
+                </div>
+              </div>
+              <ul class="reqs">
+                <li>{t("download.android.requires")}</li>
+                <li>{t("download.android.stores")}</li>
+              </ul>
+            </div>
+            <aside class="panel__side qr">
+              <div class="qr__code" role="img" aria-label={t("download.android.qrAlt")} set:html={qrSvg} />
+              <p>{t("download.android.qr")}</p>
+            </aside>
+            <p class="panel__links">
+              <a href={repo.android}>{t("download.source")}</a>
+              <a href={`${repo.android}/releases`}>{t("download.allReleases")}</a>
+            </p>
+          </section>
+        )
+      }
+      {
+        shown.includes("docker") && (
+          <section class="panel panel--wide" data-panel="docker" aria-labelledby="p-docker">
+            <div class="panel__main">
+              <div class="panel__head">
+                <PlatformIcon name="docker" />
+                <div>
+                  <h2 id="p-docker">{t("download.docker.title")}</h2>
+                  <p class="panel__version">{t("download.version", { version: bareVersion(web.tag) })}</p>
+                </div>
+              </div>
+              <p class="panel__lead">{t("download.docker.lead")}</p>
+              <ol class="cmd-steps">
+                <li>
+                  <p>{t("download.docker.step1")}</p>
+                  <CodeBlock t={t} id={`cmd-compose-${os ?? "all"}`} code={composeCmd} />
+                  <p class="cmd-steps__src">
+                    <a href={composeView(tag)}>{t("download.docker.viewSource")}</a>
+                  </p>
+                </li>
+                <li>
+                  <p>{t("download.docker.step2")}</p>
+                  <CodeBlock t={t} id={`cmd-token-${os ?? "all"}`} code={tokenCmd} />
+                </li>
+                <li>
+                  <p set:html={t("download.docker.step3", { url: "<code>http://localhost:8080</code>" })} />
+                </li>
+              </ol>
+              <ul class="reqs">
+                <li>{t("download.docker.requires")}</li>
+                <li set:html={t("download.docker.images", { ui: `<code>${data.images.ui}</code>`, worker: `<code>${data.images.worker}</code>` })} />
+              </ul>
+              <p class="panel__links">
+                <a href={docs.gettingStarted}>{t("download.docker.guide")}</a>
+                <a href={repo.web}>{t("download.source")}</a>
+              </p>
+            </div>
+            <div class="homelab">
+              <h3>{t("download.homelab.title")}</h3>
+              <p class="muted">{t("download.homelab.lead")}</p>
+              <ol class="homelab__list">
+                {homelab.map((h, i) => (
+                  <li>
+                    <span class="homelab__num mono" aria-hidden="true">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h4>
+                        <a href={h.url}>{t(`download.homelab.items.${h.key}.title`)}</a>
+                      </h4>
+                      <p>{t(`download.homelab.items.${h.key}.text`)}</p>
+                      <dl>
+                        <div>
+                          <dt>{t("download.homelab.skills")}</dt>
+                          <dd>{t(`download.homelab.items.${h.key}.skills`)}</dd>
+                        </div>
+                        <div>
+                          <dt>{t("download.homelab.tools")}</dt>
+                          <dd>{t(`download.homelab.items.${h.key}.tools`)}</dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </section>
+        )
+      }
+    </div>
+
+    {!os && (
+      <p class="show-all" hidden>
+        <button class="btn btn--ghost btn--sm" type="button" data-show-all>
+          {t("download.showAll")}
+        </button>
+      </p>
+    )}
+
+    <section class="paths" aria-labelledby="paths-title">
+      <h2 id="paths-title">{t("download.paths.title")}</h2>
+      <ul class="paths__grid">
+        {
+          (
+            [
+              ["desktop", "/download/", true],
+              ["server", "/download/docker/", false],
+              ["android", "/download/android/", false],
+            ] as const
+          ).map(([k, href, rec]) => (
+            <li class:list={["card", "path", { "path--rec": rec }]}>
+              {rec && <p class="path__badge">{t("download.paths.recommended")}</p>}
+              <h3>
+                <a href={t.href(href)}>{t(`download.paths.${k}.title`)}</a>
+              </h3>
+              <p>{t(`download.paths.${k}.text`)}</p>
+              <dl>
+                <div>
+                  <dt>{t("download.paths.skills")}</dt>
+                  <dd>{t(`download.paths.${k}.skills`)}</dd>
+                </div>
+                <div>
+                  <dt>{t("download.paths.tools")}</dt>
+                  <dd>{t(`download.paths.${k}.tools`)}</dd>
+                </div>
+              </dl>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="more" aria-labelledby="more-title">
+      <h2 id="more-title">{t("download.more.title")}</h2>
+      <ul class="more__grid">
+        <li class="card more__item">
+          <Icon name="bot" />
+          <div>
+            <h3>
+              <a href={repo.mcp}>{t("download.more.mcp.title")}</a>
+            </h3>
+            <p>{t("download.more.mcp.text", { version: bareVersion(data.releases.mcp.tag) })}</p>
+          </div>
+        </li>
+        <li class="card more__item">
+          <PlatformIcon name="homeassistant" />
+          <div>
+            <h3>
+              <a href={repo.ha}>{t("download.more.ha.title")}</a>
+            </h3>
+            <p>{t("download.more.ha.text")}</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+</Base>
+
+<script>
+  // Pre-select the visitor's system on /download. Every tile stays a link to
+  // its own page, so nothing depends on this script.
+  const root = document.querySelector<HTMLElement>("[data-download]");
+  if (root && !root.dataset.osPage) {
+    const ua = navigator.userAgent;
+    const platform = ((navigator as any).userAgentData?.platform as string | undefined) ?? navigator.platform ?? "";
+    const os = /Android/i.test(ua)
+      ? "android"
+      : /iPhone|iPad|iPod/i.test(ua)
+        ? null
+        : /Win/i.test(platform) || /Windows/i.test(ua)
+          ? "windows"
+          : /Mac/i.test(platform) || /Macintosh/i.test(ua)
+            ? "macos"
+            : /Linux|X11|CrOS/i.test(platform + ua)
+              ? "linux"
+              : null;
+    if (os) {
+      const tile = root.querySelector<HTMLElement>(`.tile[data-os="${os}"]`);
+      tile?.classList.add("is-detected");
+      tile?.querySelector<HTMLElement>(".tile__detected")?.removeAttribute("hidden");
+      root.dataset.only = os;
+      const showAll = root.querySelector<HTMLElement>(".show-all");
+      if (showAll) showAll.hidden = false;
+      root.querySelector("[data-show-all]")?.addEventListener("click", () => {
+        delete root.dataset.only;
+        showAll!.hidden = true;
+      });
+    }
+  }
+</script>
+
+<style>
+  .dl-hero {
+    padding-bottom: 1.5rem;
+  }
+  .dl {
+    padding-bottom: var(--section);
+  }
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    height: 100%;
+    padding: 1.1rem 1.1rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    text-decoration: none;
+  }
+  .tile:hover {
+    border-color: var(--border-strong);
+    background: var(--surface-2);
+    color: var(--text);
+  }
+  .tile :global(.platform-icon) {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-bottom: 0.6rem;
+  }
+  .tile__name {
+    font-weight: 600;
+    font-size: 1.0625rem;
+  }
+  .tile__hint {
+    color: var(--faint);
+    font-size: 0.875rem;
+  }
+  .tile__detected {
+    position: absolute;
+    top: 0.85rem;
+    inset-inline-end: 0.85rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .tile[aria-current="page"],
+  .tile.is-detected {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .tile[aria-current="page"] :global(.platform-icon),
+  .tile.is-detected :global(.platform-icon) {
+    color: var(--accent);
+  }
+
+  .panels {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  [data-only="windows"] .panel:not([data-panel="windows"]),
+  [data-only="macos"] .panel:not([data-panel="macos"]),
+  [data-only="linux"] .panel:not([data-panel="linux"]),
+  [data-only="android"] .panel:not([data-panel="android"]),
+  [data-only="docker"] .panel:not([data-panel="docker"]) {
+    display: none;
+  }
+  .panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 1.5rem 2.5rem;
+    padding: clamp(1.4rem, 3vw, 2.25rem);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+  }
+  .panel--wide {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  }
+  .panel > * {
+    min-width: 0;
+  }
+  .panel__head {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .panel__head :global(.platform-icon) {
+    flex: none;
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+  .panel__head h2 {
+    font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  }
+  .panel__version {
+    margin-top: 0.15rem;
+    color: var(--faint);
+    font-size: 0.875rem;
+    font-family: var(--font-mono);
+  }
+  .panel__lead {
+    margin-top: 1.1rem;
+    color: var(--muted);
+  }
+  .panel__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .file-info {
+    margin-top: 0.45rem;
+    color: var(--faint);
+    font-size: 0.8125rem;
+    padding-inline-start: 0.4rem;
+  }
+  .reqs {
+    display: grid;
+    gap: 0.4rem;
+    margin: 1.4rem 0 0;
+    padding: 0;
+    list-style: none;
+    color: var(--muted);
+    font-size: 0.9688rem;
+  }
+  .reqs li {
+    position: relative;
+    padding-inline-start: 1.1rem;
+  }
+  .reqs li::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .panel__side {
+    align-self: start;
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-alt);
+    color: var(--muted);
+    font-size: 0.9688rem;
+  }
+  .panel__side h3 {
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .warn {
+    border-inline-start: 3px solid #f5b45a;
+  }
+  .qr {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .qr {
+      display: flex;
+    }
+  }
+  .qr__code {
+    width: 164px;
+    padding: 8px;
+    border-radius: 10px;
+    background: #fff;
+  }
+  .qr__code :global(svg) {
+    width: 100%;
+    height: auto;
+  }
+  .panel__links {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+  .panel__main .panel__links {
+    margin-top: 1.25rem;
+  }
+  .cmd-steps {
+    display: grid;
+    gap: 1.1rem;
+    margin: 1.5rem 0 0;
+    padding-inline-start: 1.25rem;
+    color: var(--muted);
+  }
+  .cmd-steps > li {
+    min-width: 0;
+  }
+  .cmd-steps li::marker {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .cmd-steps p {
+    margin-bottom: 0.5rem;
+  }
+  .cmd-steps__src {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
+  .homelab h3 {
+    font-size: 1.15rem;
+  }
+  .homelab > p {
+    margin-top: 0.25rem;
+    font-size: 0.9375rem;
+  }
+  .homelab__list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .homelab__list li {
+    display: flex;
+    gap: 0.85rem;
+    padding: 0.95rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-alt);
+  }
+  .homelab__num {
+    flex: none;
+    display: inline-grid;
+    place-items: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    border: 1px solid var(--border-strong);
+    color: var(--muted);
+    font-size: 0.8125rem;
+  }
+  .homelab h4 {
+    font-size: 1rem;
+  }
+  .homelab h4 a {
+    color: var(--text);
+  }
+  .homelab h4 a:hover {
+    color: var(--accent);
+  }
+  .homelab__list p {
+    margin-top: 0.2rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+  .homelab__list dl,
+  .path dl {
+    display: grid;
+    gap: 0.2rem;
+    margin: 0.6rem 0 0;
+    font-size: 0.875rem;
+  }
+  .homelab__list dl div,
+  .path dl div {
+    display: block;
+  }
+  .homelab__list dt,
+  .path dt {
+    display: inline;
+    color: var(--faint);
+  }
+  .homelab__list dt::after,
+  .path dt::after {
+    content: ": ";
+  }
+  .homelab__list dd,
+  .path dd {
+    display: inline;
+  }
+  .homelab__list dd,
+  .path dd {
+    margin: 0;
+    color: var(--muted);
+  }
+  .show-all {
+    margin-top: 1rem;
+  }
+  .paths,
+  .more {
+    margin-top: clamp(3rem, 6vw, 4.5rem);
+  }
+  .paths h2,
+  .more h2 {
+    font-size: clamp(1.5rem, 2.8vw, 2rem);
+    margin-bottom: 1.25rem;
+  }
+  .paths__grid,
+  .more__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .more__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .path {
+    position: relative;
+  }
+  .path--rec {
+    border-color: var(--accent-line);
+  }
+  .path__badge {
+    display: inline-block;
+    margin: 0 0 0.75rem !important;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    color: var(--accent) !important;
+    font-size: 0.8125rem !important;
+    font-weight: 600;
+  }
+  .path h3 a,
+  .more__item h3 a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .path h3 a:hover,
+  .more__item h3 a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .more__item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .more__item > :global(svg) {
+    flex: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    color: var(--accent);
+    margin-top: 0.1rem;
+  }
+  @media (max-width: 900px) {
+    .tiles {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .panel,
+    .panel--wide {
+      grid-template-columns: 1fr;
+    }
+    .paths__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 560px) {
+    .tiles {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+    .tiles li:last-child {
+      grid-column: 1 / -1;
+    }
+    .tile {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 0.7rem;
+      align-items: center;
+      align-content: center;
+      padding: 0.75rem 0.85rem;
+    }
+    .tile :global(.platform-icon) {
+      grid-row: 1 / 3;
+      width: 1.4rem;
+      height: 1.4rem;
+      margin: 0;
+    }
+    .tile__name {
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+    .tile__hint {
+      font-size: 0.8125rem;
+      line-height: 1.3;
+    }
+    .tile__detected {
+      position: static;
+      grid-column: 2;
+      justify-self: start;
+      margin-top: 0.35rem;
+      font-size: 0.6875rem;
+    }
+    .more__grid {
+      grid-template-columns: 1fr;
+    }
+    .panel__buttons > div,
+    .panel__buttons .btn {
+      width: 100%;
+    }
+  }
+</style>

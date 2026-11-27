@@ -1,0 +1,48 @@
+---
+import Base from "../../layouts/Base.astro";
+import { localeFromPath, localeParams, useT } from "../../i18n";
+import { docs, githubPrivacy, CONTACT_EMAIL } from "../../lib/links";
+
+export const getStaticPaths = () => localeParams();
+const t = useT(localeFromPath(Astro.params.locale));
+const vars = {
+  githubPrivacyUrl: githubPrivacy,
+  comparisonUrl: docs.comparisonOutbound,
+  email: `<a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>`,
+};
+const sections = [
+  ["site", ["p1", "p2", "p3"]],
+  ["apps", ["p1", "p2", "p3"]],
+  ["providers", ["p1"]],
+  ["contact", ["p1"]],
+] as const;
+---
+<Base t={t} route="/privacy/" title={t("privacy.metaTitle")} description={t("privacy.description")}>
+  <section class="page-hero">
+    <div class="container">
+      <h1>{t("privacy.title")}</h1>
+      <p>{t("privacy.lead")}</p>
+    </div>
+  </section>
+  <div class="container prose page-body">
+    {
+      sections.map(([key, paras]) => (
+        <section aria-labelledby={`h-${key}`}>
+          <h2 id={`h-${key}`}>{t(`privacy.${key}.title`)}</h2>
+          {paras.map((p) => (
+            <p set:html={t(`privacy.${key}.${p}`, vars)} />
+          ))}
+        </section>
+      ))
+    }
+  </div>
+</Base>
+
+<style>
+  .page-body {
+    padding-bottom: var(--section);
+  }
+  .page-body section:first-child h2 {
+    margin-top: 0.5rem;
+  }
+</style>

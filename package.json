@@ -1,0 +1,31 @@
+{
+  "name": "cashpilot-web",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "bun scripts/serve.ts",
+    "i18n:check": "bun scripts/i18n-check.ts",
+    "data:snapshot": "bun scripts/snapshot.ts",
+    "screenshots": "bun scripts/screenshots.ts",
+    "a11y": "bun scripts/a11y.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/onest": "^5.3.1",
+    "astro": "7.4.13",
+    "qrcode": "^1.5.4",
+    "simple-icons": "^16.38.1",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@axe-core/playwright": "^4.14.1",
+    "@types/bun": "^1.4.5",
+    "@types/qrcode": "^1.5.6",
+    "playwright": "^1.65.1",
+    "sharp": "^0.35.5",
+    "typescript": "^6"
+  }
+}

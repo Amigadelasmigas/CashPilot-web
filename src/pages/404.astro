@@ -1,0 +1,41 @@
+---
+// GitHub Pages serves one 404.html for every missing path, so this page is in
+// English and links to the home page and the downloads.
+import Base from "../layouts/Base.astro";
+import Icon from "../components/Icon.astro";
+import { DEFAULT_LOCALE, getLocale, useT } from "../i18n";
+
+const t = useT(getLocale(DEFAULT_LOCALE));
+---
+<Base t={t} route="/404/" title={t("notFound.title")} description={t("notFound.text")} noAlternates noindex>
+  <section class="page-hero nf">
+    <div class="container">
+      <p class="nf__code mono" aria-hidden="true">404</p>
+      <h1>{t("notFound.title")}</h1>
+      <p>{t("notFound.text")}</p>
+      <div class="nf__actions">
+        <a class="btn btn--primary" href="/">{t("notFound.home")}</a>
+        <a class="btn btn--ghost" href="/download/"><Icon name="download" />{t("notFound.download")}</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf {
+    padding-block: clamp(4rem, 12vw, 8rem);
+  }
+  .nf__code {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .nf__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+</style>

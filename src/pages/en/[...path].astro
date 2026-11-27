@@ -1,0 +1,30 @@
+---
+// English lives at the site root. /en/... redirects there, so links built
+// from a locale code still work. The page is a plain meta refresh with a
+// canonical link, which GitHub Pages can serve.
+import { OSES } from "../../lib/catalog";
+
+export function getStaticPaths() {
+  const routes = ["", "download", ...OSES.map((o) => `download/${o}`), "referrals", "privacy", "disclaimer"];
+  return routes.map((r) => ({ params: { path: r || undefined } }));
+}
+const target = Astro.params.path ? `/${Astro.params.path}/` : "/";
+---
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>CashPilot</title>
+    <meta name="robots" content="noindex" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href={new URL(target, "https://cashpilot.club").href} />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <style>
+      html { background: #07070c; color: #ededf4; font-family: system-ui, sans-serif; }
+      a { color: #fb7185; }
+    </style>
+  </head>
+  <body>
+    <p><a href={target}>{new URL(target, "https://cashpilot.club").href}</a></p>
+  </body>
+</html>
