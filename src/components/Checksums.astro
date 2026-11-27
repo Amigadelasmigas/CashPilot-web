@@ -1,7 +1,7 @@
 ---
 import CodeBlock from "./CodeBlock.astro";
 import type { Translator } from "../i18n";
-import { downloads, repo } from "../lib/links";
+import { repo } from "../lib/links";
 
 interface Props {
   t: Translator;
@@ -10,8 +10,10 @@ interface Props {
   version: string;
   sums: Record<string, string>;
   verify: (file: string) => string;
+  /** The SHA256SUMS file of the same release. */
+  sumsUrl: string;
 }
-const { t, os, files, version, sums, verify } = Astro.props;
+const { t, os, files, version, sums, verify, sumsUrl } = Astro.props;
 const rows = files.filter((f) => sums[f]);
 ---
 <details class="checksums">
@@ -32,7 +34,7 @@ const rows = files.filter((f) => sums[f]);
     <p>{t(`download.${os}.verify`)}</p>
     <CodeBlock t={t} id={`verify-${os}`} code={verify(files[0]!)} />
     <p class="checksums__links">
-      <a href={downloads.sums}>{t("download.checksums.all")}</a>
+      <a href={sumsUrl}>{t("download.checksums.all")}</a>
       <a href={repo.desktop}>{t("download.source")}</a>
       <a href={`${repo.desktop}/releases`}>{t("download.allReleases")}</a>
     </p>

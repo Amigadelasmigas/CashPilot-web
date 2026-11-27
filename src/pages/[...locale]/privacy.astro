@@ -1,12 +1,13 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { localeFromPath, localeParams, useT } from "../../i18n";
-import { docs, githubPrivacy, CONTACT_EMAIL } from "../../lib/links";
+import { docs, githubPrivacy, cloudflarePrivacy, CONTACT_EMAIL } from "../../lib/links";
 
 export const getStaticPaths = () => localeParams();
 const t = useT(localeFromPath(Astro.params.locale));
 const vars = {
   githubPrivacyUrl: githubPrivacy,
+  cloudflarePrivacyUrl: cloudflarePrivacy,
   comparisonUrl: docs.comparisonOutbound,
   email: `<a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>`,
 };
@@ -24,7 +25,8 @@ const sections = [
       <p>{t("privacy.lead")}</p>
     </div>
   </section>
-  <div class="container prose page-body">
+  <div class="container page-body">
+    <div class="prose">
     {
       sections.map(([key, paras]) => (
         <section aria-labelledby={`h-${key}`}>
@@ -35,6 +37,7 @@ const sections = [
         </section>
       ))
     }
+    </div>
   </div>
 </Base>
 

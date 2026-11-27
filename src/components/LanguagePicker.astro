@@ -10,7 +10,10 @@ interface Props {
 }
 const { t, route } = Astro.props;
 const current = t.locale;
+// With one language there is nothing to pick, so the picker is not shown.
+const show = AVAILABLE.length > 1;
 ---
+{show && (
 <details class="lang" data-lang-picker>
   <summary class="lang__button">
     <Icon name="globe" />
@@ -40,6 +43,7 @@ const current = t.locale;
     </ul>
   </div>
 </details>
+)}
 
 <style>
   .lang {

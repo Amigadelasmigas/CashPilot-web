@@ -36,22 +36,29 @@ for (const picker of document.querySelectorAll<HTMLDetailsElement>("[data-lang-p
   });
 }
 
-// Language suggestion: only when the visitor has not chosen yet, and only for
-// a language this page exists in. Never redirects.
+// Language suggestion. Never redirects. A visitor who picked a language before
+// is offered that language again when this page is in another one. A visitor
+// who never picked is offered their browser's language, when the page exists
+// in it.
 const suggest = document.querySelector<HTMLElement>("[data-lang-suggest]");
-if (suggest && !stored()) {
+if (suggest) {
   const offers = JSON.parse(suggest.querySelector("script")!.textContent || "{}") as Record<
     string,
     { href: string; dir: string; text: string; switch: string; dismiss: string }
   >;
   const current = suggest.dataset.current!;
-  const codes = [current, ...Object.keys(offers)];
-  const base = (c: string) => c.split("-")[0]!.toLowerCase();
-  // The visitor's first preference that this page exists in, exact match first.
+  const saved = stored();
   let match: string | undefined;
-  for (const pref of navigator.languages?.length ? navigator.languages : [navigator.language]) {
-    match = codes.find((c) => c.toLowerCase() === pref.toLowerCase()) ?? codes.find((c) => base(c) === base(pref));
-    if (match) break;
+  if (saved) {
+    match = saved in offers ? saved : undefined;
+  } else {
+    const codes = [current, ...Object.keys(offers)];
+    const base = (c: string) => c.split("-")[0]!.toLowerCase();
+    // The visitor's first preference that this page exists in, exact match first.
+    for (const pref of navigator.languages?.length ? navigator.languages : [navigator.language]) {
+      match = codes.find((c) => c.toLowerCase() === pref.toLowerCase()) ?? codes.find((c) => base(c) === base(pref));
+      if (match) break;
+    }
   }
   if (match && match !== current) {
     const chosen = match;

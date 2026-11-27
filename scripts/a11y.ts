@@ -6,7 +6,7 @@ import { startServer } from "./serve";
 
 const server = startServer(0);
 const base = `http://localhost:${server.port}`;
-const routes = ["/", "/download/", "/download/windows/", "/download/docker/", "/download/android/", "/referrals/", "/privacy/", "/disclaimer/", "/nope/"];
+const routes = (process.env.ROUTES?.split(",")) ?? ["/", "/download/", "/download/windows/", "/download/macos/", "/download/linux/", "/download/docker/", "/download/android/", "/referrals/", "/privacy/", "/disclaimer/", "/nope/"];
 const browser = await chromium.launch();
 let total = 0;
 for (const width of [1440, 390]) {

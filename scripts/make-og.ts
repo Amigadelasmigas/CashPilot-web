@@ -1,6 +1,6 @@
 // One-off: builds public/og.png (1200x630, the link preview image) and
-// public/apple-touch-icon.png from the logo and the dashboard screenshot.
-// Run again after a new dashboard screenshot: bun scripts/make-og.ts
+// public/apple-touch-icon.png from the logo and the hero dashboard crop.
+// Run again after a new hero crop: bun scripts/make-og.ts
 import sharp from "sharp";
 
 const W = 1200;
@@ -8,8 +8,8 @@ const H = 630;
 const mark = await Bun.file("src/assets/mark.svg").text();
 const icon = await Bun.file("public/favicon.svg").text();
 
-const shot = await sharp("src/assets/shots/dashboard.png")
-  .extract({ left: 0, top: 0, width: 2880, height: 1500 })
+// The hero crop: the dashboard working, without the "Needs attention" list.
+const shot = await sharp("src/assets/shots/hero.png")
   .resize(760)
   .png()
   .toBuffer();

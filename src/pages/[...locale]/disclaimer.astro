@@ -12,7 +12,8 @@ const t = useT(localeFromPath(Astro.params.locale));
       <p>{t("disclaimer.lead")}</p>
     </div>
   </section>
-  <div class="container prose page-body">
+  <div class="container page-body">
+    <div class="prose">
     {
       t.keys("disclaimer.items").map((k) => (
         <section aria-labelledby={`h-${k}`}>
@@ -21,6 +22,7 @@ const t = useT(localeFromPath(Astro.params.locale));
         </section>
       ))
     }
+    </div>
   </div>
 </Base>
 

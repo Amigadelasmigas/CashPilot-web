@@ -2,13 +2,17 @@
 //
 // Lists, per locale: a missing file, missing keys (the site shows English for
 // them), keys that English does not have, and strings whose {placeholders} or
-// HTML tags differ from English. Missing files and keys are reported but do
-// not fail, because the build falls back to English. Unknown keys, placeholder
-// and tag mismatches fail (exit 1). With --strict, missing ones fail too.
+// HTML tags differ from English. Unknown keys, placeholder and tag mismatches
+// always fail (exit 1).
+//
+// --strict: a locale that has a file must have every key. A missing key would
+//           show English inside a published translation. CI runs this.
+// --all:    every one of the 20 locales must have a file. Use it before launch.
 import { existsSync, readFileSync } from "node:fs";
 import { LOCALES } from "../src/i18n/locales";
 
 const strict = process.argv.includes("--strict");
+const all = process.argv.includes("--all");
 const dir = new URL("../src/i18n/", import.meta.url).pathname;
 
 type Flat = Map<string, string>;
@@ -25,14 +29,15 @@ const hrefs = (s: string) => [...s.matchAll(/href="([^"]*)"/g)].map((m) => m[1])
 
 const en = flatten(JSON.parse(readFileSync(`${dir}en.json`, "utf8")));
 let errors = 0;
-let gaps = 0;
+let missingFiles = 0;
+let missingKeys = 0;
 const summary: string[] = [];
 
 for (const loc of LOCALES) {
   if (loc.code === "en") continue;
   const file = `${dir}${loc.code}.json`;
   if (!existsSync(file)) {
-    gaps++;
+    missingFiles++;
     summary.push(`${loc.code.padEnd(6)} missing file (${en.size} keys fall back to English)`);
     continue;
   }
@@ -54,7 +59,7 @@ for (const loc of LOCALES) {
     if (tags(v) !== tags(ref)) bad.push(`${k}: HTML tags [${tags(v)}] vs English [${tags(ref)}]`);
     if (hrefs(v) !== hrefs(ref)) bad.push(`${k}: link targets differ from English`);
   }
-  gaps += missing.length;
+  missingKeys += missing.length;
   errors += extra.length + bad.length;
   summary.push(`${loc.code.padEnd(6)} ${dict.size - extra.length}/${en.size} keys, ${missing.length} missing, ${extra.length} unknown, ${bad.length} mismatched`);
   for (const k of missing) summary.push(`         missing  ${k}`);
@@ -64,5 +69,7 @@ for (const loc of LOCALES) {
 
 console.log(`en.json: ${en.size} keys\n`);
 console.log(summary.join("\n"));
-console.log(`\n${errors} error(s), ${gaps} missing file(s) or key(s)${strict ? " (strict)" : ""}`);
-process.exit(errors > 0 || (strict && gaps > 0) ? 1 : 0);
+const mode = [strict && "strict", all && "all"].filter(Boolean).join(", ");
+console.log(`\n${errors} error(s), ${missingKeys} missing key(s), ${missingFiles} missing file(s)${mode ? ` (${mode})` : ""}`);
+const fail = errors > 0 || ((strict || all) && missingKeys > 0) || (all && missingFiles > 0);
+process.exit(fail ? 1 : 0);

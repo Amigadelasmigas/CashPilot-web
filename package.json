@@ -10,9 +10,11 @@
     "i18n:check": "bun scripts/i18n-check.ts",
     "data:snapshot": "bun scripts/snapshot.ts",
     "screenshots": "bun scripts/screenshots.ts",
-    "a11y": "bun scripts/a11y.ts"
+    "a11y": "bun scripts/a11y.ts",
+    "overflow": "bun scripts/overflow.ts"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.6",
     "@fontsource-variable/onest": "^5.3.1",
     "astro": "7.4.13",
     "qrcode": "^1.5.4",

@@ -10,7 +10,7 @@ import CodeBlock from "./CodeBlock.astro";
 import Checksums from "./Checksums.astro";
 import type { Translator } from "../i18n";
 import { getData } from "../data";
-import { downloads, files, docs, repo, composeUrl, composeView } from "../lib/links";
+import { downloadsFor, files, docs, repo, composeUrl, composeView } from "../lib/links";
 import { formatSize, bareVersion, OSES, type Os } from "../lib/catalog";
 
 
@@ -25,6 +25,7 @@ const loc = t.locale.code;
 const desktop = data.releases.desktop;
 const android = data.releases.android;
 const web = data.releases.web;
+const dl = downloadsFor(desktop.tag, android.tag);
 const size = (rel: typeof desktop, name: string) => {
   const a = rel.assets.find((x) => x.name === name);
   return a ? formatSize(a.size, loc) : null;
@@ -34,7 +35,7 @@ const info = (type: string, rel: typeof desktop, name: string) => {
   return s ? t("download.fileInfo", { type, size: s }) : type;
 };
 
-const qrSvg = await QRCode.toString(downloads.apk, {
+const qrSvg = await QRCode.toString(dl.apk, {
   type: "svg",
   margin: 1,
   errorCorrectionLevel: "M",
@@ -76,11 +77,52 @@ const checksumFiles: Record<string, string[]> = {
   </section>
 
   <div class="container dl" data-download data-os-page={os ?? ""}>
-    <nav aria-label={t("download.pickerLabel")}>
+    <p class="ios-note" data-ios-note hidden>
+      <Icon name="info" />
+      <span>{t("download.ios")}</span>
+    </p>
+
+    {
+      !os && (
+        <section class="paths" id="paths" aria-labelledby="paths-title">
+          <h2 id="paths-title">{t("download.paths.title")}</h2>
+          <ul class="paths__grid">
+            {(
+              [
+                ["desktop", "/download/", true],
+                ["server", "/download/docker/", false],
+                ["android", "/download/android/", false],
+              ] as const
+            ).map(([k, href, rec]) => (
+              <li class:list={["path", { "path--rec": rec }]}>
+                <h3>
+                  {rec ? t(`download.paths.${k}.title`) : <a href={t.href(href)}>{t(`download.paths.${k}.title`)}</a>}
+                  {rec && <span class="path__badge">{t("download.paths.recommended")}</span>}
+                </h3>
+                <p>{t(`download.paths.${k}.text`)}</p>
+                <dl>
+                  <div>
+                    <dt>{t("download.paths.skills")}</dt>
+                    <dd>{t(`download.paths.${k}.skills`)}</dd>
+                  </div>
+                  <div>
+                    <dt>{t("download.paths.tools")}</dt>
+                    <dd>{t(`download.paths.${k}.tools`)}</dd>
+                  </div>
+                </dl>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <nav class="picker" aria-label={t("download.pickerLabel")}>
+      <p class="picker__label" aria-hidden="true">{t("download.otherSystems")}</p>
       <ul class="tiles">
         {
           OSES.map((o) => (
-            <li>
+            <li data-tile={o}>
               <a class="tile" href={t.href(`/download/${o}/`)} data-os={o} aria-current={os === o ? "page" : undefined}>
                 <PlatformIcon name={o} />
                 <span class="tile__name">{t(`download.tiles.${o}.name`)}</span>
@@ -109,14 +151,14 @@ const checksumFiles: Record<string, string[]> = {
               </div>
               <div class="panel__buttons">
                 <div>
-                  <a class="btn btn--primary" href={downloads.winInstaller}>
+                  <a class="btn btn--primary" href={dl.winInstaller}>
                     <Icon name="download" />
                     {t("download.windows.installer")}
                   </a>
                   <p class="file-info">{info(t("download.windows.installerType"), desktop, files.winInstaller)}</p>
                 </div>
                 <div>
-                  <a class="btn btn--ghost" href={downloads.winPortable}>
+                  <a class="btn btn--ghost" href={dl.winPortable}>
                     <Icon name="download" />
                     {t("download.windows.portable")}
                   </a>
@@ -133,7 +175,7 @@ const checksumFiles: Record<string, string[]> = {
               <h3 id="warn-windows">{t("download.windows.warnTitle")}</h3>
               <p>{t("download.windows.warnText")}</p>
             </aside>
-            <Checksums t={t} os="windows" files={checksumFiles.windows!} version={bareVersion(desktop.tag)} sums={data.desktopSha256} verify={verifyCmd.windows!} />
+            <Checksums t={t} os="windows" files={checksumFiles.windows!} version={bareVersion(desktop.tag)} sums={data.desktopSha256} verify={verifyCmd.windows!} sumsUrl={dl.sums} />
           </section>
         )
       }
@@ -150,7 +192,7 @@ const checksumFiles: Record<string, string[]> = {
               </div>
               <div class="panel__buttons">
                 <div>
-                  <a class="btn btn--primary" href={downloads.mac}>
+                  <a class="btn btn--primary" href={dl.mac}>
                     <Icon name="download" />
                     {t("download.macos.button")}
                   </a>
@@ -159,6 +201,7 @@ const checksumFiles: Record<string, string[]> = {
               </div>
               <ul class="reqs">
                 <li>{t("download.macos.arch")}</li>
+                <li>{t("download.macos.minimum")}</li>
                 <li>{t("download.macos.requires")}</li>
                 <li>{t("download.runtime")}</li>
               </ul>
@@ -166,7 +209,7 @@ const checksumFiles: Record<string, string[]> = {
             <aside class="panel__side">
               <p set:html={t("download.macos.intel", { dockerUrl: t.href("/download/docker/") })} />
             </aside>
-            <Checksums t={t} os="macos" files={checksumFiles.macos!} version={bareVersion(desktop.tag)} sums={data.desktopSha256} verify={verifyCmd.macos!} />
+            <Checksums t={t} os="macos" files={checksumFiles.macos!} version={bareVersion(desktop.tag)} sums={data.desktopSha256} verify={verifyCmd.macos!} sumsUrl={dl.sums} />
           </section>
         )
       }
@@ -183,7 +226,7 @@ const checksumFiles: Record<string, string[]> = {
               </div>
               <div class="panel__buttons">
                 <div>
-                  <a class="btn btn--primary" href={downloads.linux}>
+                  <a class="btn btn--primary" href={dl.linux}>
                     <Icon name="download" />
                     {t("download.linux.button")}
                   </a>
@@ -192,6 +235,7 @@ const checksumFiles: Record<string, string[]> = {
               </div>
               <ul class="reqs">
                 <li>{t("download.linux.arch")}</li>
+                <li>{t("download.linux.minimum")}</li>
                 <li>{t("download.linux.requires")}</li>
                 <li>{t("download.runtime")}</li>
               </ul>
@@ -199,7 +243,7 @@ const checksumFiles: Record<string, string[]> = {
             <aside class="panel__side">
               <p set:html={t("download.linux.server", { dockerUrl: t.href("/download/docker/") })} />
             </aside>
-            <Checksums t={t} os="linux" files={checksumFiles.linux!} version={bareVersion(desktop.tag)} sums={data.desktopSha256} verify={verifyCmd.linux!} />
+            <Checksums t={t} os="linux" files={checksumFiles.linux!} version={bareVersion(desktop.tag)} sums={data.desktopSha256} verify={verifyCmd.linux!} sumsUrl={dl.sums} />
           </section>
         )
       }
@@ -217,7 +261,7 @@ const checksumFiles: Record<string, string[]> = {
               <p class="panel__lead">{t("download.android.what")}</p>
               <div class="panel__buttons">
                 <div>
-                  <a class="btn btn--primary" href={downloads.apk}>
+                  <a class="btn btn--primary" href={dl.apk}>
                     <Icon name="download" />
                     {t("download.android.button")}
                   </a>
@@ -242,7 +286,7 @@ const checksumFiles: Record<string, string[]> = {
       }
       {
         shown.includes("docker") && (
-          <section class="panel panel--wide" data-panel="docker" aria-labelledby="p-docker">
+          <section class="panel panel--docker" data-panel="docker" aria-labelledby="p-docker">
             <div class="panel__main">
               <div class="panel__head">
                 <PlatformIcon name="docker" />
@@ -278,101 +322,67 @@ const checksumFiles: Record<string, string[]> = {
               </p>
             </div>
             <div class="homelab">
-              <h3>{t("download.homelab.title")}</h3>
+              <h3 id="homelab-title">{t("download.homelab.title")}</h3>
               <p class="muted">{t("download.homelab.lead")}</p>
-              <ol class="homelab__list">
-                {homelab.map((h, i) => (
-                  <li>
-                    <span class="homelab__num mono" aria-hidden="true">
-                      {i + 1}
-                    </span>
-                    <div>
-                      <h4>
-                        <a href={h.url}>{t(`download.homelab.items.${h.key}.title`)}</a>
-                      </h4>
-                      <p>{t(`download.homelab.items.${h.key}.text`)}</p>
-                      <dl>
-                        <div>
-                          <dt>{t("download.homelab.skills")}</dt>
-                          <dd>{t(`download.homelab.items.${h.key}.skills`)}</dd>
-                        </div>
-                        <div>
-                          <dt>{t("download.homelab.tools")}</dt>
-                          <dd>{t(`download.homelab.items.${h.key}.tools`)}</dd>
-                        </div>
-                      </dl>
-                    </div>
-                  </li>
-                ))}
-              </ol>
+              <div class="table-wrap homelab__table" role="region" aria-labelledby="homelab-title" tabindex="0">
+                <table>
+                  <caption class="visually-hidden">{t("download.homelab.caption")}</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">{t("download.homelab.option")}</th>
+                      <th scope="col">{t("download.homelab.skills")}</th>
+                      <th scope="col">{t("download.homelab.tools")}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {homelab.map((h) => (
+                      <tr>
+                        <th scope="row">
+                          <a href={h.url}>{t(`download.homelab.items.${h.key}.title`)}</a>
+                          <span class="homelab__text">{t(`download.homelab.items.${h.key}.text`)}</span>
+                        </th>
+                        <td data-label={t("download.homelab.skills")}>{t(`download.homelab.items.${h.key}.skills`)}</td>
+                        <td data-label={t("download.homelab.tools")}>{t(`download.homelab.items.${h.key}.tools`)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </section>
         )
       }
     </div>
 
-    {!os && (
-      <p class="show-all" hidden>
-        <button class="btn btn--ghost btn--sm" type="button" data-show-all>
-          {t("download.showAll")}
-        </button>
-      </p>
-    )}
-
-    <section class="paths" aria-labelledby="paths-title">
-      <h2 id="paths-title">{t("download.paths.title")}</h2>
-      <ul class="paths__grid">
-        {
-          (
-            [
-              ["desktop", "/download/", true],
-              ["server", "/download/docker/", false],
-              ["android", "/download/android/", false],
-            ] as const
-          ).map(([k, href, rec]) => (
-            <li class:list={["card", "path", { "path--rec": rec }]}>
-              {rec && <p class="path__badge">{t("download.paths.recommended")}</p>}
-              <h3>
-                <a href={t.href(href)}>{t(`download.paths.${k}.title`)}</a>
-              </h3>
-              <p>{t(`download.paths.${k}.text`)}</p>
-              <dl>
-                <div>
-                  <dt>{t("download.paths.skills")}</dt>
-                  <dd>{t(`download.paths.${k}.skills`)}</dd>
-                </div>
-                <div>
-                  <dt>{t("download.paths.tools")}</dt>
-                  <dd>{t(`download.paths.${k}.tools`)}</dd>
-                </div>
-              </dl>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
+    {
+      os && (
+        <p class="paths-hint">
+          {t("download.pathsHint")} <a href={`${t.href("/download/")}#paths`}>{t("download.pathsLink")}</a>
+        </p>
+      )
+    }
 
     <section class="more" aria-labelledby="more-title">
       <h2 id="more-title">{t("download.more.title")}</h2>
       <ul class="more__grid">
-        <li class="card more__item">
-          <Icon name="bot" />
-          <div>
-            <h3>
-              <a href={repo.mcp}>{t("download.more.mcp.title")}</a>
-            </h3>
-            <p>{t("download.more.mcp.text", { version: bareVersion(data.releases.mcp.tag) })}</p>
-          </div>
-        </li>
-        <li class="card more__item">
-          <PlatformIcon name="homeassistant" />
-          <div>
-            <h3>
-              <a href={repo.ha}>{t("download.more.ha.title")}</a>
-            </h3>
-            <p>{t("download.more.ha.text")}</p>
-          </div>
-        </li>
+        {(
+          [
+            ["mcp", repo.mcp, "bot", { version: bareVersion(data.releases.mcp.tag) }],
+            ["ha", repo.ha, "home", undefined],
+          ] as const
+        ).map(([k, href, icon, vars]) => (
+          <li>
+            <a class="more__item" href={href}>
+              <Icon name={icon} />
+              <span class="more__body">
+                <span class="more__title">
+                  {t(`download.more.${k}.title`)} <Icon name="arrow" class="more__arrow" />
+                </span>
+                <span class="more__text">{t(`download.more.${k}.text`, vars)}</span>
+              </span>
+            </a>
+          </li>
+        ))}
       </ul>
     </section>
   </div>
@@ -385,9 +395,11 @@ const checksumFiles: Record<string, string[]> = {
   if (root && !root.dataset.osPage) {
     const ua = navigator.userAgent;
     const platform = ((navigator as any).userAgentData?.platform as string | undefined) ?? navigator.platform ?? "";
+    // iPadOS reports itself as a Mac; a touch screen gives it away.
+    const ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
     const os = /Android/i.test(ua)
       ? "android"
-      : /iPhone|iPad|iPod/i.test(ua)
+      : ios
         ? null
         : /Win/i.test(platform) || /Windows/i.test(ua)
           ? "windows"
@@ -396,17 +408,12 @@ const checksumFiles: Record<string, string[]> = {
             : /Linux|X11|CrOS/i.test(platform + ua)
               ? "linux"
               : null;
+    if (ios) root.querySelector("[data-ios-note]")?.removeAttribute("hidden");
     if (os) {
       const tile = root.querySelector<HTMLElement>(`.tile[data-os="${os}"]`);
       tile?.classList.add("is-detected");
       tile?.querySelector<HTMLElement>(".tile__detected")?.removeAttribute("hidden");
       root.dataset.only = os;
-      const showAll = root.querySelector<HTMLElement>(".show-all");
-      if (showAll) showAll.hidden = false;
-      root.querySelector("[data-show-all]")?.addEventListener("click", () => {
-        delete root.dataset.only;
-        showAll!.hidden = true;
-      });
     }
   }
 </script>
@@ -416,7 +423,109 @@ const checksumFiles: Record<string, string[]> = {
     padding-bottom: 1.5rem;
   }
   .dl {
+    display: flex;
+    flex-direction: column;
     padding-bottom: var(--section);
+  }
+
+  /* Which one do I need: above the tiles on /download/. */
+  .paths {
+    margin-bottom: 2rem;
+  }
+  .paths h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.9rem;
+  }
+  .paths__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .path {
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-alt);
+  }
+  .path--rec {
+    border-color: var(--accent-line);
+  }
+  .path h3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3rem 0.6rem;
+    font-size: 1.0625rem;
+  }
+  .path h3 a {
+    color: var(--text);
+  }
+  .path h3 a:hover {
+    color: var(--accent);
+  }
+  .path__badge {
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+  .path p {
+    margin-top: 0.35rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+  .path dl {
+    display: grid;
+    gap: 0.15rem;
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+  }
+  .path dt {
+    display: inline;
+    color: var(--faint);
+  }
+  .path dt::after {
+    content: ": ";
+  }
+  .path dd {
+    display: inline;
+    margin: 0;
+    color: var(--muted);
+  }
+  .paths-hint {
+    margin-top: 2rem;
+    color: var(--muted);
+  }
+
+  .ios-note {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-inline-start: 3px solid var(--accent);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text);
+  }
+  .ios-note :global(.icon) {
+    flex: none;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.2rem;
+    color: var(--accent);
+  }
+
+  /* System tiles */
+  .picker__label {
+    display: none;
   }
   .tiles {
     display: grid;
@@ -458,6 +567,7 @@ const checksumFiles: Record<string, string[]> = {
     color: var(--faint);
     font-size: 0.875rem;
   }
+  /* The badge never takes space in the tile, at any width. */
   .tile__detected {
     position: absolute;
     top: 0.85rem;
@@ -468,6 +578,7 @@ const checksumFiles: Record<string, string[]> = {
     color: var(--accent-ink);
     font-size: 0.75rem;
     font-weight: 600;
+    line-height: 1.4;
   }
   .tile[aria-current="page"],
   .tile.is-detected {
@@ -479,6 +590,7 @@ const checksumFiles: Record<string, string[]> = {
     color: var(--accent);
   }
 
+  /* Panels */
   .panels {
     display: grid;
     gap: 1.25rem;
@@ -500,8 +612,11 @@ const checksumFiles: Record<string, string[]> = {
     border-radius: 18px;
     background: var(--surface);
   }
-  .panel--wide {
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  .panel--docker {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .panel--docker .panel__main {
+    max-width: 52rem;
   }
   .panel > * {
     min-width: 0;
@@ -523,7 +638,7 @@ const checksumFiles: Record<string, string[]> = {
     margin-top: 0.15rem;
     color: var(--faint);
     font-size: 0.875rem;
-    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
   }
   .panel__lead {
     margin-top: 1.1rem;
@@ -539,7 +654,6 @@ const checksumFiles: Record<string, string[]> = {
     margin-top: 0.45rem;
     color: var(--faint);
     font-size: 0.8125rem;
-    padding-inline-start: 0.4rem;
   }
   .reqs {
     display: grid;
@@ -634,6 +748,12 @@ const checksumFiles: Record<string, string[]> = {
     margin-top: 0.5rem;
     font-size: 0.875rem;
   }
+
+  /* Home server installs: a compact table under the steps. */
+  .homelab {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
   .homelab h3 {
     font-size: 1.15rem;
   }
@@ -641,148 +761,194 @@ const checksumFiles: Record<string, string[]> = {
     margin-top: 0.25rem;
     font-size: 0.9375rem;
   }
-  .homelab__list {
-    display: grid;
-    gap: 0.75rem;
-    margin: 1rem 0 0;
-    padding: 0;
-    list-style: none;
-  }
-  .homelab__list li {
-    display: flex;
-    gap: 0.85rem;
-    padding: 0.95rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
+  .homelab__table {
+    margin-top: 1rem;
     background: var(--bg-alt);
   }
-  .homelab__num {
-    flex: none;
-    display: inline-grid;
-    place-items: center;
-    width: 1.6rem;
-    height: 1.6rem;
-    border-radius: 50%;
-    border: 1px solid var(--border-strong);
-    color: var(--muted);
-    font-size: 0.8125rem;
-  }
-  .homelab h4 {
-    font-size: 1rem;
-  }
-  .homelab h4 a {
-    color: var(--text);
-  }
-  .homelab h4 a:hover {
-    color: var(--accent);
-  }
-  .homelab__list p {
-    margin-top: 0.2rem;
-    color: var(--muted);
+  .homelab__table th,
+  .homelab__table td {
+    padding: 0.7rem 0.9rem;
     font-size: 0.9375rem;
   }
-  .homelab__list dl,
-  .path dl {
-    display: grid;
-    gap: 0.2rem;
-    margin: 0.6rem 0 0;
-    font-size: 0.875rem;
-  }
-  .homelab__list dl div,
-  .path dl div {
-    display: block;
-  }
-  .homelab__list dt,
-  .path dt {
-    display: inline;
-    color: var(--faint);
-  }
-  .homelab__list dt::after,
-  .path dt::after {
-    content: ": ";
-  }
-  .homelab__list dd,
-  .path dd {
-    display: inline;
-  }
-  .homelab__list dd,
-  .path dd {
-    margin: 0;
+  .homelab__table td {
     color: var(--muted);
   }
-  .show-all {
-    margin-top: 1rem;
+  .homelab__table tbody th a {
+    color: var(--text);
+    font-weight: 600;
   }
-  .paths,
+  .homelab__table tbody th a:hover {
+    color: var(--accent);
+  }
+  .homelab__text {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  /* More ways to connect: the whole card is the link. */
   .more {
     margin-top: clamp(3rem, 6vw, 4.5rem);
   }
-  .paths h2,
   .more h2 {
     font-size: clamp(1.5rem, 2.8vw, 2rem);
     margin-bottom: 1.25rem;
   }
-  .paths__grid,
   .more__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-  .more__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .path {
-    position: relative;
-  }
-  .path--rec {
-    border-color: var(--accent-line);
-  }
-  .path__badge {
-    display: inline-block;
-    margin: 0 0 0.75rem !important;
-    padding: 0.15rem 0.6rem;
-    border-radius: 999px;
-    background: var(--accent-soft);
-    border: 1px solid var(--accent-line);
-    color: var(--accent) !important;
-    font-size: 0.8125rem !important;
-    font-weight: 600;
-  }
-  .path h3 a,
-  .more__item h3 a {
-    color: var(--text);
-    text-decoration: none;
-  }
-  .path h3 a:hover,
-  .more__item h3 a:hover {
-    color: var(--accent);
-    text-decoration: underline;
   }
   .more__item {
     display: flex;
     gap: 1rem;
     align-items: flex-start;
+    height: 100%;
+    padding: 1.4rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    text-decoration: none;
   }
-  .more__item > :global(svg) {
+  .more__item:hover {
+    border-color: var(--accent);
+    background: var(--surface-2);
+    color: var(--text);
+  }
+  .more__item > :global(.icon) {
     flex: none;
     width: 1.6rem;
     height: 1.6rem;
     color: var(--accent);
     margin-top: 0.1rem;
   }
+  .more__body {
+    display: grid;
+    gap: 0.4rem;
+  }
+  .more__title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .more__title :global(.more__arrow) {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: -0.12em;
+    color: var(--accent);
+  }
+  :global([dir="rtl"]) .more__title :global(.more__arrow) {
+    transform: scaleX(-1);
+  }
+  .more__text {
+    color: var(--muted);
+  }
+
   @media (max-width: 900px) {
     .tiles {
       grid-template-columns: repeat(3, 1fr);
     }
-    .panel,
-    .panel--wide {
+    .panel {
       grid-template-columns: 1fr;
     }
     .paths__grid {
       grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 640px) {
+    /* A phone with its system detected: that system's panel first, then the
+       other systems as one row of small chips, then the guide. */
+    .dl[data-only] .panels {
+      order: -1;
+      margin-top: 0;
+    }
+    .dl[data-only] .picker {
+      margin-top: 1.5rem;
+    }
+    .dl[data-only] .paths {
+      order: 1;
+      margin: 2rem 0 0;
+    }
+    .dl[data-only] .picker__label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--faint);
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    .dl[data-only] .tiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .dl[data-only] .tile {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.45rem;
+      min-height: 40px;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+    }
+    .dl[data-only] .tile :global(.platform-icon) {
+      width: 1.1rem;
+      height: 1.1rem;
+      margin: 0;
+    }
+    .dl[data-only] .tile__name {
+      font-size: 0.9375rem;
+    }
+    .dl[data-only] .tile__hint,
+    .dl[data-only] .tile__detected {
+      display: none;
+    }
+    .dl[data-only="windows"] [data-tile="windows"],
+    .dl[data-only="macos"] [data-tile="macos"],
+    .dl[data-only="linux"] [data-tile="linux"],
+    .dl[data-only="android"] [data-tile="android"],
+    .dl[data-only="docker"] [data-tile="docker"] {
+      display: none;
+    }
+    /* Home server installs as one card per option. */
+    .homelab__table {
+      border: 0;
+      background: none;
+      overflow: visible;
+    }
+    .homelab__table thead {
+      display: none;
+    }
+    .homelab__table table,
+    .homelab__table tbody,
+    .homelab__table tr,
+    .homelab__table th,
+    .homelab__table td {
+      display: block;
+    }
+    .homelab__table tr {
+      margin-bottom: 0.6rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-alt);
+    }
+    .homelab__table tbody th,
+    .homelab__table td {
+      padding: 0;
+      border: 0;
+    }
+    .homelab__table td {
+      margin-top: 0.35rem;
+      font-size: 0.875rem;
+    }
+    .homelab__table td::before {
+      content: attr(data-label) ": ";
+      color: var(--faint);
     }
   }
   @media (max-width: 560px) {
@@ -816,11 +982,10 @@ const checksumFiles: Record<string, string[]> = {
       font-size: 0.8125rem;
       line-height: 1.3;
     }
+    /* On the tile border, so it never pushes the text. */
     .tile__detected {
-      position: static;
-      grid-column: 2;
-      justify-self: start;
-      margin-top: 0.35rem;
+      top: -0.6rem;
+      inset-inline-end: 0.6rem;
       font-size: 0.6875rem;
     }
     .more__grid {

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T12:10:21.531Z",
+  "fetchedAt": "2026-11-27T13:20:08.808Z",
   "services": [
     {
       "slug": "2miners-etc",
@@ -1543,8 +1543,8 @@
     "ha": 3
   },
   "pulls": {
-    "ui": 93801,
-    "worker": 98982
+    "ui": 93824,
+    "worker": 99002
   },
   "releases": {
     "web": {
@@ -1636,5 +1636,6 @@
   "images": {
     "ui": "drumsergio/cashpilot:3.0",
     "worker": "drumsergio/cashpilot-worker:3.0"
-  }
+  },
+  "agentsDoc": false
 }

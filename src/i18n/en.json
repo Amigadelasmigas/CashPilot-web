@@ -27,8 +27,7 @@
     "yes": "Yes",
     "no": "No",
     "notStated": "Not stated",
-    "beta": "beta",
-    "newWindow": "opens on GitHub"
+    "noLimit": "No limit"
   },
   "disclosure": {
     "short": "If you sign up through one of these links, the provider may pay the CashPilot project a reward. It does not come out of your earnings.",
@@ -44,7 +43,8 @@
       "download": "Download",
       "selfhost": "Self-host with Docker",
       "expect": "CashPilot does not pay you. The providers do. Earnings depend on your country, connection and hardware.",
-      "imageAlt": "The CashPilot dashboard: the total balance, earnings today and this month, a list of what needs attention, and where each service runs."
+      "imageAlt": "The CashPilot dashboard: the balance, the earnings today and this month, the services on each machine, and the earnings per day.",
+      "imageAltMobile": "The CashPilot dashboard on a phone: the balance, and the earnings today and this month."
     },
     "stats": {
       "label": "CashPilot in numbers",
@@ -72,7 +72,7 @@
         },
         "pick": {
           "title": "Pick your services",
-          "text": "Choose from the catalog. Sign up with the provider, paste your login, and CashPilot starts the service in its own container."
+          "text": "Choose from the catalog, sign up with the provider and paste your login. For services with a Docker image, CashPilot starts it in its own container. For the others it reads your balance."
         },
         "watch": {
           "title": "Watch every payout",
@@ -82,7 +82,6 @@
     },
     "categories": {
       "title": "{count} services in five groups",
-      "lead": "The catalog is built from the CashPilot repository on every update of this site.",
       "count": "{count} services",
       "bandwidth": {
         "name": "Bandwidth sharing",
@@ -103,38 +102,34 @@
       "mining": {
         "name": "Mining",
         "text": "Mine with your CPU or GPU, and see ASIC miners on your network. In beta."
+      },
+      "all": {
+        "name": "All {count} in the docs",
+        "text": "A setup guide for each service, with what it needs."
       }
     },
     "tour": {
       "title": "A look inside",
-      "lead": "Real screens from the app, with demo data.",
-      "dashboard": {
-        "title": "Dashboard",
-        "text": "Your balance, today's earnings and what needs attention, on one screen.",
-        "alt": "The dashboard with the balance, earnings today and this month, and a list of problems to fix."
-      },
+      "lead": "Real screens from the apps, with demo data. Select a screen to see all of it.",
       "fleet": {
         "title": "Fleet",
-        "text": "Every machine, the services it runs, and what it earned last month.",
-        "alt": "The Fleet page with five machines, their systems, their services and their running costs."
+        "text": "Every machine, its system, and when it last reported. A machine that stops reporting turns red.",
+        "alt": "The Fleet page: five machines with their systems, versions and when each one last reported. One machine is offline."
       },
       "catalog": {
         "title": "Catalog",
-        "text": "Every supported service, with what it needs and where it runs.",
-        "alt": "The Catalog page with services, the systems they run on and what each one needs."
+        "text": "Every supported service, with a filter by group.",
+        "alt": "The Catalog page: the group filter and the services running in your fleet, each with its kind."
       },
       "payouts": {
         "title": "Payouts",
-        "text": "Where each service pays out, and which node data you must back up.",
-        "alt": "The Payouts page with the deployed services, where they run and their payout model."
-      },
-      "apps": {
-        "title": "On your desktop and on your phone"
+        "text": "Which node data you must back up, and where each service pays out.",
+        "alt": "The Payouts page: a box that asks you to back up the MystNodes identity, which exists only on one machine's disk."
       },
       "desktop": {
         "title": "Desktop app",
         "text": "The full dashboard in a window on Windows, macOS or Linux. It can also join a CashPilot server you already run.",
-        "alt": "CashPilot Desktop on macOS, showing the balance, earnings per day and the services table."
+        "alt": "CashPilot Desktop on macOS, showing the balance and the earnings today and this month."
       },
       "android": {
         "title": "Android companion",
@@ -172,11 +167,11 @@
       },
       "containers": {
         "title": "Each service in its own container",
-        "text": "Every service runs apart from the others, with its extra rights dropped and a limit on its processes."
+        "text": "Every service CashPilot starts runs apart from the others, with its extra rights dropped and a limit on its processes."
       },
       "lan": {
         "title": "Kept off your home network",
-        "text": "On a new install, the services cannot reach your LAN, your router or the machine they run on."
+        "text": "On a new Docker install, the services it starts cannot reach your LAN, your router or the machine they run on. <a href=\"{securityUrl}\">Protecting your home network</a>."
       },
       "stop": {
         "title": "Stop anything at any time",
@@ -216,11 +211,10 @@
     },
     "services": {
       "title": "Popular services",
-      "lead": "A few of the services CashPilot can start for you. The docs list all of them, with a guide for each.",
+      "lead": "A few services from each group. The docs list all of them, with a guide for each.",
       "caption": "Popular services and what they need",
       "col": {
         "service": "Service",
-        "category": "Type",
         "homeIp": "Home IP needed",
         "devicesPerIp": "Devices per IP",
         "payout": "Payout",
@@ -228,10 +222,11 @@
       },
       "signup": "Sign up",
       "signupLabel": "Sign up for {name} (referral link)",
-      "guide": "Guide",
+      "signupLabelPlain": "Sign up for {name}",
       "guideLabel": "CashPilot guide for {name}",
       "all": "All {count} services in the docs",
-      "referrals": "All referral links"
+      "referrals": "All referral links",
+      "notStatedNote": "– means the catalog does not say."
     },
     "compare": {
       "title": "How CashPilot compares",
@@ -272,7 +267,7 @@
         },
         "safe": {
           "q": "Is it safe?",
-          "a": "Bandwidth services let other people's traffic use your IP address, so read each provider's terms first. CashPilot runs each service in its own container and, on a new install, keeps it off your home network. Read <a href=\"{securityUrl}\">Protecting your home network</a> before you start."
+          "a": "Bandwidth services let other people's traffic use your IP address, so read each provider's terms first. CashPilot runs each service it starts in its own container and, on a new Docker install, keeps it off your home network. Read <a href=\"{securityUrl}\">Protecting your home network</a> before you start."
         },
         "earn": {
           "q": "How much will I earn?",
@@ -284,7 +279,7 @@
         },
         "docker": {
           "q": "Do I need Docker?",
-          "a": "Yes, because the services run in containers. The desktop app works with Docker or Podman, and its setup wizard helps you install Docker. The Android app does not need Docker, but it reports to a CashPilot server or desktop app."
+          "a": "Yes, for the services CashPilot starts, because they run in containers. The desktop app works with Docker or Podman, and its setup wizard helps you install Docker. The Android app does not need Docker, but it reports to a CashPilot server or desktop app."
         },
         "pi": {
           "q": "Does it run on a Raspberry Pi?",
@@ -292,7 +287,7 @@
         },
         "data": {
           "q": "Does the CashPilot project see my logins or earnings?",
-          "a": "No. CashPilot runs on your machines and sends nothing to the project. Your logins stay encrypted in your own CashPilot. <a href=\"{privacyUrl}\">Privacy</a>."
+          "a": "No. CashPilot runs on your machines and sends nothing to the project. Your logins stay in your own CashPilot, encrypted in its database. <a href=\"{privacyUrl}\">Privacy</a>."
         }
       }
     },
@@ -311,7 +306,10 @@
     "lead": "Pick your system. Every download is free. No account, no email, no sign-up.",
     "pickerLabel": "Choose your system",
     "detected": "Your system",
-    "showAll": "Show all systems",
+    "otherSystems": "Other systems",
+    "ios": "There is no iPhone app. Install the desktop app on a computer, or run the server, then open the dashboard in Safari.",
+    "pathsHint": "Not sure which one you need?",
+    "pathsLink": "Compare the options",
     "fileInfo": "{type}, {size}",
     "version": "Version {version}",
     "source": "Source code",
@@ -347,7 +345,7 @@
       "portable": "Portable version",
       "portableType": "Portable app (.exe), no install",
       "arch": "64-bit (x64). Most PCs are 64-bit.",
-      "requires": "Needs Windows 10 (22H2) or Windows 11.",
+      "requires": "Needs Windows 10 22H2, or Windows 11 23H2 or newer.",
       "warnTitle": "Windows or your antivirus warns you?",
       "warnText": "The Windows app is not code-signed yet, so SmartScreen may show \"Windows protected your PC\". Click More info, then Run anyway. To check that you have the file we published, compare its SHA-256 checksum with the list below.",
       "verify": "In PowerShell:"
@@ -358,6 +356,7 @@
       "button": "Download for Mac",
       "type": "Zip file",
       "arch": "Apple silicon (M1 and newer).",
+      "minimum": "Needs macOS 12 Monterey or newer.",
       "requires": "Signed and notarized by Apple. Unzip it and open cashpilot-desktop.app.",
       "intel": "Intel Mac? There is no Intel build of the desktop app. <a href=\"{dockerUrl}\">Run the server with Docker</a> instead.",
       "verify": "In Terminal:"
@@ -368,6 +367,7 @@
       "button": "Download for Linux",
       "type": "tar.gz archive",
       "arch": "x86_64 (64-bit PC).",
+      "minimum": "Needs glibc 2.34 or newer: Ubuntu 22.04, Debian 12, or newer.",
       "requires": "Needs GTK 3 and WebKitGTK 4.1. Extract the archive and run CashPilot Desktop.",
       "server": "Setting up a server or a Raspberry Pi? <a href=\"{dockerUrl}\">Use Docker</a>.",
       "verify": "In a terminal:"
@@ -402,9 +402,10 @@
     "homelab": {
       "title": "Home server installs",
       "lead": "Ordered from easiest to hardest.",
+      "option": "Option",
+      "caption": "Home server installs, from easiest to hardest",
       "skills": "Skills needed",
       "tools": "Tools needed",
-      "read": "Read the guide",
       "items": {
         "unraid": {
           "title": "Unraid",
@@ -486,13 +487,18 @@
     "how4": "The rewards help fund the project.",
     "count": "{count} providers, from the catalog on {date}.",
     "code": "Code",
-    "link": "Referral link",
-    "website": "Without a referral",
+    "provider": "Provider",
+    "link": "Sign up with referral",
+    "website": "Provider website (no referral)",
+    "links": "Links",
     "youGet": "You get",
     "projectGets": "The project gets",
     "codeEntry": "The link does not pass the code on. Type {code} when the app asks for a referral code.",
     "guide": "CashPilot guide",
-    "toc": "Jump to a group"
+    "guideLabel": "CashPilot guide for {name}",
+    "toc": "Jump to a group",
+    "tocCount": "{count} with referral links",
+    "caption": "{group}: referral links and what each one gives"
   },
   "privacy": {
     "title": "Privacy",
@@ -503,7 +509,7 @@
       "title": "This website",
       "p1": "No cookies, no analytics, no tracking pixels and no ads. The page loads nothing from other websites. The fonts are part of the site.",
       "p2": "When you pick a language, your browser keeps that choice in its local storage. It stays on your device and is never sent to us.",
-      "p3": "GitHub Pages hosts this site. GitHub may log the IP address of each visit for security. Read the <a href=\"{githubPrivacyUrl}\">GitHub privacy statement</a>."
+      "p3": "GitHub Pages hosts this site, and Cloudflare carries the traffic to it. Both may log the IP address of each visit for security, and Cloudflare may ask your browser to report network errors to it. Read the <a href=\"{githubPrivacyUrl}\">GitHub privacy statement</a> and the <a href=\"{cloudflarePrivacyUrl}\">Cloudflare privacy policy</a>."
     },
     "apps": {
       "title": "The CashPilot apps",

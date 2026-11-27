@@ -11,6 +11,7 @@ const { t, id, code } = Astro.props;
 ---
 <div class="code" dir="ltr">
   <pre id={id} tabindex="0"><code>{code}</code></pre>
+  <div class="code__bar">
   <button
     class="copy-btn"
     type="button"
@@ -22,4 +23,5 @@ const { t, id, code } = Astro.props;
   >
     <Icon name="copy" /><span data-copy-label aria-live="polite">{t("common.copy")}</span>
   </button>
+  </div>
 </div>

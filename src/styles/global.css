@@ -29,7 +29,7 @@
   --radius-sm: 9px;
   --container: 1160px;
   --gutter: clamp(1.1rem, 4vw, 2rem);
-  --section: clamp(4rem, 9vw, 7rem);
+  --section: clamp(3.5rem, 7vw, 5.5rem);
   --header-h: 64px;
 }
 
@@ -179,9 +179,15 @@ kbd {
   background: var(--bg-alt);
 }
 
+/* A section that continues the band above it: no gap, no rule. */
+.section.section--cont {
+  padding-top: 0;
+  border-top: 0;
+}
+
 .section-head {
   max-width: 46rem;
-  margin-bottom: clamp(2rem, 4vw, 3rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 .section-head h2 {
@@ -196,6 +202,11 @@ kbd {
 
 .mono {
   font-family: var(--font-mono);
+}
+
+/* Figures: the page font with digits of equal width. Monospace is only for
+   commands, codes and URLs. */
+.num {
   font-variant-numeric: tabular-nums;
 }
 
@@ -315,6 +326,8 @@ kbd {
 
 /* Tables */
 .table-wrap {
+  /* Keeps visually hidden captions and labels inside the scroll area. */
+  position: relative;
   overflow-x: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -383,7 +396,42 @@ tbody th {
   font-size: 0.875rem;
   line-height: 1.65;
   color: var(--text);
-  white-space: pre;
+  /* Wrap long commands so the whole command is visible before you copy it.
+     The copy button copies the text itself, so wrapping changes nothing there. */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.code__bar {
+  flex: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.code__bar:has(> [hidden]) {
+  display: none;
+}
+
+/* On a phone the copy button sits in a bar above the code, so the code gets
+   the full width. */
+@media (max-width: 640px) {
+  .code {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+  }
+  .code pre {
+    padding: 0.75rem 0.9rem;
+  }
+  .code__bar {
+    order: -1;
+    padding: 0.3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .copy-btn {
+    min-height: 32px;
+  }
 }
 
 .code pre::before {

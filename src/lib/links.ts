@@ -13,24 +13,32 @@ export const repo = {
   site: `${GH}/cashpilot-web`,
 };
 
-const desktopFile = (name: string) => `${repo.desktop}/releases/latest/download/${name}`;
-
 export const files = {
   winInstaller: "CashPilot-Desktop-windows-amd64-setup.exe",
   winPortable: "CashPilot-Desktop-windows-amd64.exe",
   mac: "CashPilot-Desktop-darwin-arm64.zip",
   linux: "CashPilot-Desktop-linux-amd64.tar.gz",
+  sums: "SHA256SUMS",
   apk: "app-release.apk",
 } as const;
 
-export const downloads = {
-  winInstaller: desktopFile(files.winInstaller),
-  winPortable: desktopFile(files.winPortable),
-  mac: desktopFile(files.mac),
-  linux: desktopFile(files.linux),
-  sums: desktopFile("SHA256SUMS"),
-  apk: `${repo.android}/releases/latest/download/${files.apk}`,
-};
+/**
+ * Download links pinned to the release the page was built from, so the version,
+ * sizes and checksums on the page always describe the file the button gives.
+ * A `releases/latest/download/...` link would move to a new release the moment
+ * it publishes, up to a day before the site rebuilds.
+ */
+export function downloadsFor(desktopTag: string, androidTag: string) {
+  const desktop = (name: string) => `${repo.desktop}/releases/download/${desktopTag}/${name}`;
+  return {
+    winInstaller: desktop(files.winInstaller),
+    winPortable: desktop(files.winPortable),
+    mac: desktop(files.mac),
+    linux: desktop(files.linux),
+    sums: desktop(files.sums),
+    apk: `${repo.android}/releases/download/${androidTag}/${files.apk}`,
+  };
+}
 
 export const docs = {
   home: `${DOCS}/`,
@@ -61,6 +69,7 @@ export const rivals = {
   cashFactory: "https://github.com/OlivierGaland/CashFactory",
 };
 
+export const cloudflarePrivacy = "https://www.cloudflare.com/privacypolicy/";
 export const githubPrivacy = "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement";
 
 /** The compose file of a given web release, so the command and the "read it" link match the pinned images. */

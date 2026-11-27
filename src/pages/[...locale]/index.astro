@@ -1,22 +1,30 @@
 ---
+import { getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
 import Base from "../../layouts/Base.astro";
 import Icon from "../../components/Icon.astro";
 import PlatformIcon from "../../components/PlatformIcon.astro";
 import WindowFrame from "../../components/WindowFrame.astro";
 import PhoneFrame from "../../components/PhoneFrame.astro";
 import Disclosure from "../../components/Disclosure.astro";
+import NotStated from "../../components/NotStated.astro";
 import { localeFromPath, localeParams, useT } from "../../i18n";
-import { getData, isLive } from "../../data";
+import { getData, isLive, isReferral, type Service } from "../../data";
 import { docs, repo, rivals, feeds } from "../../lib/links";
-import { CATEGORY_ORDER, categoryIcon } from "../../lib/catalog";
+import { CATEGORY_ORDER, FEATURED, categoryIcon } from "../../lib/catalog";
 
-import dashboardImg from "../../assets/shots/dashboard.png";
+import heroImg from "../../assets/shots/hero.png";
+import heroMobileImg from "../../assets/shots/hero-mobile.png";
 import fleetImg from "../../assets/shots/fleet.png";
+import fleetCrop from "../../assets/shots/fleet-crop.png";
 import catalogImg from "../../assets/shots/catalog.png";
+import catalogCrop from "../../assets/shots/catalog-crop.png";
 import payoutsImg from "../../assets/shots/payouts.png";
+import payoutsCrop from "../../assets/shots/payouts-crop.png";
 import desktopImg from "../../assets/shots/desktop-dashboard.png";
+import desktopCrop from "../../assets/shots/desktop-crop.png";
 import androidImg from "../../assets/shots/android-home.png";
-import dashboardMobileImg from "../../assets/shots/dashboard-mobile.png";
+import androidCrop from "../../assets/shots/android-crop.png";
 
 export const getStaticPaths = () => localeParams();
 
@@ -29,19 +37,34 @@ const categories = CATEGORY_ORDER.map((key) => ({
   count: live.filter((s) => s.category === key).length,
 })).filter((c) => c.count > 0);
 
-const popular = live
-  .filter((s) => s.priority !== null && s.docker)
-  .sort((a, b) => a.priority! - b.priority!)
-  .slice(0, 8);
+// A few services from each group (FEATURED in src/lib/catalog.ts).
+const featured: Service[] = CATEGORY_ORDER.flatMap((cat) => {
+  const { count, slugs } = FEATURED[cat];
+  const inCat = live.filter((s) => s.category === cat);
+  const picked = slugs
+    ? slugs.map((slug) => inCat.find((s) => s.slug === slug)).filter((s): s is Service => Boolean(s))
+    : inCat.filter((s) => s.priority !== null).sort((a, b) => a.priority! - b.priority!);
+  return picked.slice(0, count);
+});
 
-const platforms = ["windows", "macos", "linux", "android", "docker", "pi"] as const;
-
-const tour = [
-  { key: "dashboard", img: dashboardImg, title: "localhost:8080" },
-  { key: "fleet", img: fleetImg, title: "localhost:8080/fleet" },
-  { key: "catalog", img: catalogImg, title: "localhost:8080/catalog" },
-  { key: "payouts", img: payoutsImg, title: "localhost:8080/payouts" },
+const platforms = [
+  { key: "windows", href: "/download/windows/" },
+  { key: "macos", href: "/download/macos/" },
+  { key: "linux", href: "/download/linux/" },
+  { key: "android", href: "/download/android/" },
+  { key: "docker", href: "/download/docker/" },
+  { key: "pi", href: "/download/docker/" },
 ] as const;
+
+// Each tour crop links to the whole screen as a webp, so no lightbox script is needed.
+const fullUrl = async (img: ImageMetadata) => (await getImage({ src: img, format: "webp" })).src;
+const tour = [
+  { key: "fleet", crop: fleetCrop, full: await fullUrl(fleetImg), title: "localhost:8080/fleet" },
+  { key: "catalog", crop: catalogCrop, full: await fullUrl(catalogImg), title: "localhost:8080/catalog" },
+  { key: "payouts", crop: payoutsCrop, full: await fullUrl(payoutsImg), title: "localhost:8080/payouts" },
+] as const;
+const desktopFull = await fullUrl(desktopImg);
+const androidFull = await fullUrl(androidImg);
 
 // Comparison facts, checked on 2026-11-04 against each project's repository.
 // Sources for every cell: docs/comparison.md in the CashPilot repo.
@@ -54,15 +77,17 @@ const compareCols = [
   { name: "InternetIncome", url: rivals.internetIncome },
   { name: "CashFactory", url: rivals.cashFactory },
 ];
-const compareRows: { key: string; cells: Cell[] }[] = [
+// `plain`: a requirement, not a feature, so its cells are text without a check mark.
+const compareRows: { key: string; cells: Cell[]; plain?: boolean }[] = [
   { key: "license", cells: ["values.gpl", "values.gpl", "values.proprietary", "values.noLicense", "values.gplReadme"] },
   { key: "balances", cells: ["yes", "values.estimates", "no", "no", "no"] },
   { key: "fleet", cells: ["yes", "no", "values.claimed", "no", "no"] },
   { key: "desktop", cells: ["yes", "no", "no", "no", "no"] },
   { key: "android", cells: ["yes", "no", "no", "no", "no"] },
   { key: "gpu", cells: ["values.betaMining", "no", "no", "no", "no"] },
-  { key: "docker", cells: ["values.dockerOrPodman", "yes", "yes", "yes", "yes"] },
+  { key: "docker", cells: ["values.dockerOrPodman", "yes", "yes", "yes", "yes"], plain: true },
 ];
+const cellText = (c: Cell) => (c === "yes" ? t("common.yes") : c === "no" ? t("common.no") : t(`home.compare.${c}`));
 
 const faqVars = {
   securityUrl: docs.homeSecurity,
@@ -82,26 +107,28 @@ const faqVars = {
         <a class="btn btn--ghost" href={t.href("/download/docker/")}><PlatformIcon name="docker" />{t("home.hero.selfhost")}</a>
       </div>
       <p class="hero__expect">{t("home.hero.expect")}</p>
-      <dl class="stats" aria-label={t("home.stats.label")}>
-        <div>
-          <dt>{t("home.stats.stars")}</dt>
-          <dd class="mono">{t.num(data.stars.web)}</dd>
-        </div>
-        <div>
-          <dt>{t("home.stats.pulls")}</dt>
-          <dd class="mono">{t.num(data.pulls.ui)}</dd>
-        </div>
-        <div>
-          <dt>{t("home.stats.services")}</dt>
-          <dd class="mono">{t.num(live.length)}</dd>
-        </div>
-      </dl>
-      <p class="stats__note">{t("home.stats.note", { date: t.date(data.fetchedAt) })}</p>
+      <div class="stats-line">
+        <dl class="stats" aria-label={t("home.stats.label")}>
+          <div>
+            <dt>{t("home.stats.stars")}</dt>
+            <dd class="num">{t.num(data.stars.web)}</dd>
+          </div>
+          <div>
+            <dt>{t("home.stats.pulls")}</dt>
+            <dd class="num">{t.num(data.pulls.ui)}</dd>
+          </div>
+          <div>
+            <dt>{t("home.stats.services")}</dt>
+            <dd class="num">{t.num(live.length)}</dd>
+          </div>
+        </dl>
+        <p class="stats__note">{t("home.stats.note", { date: t.date(data.fetchedAt) })}</p>
+      </div>
     </div>
     <div class="container hero__shot">
       <div class="hero__glow" aria-hidden="true"></div>
-      <WindowFrame src={dashboardImg} alt={t("home.hero.imageAlt")} title="localhost:8080" eager class="hero__desktop" />
-      <PhoneFrame src={dashboardMobileImg} alt={t("home.hero.imageAlt")} class="hero__phone" />
+      <WindowFrame src={heroImg} alt={t("home.hero.imageAlt")} title="localhost:8080" eager class="hero__desktop" />
+      <PhoneFrame src={heroMobileImg} alt={t("home.hero.imageAltMobile")} eager class="hero__phone" />
     </div>
   </section>
 
@@ -112,8 +139,10 @@ const faqVars = {
         {
           platforms.map((p) => (
             <li>
-              <PlatformIcon name={p} />
-              <span>{t(`home.platforms.${p}`)}</span>
+              <a href={t.href(p.href)}>
+                <PlatformIcon name={p.key} />
+                <span>{t(`home.platforms.${p.key}`)}</span>
+              </a>
             </li>
           ))
         }
@@ -131,7 +160,7 @@ const faqVars = {
         {
           t.keys("home.how.steps").map((k, i) => (
             <li class="card step">
-              <span class="step__num mono" aria-hidden="true">{i + 1}</span>
+              <span class="step__num num" aria-hidden="true">{i + 1}</span>
               <h3>{t(`home.how.steps.${k}.title`)}</h3>
               <p>{t(`home.how.steps.${k}.text`)}</p>
             </li>
@@ -146,16 +175,27 @@ const faqVars = {
             categories.map((c) => (
               <li class="cat">
                 <span class="cat__icon">
-                  <Icon name={categoryIcon[c.key]} />
+                  <Icon name={categoryIcon[c.key]!} />
                 </span>
                 <span class="cat__body">
                   <span class="cat__name">{t(`home.categories.${c.key}.name`)}</span>
-                  <span class="cat__count mono">{t("home.categories.count", { count: t.num(c.count) })}</span>
+                  <span class="cat__count num">{t("home.categories.count", { count: t.num(c.count) })}</span>
                   <span class="cat__text">{t(`home.categories.${c.key}.text`)}</span>
                 </span>
               </li>
             ))
           }
+          <li class="cat cat--all">
+            <a href={docs.guides}>
+              <span class="cat__icon">
+                <Icon name="arrow" class="flip" />
+              </span>
+              <span class="cat__body">
+                <span class="cat__name">{t("home.categories.all.name", { count: t.num(live.length) })}</span>
+                <span class="cat__text">{t("home.categories.all.text")}</span>
+              </span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -172,31 +212,40 @@ const faqVars = {
           tour.map((s) => (
             <li>
               <figure>
-                <WindowFrame src={s.img} alt={t(`home.tour.${s.key}.alt`)} title={s.title} sizes="(min-width: 1160px) 540px, (min-width: 760px) 46vw, 100vw" />
+                <WindowFrame
+                  src={s.crop}
+                  alt={t(`home.tour.${s.key}.alt`)}
+                  title={s.title}
+                  href={s.full}
+                  sizes="(min-width: 1160px) 540px, (min-width: 760px) 46vw, 100vw"
+                />
                 <figcaption>
-                  <strong>{t(`home.tour.${s.key}.title`)}</strong> {t(`home.tour.${s.key}.text`)}
+                  <h3>{t(`home.tour.${s.key}.title`)}</h3>
+                  <p>{t(`home.tour.${s.key}.text`)}</p>
                 </figcaption>
               </figure>
             </li>
           ))
         }
+        <li>
+          <figure>
+            <WindowFrame src={desktopCrop} alt={t("home.tour.desktop.alt")} bare href={desktopFull} sizes="(min-width: 1160px) 540px, (min-width: 760px) 46vw, 100vw" />
+            <figcaption>
+              <h3>{t("home.tour.desktop.title")}</h3>
+              <p>{t("home.tour.desktop.text")}</p>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="tour__wide">
+          <figure class="tour__phone">
+            <PhoneFrame src={androidCrop} alt={t("home.tour.android.alt")} href={androidFull} />
+            <figcaption>
+              <h3>{t("home.tour.android.title")}</h3>
+              <p>{t("home.tour.android.text")}</p>
+            </figcaption>
+          </figure>
+        </li>
       </ul>
-
-      <h3 class="apps__title">{t("home.tour.apps.title")}</h3>
-      <div class="apps">
-        <figure class="apps__desktop">
-          <WindowFrame src={desktopImg} alt={t("home.tour.desktop.alt")} bare sizes="(min-width: 1160px) 760px, 100vw" />
-          <figcaption>
-            <strong>{t("home.tour.desktop.title")}</strong> {t("home.tour.desktop.text")}
-          </figcaption>
-        </figure>
-        <figure class="apps__phone">
-          <PhoneFrame src={androidImg} alt={t("home.tour.android.alt")} />
-          <figcaption>
-            <strong>{t("home.tour.android.title")}</strong> {t("home.tour.android.text")}
-          </figcaption>
-        </figure>
-      </div>
     </div>
   </section>
 
@@ -245,7 +294,7 @@ const faqVars = {
                 </span>
                 <div>
                   <h3>{t(`home.control.${k}.title`)}</h3>
-                  <p>{t(`home.control.${k}.text`)}</p>
+                  <p set:html={t(`home.control.${k}.text`, { securityUrl: docs.homeSecurity })} />
                 </div>
               </li>
             ))
@@ -316,31 +365,55 @@ const faqVars = {
           </thead>
           <tbody>
             {
-              popular.map((s) => (
-                <tr>
-                  <th scope="row">
-                    <a class="svc-name" href={docs.guide(s.slug)} aria-label={t("home.services.guideLabel", { name: s.name })}>
-                      {s.name}
-                    </a>
-                    <span class="svc-cat">{t(`categories.${s.category}`)}</span>
-                  </th>
-                  <td data-label={t("home.services.col.homeIp")}>{s.residentialIp === null ? t("common.notStated") : s.residentialIp ? t("common.yes") : t("common.no")}</td>
-                  <td data-label={t("home.services.col.devicesPerIp")}>{s.devicesPerIp === null || s.devicesPerIp === 0 ? <span class="not-stated">{t("common.notStated")}</span> : <span class="mono">{t.num(s.devicesPerIp)}</span>}</td>
-                  <td class="wrap" data-label={t("home.services.col.payout")}>{s.paymentMethods.map((m) => t(`payment.${m}`)).join(", ")}</td>
-                  <td class="wrap" data-label={t("home.services.col.minimum")}>{s.minimumPayout ?? t("common.notStated")}</td>
-                  <td class="signup">
-                    {s.signupUrl && (
-                      <a class="btn btn--ghost btn--sm" href={s.signupUrl} rel="noopener" aria-label={t("home.services.signupLabel", { name: s.name })}>
-                        {t("home.services.signup")}
+              featured.map((s) => {
+                const ref = isReferral(s);
+                const payout = s.paymentMethods.map((m) => t(`payment.${m}`)).join(", ");
+                return (
+                  <tr>
+                    <th scope="row">
+                      <a class="svc-name" href={docs.guide(s.slug)} aria-label={t("home.services.guideLabel", { name: s.name })}>
+                        {s.name}
                       </a>
-                    )}
-                  </td>
-                </tr>
-              ))
+                      <span class="svc-cat">{t(`categories.${s.category}`)}</span>
+                    </th>
+                    <td data-label={t("home.services.col.homeIp")}>
+                      {s.residentialIp === null ? <NotStated t={t} /> : s.residentialIp ? t("common.yes") : t("common.no")}
+                    </td>
+                    <td data-label={t("home.services.col.devicesPerIp")}>
+                      {s.devicesPerIp === null ? (
+                        <NotStated t={t} />
+                      ) : s.devicesPerIp === 0 ? (
+                        t("common.noLimit")
+                      ) : (
+                        <span class="num">{t.num(s.devicesPerIp)}</span>
+                      )}
+                    </td>
+                    <td class="wrap" data-label={t("home.services.col.payout")}>
+                      {payout || <NotStated t={t} />}
+                    </td>
+                    <td class="wrap" data-label={t("home.services.col.minimum")}>
+                      {s.minimumPayout ?? <NotStated t={t} />}
+                    </td>
+                    <td class="signup">
+                      {s.signupUrl && (
+                        <a
+                          class="btn btn--ghost btn--sm"
+                          href={s.signupUrl}
+                          rel={ref ? "sponsored noopener" : "noopener"}
+                          aria-label={t(ref ? "home.services.signupLabel" : "home.services.signupLabelPlain", { name: s.name })}
+                        >
+                          {t("home.services.signup")}
+                        </a>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })
             }
           </tbody>
         </table>
       </div>
+      <p class="services__note">{t("home.services.notStatedNote")}</p>
       <p class="links-row">
         <a href={docs.guides}>{t("home.services.all", { count: t.num(live.length) })} <Icon name="arrow" class="flip" /></a>
         <a href={t.href("/referrals/")}>{t("home.services.referrals")} <Icon name="arrow" class="flip" /></a>
@@ -348,7 +421,28 @@ const faqVars = {
     </div>
   </section>
 
-  <section class="section section--alt" aria-labelledby="compare-title">
+  <section class="section section--alt" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="faq-title">{t("home.faq.title")}</h2>
+      </div>
+      <div class="faq">
+        {
+          t.keys("home.faq.items").map((k) => (
+            <details class="faq__item">
+              <summary>
+                <span class="faq__q">{t(`home.faq.items.${k}.q`)}</span>
+                <Icon name="chevron" class="faq__chev" />
+              </summary>
+              <p set:html={t(`home.faq.items.${k}.a`, faqVars)} />
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt section--cont" aria-labelledby="compare-title">
     <div class="container">
       <div class="section-head">
         <h2 id="compare-title">{t("home.compare.title")}</h2>
@@ -376,7 +470,9 @@ const faqVars = {
                   <th scope="row">{t(`home.compare.rows.${r.key}`)}</th>
                   {r.cells.map((c, i) => (
                     <td class:list={{ "is-us": i === 0 }}>
-                      {c === "yes" ? (
+                      {r.plain ? (
+                        cellText(c)
+                      ) : c === "yes" ? (
                         <span class="yes">
                           <Icon name="check" />
                           {t("common.yes")}
@@ -387,7 +483,7 @@ const faqVars = {
                           {t("common.no")}
                         </span>
                       ) : (
-                        t(`home.compare.${c}`)
+                        cellText(c)
                       )}
                     </td>
                   ))}
@@ -400,27 +496,6 @@ const faqVars = {
       <p class="links-row">
         <a href={docs.comparison}>{t("home.compare.more")} <Icon name="arrow" class="flip" /></a>
       </p>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="faq-title">
-    <div class="container faq-wrap">
-      <div class="section-head">
-        <h2 id="faq-title">{t("home.faq.title")}</h2>
-      </div>
-      <div class="faq">
-        {
-          t.keys("home.faq.items").map((k) => (
-            <details class="faq__item">
-              <summary>
-                <h3>{t(`home.faq.items.${k}.q`)}</h3>
-                <Icon name="chevron" class="faq__chev" />
-              </summary>
-              <p set:html={t(`home.faq.items.${k}.a`, faqVars)} />
-            </details>
-          ))
-        }
-      </div>
     </div>
   </section>
 
@@ -443,7 +518,7 @@ const faqVars = {
   /* Hero */
   .hero {
     position: relative;
-    padding-top: clamp(3rem, 8vw, 6rem);
+    padding-top: clamp(2.25rem, 5vw, 4rem);
     overflow: hidden;
   }
   .hero__inner {
@@ -470,61 +545,68 @@ const faqVars = {
     color: var(--accent);
   }
   .hero__title {
-    margin-top: 1.4rem;
-    max-width: 17ch;
-    font-size: clamp(2.35rem, 6.2vw, 4.4rem);
-    line-height: 1.04;
+    margin-top: 1.25rem;
+    max-width: 34ch;
+    font-size: clamp(2.25rem, 4.2vw, 3.3rem);
+    line-height: 1.06;
     letter-spacing: -0.035em;
   }
   .hero__lead {
-    margin-top: 1.4rem;
-    max-width: 40rem;
+    margin-top: 1.2rem;
+    max-width: 42rem;
     color: var(--muted);
-    font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+    font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
   }
   .hero__actions {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem;
-    margin-top: 2rem;
+    margin-top: 1.75rem;
   }
   .hero__expect {
-    margin-top: 1.25rem;
-    max-width: 34rem;
+    margin-top: 1rem;
+    max-width: 52rem;
     color: var(--faint);
+    font-size: 0.9375rem;
+  }
+  .stats-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem 1.25rem;
+    margin-top: 0.75rem;
     font-size: 0.9375rem;
   }
   .stats {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem 2.75rem;
-    margin: 2.5rem 0 0;
+    gap: 0.25rem 1.25rem;
+    margin: 0;
   }
   .stats div {
     display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    gap: 0.35rem;
   }
   .stats dt {
     color: var(--muted);
-    font-size: 0.875rem;
   }
   .stats dd {
     margin: 0;
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text);
   }
   .stats__note {
-    margin-top: 0.4rem;
     color: var(--faint);
     font-size: 0.8125rem;
   }
   .hero__shot {
     position: relative;
-    margin-top: clamp(2.5rem, 6vw, 4rem);
+    margin-top: clamp(2rem, 4vw, 2.75rem);
   }
   .hero__glow {
     position: absolute;
@@ -541,8 +623,25 @@ const faqVars = {
   }
   .hero__shot :global(.window) {
     position: relative;
-    mask-image: linear-gradient(to bottom, #000 55%, transparent 98%);
-    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 98%);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  }
+  /* The one effect on the site: the hero window fades in and rises 8 px. */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__shot :global(.window),
+    .hero__shot :global(.phone) {
+      animation: rise 200ms ease-out both;
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   /* Platforms */
@@ -557,8 +656,8 @@ const faqVars = {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 1rem 2.5rem;
-    padding-block: 1.6rem;
+    gap: 0.75rem 2rem;
+    padding-block: 1.25rem;
   }
   .platforms__title {
     font-size: 0.875rem;
@@ -570,17 +669,25 @@ const faqVars = {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem 2rem;
+    gap: 0.25rem 0.5rem;
     margin: 0;
     padding: 0;
     list-style: none;
   }
-  .platforms__list li {
+  .platforms__list a {
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
+    min-height: 40px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
     color: var(--muted);
     font-weight: 500;
+    text-decoration: none;
+  }
+  .platforms__list a:hover {
+    color: var(--text);
+    background: var(--surface-2);
   }
   .platforms__list :global(.platform-icon) {
     width: 1.35rem;
@@ -610,30 +717,51 @@ const faqVars = {
     font-weight: 700;
   }
   .cats {
-    margin-top: clamp(3rem, 6vw, 4.5rem);
+    margin-top: clamp(2rem, 4vw, 2.75rem);
   }
   .cats__title {
     font-size: 1.25rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
   .cats__grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin: 0;
     padding: 0;
     list-style: none;
   }
-  .cat {
+  .cat,
+  .cat--all a {
     display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    padding: 1.25rem;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.15rem 1.25rem;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background: var(--surface);
   }
+  .cat--all {
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+  .cat--all a {
+    height: 100%;
+    color: var(--text);
+    text-decoration: none;
+    border-style: dashed;
+    border-color: var(--border-strong);
+  }
+  .cat--all a:hover {
+    border-color: var(--accent);
+    background: var(--surface-2);
+  }
+  .cat--all .cat__name {
+    color: var(--accent);
+  }
   .cat__icon {
+    flex: none;
     display: inline-grid;
     place-items: center;
     width: 2.5rem;
@@ -646,10 +774,13 @@ const faqVars = {
     width: 1.3rem;
     height: 1.3rem;
   }
+  :global([dir="rtl"]) .cat__icon :global(.flip) {
+    transform: scaleX(-1);
+  }
   .cat__body {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.15rem;
   }
   .cat__name {
     font-weight: 600;
@@ -657,19 +788,21 @@ const faqVars = {
   .cat__count {
     color: var(--accent);
     font-size: 0.875rem;
+    font-weight: 500;
   }
   .cat__text {
-    margin-top: 0.35rem;
+    margin-top: 0.3rem;
     color: var(--muted);
     font-size: 0.9375rem;
     line-height: 1.5;
   }
 
-  /* Tour */
+  /* Tour: crops of the screens, large enough to read, each a link to the whole screen. */
   .tour {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.25rem 2rem;
+    align-items: start;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -678,32 +811,34 @@ const faqVars = {
     margin: 0;
   }
   figcaption {
-    margin-top: 1rem;
+    margin-top: 0.9rem;
+  }
+  figcaption h3 {
+    font-size: 1.125rem;
+  }
+  figcaption p {
+    margin-top: 0.3rem;
     color: var(--muted);
-    font-size: 1rem;
   }
-  figcaption strong {
-    color: var(--text);
-    font-weight: 600;
+  .tour__wide {
+    grid-column: 1 / -1;
   }
-  .apps__title {
-    margin-top: clamp(3.5rem, 7vw, 5rem);
-    margin-bottom: 1.5rem;
-    font-size: clamp(1.4rem, 2.6vw, 1.85rem);
-  }
-  .apps {
+  .tour__phone {
     display: grid;
-    grid-template-columns: minmax(0, 2.4fr) minmax(0, 1fr);
-    gap: 2.5rem;
-    align-items: start;
-  }
-  .apps__phone {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 220px minmax(0, 32rem);
+    gap: 2rem;
     align-items: center;
   }
-  .apps__phone figcaption {
-    max-width: 300px;
+  .tour__phone figcaption {
+    margin-top: 0;
+  }
+  .tour__phone :global(.phone) {
+    max-width: 220px;
+    border-radius: 32px;
+    padding: 8px;
+  }
+  .tour__phone :global(.phone img) {
+    border-radius: 25px;
   }
 
   /* Catch */
@@ -727,9 +862,6 @@ const faqVars = {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: clamp(3rem, 6vw, 5rem);
-  }
-  .split .section-head h2 {
-    font-size: clamp(1.6rem, 2.8vw, 2.1rem);
   }
   .feature-list,
   .factors {
@@ -825,9 +957,9 @@ const faqVars = {
   .services-table td {
     color: var(--muted);
   }
-  .services-table td:last-child {
+  .services-table td.signup {
     text-align: end;
-    vertical-align: middle;
+    vertical-align: top;
   }
   .services-table tbody th {
     white-space: nowrap;
@@ -836,8 +968,10 @@ const faqVars = {
     min-width: 9rem;
     max-width: 16rem;
   }
-  .not-stated {
+  .services__note {
+    margin-top: 0.6rem;
     color: var(--faint);
+    font-size: 0.875rem;
   }
   .compare-table thead th a {
     color: var(--text);
@@ -915,11 +1049,9 @@ const faqVars = {
     transform: scaleX(-1);
   }
 
-  /* FAQ */
-  .faq-wrap {
-    max-width: 52rem;
-  }
+  /* FAQ: left edge on the container, like every other band. */
   .faq {
+    max-width: 48rem;
     border-top: 1px solid var(--border);
   }
   .faq__item {
@@ -937,12 +1069,13 @@ const faqVars = {
   .faq__item summary::-webkit-details-marker {
     display: none;
   }
-  .faq__item summary h3 {
+  .faq__q {
     font-size: 1.125rem;
     font-weight: 600;
     letter-spacing: -0.01em;
+    line-height: 1.3;
   }
-  .faq__item summary:hover h3 {
+  .faq__item summary:hover .faq__q {
     color: var(--accent);
   }
   .faq__item :global(.faq__chev) {
@@ -961,12 +1094,6 @@ const faqVars = {
   }
 
   /* Closing call to action */
-  .cta-section {
-    padding-top: 0;
-  }
-  .section + .cta-section {
-    border-top: 0;
-  }
   .cta {
     display: flex;
     flex-direction: column;
@@ -980,7 +1107,7 @@ const faqVars = {
       var(--surface);
   }
   .cta h2 {
-    font-size: clamp(1.75rem, 3.6vw, 2.6rem);
+    font-size: clamp(1.75rem, 3.4vw, 2.5rem);
   }
   .cta > p {
     margin-top: 0.75rem;
@@ -997,9 +1124,6 @@ const faqVars = {
   }
 
   @media (max-width: 1024px) {
-    .cats__grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
     .catch {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -1007,20 +1131,37 @@ const faqVars = {
       grid-template-columns: 1fr;
     }
   }
-  @media (max-width: 760px) {
-    .steps,
-    .tour,
-    .apps {
+  /* Below 900 px the steps stack: the number on the left, the text beside it. */
+  @media (max-width: 900px) {
+    .steps {
       grid-template-columns: 1fr;
     }
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 1rem;
+    }
+    .step__num {
+      grid-row: 1 / 3;
+      margin-bottom: 0;
+    }
+    .step p {
+      grid-column: 2;
+    }
+  }
+  @media (max-width: 760px) {
     .cats__grid {
       grid-template-columns: 1fr 1fr;
     }
-    .stats {
-      gap: 0.5rem 1.75rem;
+    .tour {
+      grid-template-columns: 1fr;
     }
-    .stats dd {
-      font-size: 1.35rem;
+  }
+  @media (max-width: 480px) {
+    .tour__phone {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
     }
   }
   @media (max-width: 640px) {
@@ -1036,6 +1177,12 @@ const faqVars = {
       display: flex;
       justify-content: center;
     }
+    .hero__shot :global(.phone) {
+      mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+    }
+    /* Services: one card per service, the name and Sign up on the first line
+       and four facts in two columns below. */
     .services-table {
       border: 0;
       background: none;
@@ -1045,13 +1192,13 @@ const faqVars = {
       display: none;
     }
     .services-table table,
-    .services-table tbody,
-    .services-table tr,
-    .services-table th,
-    .services-table td {
+    .services-table tbody {
       display: block;
     }
     .services-table tr {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem 1rem;
       margin-bottom: 0.75rem;
       padding: 1rem 1.1rem;
       border: 1px solid var(--border);
@@ -1060,37 +1207,58 @@ const faqVars = {
     }
     .services-table tbody th,
     .services-table td {
+      display: block;
       padding: 0;
       border: 0;
+      min-width: 0;
+      max-width: none;
     }
     .services-table tbody th {
-      margin-bottom: 0.6rem;
+      grid-column: 1;
+      grid-row: 1;
+      white-space: normal;
+    }
+    .services-table td.signup {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+      text-align: end;
     }
     .services-table td[data-label] {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      padding-block: 0.3rem;
-      border-top: 1px solid var(--border);
-      max-width: none;
+      text-align: start;
+      font-size: 0.9375rem;
     }
     .services-table td[data-label]::before {
       content: attr(data-label);
+      display: block;
       color: var(--faint);
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
+      white-space: nowrap;
     }
-    .services-table td.wrap {
-      text-align: end;
+    /* Comparison: the first column stays put, and a glow on the right edge
+       shows there is more to scroll to. */
+    .compare-table {
+      background:
+        linear-gradient(to left, var(--surface) 40%, rgb(16 16 25 / 0)) right center / 2.5rem 100% no-repeat local,
+        radial-gradient(farthest-side at 100% 50%, rgb(251 113 133 / 0.35), transparent) right center / 1.25rem 100%
+          no-repeat scroll,
+        var(--surface);
     }
-    .services-table td.signup {
-      margin-top: 0.75rem;
-      text-align: start;
-    }
-    .services-table td.signup .btn {
-      width: 100%;
+    :global([dir="rtl"]) .compare-table {
+      background:
+        linear-gradient(to right, var(--surface) 40%, rgb(16 16 25 / 0)) left center / 2.5rem 100% no-repeat local,
+        radial-gradient(farthest-side at 0% 50%, rgb(251 113 133 / 0.35), transparent) left center / 1.25rem 100% no-repeat
+          scroll,
+        var(--surface);
     }
     .compare-table tbody th {
-      min-width: 9.5rem;
+      min-width: 8rem;
+      max-width: 9rem;
+      font-size: 0.875rem;
+    }
+    .compare-table td {
+      min-width: 9rem;
+      font-size: 0.875rem;
     }
   }
   @media (max-width: 480px) {
@@ -1107,10 +1275,6 @@ const faqVars = {
     }
     .cats__grid {
       grid-template-columns: 1fr;
-    }
-    .cat {
-      flex-direction: row;
-      align-items: flex-start;
     }
   }
 </style>

@@ -53,9 +53,12 @@ export interface SiteData {
   releases: Record<"web" | "desktop" | "android" | "mcp", Release>;
   desktopSha256: Record<string, string>;
   images: { ui: string; worker: string };
+  /** Whether the docs page "For AI agents" is published yet. */
+  agentsDoc: boolean;
 }
 
 const TIMEOUT_MS = 20_000;
+export const AGENTS_DOC_URL = "https://geiserx.github.io/CashPilot/for-ai-agents/";
 
 function ghHeaders(): Record<string, string> {
   const h: Record<string, string> = {
@@ -210,13 +213,24 @@ export async function fetchLive(log: (m: string) => void = console.warn): Promis
       )
     : undefined;
   const images = web ? await attempt("compose images", () => fetchImages(web.tag)) : undefined;
+  // A 404 means "not published yet", which is an answer, not a failure.
+  const agentsDoc = await attempt("docs for-ai-agents", async () => {
+    const res = await fetch(AGENTS_DOC_URL, { method: "HEAD", signal: AbortSignal.timeout(TIMEOUT_MS) });
+    if (res.status >= 500) throw new Error(`${res.status} for ${AGENTS_DOC_URL}`);
+    return res.ok;
+  });
 
   const out: Partial<SiteData> = { fetchedAt: new Date().toISOString() };
   if (services) out.services = services;
   if (starsList) out.stars = starsList;
   if (pullsUi !== undefined && pullsWorker !== undefined) out.pulls = { ui: pullsUi, worker: pullsWorker };
-  if (web && desktop && android && mcp) out.releases = { web, desktop, android, mcp };
-  if (sums && Object.keys(sums).length) out.desktopSha256 = sums;
-  if (images) out.images = images;
+  // The releases, their checksums and the compose images go together or not at
+  // all: live hashes next to a snapshot version would look like a tampered file.
+  if (web && desktop && android && mcp && sums && Object.keys(sums).length && images) {
+    out.releases = { web, desktop, android, mcp };
+    out.desktopSha256 = sums;
+    out.images = images;
+  }
+  if (agentsDoc !== undefined) out.agentsDoc = agentsDoc;
   return out;
 }

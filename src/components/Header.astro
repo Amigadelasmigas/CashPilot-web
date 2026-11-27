@@ -24,11 +24,11 @@ const { t, route, stars } = Astro.props;
       <a class="site-nav__link site-nav__gh" href={repo.web}>
         <PlatformIcon name="github" />
         <span class="site-nav__gh-label">{t("nav.github")}</span>
-        <span class="site-nav__stars mono"><Icon name="star" />{t.num(stars)}<span class="visually-hidden"> {t("nav.stars")}</span></span>
+        <span class="site-nav__stars num"><Icon name="star" />{t.num(stars)}<span class="visually-hidden"> {t("nav.stars")}</span></span>
       </a>
       <LanguagePicker t={t} route={route} />
-      <a class="btn btn--primary btn--sm" href={t.href("/download/")}>
-        <Icon name="download" />{t("nav.download")}
+      <a class="btn btn--primary btn--sm site-nav__download" href={t.href("/download/")}>
+        <Icon name="download" /><span class="site-nav__download-label">{t("nav.download")}</span>
       </a>
     </nav>
   </div>
@@ -69,6 +69,7 @@ const { t, route, stars } = Astro.props;
     display: flex;
     align-items: center;
     gap: 0.35rem;
+    min-width: 0;
   }
   .site-nav > :global(*),
   .site-nav :global(svg) {
@@ -119,6 +120,9 @@ const { t, route, stars } = Astro.props;
     }
   }
   @media (max-width: 520px) {
+    .site-header__inner {
+      gap: 0.5rem;
+    }
     .site-nav__docs,
     .site-nav__stars {
       display: none;
@@ -133,7 +137,23 @@ const { t, route, stars } = Astro.props;
       padding-inline: 0.55rem;
     }
   }
-  @media (max-width: 370px) {
+  /* A phone: the Download button keeps only its icon, so a long translation
+     of "Download" cannot push the header wider than the screen. Its text stays
+     for screen readers. */
+  @media (max-width: 420px) {
+    .site-nav__download {
+      padding-inline: 0.7rem;
+    }
+    .site-nav__download-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+  }
+  @media (max-width: 340px) {
     .brand__name {
       display: none;
     }

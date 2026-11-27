@@ -12,8 +12,13 @@ interface Props {
   sizes?: string;
   eager?: boolean;
   class?: string;
+  /** Wrap the screenshot in a link, for example to the full-size image. */
+  href?: string;
 }
-const { src, alt, title, bare = false, sizes = "(min-width: 1160px) 1100px, 100vw", eager = false, class: cls } = Astro.props;
+const { src, alt, title, bare = false, sizes = "(min-width: 1160px) 1100px, 100vw", eager = false, class: cls, href } = Astro.props;
+// Never ask for a width larger than the source.
+const widths = [...[640, 960, 1440, 1920].filter((w) => w < src.width), src.width];
+const Wrap = href ? "a" : "div";
 ---
 <div class:list={["window", { "window--bare": bare }, cls]}>
   {
@@ -28,17 +33,19 @@ const { src, alt, title, bare = false, sizes = "(min-width: 1160px) 1100px, 100v
       </div>
     )
   }
-  <Picture
-    src={src}
-    alt={alt}
-    formats={["avif"]}
-    fallbackFormat="webp"
-    widths={[640, 960, 1440, 1920]}
-    sizes={sizes}
-    loading={eager ? "eager" : "lazy"}
-    fetchpriority={eager ? "high" : undefined}
-    decoding="async"
-  />
+  <Wrap class="window__shot" href={href}>
+    <Picture
+      src={src}
+      alt={alt}
+      formats={["avif"]}
+      fallbackFormat="webp"
+      widths={widths}
+      sizes={sizes}
+      loading={eager ? "eager" : "lazy"}
+      fetchpriority={eager ? "high" : undefined}
+      decoding="async"
+    />
+  </Wrap>
 </div>
 
 <style>
@@ -81,6 +88,12 @@ const { src, alt, title, bare = false, sizes = "(min-width: 1160px) 1100px, 100v
   }
   .window :global(img) {
     width: 100%;
+  }
+  .window__shot {
+    display: block;
+  }
+  a.window__shot:focus-visible {
+    outline-offset: -3px;
   }
   [dir="rtl"] .window__bar {
     direction: ltr;

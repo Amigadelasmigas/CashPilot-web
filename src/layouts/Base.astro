@@ -5,7 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import LangSuggest from "../components/LangSuggest.astro";
 import { AVAILABLE, localizedPath, type Translator } from "../i18n";
-import { SITE } from "../lib/links";
+import { SITE, feeds } from "../lib/links";
 import { getData } from "../data";
 
 interface Props {
@@ -44,7 +44,7 @@ const ogImage = new URL("/og.png", SITE).href;
     {!noAlternates && <link rel="alternate" hreflang="x-default" href={new URL(route, SITE).href} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="alternate" type="application/atom+xml" title="CashPilot releases" href="https://github.com/GeiserX/CashPilot/releases.atom" />
+    <link rel="alternate" type="application/atom+xml" title={t("footer.feed")} href={feeds.releases} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="CashPilot" />
     <meta property="og:title" content={fullTitle} />
@@ -54,7 +54,8 @@ const ogImage = new URL("/og.png", SITE).href;
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={t("meta.ogImageAlt")} />
-    <meta property="og:locale" content={locale.code.replace("-", "_")} />
+    <meta property="og:locale" content={locale.ogLocale} />
+    {!noAlternates && AVAILABLE.filter((l) => l.code !== locale.code).map((l) => <meta property="og:locale:alternate" content={l.ogLocale} />)}
     <meta name="twitter:card" content="summary_large_image" />
     <slot name="head" />
   </head>

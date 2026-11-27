@@ -2,11 +2,14 @@
 import Logo from "./Logo.astro";
 import type { Translator } from "../i18n";
 import { docs, repo, feeds, CONTACT_EMAIL } from "../lib/links";
+import { getData } from "../data";
 
 interface Props {
   t: Translator;
 }
 const { t } = Astro.props;
+// The docs page for AI agents is linked only once it is published.
+const { agentsDoc } = await getData();
 ---
 <footer class="site-footer">
   <div class="container">
@@ -24,7 +27,7 @@ const { t } = Astro.props;
           <li><a href={t.href("/download/")}>{t("footer.download")}</a></li>
           <li><a href={docs.home}>{t("footer.docs")}</a></li>
           <li><a href={t.href("/referrals/")}>{t("footer.referrals")}</a></li>
-          <li><a href={docs.forAgents}>{t("footer.agents")}</a></li>
+          {agentsDoc && <li><a href={docs.forAgents}>{t("footer.agents")}</a></li>}
         </ul>
       </nav>
       <nav aria-labelledby="ft-project">

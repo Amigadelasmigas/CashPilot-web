@@ -43,7 +43,7 @@ const groups = CATEGORY_ORDER.map((key) => ({
           groups.map((g) => (
             <li>
               <a href={`#${g.key}`}>
-                {t(`categories.${g.key}`)} <span class="mono">{t.num(g.services.length)}</span>
+                {t(`categories.${g.key}`)} <span class="ref__toc-count">{t("referrals.tocCount", { count: t.num(g.services.length) })}</span>
               </a>
             </li>
           ))
@@ -59,57 +59,52 @@ const groups = CATEGORY_ORDER.map((key) => ({
             {t(`categories.${g.key}`)}
           </h2>
           <Disclosure t={t} noLink />
-          <ul class="ref__list">
-            {g.services.map((s) => (
-              <li class="ref__item" id={`svc-${s.slug}`}>
-                <div class="ref__head">
-                  <h3>{s.name}</h3>
-                  <a class="ref__guide" href={docs.guide(s.slug)}>
-                    {t("referrals.guide")}
-                  </a>
-                </div>
-                <dl>
-                  {s.code && (
-                    <div>
-                      <dt>{t("referrals.code")}</dt>
-                      <dd>
-                        <code dir="ltr">{s.code}</code>
-                      </dd>
-                    </div>
-                  )}
-                  <div>
-                    <dt>{t("referrals.link")}</dt>
-                    <dd>
-                      <a class="url" href={s.signupUrl} rel="noopener" dir="ltr">
-                        {s.signupUrl}
+          <div class="table-wrap ref__table">
+            <table>
+              <caption class="visually-hidden">{t("referrals.caption", { group: t(`categories.${g.key}`) })}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">{t("referrals.provider")}</th>
+                  <th scope="col">{t("referrals.code")}</th>
+                  <th scope="col">{t("referrals.youGet")}</th>
+                  <th scope="col">{t("referrals.projectGets")}</th>
+                  <th scope="col">{t("referrals.links")}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {g.services.map((s) => (
+                  <tr id={`svc-${s.slug}`}>
+                    <th scope="row">
+                      <span class="ref__name">{s.name}</span>
+                      <a class="ref__guide" href={docs.guide(s.slug)} aria-label={t("referrals.guideLabel", { name: s.name })} title={t("referrals.guide")}>
+                        <Icon name="book" />
                       </a>
+                    </th>
+                    <td class:list={{ "ref__empty": !s.code }} data-label={t("referrals.code")}>
+                      {s.code && <code dir="ltr">{s.code}</code>}
+                    </td>
+                    <td class:list={{ "ref__empty": !s.bonusReferee }} data-label={t("referrals.youGet")} lang={s.bonusReferee ? "en" : undefined}>
+                      {s.bonusReferee}
+                    </td>
+                    <td class:list={{ "ref__empty": !s.bonusReferrer }} data-label={t("referrals.projectGets")} lang={s.bonusReferrer ? "en" : undefined}>
+                      {s.bonusReferrer}
+                    </td>
+                    <td class="ref__links">
+                      <a href={s.signupUrl} rel="sponsored noopener">
+                        {t("referrals.link")}
+                      </a>
+                      <span class="url" dir="ltr">{s.signupUrl}</span>
                       {s.codeEntry && <p class="ref__note">{t("referrals.codeEntry", { code: s.codeEntry })}</p>}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>{t("referrals.website")}</dt>
-                    <dd>
-                      <a class="url" href={s.website} rel="noopener" dir="ltr">
-                        {s.website}
+                      <a class="ref__plain" href={s.website} rel="noopener">
+                        {t("referrals.website")}
                       </a>
-                    </dd>
-                  </div>
-                  {s.bonusReferee && (
-                    <div>
-                      <dt>{t("referrals.youGet")}</dt>
-                      <dd lang="en">{s.bonusReferee}</dd>
-                    </div>
-                  )}
-                  {s.bonusReferrer && (
-                    <div>
-                      <dt>{t("referrals.projectGets")}</dt>
-                      <dd lang="en">{s.bonusReferrer}</dd>
-                    </div>
-                  )}
-                </dl>
-              </li>
-            ))}
-          </ul>
+                      <span class="url" dir="ltr">{s.website}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </section>
       ))
     }
@@ -164,8 +159,10 @@ const groups = CATEGORY_ORDER.map((key) => ({
   .ref__toc a:hover {
     border-color: var(--accent);
   }
-  .ref__toc .mono {
-    color: var(--accent);
+  .ref__toc-count {
+    color: var(--muted);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
   }
   .ref__group {
     margin-top: clamp(2.5rem, 5vw, 3.5rem);
@@ -182,61 +179,132 @@ const groups = CATEGORY_ORDER.map((key) => ({
     height: 1.5rem;
     color: var(--accent);
   }
-  .ref__list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-    margin: 1rem 0 0;
-    padding: 0;
-    list-style: none;
+  .ref__table {
+    margin-top: 1rem;
   }
-  .ref__item {
-    padding: 1.2rem 1.3rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
-  }
-  .ref__head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  .ref__head h3 {
-    font-size: 1.15rem;
-  }
-  .ref__guide {
-    flex: none;
-    font-size: 0.875rem;
-  }
-  .ref__item dl {
-    display: grid;
-    gap: 0.65rem;
-    margin: 0.9rem 0 0;
-  }
-  .ref__item dt {
-    color: var(--faint);
-    font-size: 0.8125rem;
-  }
-  .ref__item dd {
-    margin: 0.1rem 0 0;
-    color: var(--muted);
+  .ref__table th,
+  .ref__table td {
+    padding: 0.8rem 0.9rem;
     font-size: 0.9375rem;
   }
-  .url {
-    font-family: var(--font-mono);
-    font-size: 0.8438rem;
+  .ref__table td {
+    color: var(--muted);
+  }
+  .ref__table tbody th {
+    white-space: nowrap;
+  }
+  .ref__name {
+    font-weight: 600;
+  }
+  .ref__guide {
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    margin-inline-start: 0.25rem;
+    vertical-align: middle;
+    border-radius: 7px;
+    color: var(--faint);
+  }
+  .ref__guide:hover {
+    color: var(--accent);
+    background: var(--surface-2);
+  }
+  .ref__guide :global(.icon) {
+    width: 1rem;
+    height: 1rem;
+  }
+  .ref__table code {
     overflow-wrap: anywhere;
-    word-break: break-all;
+  }
+  .ref__table td:nth-child(2) {
+    max-width: 12rem;
+  }
+  .ref__table td:nth-child(3),
+  .ref__table td:nth-child(4) {
+    min-width: 9rem;
+    max-width: 15rem;
+  }
+  .ref__links {
+    min-width: 14rem;
+    max-width: 22rem;
+  }
+  .ref__links a {
+    display: block;
+    font-weight: 500;
+  }
+  .ref__links .ref__plain {
+    margin-top: 0.6rem;
+    color: var(--muted);
+  }
+  .ref__links .ref__plain:hover {
+    color: var(--text);
+  }
+  .url {
+    display: block;
+    margin-top: 0.1rem;
+    color: var(--faint);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
   }
   .ref__note {
     margin-top: 0.35rem;
     font-size: 0.875rem;
     color: var(--muted);
   }
+  /* Phones: one compact card per provider. Empty facts are left out. */
   @media (max-width: 760px) {
-    .ref__list {
-      grid-template-columns: 1fr;
+    .ref__table {
+      border: 0;
+      background: none;
+      overflow: visible;
+    }
+    .ref__table thead {
+      display: none;
+    }
+    .ref__table table,
+    .ref__table tbody,
+    .ref__table tr,
+    .ref__table th,
+    .ref__table td {
+      display: block;
+    }
+    .ref__table tr {
+      margin-bottom: 0.6rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .ref__table tbody th,
+    .ref__table td {
+      padding: 0;
+      border: 0;
+      min-width: 0;
+      max-width: none;
+    }
+    .ref__table tbody th {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      white-space: normal;
+    }
+    .ref__table td {
+      margin-top: 0.3rem;
+      font-size: 0.875rem;
+    }
+    .ref__table td.ref__empty {
+      display: none;
+    }
+    .ref__table td[data-label]::before {
+      content: attr(data-label) ": ";
+      color: var(--faint);
+    }
+    .ref__links {
+      margin-top: 0.6rem !important;
     }
   }
 </style>

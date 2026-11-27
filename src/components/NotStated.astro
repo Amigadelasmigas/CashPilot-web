@@ -1,0 +1,17 @@
+---
+// A value the catalog does not give: a muted dash on screen, the words for
+// screen readers. The table explains the dash once below it.
+import type { Translator } from "../i18n";
+
+interface Props {
+  t: Translator;
+}
+const { t } = Astro.props;
+---
+<span class="not-stated"><span aria-hidden="true">–</span><span class="visually-hidden">{t("common.notStated")}</span></span>
+
+<style>
+  .not-stated {
+    color: var(--faint);
+  }
+</style>

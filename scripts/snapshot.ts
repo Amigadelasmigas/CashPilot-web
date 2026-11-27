@@ -3,7 +3,7 @@
 import { fetchLive } from "../src/data/fetch";
 
 const live = await fetchLive((m) => console.error(m));
-const need = ["services", "stars", "pulls", "releases", "desktopSha256", "images"] as const;
+const need = ["services", "stars", "pulls", "releases", "desktopSha256", "images", "agentsDoc"] as const;
 const missing = need.filter((k) => live[k] === undefined);
 if (missing.length) {
   console.error(`snapshot not written, missing: ${missing.join(", ")}`);

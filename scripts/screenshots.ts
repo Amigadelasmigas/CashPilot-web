@@ -8,7 +8,7 @@ import { startServer } from "./serve";
 
 const server = startServer(0);
 const base = `http://localhost:${server.port}`;
-const routes = (process.env.ROUTES ?? "/,/download/,/download/windows/,/download/docker/,/download/android/,/referrals/,/privacy/,/disclaimer/,/nope/").split(",");
+const routes = (process.env.ROUTES ?? "/,/download/,/download/windows/,/download/macos/,/download/linux/,/download/docker/,/download/android/,/referrals/,/privacy/,/disclaimer/,/nope/").split(",");
 const widths = [
   { name: "1440", width: 1440, height: 900, mobile: false },
   { name: "390", width: 390, height: 844, mobile: true },
