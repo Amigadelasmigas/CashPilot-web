@@ -2,6 +2,8 @@
 // A code the visitor types by hand, with a Copy button (shown only where the
 // clipboard works, by src/scripts/site.ts). Used on the referrals page and in
 // the home page's provider table.
+// `compact` (the home table) shows one short line, "Code SERGIB4014" and the
+// copy icon, and keeps the full sentence for screen readers and as a tooltip.
 import Icon from "./Icon.astro";
 import type { Translator } from "../i18n";
 import type { Service } from "../data";
@@ -12,29 +14,43 @@ interface Props {
   service: Service;
   /** Keeps the id unique when one page shows the same service twice. */
   idPrefix: string;
+  compact?: boolean;
 }
-const { t, service, idPrefix } = Astro.props;
+const { t, service, idPrefix, compact = false } = Astro.props;
 const tc = typedCode(service);
 const id = `${idPrefix}-${service.slug}-code`;
 const key = tc && { required: "referrals.codeEntry", referral: "referrals.codeReferral", coupon: "referrals.codeCoupon" }[tc.kind];
 // The code comes from the catalog, so it is escaped before it goes into the sentence as markup.
 const esc = (v: string) => v.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 const html = tc && key ? t(key, { code: `<code id="${id}" dir="ltr">${esc(tc.code)}</code>` }) : "";
+const plain = tc && key ? t(key, { code: tc.code }) : "";
 ---
 {
   tc && (
-    <p class="typed-code">
-      <span set:html={html} />
+    <p class:list={["typed-code", { "typed-code--compact": compact }]} title={compact ? plain : undefined}>
+      {compact ? (
+        <>
+          <span class="visually-hidden">{plain}</span>
+          <span class="typed-code__short" aria-hidden="true">
+            {t("referrals.code")} <code id={id} dir="ltr">{tc.code}</code>
+          </span>
+        </>
+      ) : (
+        <span set:html={html} />
+      )}
       <button
-        class="copy-btn copy-btn--sm"
+        class="copy-btn copy-btn--icon"
         type="button"
         hidden
         data-copy={id}
         data-done={t("common.copied")}
         data-failed={t("common.copyFailed")}
         aria-label={`${t("common.copy")} ${service.name} ${tc.code}`}
+        title={t("common.copy")}
       >
-        <Icon name="copy" /><span data-copy-label aria-live="polite">{t("common.copy")}</span>
+        <Icon name="copy" class="copy-btn__idle" />
+        <Icon name="check" class="copy-btn__done" />
+        <span class="visually-hidden" data-copy-label aria-live="polite">{t("common.copy")}</span>
       </button>
     </p>
   )

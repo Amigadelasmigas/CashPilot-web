@@ -97,9 +97,14 @@ for (const btn of document.querySelectorAll<HTMLButtonElement>("[data-copy]")) {
     try {
       await navigator.clipboard.writeText(target.textContent!.trim());
       label.textContent = btn.dataset.done!;
+      btn.dataset.state = "done";
     } catch {
       label.textContent = btn.dataset.failed!;
+      btn.dataset.state = "failed";
     }
-    setTimeout(() => (label.textContent = idle), 2000);
+    setTimeout(() => {
+      label.textContent = idle;
+      delete btn.dataset.state;
+    }, 2000);
   });
 }
