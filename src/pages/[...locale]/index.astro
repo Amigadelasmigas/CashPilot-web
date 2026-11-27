@@ -82,7 +82,7 @@ const compareRows: { key: string; cells: Cell[] }[] = [
   // Security rows: "LAN isolation", "Earner container settings" and "Docker socket mounted into" in docs/comparison.md.
   { key: "lanIsolation", cells: ["yes", "values.lanReachable", "no", "no", "no"] },
   { key: "lockedDown", cells: ["yes", "values.partly", "no", "no", "no"] },
-  { key: "dockerAccess", cells: ["yes", "no", "values.readOnlyMount", "no", "no"] },
+  { key: "dockerAccess", cells: ["yes", "no", "values.updaterHardened", "no", "no"] },
   { key: "balances", cells: ["yes", "values.estimates", "no", "no", "no"] },
   { key: "fleet", cells: ["yes", "no", "values.claimed", "no", "no"] },
   { key: "desktop", cells: ["yes", "no", "no", "no", "no"] },
