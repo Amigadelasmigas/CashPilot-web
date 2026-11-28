@@ -9,6 +9,8 @@ import PhoneFrame from "../../components/PhoneFrame.astro";
 import Disclosure from "../../components/Disclosure.astro";
 import NotStated from "../../components/NotStated.astro";
 import TypedCode from "../../components/TypedCode.astro";
+import HowOptions from "../../components/design/HowOptions.astro";
+import TourOptions from "../../components/design/TourOptions.astro";
 import { localeFromPath, localeParams, useT } from "../../i18n";
 import { getData, isLive, isReferral, type Service } from "../../data";
 import { docs, repo, rivals, feeds } from "../../lib/links";
@@ -67,6 +69,9 @@ const tour = [
 ] as const;
 const desktopFull = await fullUrl(desktopImg);
 const androidFull = await fullUrl(androidImg);
+// Design review only: DESIGN_OPTION=1|2|3 builds one of the layout options for
+// "How it works" and "A look inside". Unset builds the current layout.
+const designOpt = process.env.DESIGN_OPTION ?? "";
 
 // Comparison facts, checked on 2026-11-04 against each project's repository.
 // Sources for every cell: docs/comparison.md in the CashPilot repo.
@@ -155,6 +160,10 @@ const faqVars = {
   </section>
 
   <section class="section" aria-labelledby="how-title">
+    {designOpt && (
+      <HowOptions t={t} opt={designOpt} total={live.length} categories={categories} guidesUrl={docs.guides} />
+    )}
+    {!designOpt && (
     <div class="container">
       <div class="section-head">
         <h2 id="how-title">{t("home.how.title")}</h2>
@@ -203,9 +212,20 @@ const faqVars = {
         </ul>
       </div>
     </div>
+    )}
   </section>
 
   <section class="section section--alt" aria-labelledby="tour-title">
+    {designOpt && (
+      <TourOptions
+        t={t}
+        opt={designOpt}
+        web={tour}
+        desktop={{ key: "desktop", crop: desktopCrop, full: desktopFull }}
+        android={{ key: "android", crop: androidCrop, full: androidFull }}
+      />
+    )}
+    {!designOpt && (
     <div class="container">
       <div class="section-head">
         <h2 id="tour-title">{t("home.tour.title")}</h2>
@@ -251,6 +271,7 @@ const faqVars = {
         </li>
       </ul>
     </div>
+    )}
   </section>
 
   <section class="section" aria-labelledby="catch-title">

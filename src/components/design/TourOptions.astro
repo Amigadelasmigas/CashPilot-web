@@ -1,0 +1,347 @@
+---
+// Design options for "A look inside" (DESIGN_OPTION=1|2|3).
+// Only one survives once an option is chosen; the others get deleted.
+import type { ImageMetadata } from "astro";
+import WindowFrame from "../WindowFrame.astro";
+import PhoneFrame from "../PhoneFrame.astro";
+import type { Translator } from "../../i18n";
+
+interface Shot {
+  key: string;
+  crop: ImageMetadata;
+  full: string;
+  title?: string;
+}
+interface Props {
+  t: Translator;
+  opt: string;
+  web: readonly Shot[];
+  desktop: Shot;
+  android: Shot;
+}
+const { t, opt, web, desktop, android } = Astro.props;
+const all = [...web, desktop, android];
+const ratio = (s: Shot) => (s.crop.width / s.crop.height).toFixed(3);
+const sizes = "(min-width: 1160px) 760px, 100vw";
+---
+<div class="container">
+  <div class="section-head">
+    <h2 id="tour-title">{t("home.tour.title")}</h2>
+    <p>{t("home.tour.lead")}</p>
+  </div>
+
+  {
+    opt === "1" && (
+      <div class="sw">
+        <fieldset class="sw__tabs">
+          <legend class="visually-hidden">{t("home.tour.title")}</legend>
+          {all.map((s, i) => (
+            <>
+              <input class="visually-hidden" type="radio" name="tour-screen" id={`sw-${s.key}`} checked={i === 0} />
+              <label for={`sw-${s.key}`}>{t(`home.tour.${s.key}.title`)}</label>
+            </>
+          ))}
+        </fieldset>
+        {all.map((s) => (
+          <figure class:list={["sw__panel", `sw__panel--${s.key}`]}>
+            <figcaption>
+              <h3>{t(`home.tour.${s.key}.title`)}</h3>
+              <p>{t(`home.tour.${s.key}.text`)}</p>
+            </figcaption>
+            <div class="sw__stage">
+              <div class="sw__frame" style={`--r: ${ratio(s)}`}>
+                {s.key === "android" ? (
+                  <PhoneFrame src={s.crop} alt={t(`home.tour.${s.key}.alt`)} href={s.full} />
+                ) : (
+                  <WindowFrame src={s.crop} alt={t(`home.tour.${s.key}.alt`)} title={s.title} bare={!s.title} href={s.full} sizes={sizes} />
+                )}
+              </div>
+            </div>
+          </figure>
+        ))}
+      </div>
+    )
+  }
+
+  {
+    opt === "2" && (
+      <ul class="m2">
+        {[...web, desktop].map((s, i) => (
+          <li class:list={["m2__item", i < 2 ? "m2__item--tall" : "m2__item--wide"]}>
+            <figure>
+              <WindowFrame src={s.crop} alt={t(`home.tour.${s.key}.alt`)} bare href={s.full} class="m2__frame" sizes="(min-width: 1160px) 420px, (min-width: 760px) 40vw, 100vw" />
+              <figcaption>
+                <h3>{t(`home.tour.${s.key}.title`)}</h3>
+                <p>{t(`home.tour.${s.key}.text`)}</p>
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+        <li class="m2__phone">
+          <figure>
+            <PhoneFrame src={android.crop} alt={t("home.tour.android.alt")} href={android.full} />
+            <figcaption>
+              <h3>{t("home.tour.android.title")}</h3>
+              <p>{t("home.tour.android.text")}</p>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    )
+  }
+
+  {
+    opt === "3" && (
+      <ul class="rows">
+        {web.map((s) => (
+          <li class="rows__item">
+            <div class="rows__media">
+              <WindowFrame src={s.crop} alt={t(`home.tour.${s.key}.alt`)} title={s.title} href={s.full} sizes="(min-width: 1160px) 660px, 100vw" />
+            </div>
+            <div class="rows__text">
+              <h3>{t(`home.tour.${s.key}.title`)}</h3>
+              <p>{t(`home.tour.${s.key}.text`)}</p>
+            </div>
+          </li>
+        ))}
+        <li class="rows__item rows__item--apps">
+          <div class="rows__apps">
+            <WindowFrame src={desktop.crop} alt={t("home.tour.desktop.alt")} bare href={desktop.full} sizes="(min-width: 1160px) 660px, 100vw" />
+            <PhoneFrame src={android.crop} alt={t("home.tour.android.alt")} href={android.full} class="rows__phone" />
+          </div>
+          <div class="rows__text">
+            <h3>{t("home.tour.desktop.title")}</h3>
+            <p>{t("home.tour.desktop.text")}</p>
+            <h3 class="rows__second">{t("home.tour.android.title")}</h3>
+            <p>{t("home.tour.android.text")}</p>
+          </div>
+        </li>
+      </ul>
+    )
+  }
+</div>
+
+<style>
+  figure {
+    margin: 0;
+  }
+  h3 {
+    font-size: 1.125rem;
+    letter-spacing: -0.01em;
+  }
+  figcaption p,
+  .rows__text p {
+    margin-top: 0.35rem;
+    color: var(--muted);
+  }
+
+  /* Option 1: one stage, a switcher above it. Works without JavaScript (radio buttons). */
+  .sw__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 1.5rem;
+    padding: 0.3rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    width: fit-content;
+    max-width: 100%;
+  }
+  .sw__tabs label {
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .sw__tabs label:hover {
+    color: var(--text);
+  }
+  .sw__tabs input:checked + label {
+    background: var(--accent-soft);
+    color: var(--accent);
+    box-shadow: inset 0 0 0 1px var(--accent-line);
+  }
+  .sw__tabs input:focus-visible + label {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .sw__panel {
+    display: none;
+    grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .sw:has(#sw-fleet:checked) .sw__panel--fleet,
+  .sw:has(#sw-catalog:checked) .sw__panel--catalog,
+  .sw:has(#sw-payouts:checked) .sw__panel--payouts,
+  .sw:has(#sw-desktop:checked) .sw__panel--desktop,
+  .sw:has(#sw-android:checked) .sw__panel--android {
+    display: grid;
+  }
+  .sw__stage {
+    --h: 430px;
+    display: grid;
+    place-items: center;
+    height: var(--h);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background:
+      radial-gradient(ellipse at 50% 0%, rgb(251 113 133 / 0.07), transparent 60%),
+      var(--surface);
+  }
+  .sw__frame {
+    width: min(100%, calc((var(--h) - 3rem - 34px) * var(--r)));
+  }
+  .sw__panel--android .sw__frame {
+    width: min(100%, calc((var(--h) - 3rem - 20px) * var(--r)));
+  }
+  .sw__panel--android .sw__frame :global(.phone) {
+    border-radius: 34px;
+    padding: 8px;
+  }
+  .sw__panel--android .sw__frame :global(.phone img) {
+    border-radius: 27px;
+  }
+
+  /* Option 2: a matched grid. Same frame on every screen, one ratio per row,
+     the phone in its own column beside them. */
+  .m2 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 13.5rem;
+    gap: 2.25rem 1.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .m2__phone {
+    grid-column: 3;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+  .m2 :global(.m2__frame .window__shot) {
+    display: block;
+    overflow: hidden;
+  }
+  .m2__item--tall :global(.m2__frame .window__shot) {
+    aspect-ratio: 1.65;
+  }
+  .m2__item--wide :global(.m2__frame .window__shot) {
+    aspect-ratio: 2.85;
+  }
+  .m2 :global(.m2__frame picture) {
+    display: block;
+    height: 100%;
+  }
+  .m2 :global(.m2__frame img) {
+    height: 100%;
+    object-fit: cover;
+    object-position: left top;
+  }
+  .m2 figcaption {
+    margin-top: 0.9rem;
+  }
+  .m2__phone :global(.phone) {
+    border-radius: 32px;
+    padding: 8px;
+  }
+  .m2__phone :global(.phone img) {
+    border-radius: 25px;
+  }
+
+  /* Option 3: one screen per row, the text beside it, sides alternating.
+     The two apps share the last row, the phone in front of the desktop window. */
+  .rows {
+    display: grid;
+    gap: clamp(2.5rem, 5vw, 4rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .rows__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: center;
+  }
+  .rows__item:nth-child(even) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr);
+  }
+  .rows__item:nth-child(even) > :first-child {
+    order: 2;
+  }
+  .rows__text {
+    max-width: 24rem;
+  }
+  .rows__second {
+    margin-top: 1.5rem;
+  }
+  .rows__apps {
+    position: relative;
+    padding-bottom: 3.5rem;
+    padding-inline-end: 3.5rem;
+  }
+  .rows__apps :global(.rows__phone) {
+    position: absolute;
+    bottom: 0;
+    inset-inline-end: 0;
+    width: 26%;
+    border-radius: 26px;
+    padding: 6px;
+  }
+  .rows__apps :global(.rows__phone img) {
+    border-radius: 21px;
+  }
+
+  @media (max-width: 760px) {
+    .sw__tabs {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      border-radius: var(--radius-sm);
+      width: 100%;
+    }
+    .sw__panel {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .sw__panel figcaption {
+      order: 2;
+    }
+    .sw__stage {
+      --h: 300px;
+      padding: 1rem;
+    }
+    .m2 {
+      grid-template-columns: 1fr;
+    }
+    .m2__phone {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    .m2__phone figure {
+      display: grid;
+      grid-template-columns: 9rem 1fr;
+      gap: 1.25rem;
+      align-items: center;
+    }
+    .m2__phone figcaption {
+      margin-top: 0;
+    }
+    .rows__item,
+    .rows__item:nth-child(even) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .rows__item:nth-child(even) > :first-child {
+      order: 0;
+    }
+    .rows__apps {
+      padding-bottom: 2.5rem;
+      padding-inline-end: 2.5rem;
+    }
+  }
+</style>
