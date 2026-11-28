@@ -466,10 +466,6 @@ tbody th {
 
 /* A code to type by hand, with its copy button (TypedCode.astro) */
 .typed-code {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem 0.6rem;
   margin: 0.45rem 0 0;
   font-size: 0.875rem;
   line-height: 1.45;
@@ -484,10 +480,63 @@ tbody th {
   overflow-wrap: anywhere;
 }
 
-.copy-btn--sm {
-  min-height: 28px;
-  padding: 0.15rem 0.55rem;
-  font-size: 0.75rem;
+/* The home table: one line under Sign up, never wrapped. */
+.typed-code--compact {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  white-space: nowrap;
+  font-size: 0.8125rem;
+}
+
+.typed-code--compact code {
+  overflow-wrap: normal;
+}
+
+/* An icon-only copy button that sits in the line, after the code. */
+.copy-btn--icon {
+  display: inline-flex;
+  justify-content: center;
+  min-height: 0;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  margin-inline-start: 0.3rem;
+  vertical-align: middle;
+}
+
+.typed-code--compact .copy-btn--icon {
+  margin-inline-start: 0.1rem;
+}
+
+.copy-btn--icon .copy-btn__done,
+.copy-btn--icon[data-state="done"] .copy-btn__idle {
+  display: none;
+}
+
+.copy-btn--icon[data-state="done"] .copy-btn__done {
+  display: block;
+}
+
+.copy-btn--icon[data-state="done"] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* A failed copy shows its message, so it is visible without a screen reader. */
+.copy-btn--icon[data-state="failed"] {
+  width: auto;
+  padding-inline: 0.5rem;
+}
+
+.copy-btn--icon[data-state="failed"] [data-copy-label] {
+  position: static !important;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 
 /* Prose pages (privacy, disclaimer) */
