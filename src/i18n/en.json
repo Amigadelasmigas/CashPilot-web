@@ -34,7 +34,7 @@
   },
   "home": {
     "title": "CashPilot: every earner, every box, one view",
-    "description": "Free, open-source software that runs bandwidth sharing, DePIN, mining, GPU and storage services on your own machines, keeps them off your home network by default, and shows every payout in one dashboard.",
+    "description": "Free, open-source software that runs bandwidth sharing, DePIN, mining, GPU and storage services on your own machines and shows every payout in one dashboard. It can fence these apps off from your home network, so they reach the internet and nothing else.",
     "hero": {
       "pill": "Free and open source, GPL-3.0",
       "title": "Put your idle hardware to work. See every payout in one dashboard.",
@@ -234,7 +234,7 @@
       "feature": "Feature",
       "rows": {
         "license": "Licence",
-        "lanIsolation": "Keeps the apps off your home network by default",
+        "lanIsolation": "Can fence the apps off from your home network, so they reach the internet and nothing else",
         "lockedDown": "Locks down each app's container",
         "dockerAccess": "Filters control of your containers",
         "balances": "Reads balances from your provider accounts",
@@ -255,7 +255,7 @@
         "partly": "Partly",
         "updaterHardened": "No, but its updater is hardened"
       },
-      "security": "Security comes first in CashPilot. Every app it starts runs locked down and, by default, cannot reach your home network. <a href=\"{securityUrl}\">Read the security defaults</a>.",
+      "security": "Security comes first in CashPilot. Every app it starts runs locked down, and CashPilot can fence these apps off from your home network, so they reach the internet and nothing else. <a href=\"{securityUrl}\">Read the security defaults</a>.",
       "more": "Full comparison with a source for every cell"
     },
     "faq": {

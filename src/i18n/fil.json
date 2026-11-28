@@ -34,7 +34,7 @@
   },
   "home": {
     "title": "CashPilot: bawat kumikitang service, bawat makina, iisang view",
-    "description": "Libre at open-source na software na nagpapatakbo ng bandwidth sharing, DePIN, mining, GPU at storage service sa sarili mong mga makina, inilalayo ang mga ito sa home network mo bilang default, at ipinapakita ang bawat payout sa iisang dashboard.",
+    "description": "Libre at open-source na software na nagpapatakbo ng bandwidth sharing, DePIN, mining, GPU at storage service sa sarili mong mga makina, at ipinapakita ang bawat payout sa iisang dashboard. Kaya nitong ihiwalay ang mga app na ito sa home network mo, para internet lang ang maabot nila at wala nang iba.",
     "hero": {
       "pill": "Libre at open source, GPL-3.0",
       "title": "Paganahin ang hardware mong nakatengga. Tingnan ang bawat payout sa iisang dashboard.",
@@ -234,7 +234,7 @@
       "feature": "Feature",
       "rows": {
         "license": "Lisensya",
-        "lanIsolation": "Inilalayo ang mga service sa home network mo bilang default",
+        "lanIsolation": "Kayang ihiwalay ang mga service sa home network mo, para internet lang ang maabot nila at wala nang iba",
         "lockedDown": "Hinihigpitan ang container ng bawat service",
         "dockerAccess": "Sinasala ang pagkontrol sa mga container mo",
         "balances": "Binabasa ang balance mula sa mga provider account mo",
@@ -255,7 +255,7 @@
         "partly": "Bahagya",
         "updaterHardened": "Hindi, pero hinigpitan ang updater nito"
       },
-      "security": "Inuuna ng CashPilot ang seguridad. Hinihigpitan ang bawat service na pinapatakbo nito at, bilang default, hindi maaabot ng mga ito ang home network mo. <a href=\"{securityUrl}\">Basahin ang mga default na setting sa seguridad</a>.",
+      "security": "Inuuna ng CashPilot ang seguridad. Hinihigpitan ang bawat service na pinapatakbo nito, at kaya ng CashPilot na ihiwalay ang mga app na ito sa home network mo, para internet lang ang maabot nila at wala nang iba. <a href=\"{securityUrl}\">Basahin ang mga default na setting sa seguridad</a>.",
       "more": "Buong paghahambing, may source sa bawat cell"
     },
     "faq": {

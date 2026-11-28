@@ -12,7 +12,7 @@
 
 <p align="center"><strong>Every earner, every box, one view.</strong></p>
 
-The source of https://cashpilot.club, the website of [CashPilot](https://github.com/GeiserX/CashPilot). CashPilot is a self-hosted dashboard for bandwidth sharing, DePIN, mining, GPU compute and storage earners: it keeps them off your home network by default and tracks them across servers, desktops and phones. The site has a landing page, downloads for every system, the referral disclosure, and the privacy and disclaimer pages. It is static and dark only, with no cookies, no analytics and no request to any other host at runtime.
+The source of https://cashpilot.club, the website of [CashPilot](https://github.com/GeiserX/CashPilot). CashPilot is a self-hosted dashboard for bandwidth sharing, DePIN, mining, GPU compute and storage earners. It tracks them across servers, desktops and phones, and it can fence these apps off from your home network, so they reach the internet and nothing else. The site has a landing page, downloads for every system, the referral disclosure, and the privacy and disclaimer pages. It is static and dark only, with no cookies, no analytics and no request to any other host at runtime.
 
 ## Build
 
