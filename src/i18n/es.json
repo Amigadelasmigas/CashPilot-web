@@ -34,7 +34,7 @@
   },
   "home": {
     "title": "CashPilot: cada servicio que gana, cada máquina, una sola vista",
-    "description": "Software libre y de código abierto que ejecuta servicios de compartir ancho de banda, DePIN, minería, GPU y almacenamiento en tus propias máquinas, los mantiene fuera de tu red de casa por defecto y muestra todos tus pagos en un solo panel.",
+    "description": "Software libre y de código abierto que ejecuta servicios de compartir ancho de banda, DePIN, minería, GPU y almacenamiento en tus propias máquinas y muestra todos tus pagos en un solo panel. Puede aislar estas apps de tu red doméstica, para que lleguen a internet y a nada más.",
     "hero": {
       "pill": "Libre y de código abierto, GPL-3.0",
       "title": "Pon a trabajar el hardware que no usas. Consulta todos tus pagos en un solo panel.",
@@ -234,7 +234,7 @@
       "feature": "Función",
       "rows": {
         "license": "Licencia",
-        "lanIsolation": "Mantiene los servicios fuera de tu red doméstica por defecto",
+        "lanIsolation": "Puede aislar los servicios de tu red doméstica, para que lleguen a internet y a nada más",
         "lockedDown": "Restringe el contenedor de cada servicio",
         "dockerAccess": "Filtra el control de tus contenedores",
         "balances": "Lee los saldos de tus cuentas en los proveedores",
@@ -255,7 +255,7 @@
         "partly": "En parte",
         "updaterHardened": "No, pero su actualizador está restringido"
       },
-      "security": "La seguridad es lo primero en CashPilot. Cada servicio que arranca funciona en un contenedor restringido y, por defecto, no puede llegar a tu red doméstica. <a href=\"{securityUrl}\">Lee la configuración de seguridad por defecto</a>.",
+      "security": "La seguridad es lo primero en CashPilot. Cada servicio que arranca funciona en un contenedor restringido, y CashPilot puede aislar estas apps de tu red doméstica, para que lleguen a internet y a nada más. <a href=\"{securityUrl}\">Lee la configuración de seguridad por defecto</a>.",
       "more": "Comparativa completa con una fuente para cada celda"
     },
     "faq": {

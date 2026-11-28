@@ -34,7 +34,7 @@
   },
   "home": {
     "title": "CashPilot: cada serviço que rende, cada máquina, uma só visão",
-    "description": "Software livre e de código aberto que roda serviços de compartilhamento de banda, DePIN, mineração, GPU e armazenamento nas suas próprias máquinas, os mantém fora da sua rede de casa por padrão e mostra todos os pagamentos em um só painel.",
+    "description": "Software livre e de código aberto que roda serviços de compartilhamento de banda, DePIN, mineração, GPU e armazenamento nas suas próprias máquinas e mostra todos os pagamentos em um só painel. Ele pode isolar esses apps da sua rede doméstica, para que acessem a internet e nada mais.",
     "hero": {
       "pill": "Livre e de código aberto, GPL-3.0",
       "title": "Coloque seu hardware parado para trabalhar. Veja todos os pagamentos em um só painel.",
@@ -234,7 +234,7 @@
       "feature": "Recurso",
       "rows": {
         "license": "Licença",
-        "lanIsolation": "Mantém os serviços fora da sua rede doméstica por padrão",
+        "lanIsolation": "Pode isolar os serviços da sua rede doméstica, para que acessem a internet e nada mais",
         "lockedDown": "Restringe o contêiner de cada serviço",
         "dockerAccess": "Filtra o controle dos seus contêineres",
         "balances": "Lê os saldos das suas contas nos provedores",
@@ -255,7 +255,7 @@
         "partly": "Em parte",
         "updaterHardened": "Não, mas o atualizador é restrito"
       },
-      "security": "A segurança vem em primeiro lugar no CashPilot. Cada serviço que ele inicia roda em um contêiner restrito e, por padrão, não consegue acessar sua rede doméstica. <a href=\"{securityUrl}\">Leia as configurações de segurança padrão</a>.",
+      "security": "A segurança vem em primeiro lugar no CashPilot. Cada serviço que ele inicia roda em um contêiner restrito, e o CashPilot pode isolar esses apps da sua rede doméstica, para que acessem a internet e nada mais. <a href=\"{securityUrl}\">Leia as configurações de segurança padrão</a>.",
       "more": "Comparação completa com uma fonte para cada célula"
     },
     "faq": {

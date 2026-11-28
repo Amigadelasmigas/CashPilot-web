@@ -34,7 +34,7 @@
   },
   "home": {
     "title": "CashPilot: her kazanç hizmeti, her makine, tek bir görünüm",
-    "description": "Bant genişliği paylaşımı, DePIN, madencilik, GPU ve depolama hizmetlerini kendi makinelerinizde çalıştıran, onları varsayılan olarak ev ağınızdan uzak tutan ve tüm ödemeleri tek bir panelde gösteren ücretsiz, açık kaynaklı yazılım.",
+    "description": "Bant genişliği paylaşımı, DePIN, madencilik, GPU ve depolama hizmetlerini kendi makinelerinizde çalıştıran ve tüm ödemeleri tek bir panelde gösteren ücretsiz, açık kaynaklı yazılım. Bu uygulamaları ev ağınızdan yalıtabilir; böylece internete erişirler ve başka hiçbir yere erişemezler.",
     "hero": {
       "pill": "Ücretsiz ve açık kaynak, GPL-3.0",
       "title": "Boşta duran donanımınızı değerlendirin. Tüm ödemeleri tek bir panelde görün.",
@@ -234,7 +234,7 @@
       "feature": "Özellik",
       "rows": {
         "license": "Lisans",
-        "lanIsolation": "Hizmetleri varsayılan olarak ev ağınızdan uzak tutar",
+        "lanIsolation": "Hizmetleri ev ağınızdan yalıtabilir; böylece internete erişirler ve başka hiçbir yere erişemezler",
         "lockedDown": "Her hizmetin konteynerini sıkı şekilde kısıtlar",
         "dockerAccess": "Konteynerlerinizin yönetimini filtreler",
         "balances": "Sağlayıcı hesaplarınızdan bakiye okur",
@@ -255,7 +255,7 @@
         "partly": "Kısmen",
         "updaterHardened": "Hayır, ama güncelleyicisi kısıtlanmış"
       },
-      "security": "CashPilot'ta güvenlik her şeyden önce gelir. Başlattığı her hizmet kısıtlanmış olarak çalışır ve varsayılan olarak ev ağınıza erişemez. <a href=\"{securityUrl}\">Varsayılan güvenlik ayarlarını okuyun</a>.",
+      "security": "CashPilot'ta güvenlik her şeyden önce gelir. Başlattığı her hizmet kısıtlanmış olarak çalışır ve CashPilot bu uygulamaları ev ağınızdan yalıtabilir; böylece internete erişirler ve başka hiçbir yere erişemezler. <a href=\"{securityUrl}\">Varsayılan güvenlik ayarlarını okuyun</a>.",
       "more": "Her hücre için kaynak içeren tam karşılaştırma"
     },
     "faq": {
