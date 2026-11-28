@@ -524,6 +524,21 @@ tbody th {
   border-color: var(--accent);
 }
 
+/* A failed copy shows its message, so it is visible without a screen reader. */
+.copy-btn--icon[data-state="failed"] {
+  width: auto;
+  padding-inline: 0.5rem;
+}
+
+.copy-btn--icon[data-state="failed"] [data-copy-label] {
+  position: static !important;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
 /* Prose pages (privacy, disclaimer) */
 .prose {
   max-width: 44rem;
