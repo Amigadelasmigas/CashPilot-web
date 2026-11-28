@@ -34,7 +34,7 @@
   },
   "home": {
     "title": "CashPilot: setiap layanan penghasil, setiap mesin, satu tampilan",
-    "description": "Perangkat lunak gratis dan open source yang menjalankan layanan berbagi bandwidth, DePIN, mining, GPU, dan penyimpanan di mesin Anda sendiri, menjauhkannya dari jaringan rumah Anda secara default, serta menampilkan semua pembayaran di satu dasbor.",
+    "description": "Perangkat lunak gratis dan open source yang menjalankan layanan berbagi bandwidth, DePIN, mining, GPU, dan penyimpanan di mesin Anda sendiri serta menampilkan semua pembayaran di satu dasbor. CashPilot dapat memisahkan aplikasi-aplikasi ini dari jaringan rumah Anda, sehingga aplikasi itu menjangkau internet dan tidak menjangkau apa pun selain itu.",
     "hero": {
       "pill": "Gratis dan open source, GPL-3.0",
       "title": "Manfaatkan perangkat Anda yang menganggur. Lihat semua pembayaran di satu dasbor.",
@@ -234,7 +234,7 @@
       "feature": "Fitur",
       "rows": {
         "license": "Lisensi",
-        "lanIsolation": "Memisahkan layanan dari jaringan rumah Anda secara default",
+        "lanIsolation": "Dapat memisahkan layanan dari jaringan rumah Anda, sehingga layanan itu menjangkau internet dan tidak menjangkau apa pun selain itu",
         "lockedDown": "Membatasi hak akses container setiap layanan",
         "dockerAccess": "Menyaring kendali atas container Anda",
         "balances": "Membaca saldo dari akun penyedia Anda",
@@ -255,7 +255,7 @@
         "partly": "Sebagian",
         "updaterHardened": "Tidak, tetapi updater-nya dibatasi"
       },
-      "security": "CashPilot mengutamakan keamanan. Setiap layanan yang dijalankannya berjalan dengan hak akses terbatas dan, secara default, tidak bisa menjangkau jaringan rumah Anda. <a href=\"{securityUrl}\">Baca pengaturan keamanan bawaan</a>.",
+      "security": "CashPilot mengutamakan keamanan. Setiap layanan yang dijalankannya berjalan dengan hak akses terbatas, dan CashPilot dapat memisahkan aplikasi-aplikasi ini dari jaringan rumah Anda, sehingga aplikasi itu menjangkau internet dan tidak menjangkau apa pun selain itu. <a href=\"{securityUrl}\">Baca pengaturan keamanan bawaan</a>.",
       "more": "Perbandingan lengkap dengan sumber untuk setiap sel"
     },
     "faq": {

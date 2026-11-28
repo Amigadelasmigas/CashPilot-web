@@ -34,7 +34,7 @@
   },
   "home": {
     "title": "CashPilot: elke inkomstenbron, elke machine, één overzicht",
-    "description": "Gratis opensourcesoftware die diensten voor bandbreedte delen, DePIN, mining, GPU en opslag op je eigen machines draait, ze standaard buiten je thuisnetwerk houdt en elke uitbetaling in één dashboard toont.",
+    "description": "Gratis opensourcesoftware die diensten voor bandbreedte delen, DePIN, mining, GPU en opslag op je eigen machines draait en elke uitbetaling in één dashboard toont. CashPilot kan deze apps afschermen van je thuisnetwerk, zodat ze het internet bereiken en verder niets.",
     "hero": {
       "pill": "Gratis en open source, GPL-3.0",
       "title": "Zet je ongebruikte hardware aan het werk. Bekijk elke uitbetaling in één dashboard.",
@@ -234,7 +234,7 @@
       "feature": "Functie",
       "rows": {
         "license": "Licentie",
-        "lanIsolation": "Houdt de diensten standaard weg van je thuisnetwerk",
+        "lanIsolation": "Kan de diensten afschermen van je thuisnetwerk, zodat ze het internet bereiken en verder niets",
         "lockedDown": "Beveiligt de container van elke dienst",
         "dockerAccess": "Filtert de besturing van je containers",
         "balances": "Leest saldi uit je accounts bij aanbieders",
@@ -255,7 +255,7 @@
         "partly": "Deels",
         "updaterHardened": "Nee, maar de updater is beveiligd"
       },
-      "security": "Veiligheid staat bij CashPilot voorop. Elke dienst die het start, draait beveiligd en kan standaard je thuisnetwerk niet bereiken. <a href=\"{securityUrl}\">Lees de standaard beveiligingsinstellingen</a>.",
+      "security": "Veiligheid staat bij CashPilot voorop. Elke dienst die het start, draait beveiligd, en CashPilot kan deze apps afschermen van je thuisnetwerk, zodat ze het internet bereiken en verder niets. <a href=\"{securityUrl}\">Lees de standaard beveiligingsinstellingen</a>.",
       "more": "Volledige vergelijking met een bron voor elke cel"
     },
     "faq": {

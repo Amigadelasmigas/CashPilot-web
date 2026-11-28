@@ -34,7 +34,7 @@
   },
   "home": {
     "title": "CashPilot : chaque source de gains, chaque machine, une seule vue",
-    "description": "Logiciel libre et open source qui fait tourner des services de partage de bande passante, DePIN, minage, GPU et stockage sur vos propres machines, les tient à l'écart de votre réseau domestique par défaut et affiche tous vos paiements dans un seul tableau de bord.",
+    "description": "Logiciel libre et open source qui fait tourner des services de partage de bande passante, DePIN, minage, GPU et stockage sur vos propres machines et affiche tous vos paiements dans un seul tableau de bord. Il peut isoler ces applications de votre réseau domestique, pour qu'elles atteignent Internet et rien d'autre.",
     "hero": {
       "pill": "Libre et open source, GPL-3.0",
       "title": "Faites travailler votre matériel inutilisé. Suivez tous vos paiements dans un seul tableau de bord.",
@@ -234,7 +234,7 @@
       "feature": "Fonctionnalité",
       "rows": {
         "license": "Licence",
-        "lanIsolation": "Tient les services à l'écart de votre réseau domestique par défaut",
+        "lanIsolation": "Peut isoler les services de votre réseau domestique, pour qu'ils atteignent Internet et rien d'autre",
         "lockedDown": "Verrouille le conteneur de chaque service",
         "dockerAccess": "Filtre le contrôle de vos conteneurs",
         "balances": "Relève les soldes de vos comptes chez les fournisseurs",
@@ -255,7 +255,7 @@
         "partly": "En partie",
         "updaterHardened": "Non, mais son outil de mise à jour est verrouillé"
       },
-      "security": "La sécurité passe en premier dans CashPilot. Chaque service qu'il lance tourne dans un conteneur verrouillé et, par défaut, ne peut pas atteindre votre réseau domestique. <a href=\"{securityUrl}\">Lisez les réglages de sécurité par défaut</a>.",
+      "security": "La sécurité passe en premier dans CashPilot. Chaque service qu'il lance tourne dans un conteneur verrouillé, et CashPilot peut isoler ces applications de votre réseau domestique, pour qu'elles atteignent Internet et rien d'autre. <a href=\"{securityUrl}\">Lisez les réglages de sécurité par défaut</a>.",
       "more": "Comparaison complète avec une source pour chaque case"
     },
     "faq": {

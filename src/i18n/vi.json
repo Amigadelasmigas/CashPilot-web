@@ -34,7 +34,7 @@
   },
   "home": {
     "title": "CashPilot: mọi dịch vụ kiếm tiền, mọi máy, một màn hình",
-    "description": "Phần mềm miễn phí, mã nguồn mở, chạy các dịch vụ chia sẻ băng thông, DePIN, đào coin, GPU và lưu trữ trên máy của chính bạn, mặc định tách chúng khỏi mạng gia đình của bạn, và hiển thị mọi khoản thanh toán trên một bảng điều khiển.",
+    "description": "Phần mềm miễn phí, mã nguồn mở, chạy các dịch vụ chia sẻ băng thông, DePIN, đào coin, GPU và lưu trữ trên máy của chính bạn, và hiển thị mọi khoản thanh toán trên một bảng điều khiển. CashPilot có thể tách các ứng dụng này khỏi mạng gia đình của bạn, để chúng chỉ ra được internet và không vào được nơi nào khác.",
     "hero": {
       "pill": "Miễn phí và mã nguồn mở, GPL-3.0",
       "title": "Tận dụng phần cứng đang để không. Xem mọi khoản thanh toán trên một bảng điều khiển.",
@@ -234,7 +234,7 @@
       "feature": "Tính năng",
       "rows": {
         "license": "Giấy phép",
-        "lanIsolation": "Mặc định cách ly dịch vụ khỏi mạng gia đình",
+        "lanIsolation": "Có thể tách dịch vụ khỏi mạng gia đình, để chúng chỉ ra được internet và không vào được nơi nào khác",
         "lockedDown": "Giới hạn quyền container của từng dịch vụ",
         "dockerAccess": "Lọc lệnh điều khiển container của bạn",
         "balances": "Đọc số dư từ tài khoản nhà cung cấp của bạn",
@@ -255,7 +255,7 @@
         "partly": "Một phần",
         "updaterHardened": "Không, nhưng trình cập nhật bị giới hạn quyền"
       },
-      "security": "CashPilot đặt bảo mật lên hàng đầu. Mọi dịch vụ nó khởi chạy đều bị giới hạn quyền và, theo mặc định, không thể truy cập mạng gia đình của bạn. <a href=\"{securityUrl}\">Đọc về các thiết lập bảo mật mặc định</a>.",
+      "security": "CashPilot đặt bảo mật lên hàng đầu. Mọi dịch vụ nó khởi chạy đều bị giới hạn quyền, và CashPilot có thể tách các ứng dụng này khỏi mạng gia đình của bạn, để chúng chỉ ra được internet và không vào được nơi nào khác. <a href=\"{securityUrl}\">Đọc về các thiết lập bảo mật mặc định</a>.",
       "more": "Bảng so sánh đầy đủ, mỗi ô đều có nguồn"
     },
     "faq": {

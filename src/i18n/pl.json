@@ -34,7 +34,7 @@
   },
   "home": {
     "title": "CashPilot: każda usługa zarobkowa, każda maszyna, jeden widok",
-    "description": "Darmowe oprogramowanie open source, które uruchamia usługi udostępniania łącza, DePIN, kopania kryptowalut, GPU i przestrzeni dyskowej na twoich własnych maszynach, domyślnie odcina je od twojej sieci domowej i pokazuje wszystkie wypłaty w jednym panelu.",
+    "description": "Darmowe oprogramowanie open source, które uruchamia usługi udostępniania łącza, DePIN, kopania kryptowalut, GPU i przestrzeni dyskowej na twoich własnych maszynach i pokazuje wszystkie wypłaty w jednym panelu. Może odgrodzić te aplikacje od twojej sieci domowej, tak by miały dostęp do internetu i do niczego więcej.",
     "hero": {
       "pill": "Darmowe i open source, GPL-3.0",
       "title": "Zaprzęgnij nieużywany sprzęt do pracy. Wszystkie wypłaty w jednym panelu.",
@@ -234,7 +234,7 @@
       "feature": "Funkcja",
       "rows": {
         "license": "Licencja",
-        "lanIsolation": "Domyślnie trzyma usługi z dala od twojej sieci domowej",
+        "lanIsolation": "Może odgrodzić usługi od twojej sieci domowej, tak by miały dostęp do internetu i do niczego więcej",
         "lockedDown": "Zabezpiecza kontener każdej usługi",
         "dockerAccess": "Filtruje sterowanie twoimi kontenerami",
         "balances": "Odczytuje salda z twoich kont u dostawców",
@@ -255,7 +255,7 @@
         "partly": "Częściowo",
         "updaterHardened": "Nie, ale jego aktualizator jest zabezpieczony"
       },
-      "security": "W CashPilot bezpieczeństwo jest na pierwszym miejscu. Każda usługa, którą uruchamia, jest zabezpieczona i domyślnie nie ma dostępu do twojej sieci domowej. <a href=\"{securityUrl}\">Przeczytaj o domyślnych ustawieniach bezpieczeństwa</a>.",
+      "security": "W CashPilot bezpieczeństwo jest na pierwszym miejscu. Każda usługa, którą uruchamia, jest zabezpieczona, a CashPilot może odgrodzić te aplikacje od twojej sieci domowej, tak by miały dostęp do internetu i do niczego więcej. <a href=\"{securityUrl}\">Przeczytaj o domyślnych ustawieniach bezpieczeństwa</a>.",
       "more": "Pełne porównanie ze źródłem dla każdej komórki"
     },
     "faq": {
