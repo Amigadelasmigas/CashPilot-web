@@ -27,7 +27,7 @@ const crops: [string, string, Box | null][] = [
   [`${desktop}/docs/images/screenshots/02-dashboard.png`, "desktop-dashboard.png", screen],
   [`${android}/app/src/test/screenshots/screens/home_healthy_dark.png`, "android-home.png", null],
   // Crops for the tour.
-  [`${shots}/fleet.png`, "fleet-crop.png", { left: 29, top: 497, width: 1224, height: 735 }],
+  [`${shots}/fleet.png`, "fleet-crop.png", { left: 29, top: 497, width: 1075, height: 753 }],
   [`${shots}/catalog.png`, "catalog-crop.png", { left: 29, top: 202, width: 1411, height: 857 }],
   [`${shots}/payouts.png`, "payouts-crop.png", { left: 43, top: 666, width: 1498, height: 530 }],
   [`${desktop}/docs/images/screenshots/02-dashboard.png`, "desktop-crop.png", { left: 0, top: 0, width: 1555, height: 533 }],
